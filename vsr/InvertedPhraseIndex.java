@@ -15,7 +15,7 @@ import ir.classifiers.*;
  *
  * @author Ray Mooney
  */
-public class InvertedPhraseIndex extends InvertedIndex{
+public class InvertedPhraseIndex extends InvertedIndex {
 
   /**
    * The maximum number of retrieved documents for a query to present to the user
@@ -54,7 +54,12 @@ public class InvertedPhraseIndex extends InvertedIndex{
    */
   public boolean feedback = false;
 
+
+
+
   public HashMap<String, Double> knownPhrases = null;
+
+  public static final int maxPhrases = 1000;
 
   /**
    * Create an inverted index of the documents in a directory.
@@ -191,6 +196,45 @@ public class InvertedPhraseIndex extends InvertedIndex{
       idx++;
     }
     sortedPhrases = newSortedPhrases;
+  }
+
+
+  /**
+   * Index a directory of files and then interactively accept retrieval queries.
+   * Command format: "InvertedIndex [OPTION]* [DIR]" where DIR is the name of
+   * the directory whose files should be indexed, and OPTIONs can be
+   * "-html" to specify HTML files whose HTML tags should be removed.
+   * "-stem" to specify tokens should be stemmed with Porter stemmer.
+   * "-feedback" to allow relevance feedback from the user.
+   */
+  public static void main(String[] args) {
+    // Parse the arguments into a directory name and optional flag
+
+    String dirName = args[args.length - 1];
+    short docType = DocumentIterator.TYPE_TEXT;
+    boolean stem = false, feedback = false;
+    for (int i = 0; i < args.length - 1; i++) {
+      String flag = args[i];
+      if (flag.equals("-html"))
+        // Create HTMLFileDocuments to filter HTML tags
+        docType = DocumentIterator.TYPE_HTML;
+      else if (flag.equals("-stem"))
+        // Stem tokens with Porter stemmer
+        stem = true;
+      else if (flag.equals("-feedback"))
+        // Use relevance feedback
+        feedback = true;
+      else {
+        throw new IllegalArgumentException("Unknown flag: "+ flag);
+      }
+    }
+
+
+    // Create an inverted index for the files in the given directory.
+    InvertedPhraseIndex index = new InvertedPhraseIndex(new File(dirName), docType, stem, feedback);
+    // index.print();
+    // Interactively process queries to this index.
+    index.processQueries();
   }
 
 
