@@ -54,7 +54,7 @@ public class InvertedPhraseIndex extends InvertedIndex{
    */
   public boolean feedback = false;
 
-  public HashMap<String, int> knownPhrases = null;
+  public HashMap<String, Double> knownPhrases = null;
 
   /**
    * Create an inverted index of the documents in a directory.
@@ -71,7 +71,7 @@ public class InvertedPhraseIndex extends InvertedIndex{
     this.feedback = feedback;
     tokenHash = new HashMap<String, TokenInfo>();
     docRefs = new ArrayList<DocumentReference>();
-    knownPhrases = new HashMap<String, int>();
+    knownPhrases = new HashMap<String, Double>();
     reviewDocuments();
     indexDocuments();
   }
@@ -85,7 +85,7 @@ public class InvertedPhraseIndex extends InvertedIndex{
   public InvertedPhraseIndex(List<Example> examples) {
     tokenHash = new HashMap<String, TokenInfo>();
     docRefs = new ArrayList<DocumentReference>();
-    knownPhrases = new HashMap<String, int>();
+    knownPhrases = new HashMap<String, Double>();
     reviewDocuments(examples);
     indexDocuments(examples);
   }
