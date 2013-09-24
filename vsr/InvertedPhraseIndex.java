@@ -54,6 +54,8 @@ public class InvertedPhraseIndex extends InvertedIndex{
    */
   public boolean feedback = false;
 
+  public HashMap<String, int> knownPhrases = null;
+
   /**
    * Create an inverted index of the documents in a directory.
    *
@@ -69,6 +71,7 @@ public class InvertedPhraseIndex extends InvertedIndex{
     this.feedback = feedback;
     tokenHash = new HashMap<String, TokenInfo>();
     docRefs = new ArrayList<DocumentReference>();
+    knownPhrases = new HashMap<String, int>();
     reviewDocuments();
     indexDocuments();
   }
@@ -82,7 +85,8 @@ public class InvertedPhraseIndex extends InvertedIndex{
   public InvertedPhraseIndex(List<Example> examples) {
     tokenHash = new HashMap<String, TokenInfo>();
     docRefs = new ArrayList<DocumentReference>();
-    reviewDocuments();
+    knownPhrases = new HashMap<String, int>();
+    reviewDocuments(examples);
     indexDocuments(examples);
   }
 
@@ -104,7 +108,7 @@ public class InvertedPhraseIndex extends InvertedIndex{
       // Create a document vector for this document
       System.out.print(doc.file.getName() + ",");
       //HashMapVector vector = doc.hashMapVector();
-      HashMapVector vector = doc.bigramHashMapVector();
+      HashMapVector vector = doc.hashMapVector();
       reviewDocument(doc, vector);
     }
   }
@@ -128,29 +132,19 @@ public class InvertedPhraseIndex extends InvertedIndex{
    */
   protected void reviewDocument(FileDocument doc, HashMapVector vector) {
     // Iterate through each of the tokens in the document
-    // for (Map.Entry<String, Weight> entry : vector.entrySet()) {
-    // }
-    // Iterator entries = vector.entrySet().iterator();
-    // String token1, token2, token;
-    // token1 = entries.next().getKey();
-    // while (entries.hasNext())
-    // {
-    //   token2 = entries.next().getKey();
-    //   token = token1 + " " + token2; //this is the bigram
 
-    //   if (knownPhrases.containsKey(token))
-    //   {
-    //     double val = knownPhrases.get(token);
-    //     knownPhrases.put(token, val+1.0);
-    //   }
-    //   else
-    //     knownPhrases.put(token, 1.0);
+    //************if vector is hashMapVector*******************//
 
-    //   token1 = token2;
-    // }
-    String token;
     for (Map.Entry<String, Weight> entry : vector.entrySet()) {
-      token = entry.getKey();
+    }
+    Iterator entries = vector.entrySet().iterator();
+    String token1, token2, token;
+    token1 = entries.next().getKey();
+    while (entries.hasNext())
+    {
+      token2 = entries.next().getKey();
+      token = token1 + " " + token2; //this is the bigram
+
       if (knownPhrases.containsKey(token))
       {
         double val = knownPhrases.get(token);
@@ -158,7 +152,24 @@ public class InvertedPhraseIndex extends InvertedIndex{
       }
       else
         knownPhrases.put(token, 1.0);
+
+      token1 = token2;
     }
+
+
+
+    //************if vector is bigramHashMapVector*******************//
+    // String token;
+    // for (Map.Entry<String, Weight> entry : vector.entrySet()) {
+    //   token = entry.getKey();
+    //   if (knownPhrases.containsKey(token))
+    //   {
+    //     double val = knownPhrases.get(token);
+    //     knownPhrases.put(token, val+1.0);
+    //   }
+    //   else
+    //     knownPhrases.put(token, 1.0);
+    // }
   }
 
 
