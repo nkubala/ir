@@ -212,7 +212,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
     Collections.sort(sortedPhrases, 
         new Comparator<Entry<String,Double>>() {
             @Override
-            public int compare(Entry<String,Double> e1, Entry<String,Double> e2) {
+            public int compare(Map.Entry<String,Double> e1, Map.Entry<String,Double> e2) {
                 return e2.getValue().compareTo(e1.getValue());
             }
         }
