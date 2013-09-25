@@ -210,9 +210,9 @@ public class InvertedPhraseIndex extends InvertedIndex {
 
 
     Collections.sort(sortedPhrases, 
-        new Comparator<Entry<K,V>>() {
+        new Comparator<Entry<String,Double>>() {
             @Override
-            public int compare(Entry<K,V> e1, Entry<K,V> e2) {
+            public int compare(Entry<String,Double> e1, Entry<String,Double> e2) {
                 return e2.getValue().compareTo(e1.getValue());
             }
         }
