@@ -80,6 +80,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
     docRefs = new ArrayList<DocumentReference>();
     knownPhrases = new HashMap<String, Double>();
     reviewDocuments();
+    printKnownPhrases();
     indexDocuments();
   }
 
@@ -95,6 +96,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
     docRefs = new ArrayList<DocumentReference>();
     knownPhrases = new HashMap<String, Double>();
     reviewDocuments(examples);
+    printKnownPhrases();
     indexDocuments(examples);
   }
 
