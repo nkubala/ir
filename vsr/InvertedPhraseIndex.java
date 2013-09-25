@@ -156,32 +156,29 @@ public class InvertedPhraseIndex extends InvertedIndex {
 
     Map.Entry<String, Double> thisEntry, nextEntry;
 
-    if (!entries.hasNext())
-      return null;
-
-    // if (entries.hasNext())
-    // {
-    //   thisEntry = (Map.Entry<String, Double>) entries.next();
-    //   token1 = thisEntry.getKey();
-    // }
-
-    while (entries.hasNext())
+    if (entries.hasNext())
     {
-      nextEntry = (Map.Entry<String, Double>) entries.next();
-      token2 = nextEntry.getKey();
-      // token2 = entries.next().getKey();
-      token = token1 + " " + token2; //this is the bigram
+      thisEntry = (Map.Entry<String, Double>) entries.next();
+      token1 = thisEntry.getKey();
 
-      if (knownPhrases.containsKey(token))
+      while (entries.hasNext())
       {
-        double val = knownPhrases.get(token);
-        knownPhrases.put(token, val+1.0);
-      }
-      else
-        knownPhrases.put(token, 1.0);
+        nextEntry = (Map.Entry<String, Double>) entries.next();
+        token2 = nextEntry.getKey();
+        // token2 = entries.next().getKey();
+        token = token1 + " " + token2; //this is the bigram
 
-      token1 = token2;
-      thisEntry = nextEntry;
+        if (knownPhrases.containsKey(token))
+        {
+          double val = knownPhrases.get(token);
+          knownPhrases.put(token, val+1.0);
+        }
+        else
+          knownPhrases.put(token, 1.0);
+
+        token1 = token2;
+        thisEntry = nextEntry;
+      }
     }
 
 
