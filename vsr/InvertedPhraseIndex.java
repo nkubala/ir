@@ -106,7 +106,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
   /* Preprocesses documents to find most common phrases */
   protected void reviewDocuments()
   {
-    System.out.println("In reviewDocuments(): dirfile is " + dirfile + ", docType is " + docType + ", stem is " + stem + ".\n");
+    System.out.println("In reviewDocuments(): dirfile is " + dirFile + ", docType is " + docType + ", stem is " + stem + ".\n");
     DocumentIterator docIter = new DocumentIterator(dirFile, docType, stem);
     System.out.println("Reviewing documents in " + dirFile);
 
