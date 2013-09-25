@@ -156,11 +156,14 @@ public class InvertedPhraseIndex extends InvertedIndex {
 
     Map.Entry<String, Double> thisEntry, nextEntry;
 
-    if (entries.hasNext())
-    {
-      thisEntry = (Map.Entry<String, Double>) entries.next();
-      token1 = thisEntry.getKey();
-    }
+    if (!entries.hasNext())
+      return();
+
+    // if (entries.hasNext())
+    // {
+    //   thisEntry = (Map.Entry<String, Double>) entries.next();
+    //   token1 = thisEntry.getKey();
+    // }
 
     while (entries.hasNext())
     {
