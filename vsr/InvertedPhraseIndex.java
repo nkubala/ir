@@ -142,14 +142,21 @@ public class InvertedPhraseIndex extends InvertedIndex {
 
     //************if vector is hashMapVector*******************//
 
-    for (Map.Entry<String, Weight> entry : vector.entrySet()) {
-    }
+    // for (Map.Entry<String, Weight> entry : vector.entrySet()) {
+    // }
     Iterator entries = vector.entrySet().iterator();
     String token1, token2, token;
-    token1 = entries.next().getKey();
+    // token1 = entries.next().getKey();
+
+    Map.Entry<String, Double> thisEntry, nextEntry;
+    thisEntry = (Map.Entry<String, Double>) entries.next();
+    token1 = thisEntry.getKey();
+
     while (entries.hasNext())
     {
-      token2 = entries.next().getKey();
+      nextEntry = (Map.Entry<String, Double>) entries.next();
+      token2 = nextEntry.getKey();
+      // token2 = entries.next().getKey();
       token = token1 + " " + token2; //this is the bigram
 
       if (knownPhrases.containsKey(token))
@@ -161,6 +168,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
         knownPhrases.put(token, 1.0);
 
       token1 = token2;
+      thisEntry = nextEntry;
     }
 
 
