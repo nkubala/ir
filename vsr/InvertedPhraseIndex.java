@@ -120,7 +120,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
       HashMapVector vector = doc.hashMapVector();
       reviewDocument(doc, vector);
 
-      printKnownPhrases();
+      //printKnownPhrases();
     }
   }
 
@@ -134,7 +134,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
       HashMapVector vector = example.getHashMapVector();
       reviewDocument(doc, vector);
 
-      printKnownPhrases();
+      //printKnownPhrases();
     }
   }
 
