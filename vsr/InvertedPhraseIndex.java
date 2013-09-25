@@ -70,11 +70,12 @@ public class InvertedPhraseIndex extends InvertedIndex {
    * @param feedback Whether relevance feedback should be used.
    */
   public InvertedPhraseIndex(File dirFile, short docType, boolean stem, boolean feedback) {
+    super(dirFile, docType, stem, feedback);
+
     this.dirFile = dirFile;
     this.docType = docType;
     this.stem = stem;
     this.feedback = feedback;
-    //super(dirFile, docType, stem, feedback);
     tokenHash = new HashMap<String, TokenInfo>();
     docRefs = new ArrayList<DocumentReference>();
     knownPhrases = new HashMap<String, Double>();
@@ -89,7 +90,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
    * @param examples A List containing the Example objects for text categorization to index
    */
   public InvertedPhraseIndex(List<Example> examples) {
-    //super(examples);
+    super(examples);
     tokenHash = new HashMap<String, TokenInfo>();
     docRefs = new ArrayList<DocumentReference>();
     knownPhrases = new HashMap<String, Double>();
