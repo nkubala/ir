@@ -157,7 +157,7 @@ public class InvertedPhraseIndex extends InvertedIndex {
     Map.Entry<String, Double> thisEntry, nextEntry;
 
     if (!entries.hasNext())
-      return();
+      return null;
 
     // if (entries.hasNext())
     // {
