@@ -205,12 +205,22 @@ public class InvertedPhraseIndex extends InvertedIndex {
   public void printKnownPhrases()
   {
     //Map<String, Double> sortedPhrases = knownPhrases.sort();
-    // Map<String, Double> sortedPhrases = knownPhrases;
-    // Map<String, Double> newSortedPhrases = new HashMap<String, Double>();
+    Map<String, Double> sortedPhrases = knownPhrases;
+    Map<String, Double> newSortedPhrases = new HashMap<String, Double>();
 
 
-    Map<String, Double> sortedPhrases = new TreeMap<String, Double>(knownPhrases);
-    Map<String, Double> newSortedPhrases = new TreeMap<String, Double>();
+    Collections.sort(sortedPhrases, 
+        new Comparator<Entry<K,V>>() {
+            @Override
+            public int compare(Entry<K,V> e1, Entry<K,V> e2) {
+                return e2.getValue().compareTo(e1.getValue());
+            }
+        }
+    );
+
+
+    // Map<String, Double> sortedPhrases = new TreeMap<String, Double>(knownPhrases);
+    // Map<String, Double> newSortedPhrases = new TreeMap<String, Double>();
 
     int idx = 0;
     while (idx < maxPhrases)
