@@ -287,6 +287,7 @@ public class Experiment {
     String outFile = args[args.length - 1];
     short docType = DocumentIterator.TYPE_TEXT;
     boolean stem = false, pseudofeedback = false;
+    int m;
     float[] feedbackparams;
     for (int i = 0; i < args.length - 3; i++) {
       String flag = args[i];
@@ -312,7 +313,7 @@ public class Experiment {
       }
     }
     Experiment exper = new Experiment(new File(corpusDir), new File(queryFile),
-        new File(outFile), docType, stem, pseduofeedback, m, feedbackparams);
+        new File(outFile), docType, stem, pseudofeedback, m, feedbackparams);
     exper.makeRpCurve();
   }
 }
