@@ -539,13 +539,13 @@ public class InvertedIndex {
         feedback = true;
       else if (flag.equals("-pseudofeedback")) {
       	pseudofeedback = true;
-		int m = args[i+1];
+		int m = Integer.parseInt(args[i+1]);
 		//TODO: use pseudofeedback
 		}
       else if (flag.equals("-feedbackparams")) {
-		feedbackparams[0] = args[i+1];
-		feedbackparams[1] = args[i+2];
-		feedbackparams[2] = args[i+3];
+		feedbackparams[0] = Float.parseFloat(args[i+1]);
+		feedbackparams[1] = Float.parseFloat(args[i+2]);
+		feedbackparams[2] = Float.parseFloat(args[i+3]);
 		//TODO: use feedback params
       	}
       else {
