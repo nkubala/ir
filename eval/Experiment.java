@@ -300,12 +300,14 @@ public class Experiment {
       else if (flag.equals("-pseudofeedback")) {
         pseudofeedback = true;
         m = Integer.parseInt(args[i+1]);
+        i++;
         //TODO: use pseudofeedback
     }
       else if (flag.equals("-feedbackparams")) {
         feedbackparams[0] = Float.parseFloat(args[i+1]);
         feedbackparams[1] = Float.parseFloat(args[i+2]);
         feedbackparams[2] = Float.parseFloat(args[i+3]);
+        i+=3;
         //TODO: use feedback params
         }
       else {
