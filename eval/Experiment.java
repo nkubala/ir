@@ -68,6 +68,8 @@ public class Experiment {
    */
   double[] averagePrecisions = null;
 
+
+
   /**
    * Create an Experiment object for generating Recall/Precision curves
    *
@@ -285,6 +287,7 @@ public class Experiment {
     String outFile = args[args.length - 1];
     short docType = DocumentIterator.TYPE_TEXT;
     boolean stem = false, pseudofeedback = false;
+    float[] feedbackparams;
     for (int i = 0; i < args.length - 3; i++) {
       String flag = args[i];
       if (flag.equals("-html"))
@@ -295,15 +298,15 @@ public class Experiment {
         stem = true;
       else if (flag.equals("-pseudofeedback")) {
         pseudofeedback = true;
-        int m = args[i+1];
+        int m = Integer.parseInt(args[i+1]);
         //TODO: use pseudofeedback
-      }
+    }
       else if (flag.equals("-feedbackparams")) {
-        feedbackparams[0] = args[i+1];
-        feedbackparams[1] = args[i+2];
-        feedbackparams[2] = args[i+3];
+        feedbackparams[0] = Float.parseFloat(args[i+1]);
+        feedbackparams[1] = Float.parseFloat(args[i+2]);
+        feedbackparams[2] = Float.parseFloat(args[i+3]);
         //TODO: use feedback params
-      }
+        }
       else {
         throw new IllegalArgumentException("Unknown flag: " + flag);
       }
