@@ -514,6 +514,15 @@ public class InvertedIndex {
       else if (flag.equals("-feedback"))
         // Use relevance feedback
         feedback = true;
+      else if (flag.equals("-pseudofeedback"))
+	int m = args[i+1];
+	//TODO: use pseudofeedback
+      else if (flag.equals("-feedbackparams")){
+	float ALPHA = args[i+1];
+	float BETA = args[i+2];
+	float GAMMA = args[i+3];
+	//TODO: use feedback params
+      }
       else {
         throw new IllegalArgumentException("Unknown flag: "+ flag);
       }

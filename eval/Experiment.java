@@ -293,6 +293,15 @@ public class Experiment {
       else if (flag.equals("-stem"))
         // Stem tokens with Porter stemmer
         stem = true;
+      else if (flag.equals("-pseudofeedback")){
+	int m = args[i+1];
+	//TODO: use pseudofeedback
+      }
+      else if (flag.equals("-feedbackparams)){
+	float ALPHA = args[i+1];
+	float BETA = args[i+2];
+	float GAMMA = args[i+3];
+      }
       else {
         throw new IllegalArgumentException("Unknown flag: " + flag);
       }
