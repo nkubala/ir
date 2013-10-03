@@ -563,6 +563,3 @@ public class InvertedIndex {
 
 
 }
-
-   
-//

@@ -307,6 +307,8 @@ public class Experiment {
         feedbackparams[0] = Float.parseFloat(args[i+1]);
         feedbackparams[1] = Float.parseFloat(args[i+2]);
         feedbackparams[2] = Float.parseFloat(args[i+3]);
+        System.out.println("Feedback Params are " + feedbackparams[0] + 
+          ", " + feedbackparams[1] + ", " + feedbackparams[2] + "\n");
         i+=3;
         //TODO: use feedback params
         }
