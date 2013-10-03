@@ -525,7 +525,7 @@ public class InvertedIndex {
     short docType = DocumentIterator.TYPE_TEXT;
     boolean stem = false, feedback = false, pseudofeedback = false;
     int m;
-    float[3] feedbackparams;
+    float[] feedbackparams;
     for (int i = 0; i < args.length - 1; i++) {
       String flag = args[i];
       if (flag.equals("-html"))
