@@ -49,6 +49,10 @@ public class Feedback {
    * The list of DocumentReference's that were rated irrelevant
    */
   public ArrayList<DocumentReference> badDocRefs = new ArrayList<DocumentReference>();
+  /**
+   * The number of documents to use in pseudofeedback
+   */
+  public int m = 0;
 
   /**
    * Create a feedback object for this query with initial retrievals to be rated
@@ -57,6 +61,17 @@ public class Feedback {
     this.queryVector = queryVector;
     this.retrievals = retrievals;
     this.invertedIndex = invertedIndex;
+  }
+
+  public Feedback(HashMapVector queryVector, Retrieval[] retrievals, InvertedIndex invertedIndex, int m, float[] feedbackparams)
+  {
+    this.queryVector = queryVector;
+    this.retrievals = retrievals;
+    this.invertedIndex = invertedIndex;
+    this.m = m;
+    this.ALPHA = feedbackparams[0];
+    this.BETA = feedbackparams[1];
+    this.GAMMA = feedbackparams[2];
   }
 
   /**
@@ -97,6 +112,17 @@ public class Feedback {
       badDocRefs.add(docRef);
     else if (!response.equals("u"))
       getFeedback(showNumber);
+  }
+
+  /**
+  *Use pseudo feedback based on the number of documents specified in the command line
+  *Adds the first m documents from the retrieval list to the list of good rated documents
+  */
+
+  public void usePseudoFeedback(int m)
+  {
+    for (int i = 0; i < m; i++)
+      goodDocRefs.add(retrievals[i].docRef);
   }
 
   /**

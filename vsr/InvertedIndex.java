@@ -54,6 +54,15 @@ public class InvertedIndex {
    */
   public boolean feedback = false;
 
+/****************************************************************************************************/
+  /**
+   * Whether pseudofeedback is used
+   */
+  public boolean psedofeedback = false;
+
+  public int m = 0;
+
+  public float[3] feedbackparams = [0.0, 0.0, 0.0];
   /**
    * Create an inverted index of the documents in a directory.
    *
@@ -62,11 +71,14 @@ public class InvertedIndex {
    * @param stem     Whether tokens should be stemmed with Porter stemmer.
    * @param feedback Whether relevance feedback should be used.
    */
-  public InvertedIndex(File dirFile, short docType, boolean stem, boolean feedback) {
+  public InvertedIndex(File dirFile, short docType, boolean stem, boolean feedback, boolean pseudofeedback, int m, float[] feedbackparams) {
     this.dirFile = dirFile;
     this.docType = docType;
     this.stem = stem;
     this.feedback = feedback;
+    this.pseudofeedback = pseudofeedback;
+    this.m = m;
+    this.feedbackparams = feedbackparams;
     tokenHash = new HashMap<String, TokenInfo>();
     docRefs = new ArrayList<DocumentReference>();
     indexDocuments();
@@ -391,6 +403,8 @@ public class InvertedIndex {
       Feedback fdback = null;
       if (feedback)
         fdback = new Feedback(queryVector, retrievals, this);
+      else if (pseudofeedback)
+      	fdback = new Feedback(queryVector, retrievals, this, m, feedbackparams);
       // The number of the last document presented
       int currentPosition = MAX_RETRIEVALS;
       // The number of a document to be displayed.  This is one one greater than the array index
@@ -408,6 +422,13 @@ public class InvertedIndex {
           currentPosition = currentPosition + MAX_RETRIEVALS;
           continue;
         }
+
+        if (pseudofeedback)
+        {
+        	fdback.usePseudoFeedback(m);
+        	System.out.println("Added the first " + m + "retrievals to high rated docs.\n");
+        }
+
         if (command.equals("r") && feedback) {
           // The "redo" command re-excutes a revised query using Ide_regular
           if (fdback.isEmpty()) {
@@ -502,7 +523,9 @@ public class InvertedIndex {
 
     String dirName = args[args.length - 1];
     short docType = DocumentIterator.TYPE_TEXT;
-    boolean stem = false, feedback = false;
+    boolean stem = false, feedback = false, pseudofeedback = false;
+    int m;
+    float[3] feedbackparams;
     for (int i = 0; i < args.length - 1; i++) {
       String flag = args[i];
       if (flag.equals("-html"))
@@ -514,15 +537,17 @@ public class InvertedIndex {
       else if (flag.equals("-feedback"))
         // Use relevance feedback
         feedback = true;
-      else if (flag.equals("-pseudofeedback"))
-	int m = args[i+1];
-	//TODO: use pseudofeedback
-      else if (flag.equals("-feedbackparams")){
-	float ALPHA = args[i+1];
-	float BETA = args[i+2];
-	float GAMMA = args[i+3];
-	//TODO: use feedback params
-      }
+      else if (flag.equals("-pseudofeedback")) {
+      	pseudofeedback = true;
+		int m = args[i+1];
+		//TODO: use pseudofeedback
+		}
+      else if (flag.equals("-feedbackparams")) {
+		feedbackparams[0] = args[i+1];
+		feedbackparams[1] = args[i+2];
+		feedbackparams[2] = args[i+3];
+		//TODO: use feedback params
+      	}
       else {
         throw new IllegalArgumentException("Unknown flag: "+ flag);
       }
@@ -530,7 +555,7 @@ public class InvertedIndex {
 
 
     // Create an inverted index for the files in the given directory.
-    InvertedIndex index = new InvertedIndex(new File(dirName), docType, stem, feedback);
+    InvertedIndex index = new InvertedIndex(new File(dirName), docType, stem, feedback, pseudofeedback, m, feedbackparams);
     // index.print();
     // Interactively process queries to this index.
     index.processQueries();

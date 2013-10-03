@@ -77,10 +77,10 @@ public class Experiment {
    * @param docType   The type of documents to index (See docType in DocumentIterator).
    * @param stem      Whether tokens should be stemmed with Porter stemmer.
    */
-  public Experiment(File corpusDir, File queryFile, File outFile, short docType, boolean stem)
+  public Experiment(File corpusDir, File queryFile, File outFile, short docType, boolean stem, boolean pseudofeedback, int m, float[] feedbackparams)
       throws IOException {
     this.corpusDir = corpusDir;
-    this.index = new InvertedIndex(corpusDir, docType, stem, false);
+    this.index = new InvertedIndex(corpusDir, docType, stem, false, pseudofeedback, m, feedbackparams);
     this.queryFile = queryFile;
     this.outFile = outFile;
   }
@@ -284,7 +284,7 @@ public class Experiment {
     String queryFile = args[args.length - 2];
     String outFile = args[args.length - 1];
     short docType = DocumentIterator.TYPE_TEXT;
-    boolean stem = false;
+    boolean stem = false, pseudofeedback = false;
     for (int i = 0; i < args.length - 3; i++) {
       String flag = args[i];
       if (flag.equals("-html"))
@@ -293,21 +293,23 @@ public class Experiment {
       else if (flag.equals("-stem"))
         // Stem tokens with Porter stemmer
         stem = true;
-      else if (flag.equals("-pseudofeedback")){
-	int m = args[i+1];
-	//TODO: use pseudofeedback
+      else if (flag.equals("-pseudofeedback")) {
+        pseudofeedback = true;
+        int m = args[i+1];
+        //TODO: use pseudofeedback
       }
-      else if (flag.equals("-feedbackparams)){
-	float ALPHA = args[i+1];
-	float BETA = args[i+2];
-	float GAMMA = args[i+3];
+      else if (flag.equals("-feedbackparams")) {
+        feedbackparams[0] = args[i+1];
+        feedbackparams[1] = args[i+2];
+        feedbackparams[2] = args[i+3];
+        //TODO: use feedback params
       }
       else {
         throw new IllegalArgumentException("Unknown flag: " + flag);
       }
     }
     Experiment exper = new Experiment(new File(corpusDir), new File(queryFile),
-        new File(outFile), docType, stem);
+        new File(outFile), docType, stem, pseduofeedback, m, feedbackparams);
     exper.makeRpCurve();
   }
 }
