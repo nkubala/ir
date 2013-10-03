@@ -62,7 +62,7 @@ public class InvertedIndex {
 
   public int m = 0;
 
-  public float[] feedbackparams = [0.0, 0.0, 0.0];
+  public float[] feedbackparams = {0.0, 0.0, 0.0};
   /**
    * Create an inverted index of the documents in a directory.
    *
