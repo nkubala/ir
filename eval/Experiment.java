@@ -299,7 +299,7 @@ public class Experiment {
         stem = true;
       else if (flag.equals("-pseudofeedback")) {
         pseudofeedback = true;
-        int m = Integer.parseInt(args[i+1]);
+        m = Integer.parseInt(args[i+1]);
         //TODO: use pseudofeedback
     }
       else if (flag.equals("-feedbackparams")) {

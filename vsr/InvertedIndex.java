@@ -58,7 +58,7 @@ public class InvertedIndex {
   /**
    * Whether pseudofeedback is used
    */
-  public boolean psedofeedback = false;
+  public boolean pseudofeedback = false;
 
   public int m = 0;
 
