@@ -62,7 +62,7 @@ public class InvertedIndex {
 
   public int m = 0;
 
-  public float[] feedbackparams = {0.0f, 0.0f, 0.0f};
+  public float[] feedbackparams = {1.0f, 1.0f, 1.0f};
   /**
    * Create an inverted index of the documents in a directory.
    *
@@ -524,8 +524,8 @@ public class InvertedIndex {
     String dirName = args[args.length - 1];
     short docType = DocumentIterator.TYPE_TEXT;
     boolean stem = false, feedback = false, pseudofeedback = false;
-    int m;
-    float[] feedbackparams;
+    int m = 0;
+    float[] feedbackparams = {1.0f, 1.0f, 1.0f};
     for (int i = 0; i < args.length - 1; i++) {
       String flag = args[i];
       if (flag.equals("-html"))

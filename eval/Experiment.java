@@ -287,8 +287,8 @@ public class Experiment {
     String outFile = args[args.length - 1];
     short docType = DocumentIterator.TYPE_TEXT;
     boolean stem = false, pseudofeedback = false;
-    int m;
-    float[] feedbackparams;
+    int m = 0;
+    float[] feedbackparams = {1.0f, 1.0f, 1.0f};
     for (int i = 0; i < args.length - 3; i++) {
       String flag = args[i];
       if (flag.equals("-html"))
