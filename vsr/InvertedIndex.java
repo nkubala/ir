@@ -62,7 +62,7 @@ public class InvertedIndex {
 
   public int m = 0;
 
-  public float[] feedbackparams = {0.0, 0.0, 0.0};
+  public float[] feedbackparams = {0.0f, 0.0f, 0.0f};
   /**
    * Create an inverted index of the documents in a directory.
    *
@@ -539,7 +539,7 @@ public class InvertedIndex {
         feedback = true;
       else if (flag.equals("-pseudofeedback")) {
       	pseudofeedback = true;
-		int m = Integer.parseInt(args[i+1]);
+		m = Integer.parseInt(args[i+1]);
 		//TODO: use pseudofeedback
 		}
       else if (flag.equals("-feedbackparams")) {
