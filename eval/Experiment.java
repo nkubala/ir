@@ -156,14 +156,18 @@ public class Experiment {
     System.out.println("\nQuery " + (rpResults.size() + 1) + ": " + query);
 
     // Process the query and get the ranked retrievals
-    Retrieval[] retrievals = index.retrieve(query);
+    
+    //Retrieval[] retrievals = index.retrieve(query);
+    HashMapVector queryVector = (new TextStringDocument(query, stem)).hashMapVector();
+    Retrieval[] retrievals = index.retrieve(queryVector);
+
+    //Perform pseudofeedback, if specified
     if (pseudofeedback)
     {
-      HashMapVector queryVector = (new TextStringDocument(query, stem)).hashMapVector();
-      retrievals = index.retrieve(queryVector);
       Feedback fdback = new Feedback(queryVector, retrievals, this.index, m, feedbackparams);
       fdback.usePseudoFeedback(m);
       queryVector = fdback.newQuery();
+      retrievals = index.retrieve(queryVector);
     }
     System.out.println("Returned " + retrievals.length + " documents.");
 
