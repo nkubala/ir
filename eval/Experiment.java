@@ -71,6 +71,7 @@ public class Experiment {
   int m;
   float[] feedbackparams;
   boolean pseudofeedback;
+  boolean stem;
 
 
 
@@ -92,6 +93,7 @@ public class Experiment {
     this.m = m;
     this.feedbackparams = feedbackparams;
     this.pseudofeedback = pseudofeedback;
+    this.stem = stem;
   }
 
   /**
@@ -158,10 +160,10 @@ public class Experiment {
     if (pseudofeedback)
     {
       HashMapVector queryVector = (new TextStringDocument(query, stem)).hashMapVector();
-      Feedback fdback = new Feedback(queryVector, retrievals, this, m, feedbackparams);
+      retrievals = index.retrieve(queryVector);
+      Feedback fdback = new Feedback(queryVector, retrievals, this.index, m, feedbackparams);
       fdback.usePseudoFeedback(m);
       queryVector = fdback.newQuery();
-      retrievals = retrieve(queryVector);
     }
     System.out.println("Returned " + retrievals.length + " documents.");
 
