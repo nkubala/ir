@@ -63,6 +63,7 @@ public class Feedback {
     this.invertedIndex = invertedIndex;
   }
 
+  //this constructor is used to alter values of feedback parameters, taken from the command line.
   public Feedback(HashMapVector queryVector, Retrieval[] retrievals, InvertedIndex invertedIndex, int m, float[] feedbackparams)
   {
     this.queryVector = queryVector;

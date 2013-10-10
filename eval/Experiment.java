@@ -68,6 +68,9 @@ public class Experiment {
    */
   double[] averagePrecisions = null;
 
+
+  //these values are passed to the constructor of InvertedIndex, and used in the constructor for Feedback
+  //I could have used this.index.[value], but I didn't.
   int m;
   float[] feedbackparams;
   boolean pseudofeedback;
@@ -156,8 +159,6 @@ public class Experiment {
     System.out.println("\nQuery " + (rpResults.size() + 1) + ": " + query);
 
     // Process the query and get the ranked retrievals
-    
-    //Retrieval[] retrievals = index.retrieve(query);
     HashMapVector queryVector = (new TextStringDocument(query, stem)).hashMapVector();
     Retrieval[] retrievals = index.retrieve(queryVector);
 

@@ -423,6 +423,7 @@ public class InvertedIndex {
           continue;
         }
 
+        //Use pseudofeedback, if specified.
         if (pseudofeedback)
         {
         	fdback.usePseudoFeedback(m);
