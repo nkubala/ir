@@ -69,6 +69,8 @@ public class Experiment {
   double[] averagePrecisions = null;
 
   int m;
+  float[] feedbackparams;
+  boolean pseudofeedback;
 
 
 
@@ -88,6 +90,8 @@ public class Experiment {
     this.queryFile = queryFile;
     this.outFile = outFile;
     this.m = m;
+    this.feedbackparams = feedbackparams;
+    this.pseudofeedback = pseudofeedback;
   }
 
   /**
@@ -151,9 +155,13 @@ public class Experiment {
 
     // Process the query and get the ranked retrievals
     Retrieval[] retrievals = index.retrieve(query);
-    fdback.usePseudoFeedback(m);
-    queryVector = fdback.newQuery();
-    retrievals = retrieve(queryVector);
+    if (pseudofeedback)
+    {
+      fdback = new Feedback(queryVector, retrievals, this, m, feedbackparams);
+      fdback.usePseudoFeedback(m);
+      queryVector = fdback.newQuery();
+      retrievals = retrieve(queryVector);
+    }
     System.out.println("Returned " + retrievals.length + " documents.");
 
     // Read the known relevant docs from query file and parse them
