@@ -157,7 +157,8 @@ public class Experiment {
     Retrieval[] retrievals = index.retrieve(query);
     if (pseudofeedback)
     {
-      fdback = new Feedback(queryVector, retrievals, this, m, feedbackparams);
+      HashMapVector queryVector = (new TextStringDocument(query, stem)).hashMapVector();
+      Feedback fdback = new Feedback(queryVector, retrievals, this, m, feedbackparams);
       fdback.usePseudoFeedback(m);
       queryVector = fdback.newQuery();
       retrievals = retrieve(queryVector);
