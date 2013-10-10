@@ -68,6 +68,8 @@ public class Experiment {
    */
   double[] averagePrecisions = null;
 
+  int m;
+
 
 
   /**
@@ -85,6 +87,7 @@ public class Experiment {
     this.index = new InvertedIndex(corpusDir, docType, stem, false, pseudofeedback, m, feedbackparams);
     this.queryFile = queryFile;
     this.outFile = outFile;
+    this.m = m;
   }
 
   /**
@@ -148,6 +151,9 @@ public class Experiment {
 
     // Process the query and get the ranked retrievals
     Retrieval[] retrievals = index.retrieve(query);
+    fdback.usePseudoFeedback(m);
+    queryVector = fdback.newQuery();
+    retrievals = retrieve(queryVector);
     System.out.println("Returned " + retrievals.length + " documents.");
 
     // Read the known relevant docs from query file and parse them
@@ -307,7 +313,7 @@ public class Experiment {
         feedbackparams[0] = Float.parseFloat(args[i+1]);
         feedbackparams[1] = Float.parseFloat(args[i+2]);
         feedbackparams[2] = Float.parseFloat(args[i+3]);
-        System.out.println("Feedback Params are " + feedbackparams[0] + 
+        //System.out.println("Feedback Params are " + feedbackparams[0] + 
           ", " + feedbackparams[1] + ", " + feedbackparams[2] + "\n");
         i+=3;
         //TODO: use feedback params

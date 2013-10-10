@@ -426,6 +426,8 @@ public class InvertedIndex {
         if (pseudofeedback)
         {
         	fdback.usePseudoFeedback(m);
+          queryVector = fdback.newQuery();
+          retrievals = retrieve(queryVector);
         	System.out.println("Added the first " + m + "retrievals to high rated docs.\n");
         }
 
