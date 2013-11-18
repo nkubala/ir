@@ -10,10 +10,10 @@ public class PageRankSpider extends Spider
 {
 
   //Graph containing all links processed by spider
-  protected Graph PageRankGraph = new Graph();
+  protected Graph pageRankGraph = new Graph();
 
   //Hashmap containing all links and their PageRanks
-  protected Map<String, Double> PageRankMap = new HashMap<String, Double>();
+  protected Map<String, Double> pageRankMap = new HashMap<String, Double>();
 
   Node currentNode;
   Node newNode;
@@ -78,10 +78,10 @@ public class PageRankSpider extends Spider
         // Add new links to end of queue
         linksToVisit.addAll(newLinks);
 
-/***************************************************************************************/
+
         //Time to build the link graph
         //First, pull node for current link (or create if doesn't exist)
-        currentNode = PageRankGraph.getNode(link.toString());
+        currentNode = pageRankGraph.getNode(link.toString());
 
         //For each link, check if node exists in graph
         //if not, create node with link, add incoming edge from current link,
@@ -92,7 +92,7 @@ public class PageRankSpider extends Spider
         for (Link l : newLinks)
         {
           contains = 0;
-          newNode = PageRankGraph.getNode(l.toString());
+          newNode = pageRankGraph.getNode(l.toString());
 
           if (!newNode.edgesIn.contains(currentNode))
           {
@@ -100,38 +100,18 @@ public class PageRankSpider extends Spider
             currentNode.addEdge(newNode);
           }
         }
-
-/***************************************************************************************/
       }
     }
 
-/***************************************************************************************/
+
     //Time to compute PageRanks
     //Will store in a hashMap of PageRanks (key:value = url_name:PageRank)
 
     //constants for use in algorithm
     double alpha = 0.15;
-    Node[] nodes = PageRankGraph.nodeArray();
+    Node[] nodes = pageRankGraph.nodeArray();
     int num_pages = nodes.length; //equivalent to |S| in algorithm
     double e_p = alpha / num_pages;
-    
-    //DEBUG
-    //checking incoming nodes
-    // for (Node n : nodes)
-    // {
-    //   System.out.println("Incoming Edges for " + n.toString());
-    //   List<Node> in_list = n.getEdgesIn();
-    //   for (Node in : in_list)
-    //   {
-    //     System.out.println(in.toString());
-    //   }
-    //   System.out.println("Outgoing Edges for " + n.toString());
-    //   List<Node> out_list = n.getEdgesOut();
-    //   for (Node out : out_list)
-    //   {
-    //     System.out.println(out.toString());
-    //   }
-    // }
 
     //temps/counter
     double new_val = 0;
@@ -143,7 +123,7 @@ public class PageRankSpider extends Spider
     //initialize each PageRank to 1/|s|
     for (Node n : nodes)
     {
-      PageRankMap.put(n.toString(), (double)1/num_pages);
+      pageRankMap.put(n.toString(), (double)1/num_pages);
     }
 
     //iterate through nodes, computing page ranks
@@ -155,7 +135,7 @@ public class PageRankSpider extends Spider
         for (Node in_node : n.getEdgesIn())
         {
           //summing R(q)/N_q for all incoming pages
-          r_q = PageRankMap.get(in_node.toString());
+          r_q = pageRankMap.get(in_node.toString());
           n_q = in_node.getEdgesOut().size();
           new_val += r_q / n_q;
         }
@@ -163,7 +143,7 @@ public class PageRankSpider extends Spider
         new_val += e_p;
 
         //new_val is now computed R'(p), update value in hashmap
-        PageRankMap.put(n.toString(), new_val);
+        pageRankMap.put(n.toString(), new_val);
         new_val = 0;
       }
 
@@ -171,35 +151,44 @@ public class PageRankSpider extends Spider
       norm = 0;
       for (Node n : nodes)
       {
-        norm += PageRankMap.get(n.toString());
+        norm += pageRankMap.get(n.toString());
       }
       norm = 1 / norm;
 
       //normalize all ranks
       for (Node n : nodes)
       {
-        PageRankMap.put(n.toString(), norm * PageRankMap.get(n.toString()));
+        pageRankMap.put(n.toString(), norm * pageRankMap.get(n.toString()));
       }
 
       count++;
     }
 
-
-
-
-
-/***************************************************************************************/   
     // System.out.println("Printing Graph");
     // System.out.println();
-    // PageRankGraph.print();
-    PrintPageRanks();
+    // pageRankGraph.print();
+    printPageRanks();
+    writePageRanks();
   }
 
 
-  private void PrintPageRanks()
+  private void printPageRanks()
   {
-    for (Map.Entry<String, Double> entry : PageRankMap.entrySet())
+    for (Map.Entry<String, Double> entry : pageRankMap.entrySet())
       System.out.println(entry.getKey() + "\t" + entry.getValue());
+  }
+
+  private void writePageRanks()
+  {
+    try {
+      PrintWriter out = new PrintWriter(new FileWriter(new File(saveDir, "pageRanks")));
+      for (Map.Entry<String, Double> entry : pageRankMap.entrySet())
+        out.println(entry.getKey() + "\t" + entry.getValue());
+      out.close();
+    }
+    catch (IOException e) {
+      System.err.println("HTMLPage.write(): " + e);
+    }
   }
 
   public static void main(String args[])
