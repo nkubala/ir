@@ -17,6 +17,9 @@ public class PageRankSpider extends Spider
 
   //Hashmap containing all links and their PageRanks
   protected Map<String, Double> pageRankMap = new HashMap<String, Double>();
+
+  //hashmap used in computing pageranks
+  protected Map<String, Double> tempRankMap = new HashMap<String, Double>();
   
   //maps link urls to Pxxx.html names
   protected Map<String, String> linkNameMap = new HashMap<String, String>();
@@ -159,7 +162,8 @@ public class PageRankSpider extends Spider
         new_val += e_p;
 
         //new_val is now computed R'(p), update value in hashmap
-        pageRankMap.put(n.toString(), new_val);
+        //pageRankMap.put(n.toString(), new_val);
+        tempRankMap.put(n.toString(), new_val);
         new_val = 0;
       }
 
@@ -167,14 +171,14 @@ public class PageRankSpider extends Spider
       norm = 0;
       for (Node n : nodes)
       {
-        norm += pageRankMap.get(n.toString());
+        norm += tempRankMap.get(n.toString());
       }
       norm = 1 / norm;
 
       //normalize all ranks
       for (Node n : nodes)
       {
-        pageRankMap.put(n.toString(), norm * pageRankMap.get(n.toString()));
+        pageRankMap.put(n.toString(), norm * tempRankMap.get(n.toString()));
       }
 
       count++;
