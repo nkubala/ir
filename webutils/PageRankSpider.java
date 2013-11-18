@@ -3,6 +3,9 @@ package ir.webutils;
 import java.util.*;
 import java.net.*;
 import java.io.*;
+import java.text.DecimalFormat;
+
+import ir.utilities.*;
 
 
 
@@ -14,6 +17,9 @@ public class PageRankSpider extends Spider
 
   //Hashmap containing all links and their PageRanks
   protected Map<String, Double> pageRankMap = new HashMap<String, Double>();
+  
+  //maps link urls to Pxxx.html names
+  protected Map<String, String> linkNameMap = new HashMap<String, String>();
 
   Node currentNode;
   Node newNode;
@@ -71,6 +77,9 @@ public class PageRankSpider extends Spider
         count++;
         System.out.println("Indexing" + "(" + count + "): " + link);
         indexPage(currentPage);
+        String nameStr = "P" + MoreString.padWithZeros(count, (int) Math.floor(MoreMath.log(maxCount, 10)) + 1);
+        nameStr += ".html";
+        linkNameMap.put(link.toString(), nameStr);
       }
       if (count < maxCount)
       {
@@ -103,10 +112,17 @@ public class PageRankSpider extends Spider
       }
     }
 
-
     //Time to compute PageRanks
     //Will store in a hashMap of PageRanks (key:value = url_name:PageRank)
+    computePageRanks();
+    printPageRanks();
+    //roundPageRanks();
+    writePageRanks();
+  }
 
+
+  private void computePageRanks()
+  {
     //constants for use in algorithm
     double alpha = 0.15;
     Node[] nodes = pageRankGraph.nodeArray();
@@ -163,27 +179,39 @@ public class PageRankSpider extends Spider
 
       count++;
     }
+  }
 
-    // System.out.println("Printing Graph");
-    // System.out.println();
-    // pageRankGraph.print();
-    printPageRanks();
-    writePageRanks();
+  private void roundPageRanks()
+  {
+    for (Map.Entry<String, Double> entry : pageRankMap.entrySet())
+    {
+      pageRankMap.put(entry.getKey(), (double)Math.round(entry.getValue() * 100000) / 100000);
+    }
   }
 
 
   private void printPageRanks()
   {
+    DecimalFormat df = new DecimalFormat("0.0000000000");
     for (Map.Entry<String, Double> entry : pageRankMap.entrySet())
-      System.out.println(entry.getKey() + "\t" + entry.getValue());
+    {
+      if (linkNameMap.get(entry.getKey()) != null)
+          //System.out.printf(linkNameMap.get(entry.getKey()) + "\t" + "%f\n", entry.getValue());
+        System.out.println(linkNameMap.get(entry.getKey()) + "\t" + df.format(entry.getValue()));
+    }
   }
 
   private void writePageRanks()
   {
+    DecimalFormat df = new DecimalFormat("0.0000000000");
     try {
       PrintWriter out = new PrintWriter(new FileWriter(new File(saveDir, "pageRanks")));
       for (Map.Entry<String, Double> entry : pageRankMap.entrySet())
-        out.println(entry.getKey() + "\t" + entry.getValue());
+      {
+        if (linkNameMap.get(entry.getKey()) != null)
+          //out.printf(linkNameMap.get(entry.getKey()) + "\t" + "%f\n", entry.getValue());
+          out.println(linkNameMap.get(entry.getKey()) + "\t" + df.format(entry.getValue()));
+      }
       out.close();
     }
     catch (IOException e) {

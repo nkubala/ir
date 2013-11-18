@@ -23,6 +23,8 @@ public class PageRankInvertedIndex extends InvertedIndex
 	//@Override
   	public PageRankInvertedIndex(File dirFile, short docType, boolean stem, boolean feedback, int weight, File pageRankFile)
   	{
+  		super(dirFile, docType, stem, feedback);
+
 	    this.dirFile = dirFile;
 	    this.docType = docType;
 	    this.stem = stem;
@@ -88,18 +90,28 @@ public class PageRankInvertedIndex extends InvertedIndex
     //adds PageRank to every document score
 	public void addPageRanks(Retrieval[] retrievals)
 	{
-		String line, page, rankStr, retName, retScore;
-		double rank;
+		String line, page, rankStr, retName;
+		double rank, retScore;
 
 		//move PageRanks from file to hashmap (for easy parsing)
-		Scanner sc = new Scanner(pageRankFile);
-		while (sc.hasNextLine())
-		{
-			line = sc.nextLine();
-			page = line.split(" ")[0];
-			rankStr = line.split(" ")[1];
-			rank = Double.parseDouble(rankStr);
-			pageRankMap.put(page, rank);
+		try {
+			Scanner sc = new Scanner(pageRankFile);
+			while (sc.hasNextLine())
+			{
+				line = sc.nextLine();
+				//System.out.println("line is " + line);
+				page = line.split("\t")[0];
+				rankStr = line.split("\t")[1];
+				rank = Double.parseDouble(rankStr);
+				pageRankMap.put(page, rank);
+			}
+			sc.close();
+		}
+		catch (FileNotFoundException e) {
+    		System.err.println("FileNotFoundException: " + e.getMessage());
+    		//throw new SampleException(e);
+		} catch (IOException e) {
+    		System.err.println("Caught IOException: " + e.getMessage());
 		}
 
 		//iteratively update retrieval scores
@@ -108,7 +120,7 @@ public class PageRankInvertedIndex extends InvertedIndex
 			retName = r.docRef.file.getName();
 			retScore = r.score;
 			rank = pageRankMap.get(retName);
-			retScore = ((1.0 - (weight / 100)) * retScore) + ((weight / 100) * rank);
+			r.score = ((1.0 - (weight / 100)) * retScore) + ((weight / 100) * rank);
 		}
 	}
 
@@ -134,7 +146,7 @@ public class PageRankInvertedIndex extends InvertedIndex
 	      else if (flag.equals("-weight"))
 	      	//get weight and open PageRank file
 	      {
-	      	weight = Integer.parseint(args[++i]);
+	      	weight = Integer.parseInt(args[++i]);
 	      }
 	      else {
 	        throw new IllegalArgumentException("Unknown flag: "+ flag);
