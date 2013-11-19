@@ -1,0 +1,34 @@
+<base href="http://www.cs.utexas.edu/~novak/gcldownload.html">
+<HTML>
+<!--  gcldownload.html          G. Novak           29 Aug 02    -->
+<!--    -->
+<HEAD>
+  <TITLE>Downloading Gnu Common Lisp</TITLE>
+</HEAD>
+<BODY>
+
+<H2>Downloading Gnu Common Lisp</H2>
+
+This pages describes how to download and install Gnu Common Lisp (GCL)
+assuming you have a PC running Linux.
+<P>
+First, get the packages
+<A href="http://packages.debian.org/unstable/interpreters/gcl.html">gcl</A> and
+<A href="http://packages.debian.org/stable/libs/libgmp3.html">libgmp3</A>
+(click the button Go To Download Page and download each file).
+<P>
+This will download files such as <TT>gcl_2.5.0.cvs20020625-43_i386.deb</TT>
+and <TT>libgmp3_4.0.1_i386.deb</TT>; then install using:
+<PRE>
+dpkg --install libgmp*.deb
+dpkg --install gcl*.deb
+
+cp /usr/bin/gcl /usr/bin/lisp
+</PRE>
+<P>
+Now you should be able to run gcl using the command <TT>gcl</TT>
+or <TT>/usr/bin/gcl</TT> .  You should also be able to use it from
+within Emacs using the command <TT>M-x run-lisp</TT>
+</BODY>
+
+</HTML>

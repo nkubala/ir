@@ -1,0 +1,448 @@
+<base href="http://www.cs.utexas.edu/~jbsartor/cs105.htm">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>CS105: Computer Programming C++</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>CS105: Introduction to Computer Programming: C++</h1>
+
+
+<!-- HEADER INFO -->
+<div class="header-box">
+
+<table>
+
+<tr>
+  <td class="header-item">When:</td>
+  <td>Wednesdays 2-3:30pm, January 20th to March 31st</td>
+</tr>
+
+<tr>
+  <td class="header-item">Where:</td>
+
+  <td><a href="http://www.utexas.edu/maps/main/buildings/wel.html">WEL 2.256</a> </td>
+
+</tr>
+
+<tr>
+  <td class="header-item">Instructor:</td>        
+  <td><a href="http://www.cs.utexas.edu/~jbsartor/">Jennifer Sartor</a></td>
+</tr>
+
+<tr>
+  <td class="header-item">Email:</td>
+  <td><a href="mailto:jbsartor@cs.utexas.edu">jbsartor@cs.utexas.edu</td>
+</tr>
+
+<tr>
+  <td class="header-item">Office Hours:</td>      
+
+  <td>Monday afternoon 3:30-4:30 <a
+  href="http://www.cs.utexas.edu/facilities/accommodations/public_labs/intel_lab/">
+  in the new ENS Intel lab</a> (located in the basement of the <a
+  href="http://www.utexas.edu/maps/main/buildings/ens.html">ENS</a>
+
+  building, <a href="http://www.youtube.com/watch?v=f6DVpljh0B4">right across from the elevators, room 1</a>), or by
+  appointment</td>
+
+</tr>
+
+<tr>
+  <td class="header-item">Prerequisites:</td> 
+  <td>CS307, CS313E, or EE322C with a grade of at least C, 
+      or permission of the instructor</td>
+</tr>
+
+<tr>
+
+  <td class="header-item">Books: <br /> (recommended, not required)</td> 
+  <td>
+    <ul>
+      <li>If you're just starting out:
+      <a href="http://www.amazon.com/Program-Harvey-Paul-Deitel-Associates/dp/0136152503">C++: How to Program, 6th Edition</a> </li>
+      <li>If you're a grandmaster whiz-bang:
+      <a href="http://www.amazon.com/Effective-Specific-Addison-Wesley-Professional-Computing/dp/0321334876">Effective C++, 3rd Edition</a> </li>
+
+    </ul>
+  </td>
+</tr>
+
+<tr>
+  <td class="header-item">Mailing List:</td>      
+  <td><a href="https://utlists.utexas.edu/sympa/info/cs105-spring10">Class Mailing List</a></td>
+</tr>
+
+
+</table>
+</div>
+
+
+
+<!-- USEFUL LINKS -->
+
+
+<h2>Course Announcements</h2>
+
+
+<!--
+<div class="notify-box">
+
+</div>
+-->
+
+<ul>
+
+<li>
+Subscribe to <a
+href="https://utlists.utexas.edu/sympa/subscribe/cs105-spring10"> the
+class mailing list</a> and <a
+href="https://udb.cs.utexas.edu/amut/acut/">sign up for a CS account
+
+</a> if you don't have one already.
+</li>
+
+
+
+<li>If you're new to Linux, check out the 1-hour tutorials that the CS
+department runs in <a
+href="http://www.utexas.edu/maps/main/buildings/tay.html">TAY
+3.128</a> on the following dates:
+
+  <ul>
+    <li>Thursday January 28rd from 11-12pm</li>
+    <li>Friday January 29th from 3-4pm</li>
+    <li>Monday February 1st from 9-10am</li>
+  </ul>
+
+Email rivin@cs.utexas.edu if you have any questions about the
+tutorials.
+
+</li>
+
+
+
+</ul>
+
+
+
+
+
+
+
+<h2>Schedule</h2>
+
+
+<p>This is an ambitious schedule -- we may have to shift some content
+around as the semester progresses.  We cannot cover all of C++, this class is only an introduction.  It is better if you have an understanding of object-oriented programming, and experience with some procedural language.   We will try to cover of C++: basic syntax, I/O, functions and argument passing, arrays, references, pointers, classes, friends, dynamic memory management, operator overloading, inheritance, polymorphism with virtual functions and dynamic binding, and generic programming with templates.
+</p>
+
+<table id="schedule">
+
+<tr>
+  <th>Date</th>
+  <th>Book Chapter(s)</th>
+  <th>Material</th>
+
+  <th>Assignments</th>
+</tr>
+
+<tr>
+  <td>1/20</td>
+  <td>1, 2, 4, 5, 6</td>
+  <td>    <a href="cs105/CS105_spr10_lec1.pptx.pdf">Introduction, </a> and simple <a href="cs105/code"> programs </a> <a href="cs105/code/basic.cpp">basic</a>,  <a href="cs105/code/basicFuncDefault.cpp">basicFuncDefault</a>, <a href="cs105/code/basicFuncStatic.cpp">basicStatic</a>, in C++
+  </td>
+
+</tr>
+
+<tr>
+  <td>1/27</td>
+  <td>6, 7</td>
+  <td><a href="cs105/CS105_spr10_lec2.pptx.pdf">Parameter Passing, Arrays</a></td>
+  <td> <a href="cs105/assign1_spr10.htm">A1: Decipher: due NOON Feb 2</a></td>
+</tr>
+
+<tr>
+  <td>2/3</td>
+  <td>8</td>
+  <td><a href="cs105/CS105_spr10_lec3.pptx.pdf">Pointers</a></td>
+  <td><a href="cs105/assign2_spr10.htm">A2: GameofLife: due NOON Feb 9</a></td>
+</tr>
+
+<tr>
+  <td>2/10</td>
+  <td>8,10,3,9</td>
+  <td><a href="cs105/CS105_spr10_lec4.pptx.pdf">Pointers, Dynamic Allocation and start Classes</a></td>
+  <td><a href="cs105/assign3_spr10.htm">A3: GameofLife again: due NOON Feb 16</a></td>
+</tr>
+
+<tr>
+  <td>2/17</td>
+  <td>3,9,10</td>
+  <td><a href="cs105/CS105_spr10_lec5.pptx.pdf">Classes and Objects</a></td>
+  <td><a href="cs105/assign4_spr10.htm">A4: Date object due NOON Feb 23</a></td>
+</tr>
+
+<tr>
+  <td>2/24</td>
+  <td>10,11</td>
+  <td><a href="cs105/CS105_spr10_lec6.pptx.pdf">Friends and Operator Overloading</a></td>
+  <td><a href="cs105/assign5_spr10.htm">A5: Overloading Date Operators due NOON Mar 2</a></td>
+</tr>
+
+<tr>
+  <td>3/3</td>
+  <td>11,12</td>
+  <td><a href="cs105/CS105_spr10_lec7.pptx.pdf">Inheritance</a></td>
+  <td><a href="cs105/assign6_spr10.htm">A6: Pairing Hands due NOON Mar 11</a> NEW: REDO due noon Mar 29</td>
+</tr>
+
+<tr>
+  <td>3/10</td>
+  <td>10,11,12,13</td>
+  <td><a href="cs105/CS105_spr10_lec8.pptx.pdf">Polymorphism and Virtualness</a></td>
+  <td><a href="cs105/assign7_spr10.htm">A7: Abstract Game of Life due NOON Apr 5  (UPDATED)</a></td>
+</tr>
+
+<tr>
+  <td>3/17</td>
+  <td>None.</td>
+  <td>Spring Break Relaxation.</td>
+  <td>Have fun.</td>
+</tr>
+
+<tr>
+  <td>3/24</td>
+  <td>8,14,16,21,22,25</td>
+  <td><a href="cs105/CS105_spr10_lec9.pptx.pdf">Templates, OO Stuff, Extra</a></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>3/31</td>
+  <td>ALL</td>
+  <td><a href="cs105/CS105_spr10_lec10.pptx.pdf">Review with Jeopardy!</a></td>
+  <td></td>
+</tr>
+
+
+</table>
+
+
+
+<!-- SYLLABUS STUFF -->
+
+<hr>
+
+
+
+<h2>Course Overview</h2>
+
+<p>
+This purpose of this course is to provide some exposure to the C++
+programming language.  We will try to cover of C++: basic syntax, I/O, functions and argument passing, arrays, references, pointers, classes, friends, dynamic memory management, operator overloading, inheritance, polymorphism with virtual functions and dynamic binding, and generic programming with templates.
+
+</p>
+
+
+
+
+
+<h2>Prerequisites</h2>
+
+<p>
+The course prerequisites are listed above.  If you're unsure if you've
+programmed enough to take this course, talk to me after class or via
+
+<a href="mailto:jbsartor@cs.utexas.edu">email</a>.
+</p>
+
+
+<h2>Grading</h2>
+
+<p>
+The main work that you'll have to do for this course consists of 7 programming assignments, because this class is focussed on learning a programming language.  Programming assignments will be done individually (by yourself, not pair programming) and be worth 83% of your grade.  In lieu of tests, in-class quizzes will be given periodically to test your knowledge of what we have been covering.  Quizzes will contribute 17% of your grade, so make sure to attend classes.
+</p>
+
+<p>
+
+Your assignments will be evaluated on correctness, clarity, and style.  Regardless of your overall average, to pass this class you will need to submit working versions of all 6 programming assignments. A program is considered to be working if and only if it compiles and executes without error.  It should also pass the basic test drivers provided with each assignment.  Don't underestimate style and documentation which will be approximately 15% of each programming assignment.
+</p>
+
+<p>
+Due to the numerous issues regarding incompatibility between compilers, operating systems, file formats, etc., on different computer systems, students are strongly advised to do all of their program development on a UNIX machine. It is the student's responsibility to ensure that their projects both compile and run on the standard CS UNIX machines where they will be graded. All students are eligible to recieve a UNIX account if they do not already have one. Please see the instructor if there is a problem.  Programming assignments will be turned in with the <b>unix-based</b> turnin.  The last assignment turned in by the deadline is the one that will be graded.
+
+Your instructor reserves the right to regrade the entirety of any quiz or project if it is submitted for regrading. This could result in a lower score for coursework submitted for specious reasons. 
+</p>
+
+<h2>Late Work Policy</h2>
+
+<p>
+Assignments will be typically due on Tuesdays at
+noon.  Late assignments will not be accepted (I will give 10 minutes slack time).  You are allowed 2 late days (each 24 hours) called "mulligans" during this semester to deal with emergencies.  You must notify me ahead of the turnin time that you intend to take mulligan time.  You can take both days on 1 assignment, or 1 day on each of 2 assignments. 
+</p>
+
+
+<h2>Academic Honesty</h2>
+
+<p>
+You are required to do your own work.  Don't copy code.  It's okay to talk about general concepts
+or algorithms, but don't share pseudocode or code.  You can talk about problems you are having on assignments, but do not show code to classmates to get debugging help.  Either use debugging tools or ask the instructor for more specific help.  The best way to do this is to avoid talking to others about the program while you are at the computer.  
+ If you have questions on what constitutes cheating or questions about this policy, please talk to the instructor.  
+</p>
+
+<p>
+Any cheating that I catch I
+have to report to the university, and will result in failing the class.  It's totally not worth it for a
+1-credit class like this.  If you find yourself in a bind, email me
+and we'll work something out.
+</p>
+
+<h2>Resources</h2>
+
+<ul>
+
+<li>Useful links:
+  <ul>
+
+    <li><a
+    href="http://www.cs.utexas.edu/facilities/accommodations/public_labs/unix_hosts_status/">A
+    list of the CS department's public linux machines</a></li>
+
+    <li><a
+    href="http://www.cs.utexas.edu/~nate/cs105/turnin.html">Instructions
+    on how to use the <code>turnin</code> program</a></li>
+
+    <li>Some brief instructions on <a href="http://www.cs.utexas.edu/users/nate/cs105/ssh.html">how to SSH to a
+    department Linux machine</a></li>
+
+    <li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">A few
+    tutorials on simple Linux commands</a></li>
+
+    <a name="linux-editors"></a>
+    <li>Programming on a Linux box:
+    <ul>
+
+      <li><a href="http://www.gnu.org/software/emacs/">Emacs</a> and
+      <a href="http://www.vim.org/">VIM</a> are two of the most
+      popular text editors for Linux.</li>
+
+      <li><a href="http://kate-editor.org/">Kate</a> is useful little
+      text editor for Linux.</li>
+
+      <li>For bare-bones text editing, <a
+      href="http://www.nano-editor.org/">nano</a> is kind of like
+      Notepad for Linux.</li>
+
+    </ul>
+    </li>
+
+    <li>Programming on a Windows box:
+    <ul>
+
+      <li><a href="http://www.cygwin.com/">cygwin</a> gives you a
+      Linux-like shell for your Windows machine.</li>
+
+      <li><a href="http://www.eclipse.org/">Eclipse</a> is a free IDE
+      that runs under Windows.</li>
+
+      <li><a
+      href="http://msdn2.microsoft.com/en-us/express/default.aspx">Microsoft
+      Visual Studio Express</a> is a free version of Microsoft's
+      popular Visual Studio IDE.</li>
+
+      <li><a href="http://www.realvnc.com/">RealVNC</a> is one of
+      several free VNC clients that allow you to control a CS
+      department linux machine remotely.  You'll need to start a
+      <code>vncserver</code> on a department linux machine and then
+      use this client to connect to that machine from your windows
+      host.</li>
+
+    </ul>
+
+    </li>
+    <li><a
+    href="http://www.valgrind.org/">Valgrind</a> is a very useful tool to make sure you don't have memory leaks, and for debugging in general. </li>
+
+    <li><a
+    href="http://www.delorie.com/gnu/docs/gdb/gdb_toc.html">GDB Help.</a> GDB is a very useful debugging tool, and this webpage can get you started with it. </li>
+
+  </ul>
+</li>
+
+<li>
+
+Please <a
+href="https://utlists.utexas.edu/sympa/subscribe/cs105-spring10">subscribe to
+the class mailing list</a> as soon as possible.  Important
+announcements and helpful hints will be posted there.
+
+</li>
+
+<li>The intro book, <a
+href="http://www.amazon.com/Program-Harvey-Paul-Deitel-Associates/dp/0136152503">C++:
+How to Program, 6th Edition</a>: Although it's not required, the book
+is an excellent resource to have around.  It covers a wide range of
+C++ in an easy-to-read manner and is suitable for a wide range of
+programmers.</li>
+
+<li>The advanced book, <a
+href="http://www.amazon.com/Effective-Specific-Addison-Wesley-Professional-Computing/dp/0321334876">Effective
+C++</a>: if you're more experienced, this is the book to get.  It
+doesn't cover language or syntax, but it's the best reference for
+common C++ idioms.  If you get into C++ in any depth beyond this intro
+course, you'll find yourself reaching for this book frequently.</li>
+
+<li>This website: Lecture notes and major announcements will be posted
+to this website.  You should still subscribe to the class mailing list,
+though, since most of the annoucements will be posted there.</li>
+
+<li>
+The internet: There are quite a few C++ websites out there.  If
+you encounter an error message that you don't understand, you can
+often Google for the text of the error and find others who ran into
+the same problem.
+
+  <ul>
+    <li><a href="http://www.dinkumware.com/manuals/">Dinkumware's C++
+    Reference</a></li>
+
+    <li><a href="http://www.sgi.com/tech/stl/">SGI's C++ Standard
+    Template Library Reference</a></li>
+
+    <li><a href="http://www.cppreference.com/">cppreference.com</a>
+    C++ library and language reference</li>
+
+    <li><a href="http://www.cplusplus.com/reference/">cplusplus.com's
+    library reference</a></li>
+
+    <li><a href="http://www.parashift.com/c++-faq-lite/">The C++ FAQ
+    Lite</a>, a good source for in-depth answers to complex C++
+    questions</li>
+
+    <li><a href="http://www.fredosaurus.com/notes-cpp/index.html">Fred
+    Swartz's C++ Notes</a> answer a variety of common C++ questions</li>
+
+    <li><a
+    href="http://www.cplusplus.com/doc/tutorial/">cplusplus.com's C++
+    tutorial</a></li>
+
+  </ul>
+
+</li>
+
+</ul>
+
+<h2>Acknowledgements</h2>
+
+<p>
+Parts of this course were adapted from or inspired by the CS105
+courses of Nate Kohl and Maria Jump, with additional thanks to Greg
+Kuhlmann.
+</p>
+
+</body>
+</html>

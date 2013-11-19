@@ -1,0 +1,915 @@
+<base href="http://www.cs.utexas.edu/~tandy/331-2013.html">
+<h2>
+<p> CS 331 (Algorithms and Complexity), Fall 2013, 
+  Professor Warnow </h2>
+<h3> Course Description </h3>
+
+
+
+
+
+
+<p>
+<b>Instructor: Tandy Warnow</b>
+Office: GDC 4.510,
+Email: tandy@cs.utexas.edu.
+Office hours: M 3:30-5:00. Also,
+December 12 from 1-3, and
+December 13 from 1-3.
+<p> 
+<b>Teaching Assistant:</b>
+Siddhesh Chaubal, spchaubal@gmail.com.
+Office hours: 
+Desk 1 on Tuesdays from 2 to 4 pm,
+and Desk 4 on Thursdays from 10:30 to 11:30 am, 
+GDC 1.302.
+
+
+<p>
+Class meets: MW 11 AM - 12:30 PM, GDC 1.304
+<p>
+Discussion sections: Fridays 10-11 (JGB 2.202) and 12-1 (GDC 4.302)
+
+<p> Course website: http://www.cs.utexas.edu/users/tandy/331-2013.html
+<p> Piazza website: https://piazza.com/utexas/fall2013/cs331warnow/home.
+
+<p><b>Announcements</b>
+<ul>
+<li>The problems for Exam 3 will be drawn from
+<a href="exam3-preparation.pdf">this list</a>.
+<li> A short exam
+(30 minutes) will be given on Monday, November 4,
+covering probability theory, and summing to
+40 points (the same number of points
+as were in Exam 2 for probability theory).
+This is an optional exam. If you take the exam,
+I will use the better of the grade you
+receive on this short exam
+and the grade you received on Exam 2 for the
+probability theory material, and thus your Exam 2 grade
+could improve.
+If your grade on the short exam is worse than what
+you did on the Exam 2 probability theory questions, it
+will not hurt your Exam 2 grade.
+If you do not take the short optional exam, your
+Exam 2 grade will not be changed.
+Also - there is no competition between students
+for grades. If you all do well, you can all get an
+A. 
+The point of this extra exam is to help those of you
+who did poorly on the second exam, and to 
+encourage all of you to learn the probability
+theory material well now (not just for the final).
+</b>
+<li> Please note the expanded options for the
+final project, and the changed due date.
+<li> The third exam has been moved to November 27.
+ <li> The final exam will be Saturday December 14, 2-5 PM.
+(Location to be determined)
+<li> Please read carefully the instructions for submitting
+the programming assignment. Note the requirement to submit
+electronically, to include a folder with various 
+files, etc. 
+<li>
+Please see slides 45 and onwards in
+<a href="331-2013-Aug28-Sept4.pdf">here</a> for
+some of the  pre-requisites for the course
+(induction, proof by contradiction, combinatorial
+counting, and big-oh notation). The T.A. will 
+cover induction and proofs
+by contradiction in the discussion sections
+(to help you with the homework), as well.
+<li>
+Piazza is set up for the class, see 
+https://piazza.com/utexas/fall2013/cs331warnow/home 
+
+</ul>
+
+<p>  Course Description:  This is a required course for
+CS undergraduates, and covers algorithm
+design and techniques, as well as  computational
+complexity.  I will include algorithms
+from computational biology 
+to illustrate 
+algorithm design techniques.
+The course also requires a final project
+from each student, in which groups of 3-4 students
+per group implement and test a heuristic for an NP-hard
+computational biology problem.
+
+<p> <b> Pre-requisites: </b> the following courses with a grade of at 
+least C- in each: CS 313H or 313K; 312, 314 or 314H; and M 408C, 408N, or
+427L; and SSC 321 or M362K. Finally, M340L is
+required as a pre-requisite or co-requisite.
+These pre-requisites are enforced by the department, and
+I am not allowed to waive them (unless
+you are a transfer student).  
+
+<p> <b> Textbook: </b> Algorithm Design, by Jon Kleinberg and Eva Tardos
+
+
+<p> <b>Tentative Syllabus </b>
+<ul>
+<li> Review of pre-requisites
+(graphs, reading and writing mathematics, running time, combinatorial counting, and proof
+techniques): 1 week
+<li> Greedy Algorithms: 2 weeks
+<li> Dynamic Programming: 2.5 weeks
+<li> Divide-and-conquer: 1 week
+<li> NP-hardness and polynomial reductions: 2 weeks
+<li> Approximation algorithms: 1 weeks
+<li> Probability Theory and Randomized algorithms: 1 week
+<li> Undecidability: .5 weeks.
+</ul>
+
+
+<p> <b> Grading </b>
+<ul>
+<li> Homework (20%)
+<li> Exam I: September 30 (15%)
+<li> Exam II: October 28 (15%)
+<li> Exam III: November 27 (15%)
+<li> Final Project: due December 9 (10%)
+<li> <b> Final exam: December 14 (25%)  </b>
+</ul>
+
+
+
+<p> <b> Details</b>
+<ul>
+<li> 
+<i> Homework</i>: 
+<ul>
+<li>
+Homeworks will include  programming
+assignments,  algorithm design,
+and theoretical analyses of
+algorithms (both running time and correctness).
+<li>
+Programming assignments can be done using
+Java, C, C++, or Python.
+To turn in the programming assignment,
+use turnin. 
+The command is submit homework 7, for example, using
+folder name HW7-folder, would be:
+<ul>
+<li> turnin --submit kk8 hw7 HW7-folder
+</ul>
+Please make sure your folder includes all of the following: 
+an executable (if appropriate),
+source code (with comments!), and a README explaining what you did.
+Your README should include the testing you did for your software.
+Your software should be your own work, not joint with anyone else, and you
+should not copy any code from anywhere to do this.
+<li> All homework is due by
+11:10 AM  on the day
+they are due. The theory
+portions can be submitted
+by email (in PDF form)  in advance of the class
+if desired.
+Late theory homeworks will not be accepted under any circumstances.
+<li> 
+The programming assignments are also due by 
+11:10 AM on the day they are due.
+However, unlike the theory homeworks, 
+you are permitted a total of 10 late days for
+the programming assignments,
+provided that no individual
+programming assignment is more
+than 7 days late.  
+<li>
+You are allowed to collaborate with other
+students from this course on your homeworks,
+but you must identify (in writing)
+the names of all students who
+worked with you, and you must write up your solutions
+entirely separately.
+(Identical or near-identical solutions will be
+unacceptable and not receive credit.)
+
+
+</ul>
+<li>
+<i> Quizzes</i>:  these may not be annouonced 
+in advance,  but 
+will not count towards your grade.  
+<li>
+<i>Final Project</i>: Groups of at most 3-4 students
+can work together on this. 
+You have several options for this.
+<ul>
+<li> Find an NP-hard optimization
+graph
+problem (such as
+Travelling Salesman, Vertex Coloring, Max
+Clique, Maximum Independent Set,
+Dominating Set).
+Find two (or more) leading heuristics 
+for this problem, and develop (or find) two or
+more datasets
+to test these heuristics. Provide a study
+with a comparison of these heuristics 
+on these data. Write up your study.
+Alternatively, work on one of the problems
+listed below.
+The final project thus has a writing component,
+in which you describe your work.
+<li> The alternative projects are to develop
+a
+heuristic for one of the following two NP-hard problems
+(<i>Maximum Weight Quartet Compatibility</i> and
+<i>Maximum Parsimony</i>).
+Here too you have to write up your work! 
+<ul>
+<li>
+The maximum weight quartet compatibility problem takes
+as input a set of quartet trees with weights,
+and the objective is a tree on all
+the species that satisfies a maximum weight subset of
+the input quartets.
+You should assume that the weights are non-negative real 
+numbers, given probably as values between 0 and 1.
+The number of total species will be at most 100,
+but there could be up to three trees on every four
+species.
+However, it may <i> not</i>  be the case that 
+there is a tree on every four leaves! So be prepared for
+many different types of inputs.
+The output is the tree you find and its score.
+Note - to determine if a tree T satisfies a quartet
+tree on four species a,b,c,d, you have to compute the
+induced subtree on a,b,c,d defined by T, and see if it
+agrees with the input quartet tree on a,b,c,d. So, for
+example, if the quartet tree is ((a,(b,(c,d)))), and
+T splits the four leaves by ab|cd (so some edge separates
+ab from cd), then T satisfies that quartet tree. In other
+words, you tree the quartet trees as unrooted 
+trees, and the output tree T is also unrooted.
+You add up the weights of all quartet trees that are satisfied
+by the tree T, and that is its score.
+
+<li>
+The maximum parsimony problem takes as input a
+set of n strings, each string a sequence of k nucleotides
+(A, C, T, or G). 
+These strings have names, as in s1, s2, s3, .... The objective
+is a tree on these strings that has the optimal parsimony score.
+This is the standard maximum parsimony problem, so
+each substitution 
+counts the same, and you therefore only need to 
+consider the total number of
+changes (i.e., the Hamming distance) across all the edges.
+As we showed in class, the score of a given tree can
+be computed in polynomial time using dynamic programming.
+Here the objective is not to score a given tree, but to
+find a good tree! This is the NP-hard part. So don't try to
+solve this exactly - just find a heuristic.
+The output should be the tree you find for the
+input, and the score of the tree. You do not
+need to include labels for the internal nodes.
+The number of sequences may be large or may be small,
+and the length of the strings may be large or small.
+But you can assume that the input has at most 10,000
+strings of length 5000 (i.e., n will be at most
+10,000 and k will be at most 5000).
+</ul>
+Note - there are many very good heuristics
+for maximum parsimony, but fewer good heuristics
+for maximum weight quartet compatibility. Therefore,
+there's a possibility you might develop a technique
+that is publishable  and useful if you 
+work on the maximum weight quartet compatibility
+problem!
+Some of the programming assignments that are assigned
+as homework will be usable in this final
+project. 
+If you do this option, you will not need to 
+develop your own datasets - we will provide them.
+
+</ul>
+<p>
+<i> Grading for the Final Project.</i>
+This depends on 
+which option  you pick. 
+However, for both projects, please note the university
+rules about <b>plagiarism</b>: do not copy text without
+putting it in quotes and specifying where the quote
+comes from, and even avoid paraphrasing unless
+you explicitly say you are paraphrasing someone,
+and who you are paraphrasing. 
+Please see <a href="http://www.utexas.edu/cola/centers/cwgs/_files/pdf-4/ai2012.pdf">this document</a>.
+<ul>
+<li> For the
+option where you develop a heuristic for
+maximum parsimony or maximum weight quartet 
+compatibility and test it, the grading is as follows:
+<ul>
+<li> 10% writing correctness (spelling, punctuation,
+grammar, etc.). This part includes giving a proper
+bibliography.
+<li> 15% writing clarity
+<li> 10% discussion of what is known about the problem
+and heuristics for the problem
+<li> 25% for the heuristic you develop. It should
+run on the datasets we provided as test cases,
+and should be well documented. You'll need
+to submit the code for your heuristic(s).
+<li> 40% presentation and discussion of results  (graphs or
+tables and text)
+</ul>
+<li>
+For the option where you pick some other NP-hard
+problem, the grading is as follows:
+<ul>
+<li> 10% writing correctness (spelling, punctuation,
+grammar, etc.). This part includes giving a proper
+bibliography.
+<li> 15% writing clarity
+<li> 35% discussion of what is known about the problem
+and heuristics for the problem
+<li> 40% presentation and discussion of results  (include
+figures or tables but also text).
+</ul>
+</ul>
+<p>
+<li>
+<i> Exams</i>: closed book - no notes, no phones, and no internet
+access during the exam.
+
+</ul>
+<p> <b> Policies </b>
+<ul>
+<li>
+You are responsible for all the material taught in the class,
+and not all of it is covered in the textbook.
+If you miss a class meeting, please be sure to obtain notes
+from one of your fellow students.  You can also download the 
+presentation given by the instructor by the evening after the
+class.
+<li>
+If you will not be able to attend
+class for some reason that reasonably you would know about in advance
+(e.g., a religious holiday or sporting event in which you are a participant), you should tell
+me about this in the first week of class, so that I can try to accomodate
+your schedule.  (Observed religious holidays will always be accomodated.)
+<li>
+Please do not use your cellphone while in the class -- it is
+distracting to the other students, and unnecessary.
+</ul>
+
+
+
+<p>
+<b>Students with disabilities:</b>
+ You may request appropriate academic accommodations from the Division of Diversity and Community Engagement, Services for Students with Disabilities, 512-471-6259, http://www.utexas.edu/diversity/ddce/ssd/
+
+
+
+
+<p> <b>  Academic honesty </b>
+<ul>
+<li>
+Please see <a href="http://www.cs.utexas.edu/academics/conduct/">Professor Elaine Rich's discussion</a>
+of academic honesty and appropriate conduct.
+<li>
+Most importantly, do not, under any circumstances, 
+submit work that is not your own work.  Penalties for
+cheating are very serious, and cheating becomes part of your
+permanent university record.
+</ul>
+
+
+<p> <b> Course notes </b>
+<ul>
+<li>
+Please see <a href="http://www.cs.utexas.edu/~tandy/class1.pdf">this</a>
+for some terminology (from a previous class), especially helpful for
+talking about graphs.
+<li>
+Professor 
+<a href="http://www.cs.ucdavis.edu/people/faculty/gusfield.html">Dan Gusfield</a> 
+of the University of California at Davis
+has written a delightful and informative discussion on induction
+proofs called
+``Why Johny can't induct".
+Please
+click <a href="gusfield-induction.pdf">here</a> to download the pdf. 
+</ul>
+
+<p><b>Class Presentations </b>
+<ul>
+<li> August 28 and September 4: Basics
+<a href="331-2013-Aug28-Sept4.ppt">(PPT)</a>
+<a href="331-2013-Aug28-Sept4.pdf">(PDF)</a>
+<li> September 9-11: Dynamic Programming
+Algorithms
+<a href="331-2013-Sept9-11.ppt">(PPT)</a>
+<a href="331-2013-Sept9-11.pdf">(PDF)</a>
+<li> September 16-18: Recursion and Divide-and-Conquer
+algorithms
+<a href="331-recursion.pptx">(PPTX)</a>
+<a href="331-recursion.pdf">(PDF)</a>
+<li> September 23-25: Graph Algorithms
+<a href="331-2013-graphs.ppt">(PPT)</a>
+<a href="331-2013-graphs.pdf">(PDF)</a>
+<li> September 30: <b> Exam 1</b>
+<li> October 2-7: Minimum Spanning Tree
+<a href="331-2013-MST.ppt">(PPT)</a>
+<a href="331-2013-MST.pdf">(PDF)</a>
+<li> October 9-14: All-pairs shortest path DP algorithms
+<a href="331-2013-DP-shortestpath.ppt">(PPT)</a>
+<a href="331-2013-DP-shortestpath.pdf">(PDF)</a>
+<li> October 16-21: Randomized algorithms
+<a href="331-randomized-algs-revised4.ppt">(PPT)</a>
+<a href="331-randomized-algs-revised4.pdf">(PDF)</a>
+<li> October 23, preparation for Exam 2
+<li> October 28: <b> Exam 2</b>
+<li> October 30: Review of probability theory
+<li> November 4 to 13: NP-hardness
+<a href="331-complexity.ppt">(PPT)</a>
+<a href="331-complexity.pdf">(PDF)</a>
+<li> November 18 to 20: Approximation algorithms
+<a href="331-approx-alg.ppt">(PPT)</a>
+<a href="331-approx-alg.pdf">(PDF)</a>
+<li> November 25: Undecidability
+(See www.cgl.uwaterloo.ca/~csk/halt)
+<li> November 27: <b> Exam 3</b>
+(The problems on Exam 3 will
+be drawn from  <a href="exam3-preparation.pdf">this list</a>
+of problems.)
+<li> December 2: Review of Exam 3.
+<li> December 4:  Review of the course
+<li> Final projects are due on December 9 (via turnin).
+
+</ul>
+
+<p><b>Homeworks</b>
+<li> Homework #1: Due September 4 (<b>Note:
+I made it easier</b>). 
+<a href="331-hw1-solution.pdf">(Solution)</a>.
+The material in this homework is taught in
+the pre-requisites -- proof by contradiction
+and induction (both strong and weak).
+This material is covered in
+slides 45-85 in the 
+<a href="331-2013-Aug28-Sept4.pdf">PDF</a>.
+<ul> 
+<li> Read the rest of the slides in the lecture
+notes given in
+<a href="331-2013-Aug28-Sept4.pdf">PDF</a>.
+(We ended at slide number 44 - so read starting
+on slide number 45.)
+Preferably do this before discussion sections
+on Friday, where the T.A. will go over some of that
+material, to help you do the rest of the homework.
+<li> Prove that the square root of 5 is not rational.
+<li> Prove that there is no smallest real number
+that is strictly larger than 5.
+<li> 
+The following recurrence relation has a closed
+form solution as a linear equation. 
+Find the closed form,
+and prove your solution  correct  using induction:
+F(0)=5, and F(n)=F(n-1)+4 for n>0.
+<li>
+Prove that k(n) is at least 4 to the nth power
+for all n > 0, 
+using induction:
+<ul>
+<li> k(n)=4k(n-1)+n if n>1, and k(1)=5
+</ul>
+<li> Prove that
+m(n) is at most 2 to the nth power, for all n>0,
+using strong induction:
+<ul>
+<li>
+m(1)=m(2)=2, and m(n)=m(n-1)+m(n-2) if n>2
+</ul>
+</ul>
+<li>Homework #2 (due September 11)
+<a href="331-hw2-solus.pdf">(solutions)</a>
+<ol>
+<li> Problem 1, page 67 in the textbook
+<li> Problem 2, page 67 in the textbook
+<li> Problem 3, page 67 in the textbook
+<li> Problem 4, page 67 in the textbook
+<li> Problem 5, page 67 in the textbook
+<li> Write the definition that a function f(n) is
+O(g(n)).
+<li> Prove (using the definition) that
+f(n) = 3n+500 is O(g(n)) where g(n) = n-1.
+This means you have to find the values of the constants
+in the definition, in order  to establish the
+relationship.
+<li> Let F(a,b) be defined for positive integers a and b, by
+<ul><li>F(1,x)=F(x,1)=x for all x, 
+<li>
+F(a,b) = F(a-1,b) +F(a,b-1)+1 for all positive integers a and b
+</ul>
+For this function F(.,.), do the following:
+<ul> <li> Compute F(i,j) for all i,j between 1 and 3. (Write out
+the 3x3 matrix of values.)
+<li> Give a polynomial time algorithm to compute F(a,b) for arbitrary values of a and b (so the running time must be polynomial in a and b).
+Analyze the running time.
+</ul>
+
+<li>
+Find a closed form solution for the following recursively 
+defined function F(n), defined for all non-negative integers n, 
+and prove it correct by induction on n:
+F(0) = 1  and F(n) = F(n-1) + 6n -3 for n>0.
+<li>
+Consider the following recursively defined sets:
+<ul>
+<li>
+A(0) = {0}
+<li>
+A(n) = A(n-1) union {2n}
+</ul>
+What is A(5)?
+Find a closed form solution for A(n) and prove it
+correct by induction on n.
+
+<li>  Write the 
+following as a graph-theoretic problem: 
+You want to divide up the class into of disjoint sets so that no two people in any set are friends, and so that you use the smallest number of sets possible. (What are the vertices, what are the edges, and what are you looking for?)
+<li>
+Write the following as a graph-theoretic problem: You want to find out if it is possible to divide the students in the class into disjoint pairs (everyone in some pair, but no one in two pairs) so that for each pair you create, the two students like each other. What are the vertices, what are the edges, and what are you looking for?
+
+<li>
+Draw a graph on five vertices that has exactly two connected components
+<li>
+Draw a graph on five vertices that has exactly one isolated vertex
+<li>
+Draw a graph  on five vertices that has a vertex that is adjacent to every other
+vertex
+<li>
+Draw a graph on five vertices that can be 2-colored
+<li>
+Draw a graph on five vertices that cannot be 2-colored
+<li> Write out in mathematical notation that
+for a function F that maps the reals to the reals, there is
+exactly one real number which is mapped to a negative number.
+<li>
+Write out in set-theoretic notation the
+set of subsets of the integers that
+do not have 0 as an element.
+<li> Express using mathematical notation the property that a function F from a set A to a set B is onto (surjective) - this means that every
+element of B is in the image of F
+</ol>
+</ul>
+<li> Homework #3: Due September 18
+<a href="331-hw3-solus.pdf">(solutions)</a>.
+<ol>
+<li> Write out a dynamic programming algorithm for the original
+Rock Game.
+Analyze the running time.
+<li> Write out a dynamic programming algorithm for weighted
+maximum parsimony on DNA sequences, where the cost of changes
+depends on a symmetric input substitution cost matrix M[x,y], the cost
+of changing x into y.
+</ol>
+<li> Homework #4: Due September 25
+<a href="331-hw4-solus.pdf">(solutions)</a>.
+<ol>
+<li>
+Draw the trees represented by the following Newick strings:
+<ul>
+<li> (a,(b,((c,d),(e,f))))
+<li> ((a,b),(c,(d,(e,f))))
+</ul>
+<li> Draw a non-binary rooted tree, and represent it
+with a Newick string
+<li> Draw the tree represented by the following Newick
+string: (a,b,((c,d),e))
+<li> Run the Aho, Sagiv, Szymanski, and Ullman algorithm
+on the following input:
+<ul> ((a,e),b), ((e,c),d), ((b,g),d), ((a,f),d), ((c,g),f)
+</ul>
+Show all the steps of the algorithm.
+Draw any tree that is compatible with the input.
+<li> Do problem 1, page 312, in the text.
+<li>
+Design a Dynamic Programming algorithm to determine
+which player has a winning strategy for the
+following variant of the
+Rock Game:
+<it> You have three piles of rocks, with A, B, and C rocks in 
+each pile. There are two players. At each turn, a player can take off
+either one or two rocks, and can remove these rocks from the
+same pile, or from two piles.
+The player to 
+remove the last rock wins.
+<li> Consider a variant of  MergeSort when
+each division is into three sets of roughly equal
+size.
+Analyze the running time for the case where the input size is
+a power of 3.
+<li> Prove, using induction on k, that
+the running time of the usual MergeSort
+(that divides into two roughly equal sized subsets)
+is O(n log n) when n=2^k for some integer k.
+(Hint: express the running time as a recurrence relation that
+depends on k and n.)
+<li> Read the following pages in the text (Kleinberg and Tardos):
+<ul> 
+<li> Pages 87-89 (representing undirected graphs) 
+<li> Page 97 (representing directed graphs)
+<li> Pages 251-260 (Dynamic Programming)
+
+</ol>
+<li> Homework #5: Due October 7.
+Do at least one of the following programming assignments.
+This <a href="331-programming-1.pdf">PDF</a> contains
+sample input and output format  for
+these three problems. 
+See also the *.txt test cases
+(input and output files) for each problem.
+<ol>
+<li>
+Implement a dynamic programming
+algorithm to compute the LCA matrix given a rooted binary tree with
+all nodes labelled. 
+<ul>
+<li>
+Input: A rooted binary tree, given as an adjacency list.
+<li>
+Output: LCA matrix such that LCA[x,y] is the least common ancestor for
+leaves  x and y.
+<ul>
+<li>
+Test input file: <a href="Problem1TestInput.txt">txt</a>
+<li>
+Test output file: <a href="Problem1TestOutput.txt">txt</a>
+</ul>
+</ul>
+<li>
+Implement a program to construct the tree induced on
+a set of three leaves by another tree T.
+If you have solved the LCA matrix problem, you can use it
+in this program.
+<ul>
+<li> Input: A rooted binary tree T in Newick Tree Format, and a
+set of three leaves {a,b,c}.
+<li>
+Output: The Newick Tree Format for the subtree on a,b,c induced by T.
+<ul>
+<li>
+Test input file: <a href="Problem2TestInput.txt">txt</a>
+<li>
+Test output file: <a href="Problem2TestOutput.txt">txt</a>
+</ul>
+</ul>
+<li>
+Implement a program to 
+solve the following problem:
+<ul>
+<li>
+Input: A set X of rooted triplet trees, each in Newick Tree Format.
+<li>
+Output: A rooted tree T, if it exists, that is compatible with 
+all the rooted triplet trees in X; otherwise return "INCOMPATIBLE".
+<ul>
+<li>
+Test input file: <a href="Problem3TestInput.txt">txt</a>
+<li>
+Test output file: <a href="Problem3TestOutput.txt">txt</a>
+<li>
+Comment: the recursive Aho, Sagiv, Szymanski, and Ullman (ASSU) algorithm
+solves this problem. However, you can use another technique
+that you prefer, as long as it's correct. The ASSU algorithm
+is not required to produce a binary tree, and so you may
+obtain an incompletely resolved tree if you use it; that is 
+perfectly fine. More generally, there can be several trees
+that are compatible with the given set of rooted triplet trees,
+and so the answer may not be unique.
+Also make sure that you return
+"INCOMPATIBLE" if the set is incompatible.
+
+</ul>
+</ul>
+</ul>
+</ul>
+</ol>
+<li> Homework #6: Due October 14. 
+Solutions <a href="331-hw6-solus.pdf">here</a>.
+<ul>
+<ol>
+<li>
+Read Section 4.5 in the textbook.
+<li>
+Read Solved Exercise 3 (pages 187-188)
+in the textbook.
+<li> 
+Do problems 1, 2a, 8, and 10 on pages 188-192.
+<li>
+Do problem 3 page 314.
+<li>
+Rewrite your solutions to all problems
+on the  exam that you had any points taken off for, and explain
+all your steps.
+</ol>
+</ul>
+<li> Homework #7: Due October 21.
+Do at least one of the following (but
+see <a href="331-hw7-testcase-explanation.pdf">this PDF</a>
+with explanations for the I/O formats).
+
+<ul>
+<ol>
+<li>
+Implement an algorithm to find an Eulerian Tour (if it
+exists) in an connected undirected simple graph
+(no self-loops, no parallel edges).
+The input will be a graph described by an adjacency list,
+with vertices labelled 1...n.
+See <a href="testinput1.txt">Sample Input</a> and <a href="testoutput1.txt">Sample Output</a>.
+<li>
+Implement one of the other algorithms (see Homework #5)
+that you didn't already do.
+(If you did not do well on the Homework #5 assignment and
+want to try to finish it for this assignment, you can do the
+same problem - however, this exception to the expectation that you'll
+do a new problem will be allowed only once per student.)
+<li>
+Implement one of the MST algorithms. 
+The input will be a graph described by an adjacency list, with
+weights for each edge, and
+with vertices labelled 1...n.
+See <a href="testinput3.txt">Sample Input</a> and <a href="testoutput3.txt">Sample Output</a>.
+<li>
+Implement one of the all-pairs shortest path algorithms.
+The input will be an undirected graph described by an adjacency
+matrix, but the entry M[i,j] will be the weight of the edge (if
+it exists) or else a letter "X" indicating that
+there is no edge present. You should assume all weights are
+positive, and that the graph is a connected
+simple graph.
+See <a href="testinput4.txt">Sample Input</a> and <a href="testoutput4.txt">Sample Output</a>.
+</ul>
+<li> Homework #8, due Wednesday October 23.
+Solutions <a href="331-hw8-solus.pdf">here</a>.
+Solve the problems on page 14 from 
+the lecture notes on Randomized Algorithms.
+<li> Homework #9, due Monday, November 4.
+Solutions <a href="331-hw9-solus.pdf">here</a>.
+<ul>
+<li> A probability space is described
+as a triplet (S, X, Pr). Give this definition
+formally. What does Pr have to satisfy?
+<li> What is a random variable? (Be formal)
+<li> Suppose that I have a fair coin (probability of
+heads and tails are equal). What is the probability
+that in 100 tosses of the coin I obtain exactly
+50 heads?
+<li> Suppose I am offered a bet as follows.
+I pay $1, and then I toss a coin 10 times.
+If I see exactly 5 heads and 5 tails (in any
+order), then I get $50, and otherwise I lose
+the bet. Assuming
+the coin is fair, should I take the bet? (Show all your
+calculations.)
+<li> Write out the proof, formally (and carefully),
+that for every simple graph, there is a cutset
+of size at least m/2, where m is the number
+of edges in the graph. Specify the probability
+space, the random variable, etc.
+<li> Write out the proof, formally, that
+for every 3-SAT instance 
+with three independent
+literals in each clause, there is a truth assignment
+that satisfies at least 7k/8 clauses, where
+k is the number of clauses.
+</ul>
+<li> Homework #10.
+Due Wednesday November 6.
+<ul>
+<li>
+Provide a written proposal
+for your final project. Specify who will be
+on the team, what problem you will work on,
+and what initial progress you have made.
+This should be 1-2 pages, in PDF format.
+Provide hardcopy.
+<li> 
+Give a polynomial time
+dynamic programming
+algorithm to find a longest
+path in a DAG (directed acyclic graph).
+Analyze its running time.
+</ul>
+<li> Homework #11, due Monday November 11.
+<ul>
+<li> Write all solutions to all problems on Exam 2 that you did
+not get full credit for. Provide Exam 2 with your homework.
+<li> Read Section 8.10 (A partial
+taxonomy of hard problems); these
+are NP-hard problems you can use to
+prove other problems are NP-hard.
+<li> What is the class P? What is the set NP?
+<li> What is meant by the set of NP-Complete problems?
+<li> How does one prove that a problem is NP-hard?
+<li> Let
+a(n) be defined by 
+<ul>
+<li> a(1)=1 and a(2)=2
+<li> a(n)=a(n-2) if n is even and greater than 2
+<li> a(n)=a(n-1) if n is odd and greater than 2
+</ul>
+Prove (using strong induction) that a(n) =2 for all n>1.
+
+<li> Recall that
+the k-colorability problem is
+where you are given a graph G
+and you are asked whether it is possible
+to assign k colors to the vertices
+so that no two adjacent vertices
+get the same color. 
+<ul> 
+<li> Prove that k-colorability is in NP.
+<li> Prove that 2-colorability
+reduces to 3-colorability.
+<li> Suppose you could prove that 3-colorability
+reduces to 2-colorability.
+What would that mean?
+<li> Is 2-colorability NP-Complete?
+<li> Is 3-colorability NP-Complete?
+</ul>
+</ul>
+<li> Homework #12, due Monday November 18.
+<ul>
+<li> Consider the following two 
+problems: Clique and Independent Set.
+The input to Clique is a graph G and and integer k, and the output
+is YES if and only if G has a clique of size k. The
+input to Independent Set
+is a graph G and an integer k, and the output is YES if and only
+if G has an independent set of size k.
+<ul>
+<li> Prove that V' is a clique of size k in G if and only if
+V' is an independent set of size k in G*, where G* is the complement
+of G (so G and G* have the same vertex set but G* has edges
+between pairs of vertices where G does not).
+<li> Give a Karp reduction from Clique to Independent Set.
+<li> Prove that Independent Set is in NP. 
+<li> Suppose you know that Clique is NP-hard. Then 
+does it follow that Independent Set is NP-hard?
+</ul>
+</ul> <li> Homework #13, due Wednesday November 20.  <ul>
+
+<li> Consider the following function F that
+maps graphs G to new graphs G', where
+F(G) = G', where G is the graph formed by
+adding one vertex v* to G and making v* adjacent to exactly
+one vertex (any single vertex will do) in G.
+<ul>
+<li>
+Prove or disprove: if G is 3-colorable then G' is 4-colorable.
+<li>
+Prove or disprove: 
+if G' is 4-colorable then G must be
+3-colorable.
+</ul>
+<li> Give a Karp reduction from 3-colorability to 
+4-colorability. Prove it is a Karp reduction (so yes-instances
+are mapped to yes-instances, and no-instances are mapped to no-instances).
+</ul>
+<li>
+Homework #14, due Monday November 25.
+<ul> 
+<li> 
+Consider the Hamiltonian Path in a DAG (HPD)
+problem, where the input is a DAG and the
+output is YES if the DAG has a Hamiltonian Path,
+and NO otherwise.
+Now also consider the Directed Hamiltonian Path (DHP) problem,
+where the input is a directed graph (not necessarily
+a DAG) and the output
+is YES if the graph has a Hamiltonian Path
+and NO otherwise.
+<ul>
+<li>
+Prove that HPD is in NP.
+<li>
+Give a Karp reduction from   HPD to DHP.
+<li>
+Suppose DHP were shown to reduce to HPD. What
+would this imply?
+<li> Give a polynomial time algorithm for HPD.  
+</ul>
+<li> Describe the 2-approximation algorithm for
+Vertex Cover, and prove that it is a 2-approximation.
+Analyze its running time, when the input is a graph
+given as an adjacency list.
+<li> Define what is meant by saying that a problem is
+<i>decidable</i>.
+<li> Give an example of a problem that is not decidable.
+</ul>
+<li> Homework #15, due Monday December 2.
+<ul>
+<li>
+Submit draft of final project.
+<li> Implement one of the algorithms from Homework #7 that you have not yet done.
+</ul>
+<li> Final Project due Monday December 9,
+as a PDF, via turnin.

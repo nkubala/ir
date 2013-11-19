@@ -1,0 +1,49 @@
+<base href="http://www.cs.utexas.edu/~novak/cs314lisp.html">
+<HTML>
+<!--  cs314lisp.html          G. Novak         07 Sep 12        -->
+<HEAD>
+<TITLE>Try Some Lisp</TITLE>
+</HEAD>
+
+<BODY>
+<H2>Try Some Lisp</H2>
+<HR>
+
+<P>
+It is easy to try a little Lisp on CS Unix machines:
+
+<UL>
+<LI> To start, enter <B><TT>lisp</TT></B> or <B><TT>gcl</TT></B>
+
+<LI> To exit, enter <TT>(bye)</TT>
+
+<LI> If you get an error, enter <TT>:q</TT>
+</UL>
+
+<H4> Some things to Try:</H4>
+<PRE>
+(+ 2 3)
+
+(sqrt 2)
+
+(cons 'a '() )
+
+(cons 'a '(b) )
+
+(cons 'a (list 'b 'c) )
+
+(defun twice (x) (* 2 x))
+
+(twice 3)
+
+(defun fact (n) (if (<= n 1) 1 (* n (fact (- n 1)))))
+
+(fact 5)
+
+(fact 100)
+
+</PRE>
+
+</BODY>
+
+</HTML>

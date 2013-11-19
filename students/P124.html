@@ -1,0 +1,354 @@
+<base href="http://www.cs.utexas.edu/~dahlin/Classes/UGOS/">
+<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR" content="Microsoft FrontPage
+  4.0"><title>Dahlin CS372: Introduction to Operating
+  Systems</title></head><body>
+
+
+<hr>
+
+<center>
+<center>
+<h1>CS372 Introduction to Operating Systems<br>
+Spring 2011</h1>
+</center>
+<center>
+  <p><font size="-1"><a href="#Announcements">Announcements
+    </a>| <a href="#Administrative%20Information">Administrative
+      Information</a> | <a href="#Grading">Grading </a>|&nbsp; <a href="http://www.cs.utexas.edu/users/dahlin/Classes/UGOS/schedule.html">Schedule</a>&nbsp; | 
+  <a href="http://www.cs.utexas.edu/users/dahlin/Classes/UGOS/project372.html">Project</a> | 
+  <!-- <a href="project372H.html">Project (CS372H)</a> |  -->
+  <a href="http://www.cs.utexas.edu/users/dahlin/Classes/UGOS/reading/references.html">References</a><br>
+  </font></p>
+  <p>&nbsp;</p>
+</center>
+			<p style="text-align: left;">The crosscutting theme in this course is
+providing
+abstractions above
+imperfect hardware to make it usable by programmers and users. At the
+end
+of the course, students should understand a set of abstractions
+(concurrent
+programming, virtual addressing, memory protection, caching,
+transactions,
+...) that are useful in many large-scale software systems not just OS
+kernels.
+More important than memorizing specific abstractions used in operating
+systems of the past, students should understand these abstractions well
+enough to synthesize their own abstractions when faced with new
+problems. </p>
+			<div style="text-align: left;">
+				Another important goal of the course is for students to understand 
+the computers they use and on which they build their applications. A 
+student graduating with a CS degree should believe "there is no magic": 
+they should be able to describe the chain of events that occurs when 
+they hit a key and cause a letter to appear on the screen from the 
+register level (or logical gate level or transistor level) to the system
+ architecture level to the operating system level to the application 
+level. This is philosophically important, but it is also of practical 
+interest to developers who need to figure out how to make a system do 
+what they want it to do.<br>
+				<br>
+				<br>
+				<hr>
+				<!--   Announcement section -->
+			  <h2><a
+                          name="Announcements"></a>Announcements:</H2>
+
+                          <LI><A HREF="http://dahlin.smugmug.com/Computers/transactions/16376300_gjhyb">Here is Thursday's lecture on
+                          transactions</LI>
+                          
+                          <LI><A HREF="http://dahlin.smugmug.com/Computers/Files-inodes-directories/16338476_tvdc8">Here is Tuesday's lecture on file
+                          systems -- files, inodes, and
+                          directories</A></LI>
+                          
+                          <LI>Here (soon) will be a video of 
+                          Thursday's lecture. I've had to split it
+                          into two parts. <A
+                          HREF="http://www.cs.utexas.edu/video/dahlin/PageTables.m4v">part1</A>
+                          and <A
+                          HREF="lectures/pageTableOverheads2.m4v">part2</A>. The
+                          notes are the last part of <A
+                          HREF="lectures/lec12.pdf">lec12.pdf</A>.</LI>
+
+                          <LI>Homework 7 was originally due on Monday
+                          3/7. It is now due on Friday 3/12. Homework
+                          8 was originally due on Monday 3/21. It is
+                          now due Friday 3/25.</LI>
+
+                          <!---
+<li>The final exam will be in the time and place scheduled by the university. Mark your calendars. No rescheduling will be permitted except as required by university policy. The approximate schedule for final exams is <a href="http://registrar.utexas.edu/students/exams/index.html">here</a>. Final schedules are usually posted during the last few weeks of the semester.</LI>
+---></h2>
+
+					<!--
+  <li>2005-1-17: <B>[372H]</B> Enrollment: if you have not yet been able to enroll
+  in class, come to the first lecture to apply for a slot. Bring a
+  copy of your transcript and a short (< 1/4 page) statement
+  describing any other qualifications I should be aware of. I do not
+  expect to be able to accomodate all requests, but I will make
+  decisions quickly so that you can finalize your schedule. More
+  details will be discussed in class.</li>
+-->
+				
+	      <hr>
+				<h2><a name="Administrative Information"></a>Administrative Information</h2>
+				<table cellspacing="6">
+				  <tbody>
+						<tr>
+							<td align="left" valign="top"><b>Instructor:</b></td>
+							<td align="left"><a href="http://www.cs.utexas.edu/users/dahlin">Mike Dahlin</a> <img src="email.png" title="" alt="My email address is my last name -AT- cs -DOT- utexas -DOT- edu" style="width: 138px; height: 22px;" align="middle"> 471-9549</td>
+						</tr>
+						<tr>
+							<td align="left"><b>Office Hr:</b></td>
+							<td align="left">Tuesday 1:00 - 2:00 PM, ACES 6.248 or by appointment</td>
+						</tr>
+						<tr>
+							<td halign="top" align="left"><b>Class Info:</b></td>
+							<td align="left">53525 TTH  3:30-5:00 PM, JGB 2.216<br>
+							</td>
+						</tr>
+						<tr>
+							<td style="font-weight: bold;">TA:</td>
+							<td>Muqeet Ali <a href="mailto:muqeet@cs.utexas.edu">muqeet@cs.utexas.edu</a><br>							  
+							  Office Hours: Mon 2:00-3:00 PM,  
+				Location: PAI 5.33, Desk #2<br>
+				Juhyun Lee <a href="mailto:impjdi@cs.utexas.edu">impjdi@cs.utexas.edu</a><br>				
+				Office Hours: Wed 5:00-6:00 PM, Location:
+				PAI 5.33, Desk #1</td>
+						</tr>
+						<tr>
+							<td align="left"><b>Newsgroup: </b></td>
+							<td colspan="2" align="left"><a href="http://groups.google.com/group/utexas-cs-372-spring-2011">http://groups.google.com/group/utexas-cs-372-spring-2011</a>
+                        (Contact mike's assistant leah@cs for an invitation if you have not yet received one.)</td>
+						</tr>
+						<tr>
+							<td align="left" valign="top"><b>Home page:</b></td>
+							<td colspan="2" align="left"><a href="http://www.cs.utexas.edu/users/dahlin/Classes/UGOS/index.html">http://www.cs.utexas.edu/users/dahlin/Classes/UGOS/index.html</a><br>
+							This handout and all other information for the course will be available at this address.</td>
+						</tr>
+						<tr>
+						  <td align="left" valign="top"><strong>Prequisites:</strong></td>
+						  <td colspan="2" align="left">Prerequisites for CS372: Computer
+						    Science 337 or 337H, and 352 or 352H, with a grade of<br>
+					      at least C- in each. Please see the official course catalog <a href="https://utdirect.utexas.edu/registrar/nrclav/details.WBX?s_ccyys=20112&amp;s_unique=53525&amp;s_level=U">https://utdirect.utexas.edu/registrar/nrclav/details.WBX?s_ccyys=20112&s_unique=53525&s_level=U</a> for details.</td>
+					  </tr>
+					</tbody>
+				</table>
+				
+			  <hr>
+				<h2><a name="Readings"></a>Readings</h2>
+				<ul>
+				<li><i>Essential Operating Systems Principles (working title),</i> 
+Anderson, Chen, Dahlin, Gribble. I will provide drafts of this 
+work-in-progress textbook to you. For some topics, this will be the main text, with Silbershatz as an option for more depth. For other topics, Sibershatz will be the main resource.
+</li>    
+					<li>Silbershatz, Galvin,
+				Gagne: <i>Operating Systems Concepts,
+				(any recent edition--within the last 3
+				years or so--should be fine).</i>
+				Publisher: John Wiley &amp; Sons.</li>
+				  <li>Additional handouts assigned in class<br>
+				</li></ul>
+			  <p><br>
+			  </p>
+				<hr>
+				<h2><a name="Grading"></a>Grading and
+				Course Mechanics</h2>
+				<p>The department's <a href="http://www.cs.utexas.edu/academics/conduct/">code of conduct</a> outlines what is
+expected of you  and what you can expect from classes in the CS</p>
+
+				It is important for you to realize what grades in this class reflect and what they <i>don't</i>
+ reflect. All we can grade you on is how well you demonstrate that you 
+know the material this semester. We can't grade you on how much of a 
+success you'll be after graduation, how 
+smart/creative/persistent/self-motivated you are, or even how well 
+you'll be able to apply the material in the future. And after all, it is
+ what you do in the future, not what you do this semester, that's really
+ important.
+		    <p>That said, grades will be determined as follows:</p>
+				<ul>
+					<li>Homework 5%</li>
+					<li>Midterm 1: 20%
+					</li>
+					<li>Midterm 2: 20%
+					</li>
+					<li>Projects: 30%
+				</li>
+					<li>Final 25%</li>
+				</ul>
+
+<!---				<P><I>Rather than having two midterms,
+				an alternative would be to have a
+				midterm (worth 25%)
+				and a final (worth 35%). 
+				I will take a non-binding poll in the first
+				class to see if there is a strong
+				preference one way or the other and 
+				announce by the second class whether 
+				we will do midterm 30/midterm
+				30/project 40
+				or midterm 25/final 35/project
+				40</I></P>
+--->
+				
+
+				The course will be graded on a curve, with the score-to-letter-grade
+ mapping determined by the instructor based on factors such as the 
+difficulty of an assignment, the types of errors people are making, etc.
+ During the semester, I will give rough estimates of where grade 
+cut-offs lie, but these will be deliberately somewhat vague; if knowing 
+where a cut-off is within a few points will affect how you study, you're
+ worrying too much about grades and not enough about the material (Plus,
+ it's a really bad idea to gauge your effort by what you think you need 
+to make to get a particular letter grade). I want everyone in the class 
+to do well, and if everyone masters the material and gets good marks, I 
+will happily abandon the curve and give "extra" A's and B's. In 
+particular, I guarantee that anyone who gets a grade of 90% or more of 
+the total points will get an A, anyone with 80% or more will get at 
+least a B, and anyone with 70% or more of the points will get at least a
+ C.
+				<p>I grade on a curve rather than an absolute scale because it 
+protects students from stressing out if I happen to give an overly hard 
+midterm or final. The downside of grading on a curve is that it tends to
+ lead students to think they are competing against each other. In 
+practice, this worry is misplaced. First, I will set grade cut-offs for 
+each assignment to correspond to the quality of the work and depth of 
+understanding reflected by each range of scores not by the number of 
+students that make each range of scores. Second, note that the impact of
+ any individual score on the overall class distribution is trivial -- 
+for example someone making a 10% better grade on a midterm raises the 
+class semester average by .1%.</p>
+				<p>Also, for this type of project students often stress about 
+whether they will be penalized because their project may not be as 
+elaborate as that of some of the other groups in the class. Again, this 
+is not something to worry about. The project is hard enough without 
+looking over your shoulder at other students. By and large, most 
+students do quite well on the project -- the consequence is that the 
+project has less effect than you might think on the curve. A warning, 
+however: if you punt the project, you will fail the course.</p>
+				<p>In some courses, the TAs and instructor have to spend a lot of 
+time dealing with regrading appeals, time that would be better spent 
+helping students learn the material. Absolutely come to us if we make an
+ arithmetic error, but realize that a few points here and there are 
+extremely unlikely to make any difference in your final grade. If you 
+believe that we assigned too little credit for your work, you may submit
+ your work for a regrade under the following restrictions. (1) All 
+regrade requests must be submitted with a clear, written statement that 
+explains why you believe the original grade was incorrect. (2) All 
+requests for regrades must be submitted within 1 calendar week of when 
+the graded work is returned. (3) We will regrade the <i>entire</i> exam,
+ problem set, or project assignment, and if we were overly generous we 
+will deduct points. Thus, you grade can go up or down on a regrade.</p>
+				<p>You  are required to attend class, and you are responsible for knowing or learning  any material presented in class. If you must miss class, you are not required  to inform the instructor, but you are responsible for learning any material you  missed. The instructor posts detailed notes for each class on the course web  site, but classes are interactive, so the actual discussion may depart from the  notes. The best way to know what actually happened in a class is to be there  and participate; if you must miss a class, you should study the notes carefully  and perhaps talk to your colleagues about the technical topics discussed and  their take on what points were particularly emphasized. Although attending  class and participating in discussion is vital for learning the material and  doing well on the assignments and exams, there is no explicit or separate  &quot;attendance&quot; element used in computing your final grade.</p>
+<p><b>Late policy. </b>No extensions will be given for completing 
+  the programming projects, except that each team will be allowed 4 
+  flexible slip days for the projects. A team may divide their slip days 
+  across projects in any way they wish to extend deadlines for the 
+  projects. To help the TA track your 
+  slip-day status, the top of each project's README file must include the 
+</p>
+				<ul>
+					Slip days used (this project): _______ Slip days used (total): ______
+				</ul>
+				<p>Slip days will be tracked at the granularity of a day; if an 
+			  assignment is 1 minute late, it is one day late.</p>
+			  <p>No extensions will be given for completing homeworks, and late homeworks will not be graded. Slip days may not be used for homeworks.</p>
+				<p>Exemptions of the above
+				  rules will be allowed in three cases:			  </p>
+				<ol>
+					<li type="1">Illness, which has to be documented by a doctor and approved by the university.
+					</li><li type="1">Death in the immediate family.
+					</li><li type="1">Accommodation for students with disabilities as prescribed by the university.<br>
+				</li></ol>
+	No extensions will be given for any other reason, including 
+participation in the Annual Elbonian Cultural Festival, death of a 
+former president, a critical job interview or business trip, or a potluck lunch for the local chapter of a 
+political party (yes, we have received such requests in the past).
+					<p><b>Cooperation and cheating.</b> We encourage you to discuss the
+ problem sets and programming assignments with your colleagues. We 
+welcome discussions of possible interpretations of questions, solution 
+approaches, and points of confusion. You are also welcome to use 
+existing public libraries in your programming assignments (such as 
+public classes for queues, trees, etc.) You may also look at operating 
+systems code for public domain software such as Linux. Such activities 
+qualify under approved collaboration practices and you are welcome to 
+take advantage of them. <b>You may not look at any course project material relating to any project similar to this course's class projects.</b>
+ For example, you may not look at the work done by a student in past 
+years' courses, and you may not look at similar course projects at other
+ universities.&nbsp; If you are unsure about whether a particular source
+ of external information is permitted, contact the instructor before 
+looking at it.<br>
+					</p>
+					<p>Note that cooperation is not the same thing as cheating. The 
+project assignments and exams must be the work of the student turning 
+them in. Students who violate University rules on scholastic dishonesty 
+are subject to disciplinary penalties, including the possibility of 
+failure in the course and/or dismissal from the University. Because such
+ dishonesty harms the individual, all students, and the integrity of the
+ University, policies on scholastic dishonesty will be strictly 
+enforced.</p>
+					<p>It is generally OK to verbally discuss the concepts needed to do
+ projects assignments. Three guidelines will help you keep on the right 
+side of the line. </p>
+					<ol>
+						<li type="1">First, other than the TA and instructor, <b>it is never OK to look at the written work of another person or show another person your written work</b>
+ until after all grading on an assignment is completed. This includes 
+looking at paper print-outs, sketching solutions on a white board or 
+napkin, or looking at a screen to help debugging. It should go without 
+saying that copying other people's code or solution sets is strictly 
+prohibited. 
+					
+						</li>
+					  <li type="1">Second, while you are discussing an assignment with another student, you must not have a writing implement, keyboard, or recording device in hand. Similarly, you should not read from your own work. After discussing a
+						problem with another
+						student (or the TA!),
+						go watch American Idol for a half hour before going back to work 
+on the assignment. If you can't remember what the person said after a 
+half hour, you didn't really understand it.</li><li type="1">Third, 
+everyone in the class is expected to take appropriate measures for 
+protecting one's work. For example, you should protect your files and 
+printouts from unauthorized access. 
+				
+					</li></ol>
+					<p>Note that these guidelines are necessarily generalizations and 
+can not account for all circumstances. Intellectual dishonesty can end 
+your career, and it is your responsibility to stay on the right side of 
+the line. If you are not sure about something, ask.</p>
+					<p><b>Midterms.</b> There will
+					be two midterms. The first midterm is March 1 and the second midterm is April 14. If
+					you have a  preexisting, important, and unresolvable conflict with a 
+					midterm, let the instructor
+					know during the <b>first two
+					weeks of class</b>, and, if appropriate, we will schedule a makeup for a time <b>before</b>
+ the exam is given to the rest of the class. The final will be at the 
+place and time specified by the Registrar. Unless stated otherwise, both
+ the midterm and final exam will be <b>closed book</b> and will cover material from lectures, readings, problem sets, and the projects. Currently, the registrar's web site, <a href="http://registrar.utexas.edu/schedules/112/finals/">http://registrar.utexas.edu/schedules/112/finals/</a>, indicates that the exam will be         Tuesday, May 17, 2:00-5:00 pm. This may be subject to change by the  registrar's office, which will produce a final exam schedule later this semester.</p>
+					<p><b>Projects.</b> Perhaps the most valuable part of this class 
+will be the programming assignments. The projects will be done in 
+two-person teams. Further details about the project will be covered in 
+later handouts.</p>
+			  <p><b>Homework.</b> We will post a number of problem sets. In each problems set, a few problems will be marked as &quot;required turn in&quot;. You must turn in required-turn-in problems at a specified time and we will grade those. The other problems are not turned in, but you should do them to learn the material and practice for the exams.</p>
+<p>Of course, the lack of an actual 
+					  grade or a deadline for completing these problems may be an 
+					  invitation for procrastination or even ignoring this process altogether.
+					  But we trust that you will find this a useful aspect of the class and 
+					  we strongly urge you to take advantage of it. To make effective use of 
+					  this feature, complete the sets by the specified deadline. Delaying the 
+					  problem sets with the intent of accumulating them and solving them at once before the exams is not an effective strategy.</p>
+<p>Required-turn-in problems must be done individually. However-as discussed in the cooperation policy above, you may orally discuss the homework problems, your approach, difficulties, ideas, etc with anyone, but you must not look at or show any written work from/to anyone else (except the TAs or the instructor).</p>
+			  <p>&nbsp;</p>
+					<p><b>Accommodations for students with disabilities.</b> The 
+					  University of Texas at Austin provides upon request appropriate academic
+					  adjustments for qualified students with disabilities. For more 
+					  information, contact the Office of the Dean of Students at 471-6259, 
+			  </p>
+					<br>
+			</div>
+			<br>
+		</center>
+</body></html>

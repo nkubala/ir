@@ -1,0 +1,94 @@
+<base href="http://www.cs.utexas.edu/~novak/cs314time.html">
+<HTML>
+<!--  cs314time.html          G. Novak           23 Aug 13    -->
+<!--    -->
+<HEAD>
+  <TITLE>CS 314 Assignment 1: Timing and Big O</TITLE>
+</HEAD>
+<BODY>
+
+<H2>CS 314 Assignment 1: Timing and Big O</H2>
+
+<H3>Due: September 10, 2013, in class.</H3>
+
+<B>Files:</B> <tt>Stopwatch.java</tt> &nbsp;&nbsp; <tt>timing.java</tt>
+  &nbsp;&nbsp; <tt>log-log.pdf</tt> &nbsp;&nbsp;
+ <tt>semi-log.pdf</tt>
+<P>
+<OL>
+<LI> Examine and test the factorial functions <tt>fact(n)</tt> where
+<tt>n</tt> is <tt>int</tt>, <tt>Integer</tt>, <tt>long</tt>,
+<tt>float</tt>, and <tt>double</tt>.
+For how large a value of <tt>n</tt> does <tt>fact(n)</tt> correctly
+and accurately compute the factorial in each case?  (We will assume
+that "accurately" means that all digits of the factorial are correct.)
+Be careful: most students get this wrong.
+Did you get any indication (such as a runtime exception) if the
+value of the factorial was incorrect?
+<P>
+<LI> The file <tt>timing.java</tt> contains some mystery functions
+<tt>mickey</tt>, <tt>minnie</tt>, <tt>donald</tt>, <tt>goofy</tt>,
+<tt>pluto</tt>,
+<A href="http://en.wikipedia.org/wiki/Gyro_Gearloose"><tt>gyro</tt></A>,
+and <tt>daffy</tt>, and also a <tt>BigInteger</tt> version of <tt>fact</tt>.
+We want to analyze the performance of these functions experimentally.
+<P>
+Use the <tt>Stopwatch</tt> to time the functions:
+<PRE>
+Stopwatch timer = new Stopwatch();
+
+   ... initialize arguments first
+timer.start();
+   ... code to be timed
+timer.stop();
+
+System.out.println(timer);
+</PRE>
+<P>
+For <tt>daffy</tt> and <tt>donald</tt>, time the functions for values
+of <tt>n</tt> from <tt>30</tt> through <tt>44</tt> .  Plot these times
+(if appropriate) on semi-log paper.
+<P>
+For <tt>mickey</tt>, <tt>minnie</tt>, <tt>goofy</tt>, and <tt>pluto</tt>,
+initialize by making an array of size <tt>n</tt> with <tt>randomarr(n)</tt>.
+The initialization of the array should not be inside the timing calls.
+Use values of <tt>n</tt> of <tt>1000</tt>, <tt>2000</tt>, <tt>4000</tt>
+... through <tt>128000</tt> .
+<P>
+For <tt>gyro</tt>, make an array using <tt>randomarr(n)</tt> and call
+<tt>pluto</tt> on it first. (<tt>pluto</tt> should not be included in
+the timing).  Use values of <tt>n</tt> of <tt>1000</tt>, <tt>2000</tt>,
+<tt>4000</tt> ... through <tt>128000</tt> .
+<P>
+For <TT>fact(BigInteger n)</tt>, test on values of <tt>n</tt> from
+<tt>1000</tt> through <tt>64000</tt>, doubling each time.  You can make
+a <tt>BigInteger</tt> using code such as:
+<PRE>
+BigInteger bign = BigInteger.valueOf((long) 1000);
+</PRE>
+A <tt>BigInteger</tt> <tt>bign</tt> that is not too large can be converted to
+an <tt>int</tt> using <tt>bign.intValue()</tt> .  There are operations
+<tt>.add()</tt>, <tt>.subtract()</tt>, <tt>.multiply()</tt>, and
+<tt>.divide()</tt>, each with a <tt>BigInteger</tt> argument.
+<P>
+For each of the functions, plot the time taken vs. <tt>n</tt> on
+log-log paper and estimate the big-O for the function.
+Note that the timer will not be accurate for very small times,
+e.g. less than a millisecond (0.001 second).  If all the times of a
+function are too small, just report that the function is too fast
+to measure (and don't plot it).  Do not include times that are too
+small in your plots, since the reported times are just noise.
+<P>
+For <tt>mickey</tt>, <tt>minnie</tt>, <tt>goofy</tt>, and <tt>pluto</tt>,
+also estimate the Big O of each function using the ratio of times
+as the input size is doubled.  The time of the stopwatch in seconds
+can be obtained (as <tt>double</tt>) as <tt>timer.time()</tt>.
+For small values of the input size, the times will be noisy and the
+ratio will not be meaningful, so you may need to ignore the first few
+ratio values and concentrate on the ratios for larger inputs.
+</OL>
+
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,1131 @@
+<base href="http://www.cs.utexas.edu/~byoung/cs361/syllabus361.html">
+<HTML>
+<HEAD>
+<TITLE>CS 361, Fall 2013: Syllabus</TITLE>
+</HEAD>
+
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B"
+alink="#FF0000">
+<BLOCKQUOTE>
+
+<STYLE TYPE="text/css">
+<!--
+H2
+   {
+   color:blue;
+   font-size:25pt;
+   }
+H3
+   {
+   color:cornflowerblue;
+   font-size:18pt;
+   }
+-->
+</STYLE>
+
+<FONT FACE="Arial, Helvetica, Geneva" SIZE="+1">
+
+<DIV ALIGN="center">
+<H2>CS 361: Fall, 2013 <BR>Introduction to Computer Security </H2>
+<H3><B>Instructor:</B> Dr. Bill Young</H3>
+
+<B>Unique number:</B> 53980 <BR>
+<B> Class time:</B> MWF 9-10am; <B>Location:</B> GDC 2.216 <BR>
+<B>Office:</B> GDC 7.810; <B>Office Hours:</B>  MW 10-11am, TT
+10:30-11:30am, and by appointment<BR> 
+<B>Office Phone:</B> 471-9782;  <B>Email:</B> byoung@cs.utexas.edu<BR><BR>
+<B>TA:</B> Cheng Zhang; <B>Email:</B> chance.czhang@gmail.com<BR> 
+<B>TA Office Hours:</B> Tues. 11am-1pm; Thursday 11-1pm<BR>
+<B>TA:</B> Yige (Victoria) Hu; <B>Email:</B> yige@cs.utexas.edu <BR> 
+<B>TA Office Hours:</B> Thursday and Friday, GDC 1.302, desk 1<BR>
+<B>Proctor:</B> Comyar Zaheri; <B>Email:</B> comyarzaheri@utexas.edu<BR> 
+<B>Proctor Office Hours:</B> GDC 1.302: MWF 1-3pm; TT 11am-12:30pm<BR>
+<B>This website:</B>
+www.cs.utexas.edu/users/byoung/cs361/syllabus361.html<BR>
+</DIV><BR><BR>
+
+<!-- cz3286 (Cheng), YH6596, cz3668 (Comyar) -->
+
+<HR><BR>
+
+<H3>Important Class Announcements:</H3>  
+
+<b> Breaking news important to the class will be posted here.  Consult
+this spot often.</b><P>
+
+As we discussed in class, <i>if you do better on the final than you
+did on the midterm, I will drop your midterm grade and double your
+grade on the final.</i>  This is a great opportunity for some of you
+to recover from bad performance on the midterm; so don't blow it!<P>
+
+Among many possibilities for assignment 6, are the following two assignments:
+<A HREF="kerberos-assignment.html">Kerberos Assignment</A>
+and <A HREF="assignment-unix.html">Unix Assignment</A>.  I welcome
+your feedback on them and your vote on which you'd prefer.<P>
+
+Thanksgiving is on Thursday, Nov. 28. The "required" weekly class day
+will be on Monday (11/25) that week, rather than Wed. to allow folks
+to have the day before Thanksgiving off.<P>
+
+<!-- Programming assignment 4 is now posted:
+<A HREF="assignment-aes.html">Assignment 4: Due Friday,
+  11/1/13</A><P>  -->
+
+Programming assignment 5 is also posted:
+<A HREF="crack-assignment.html">Assignment 5: Due Friday,
+  11/15/13</A>.  Use the following turnin for project 5:
+<pre>
+   turnin --submit cz3286 CS361-pr5
+</pre><P>
+
+<!-- Statistics for the midterm are here: <A HREF="midterm-stats">midterm stats</A>.  
+If you haven't seen your test, you can review them in my office, but
+I'm not passing them out.<P>
+
+We have a new scholarship grant from the National Science Foundation
+that may be of interest to some of
+you: <A HREF="https://www.sfs.opm.gov/">Scholars for Service
+program</A>.  There's quite a bit of information on the FAQ page on
+that site.  Note you must have at least three semesters left at UT and
+be a US citizen to qualify. See me if you might be interested or just
+want to chat about this opportunity.<P>
+
+Here's the turnin command for the fourth project:
+<pre>
+turnin --submit yige CS361-pr4 <file>
+</pre>
+We're going to try to be better about getting those out early and
+being very clear about the command. <P> -->
+
+We've also now initialized the turnin for all of the remaining weekly
+question homework.  The command for each week will be:
+<pre>
+turnin --submit czaheri CS361-hw# <file>
+</pre>
+where the # is replaced by the homework number.<P>
+
+<!-- Here are some sample problems for entropy and
+encodings: <A HREF="entropy-examples.html">Entropy Examples</A>.  You
+don't need to turn these in, but I'd suggest working them.<P> -->
+
+<!-- Here are the two quizzes we've had: <A HREF="quiz1.pdf">Quiz 1</A>, and 
+<A HREF="quiz2.pdf">Quiz 2.</A><BR><br> -->
+
+If you send me an email re. the class, please put "CS361" somewhere in
+the subject line, so I'll know to which class it refers.<P>
+
+<!-- ################################################################################ --> 
+
+<BR><BR><HR><BR>
+
+<H3>Some Interesting Links:</H3> 
+
+<A HREF="http://news.idg.no/cw/art.cfm?id=71277752-BDB5-9B0A-FB17DE905025A804">Adobe
+  Encrypts Passwords</A><BR>
+
+<A HREF="http://www.nextgov.com/cio-briefing/wired-workplace/2013/10/get-security-boost-add-more-women-your-cyber-team/72947/">Women needed in Cybersecurity</A><BR>
+
+<A HREF="http://www.intelfreepress.com/news/lessons-from-the-first-computer-virus-the-morris-worm/7223">Morris
+  Worm at 25</A><BR>
+
+<A HREF="http://www.nytimes.com/2013/10/27/magazine/i-am-woman-watch-me-hack.html?_r=0">Women
+  in CS</A><BR>
+
+<A HREF="http://www.cs.bc.edu/~straubin/cs381-05/blockciphers/rijndael_ingles2004.swf">Rijndael
+animation</A><BR>
+
+<A HREF="https://www.sfs.opm.gov/">Scholars for Service program</A><BR>
+
+<A HREF="http://www.net-security.org/secworld.php?id=15819">$1M Cyber challenge</A><BR>
+
+<A HREF="http://www.eweek.com/security/cyber-security-jobs-young-adults-show-little-interest-in-the-field.html">Cybersecurity jobs</A><BR>
+
+<A HREF="https://www.schneier.com/blog/archives/2013/09/the_nsa_is_brea.html">NSA
+  breaking encryptions</A><BR>
+
+<A HREF=""http://www.networkworld.com/news/2013/081413-usenix-researchers-propose-security-that-272854.html>Blocking Malware</A><BR>
+
+<A HREF="http://www.cio.com/article/737851/Cybersecurity_Pros_in_High_Demand_Highly_Paid_and_Highly_Selective">Security
+  jobs hot</A><BR>
+
+<A HREF="http://www.govinfosecurity.com/attracting-next-cybersecurity-pros-a-5967">Attracting
+  security pros</A><BR>
+
+<A HREF="http://blogs.computerworld.com/cybercrime-and-hacking/22036/hacker-uses-android-remotely-attack-and-hijack-airplane">Hacking Airplanes</A><BR>
+
+<A HREF="http://research.umd.edu/news/news_story.php?id=7255">Human
+  side of cybercrime</A><BR>
+
+<A HREF="http://sciencecareers.sciencemag.org/career_magazine/previous_issues/articles/2013_03_27/caredit.a1300057">Wow!</A><BR>
+
+<A HREF="http://www.cbsnews.com/8301-500395_162-57596257/despite-job-boom-fewer-students-study-tech/">IT
+  Jobs Up, Degrees Down</A><BR>
+
+<A HREF="http://www.networkworld.com/news/2013/080213-black-hat-elliptical-curve-cryptography-272476.html">Is
+  RSA Obsolete?</A><BR>
+
+<A HREF="https://www.hfes.org/Web/DetailNews.aspx?ID=287">Preventing
+  Cyber Pearl Harbor</A><P>
+
+<A HREF="http://www.washingtonpost.com/world/national-security/federal-agencies-private-firms-fiercely-compete-in-hiring-cyber-experts/2012/11/12/a1fb1806-2504-11e2-ba29-238a6ac36a08_story.html">Cyberjobs Hot</A><BR>
+
+<A HREF="http://arstechnica.com/security/2012/11/crypto-keys-stolen-from-virtual-machine/">Covert
+  Channel between VMs</A><BR>
+
+<A HREF="http://www.informationweek.com/security/antivirus/antivirus-tool-fail-blocking-success-var/240009991">Anti-Virus Failures</A><BR>
+
+<A HREF="http://www.infosecwriters.com/text_resources/pdf/AESbyExample.pdf">Info
+  on AES mixColumns</A><BR>
+
+<A HREF="http://www.nytimes.com/2012/10/30/science/rethinking-the-computer-at-80.html">Peter Neumann</A><BR>
+
+
+<A HREF="http://www.washingtonpost.com/business/economy/cybersecurity-experts-needed-to-meet-growing-demand/2012/05/29/gJQAtev1yU_story.html">Experts needed</A><BR>
+
+<A HREF="http://www.reuters.com/article/2011/08/02/idUSN1E7701KK20110802">Govt
+  wants hackers</A><BR>
+
+<A HREF="http://www.govinfosecurity.com/articles.php?art_id=4143&opg=1">Women,
+  minorities in Security</A><BR>
+
+This site contains a nice animation of AES-128: 
+<A HREF="http://www.cs.bc.edu/~straubin/cs381-05/blockciphers/rijndael_ingles2004.swf">AES</A><BR>
+
+<A HREF="http://xkcd.com/153/">Cute cartoon about Feistel 
+ciphers<A><BR>  
+
+<A HREF="www.slate.com/articles/technology/future_tense/2012/10/silent_circle_mike_janke_s_iphone_app_makes_encryption_easy_governments.html">Encryption
+for the masses</A><BR>
+
+<A HREF="http://www.infoworld.com/t/security/kaspersky-promises-the-impossible-fully-secure-os-205155">Fully
+  Secure OS?</A><BR>
+
+<A HREF="http://www.aclu.org/blog/technology-and-liberty/president-reads-his-daily-brief-ipad-and-other-lessons-nsa">iPad
+  as Secure Device</A><BR>
+
+<A HREF="http://www.technologyreview.com/news/429498/to-keep-passwords-safe-from-hackers-just-break/http://www.technologyreview.com/news/429498/to-keep-passwords-safe-from-hackers-just-break/">protecting passwords</A><BR>
+
+<A HREF="http://www.nytimes.com/2012/10/06/us/worries-over-defense-dept-money-for-hackerspaces.html">DoD
+  Money for Hackerspaces</A><BR>
+
+<A HREF="http://www.forbes.com/sites/susanadams/2012/09/20/the-cities-with-the-most-computer-science-jobs/">Cities
+  with Most CS Jobs</A><BR>
+
+<A HREF="http://www.digitalcommunities.com/articles/Have-Hackers-Won.html">Have
+  Hackers Won?</A><BR>
+
+<A HREF="http://spectrum.ieee.org/riskfactor/telecom/security/this-week-in-cybercrime-some-new-computers-have-malware-already-installed/?utm_source=computerwise&utm_medium=email&utm_campaign=091912">Malware Pre-installed</A><BR>
+
+<A
+HREF="http://www.nextgov.com/emerging-tech/2012/09/get-ready-computers-worldwide-automatically-smother-cyber-strikes/57977/">Smother
+Cyber Attacks</A><BR>
+
+<A HREF="http://www.washingtonpost.com/world/national-security/secrecy-surrounding-zero-day-exploits-industry-spurs-calls-for-government-oversight/2012/09/01/46d664a6-edf7-11e1-afd6-f55f84bc0c41_story.html">Sale
+  of Zero-day exploits</A><BR>
+
+<A HREF="http://www.fastcompany.com/3000830/how-algorithms-rule-world">Algorithms
+  rule the world</A><BR>
+
+<A HREF="http://hackaday.com/2012/07/25/arduino-resistor-and-barrel-plug-lay-waste-to-millions-of-hotel-locks/">Hotel
+  locks hacked</A><BR>
+
+<A HREF="http://spectrum.ieee.org/computing/networks/declarations-of-cyberwar/?utm_source=techalert&utm_medium=email&utm_campaign=072612">Cyberwar</A><BR>
+
+<A HREF="http://www.washingtontimes.com/news/2011/sep/13/computer-based-attacks-emerge-as-threat-of-future-/">Cyber attacks</A><BR>
+
+<A HREF="http://www.kuleuven.be/english/newsletter/newsflash/encryption_standard.html">Flaw
+  in AES</A><BR>
+
+<A HREF="http://boingboing.net/2011/07/22/solution-claimed-to.html">Zodiac Message</A><BR>
+
+<A HREF="http://www.nytimes.com/2011/07/26/science/26code.html?_r=1">One
+  Time Pad</A><BR>
+
+<A HREF="http://www.govtech.com/security/Cyber-Camp-Develops-Tomorrows-IT-Security-Pros.html#">Cyber Camp</A><BR>
+
+<A HREF="http://www.computerworld.com/s/article/351231/11_hot_skills_for_2011">Hot
+  Skills for 2011</A><BR>
+
+<A
+href="http://online.wsj.com/article/SB10001424052748703793804575511961264943300.html">Cyber
+attack threat</A><BR>
+
+<!-- <A HREF="http://www.kaspersky.com/news?id=207576183">Stuxnet Worm</A><BR>
+
+<A HREF="http://www.youtube.com/watch?v=cL9Wu2kWwSY">Exponential World
+Video</A><BR>
+
+<A
+HREF="http://www.technewsworld.com/story/70622.html?wlc=1282914871">Stuxnet Worm</A><BR>
+
+<A
+HREF="http://www.computerworld.com/s/article/350918/20_20_Vision">Career Advice</A><BR>
+
+<A
+HREF="http://online.wsj.com/article/SB10001424052748704545004575352983850463108.html">Cyber
+Shield</A><BR>
+
+<A
+HREF="http://www.npr.org/templates/story/story.php?storyId=128574055">Lack
+of cyber warriors</A><BR>
+
+<A HREF="http://www.bbc.co.uk/news/technology-10742588">UK seeks cyber warriors</A><BR>
+
+<A
+HREF="http://www.theregister.co.uk/2010/07/08/cyber_command_crest_md5/">Cyber
+Command Seal puzzle</A><BR>
+
+<A
+HREF="http://www.computerworld.com/s/article/9173967/Cyberattacks_an_existential_threat_to_U.S._FBI_says">
+Cyberattacks Existential Threat</A><p>
+
+<A
+HREF="http://gizmodo.com/5601826/this-1500-system-can-intercept-your-cellphone-calls">Cell
+phone security spoof</A><BR>
+
+-->
+
+<BR><BR><HR><BR>
+
+<H3>Course Description:</H3> CS 361 is an introduction to topics in
+computer security, one of the "hottest" and most relevant areas of
+computing today.  The student will develop an intuition about what
+computer security means, both in the abstract and in the context of
+real systems; be able to recognize potential threats to
+confidentiality, integrity and availability; be aware of some of the
+underlying formalisms and technologies that attempt to address these
+challenges; and be conversant with current security-related issues in
+the field. <P>
+
+Topics to be covered will include:
+<OL TYPE="1" START="1">
+<LI> Scope of the security problem;
+<LI> Various views of computer security;
+<LI> Security policies;
+<LI> Formalizing security properties;
+<LI> Elementary information theory;
+<LI> Elementary cryptography;
+<LI> Cryptographic protocols;
+<LI> Authentication;
+<LI> Risk assessment;
+<LI> Malicious logic;
+<LI> System evaluation and certification.
+</OL>
+
+<b>Very important:</b> This course has a new, blended format as of
+Fall, 2011.  "Blended" means that a large portion of the course
+content is delivered on-line.  Videotaped mini-lectures will be made
+available on-line via UT's Quest
+system: <A HREF="http://quest.cns.utexas.edu">Quest system</A>.  You
+will view these prior to coming to class and answer a series of
+questions on-line. The class will meet twice a week, on Monday and
+Wednesday; the Wednesday meeting is mandatory; the Monday session is
+optional.  We'll meet to discuss the material and assignments, and
+possibly have a short quiz (on Wed.) to ensure that you've viewed the
+lectures and done the required preparation.<P>
+
+<i>Note: This is not a self-paced course.</i>  A chart of the material
+for each week is here: <A HREF="log-of-lectures.pdf">Log of
+lectures</A>. You must view the mini-lectures and do the on-line
+portions as they are assigned, and you must attend class on
+Wednesdays.  You will have around 6 programming assignments over the
+course of the semester. If you don't have the self-discipline to keep
+up, you shouldn't take this course.  A paper that describes the
+blended course is available here: <A HREF="paper4.pdf">Blended
+class</A><P>
+
+<b>Using Piazza:</b> We will be using Piazza for class
+communication. The Piazza system is highly catered to getting you help
+quickly and efficiently from classmates, the TA, and myself. Rather than
+emailing questions to the teaching staff, I encourage you to post your
+questions on Piazza. If you have any problems or feedback for the
+developers, email team@piazza.com.  The Piazza class page will be
+posted shortly.
+
+<!-- 
+Find our class page at:
+http://www.piazza.com/utexas/summer2012/cs361. -->
+<P>
+
+<!-- Here are the questions associated with the various lectures:
+<A HREF="questions.pdf">questions.</A><P>  -->
+
+<b>InfoSec Certification:</b> Notice that CS students at UT have the
+option of completing a number of security-related courses and
+receiving a government-sanctioned certification in security.  See the
+following link for information:
+ <A HREF="http://www.cs.utexas.edu/undergraduate-program/academics/certificate-programs/infosec">
+Security certification.</A><P>
+
+<P>
+
+<H3>Prerequisites:</H3> You are expected to have taken and passed the
+following courses (or equivalent) with a grade of at least C-:
+Computer Science 311, 311H, 313H, or 313K; Computer Science 314, 314H,
+315, or 315H; Computer Science 310, 310H, 429, or 429H; and
+Mathematics 408C, 408K, or 408N. If you don't have the prerequisites,
+be sure to clear it with the CS department or risk being dropped from
+the class.<P>
+
+<H3>Text:</H3> There is no textbook.  If you would like a book for
+reference purposes, ask me and I can suggest one. All of the lectures,
+slides, and supplementary materials are on-line.  Note that there is a
+required fee for the use of the Quest system.  <i>This is very cheap
+compared to the cost of a textbook.</i>
+<P>
+
+<H3>Fee for Quest System:</H3>
+
+This course makes use of the web-based Quest content delivery system
+maintained by the UT College of Natural Sciences.  Go to
+ <A HREF="http://quest.cns.utexas.edu">Quest system</A> to log in to
+the Quest system for this class.  This service requires a charge per
+student for its use, which goes toward the maintenance and operation
+of the resource.  At some point during the semester, when you log into
+Quest you will be required to pay via credit card on a secure payment
+site. You may have the option to wait some time to pay while still
+continuing to use Quest for your assignments.  <i>But, at some point,
+you will be kicked off the system and not able to continue in our
+course; so be sure to pay up.</i>  If you are taking more than one
+course using Quest, there is a maximum Quest fee per semester you will
+have to pay.  For payment questions, email quest.fees@cns.utexas.edu.<P>
+
+<H3>Class Notes:</H3> All of the class slides will be available via
+links below.  They will be made them available as we cover new
+material and you are welcome to print them out or view them on-line.
+Slides are available in 4-up PostScript (PS) or in PDF format (full
+size and in 4-ups).  The PostScript files can be viewed with Ghostview
+or printed on any postscript-compatible printer.  The PDF files can be
+viewed with Acroread.  <P>
+
+A listing of the lectures for each week is
+here: <A HREF="log-of-lectures.pdf">Log of lectures</A>.  Slides are
+grouped into lectures, which are grouped into modules.  Each week, you
+will cover one or two modules.  <i>Note that you must view the video
+associated with each lecture.  It is not adequate to just read the
+slides.</i><P>
+
+<BR><HR><BR>
+
+<!-- Move the questions following the lectures.  -->
+
+<h4>Week 1: Module 1:</h4>
+
+Lecture 1: Introduction
+<A HREF="lecture1-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture1-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture1.pdf"> PDF</A><P>
+
+Lecture 2: Why Security is Hard
+<A HREF="lecture2-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture2-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture2.pdf"> PDF</A><P>
+
+Lecture 3: Security as Risk Management
+<A HREF="lecture3-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture3-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture3.pdf"> PDF</A><P>
+
+Lecture 4: Aspects of Security
+<A HREF="lecture4-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture4-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture4.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<h4>Week 2: Module 2:</h4>
+
+Lecture 5: Policies and Metapolicies 
+<A HREF="lecture5-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture5-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture5.pdf"> PDF</A><P>
+
+Lecture 6: A Policy Example: MLS
+<A HREF="lecture6-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture6-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture6.pdf"> PDF</A><P>
+
+Lecture 7: MLS Example: Part II
+<A HREF="lecture7-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture7-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture7.pdf"> PDF</A><P>
+
+Lecture 8: MLS Example: Part III
+<A HREF="lecture8-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture8-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture8.pdf"> PDF</A><P>
+
+Lecture 9: MLS Example: Part IV
+<A HREF="lecture9-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture9-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture9.pdf"> PDF</A><P>
+
+Lecture 10: Tranquility and BLP
+<A HREF="lecture10-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture10-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture10.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<h4>Week 3: Module 3:</h4>
+
+Lecture 11: Access Control Policies
+<A HREF="lecture11-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture11-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture11.pdf"> PDF</A><P>
+
+Lecture 12: Lattice Based Security
+<A HREF="lecture12-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture12-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture12.pdf"> PDF</A><P>
+
+Lecture 13: Covert Channels I
+<A HREF="lecture13-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture13-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture13.pdf"> PDF</A><P>
+
+Lecture 14: Covert Channels II
+<A HREF="lecture14-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture14-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture14.pdf"> PDF</A><P>
+
+Lecture 15: Covert Channels III
+<A HREF="lecture15-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture15-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture15.pdf"> PDF</A><P>
+
+Lecture 16:  Detecting Covert Channels
+<A HREF="lecture16-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture16-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture16.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<h4>Week 4: Module 4:</h4>
+
+Lecture 17:  Non-Interference 
+<A HREF="lecture17-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture17-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture17.pdf"> PDF</A><P>
+
+Lecture 18:  Non-Interference II
+<A HREF="lecture18-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture18-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture18.pdf"> PDF</A><P>
+
+<h4>Week 4: Module 5:</h4>
+
+Lecture 19:  What is Integrity?
+<A HREF="lecture19-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture19-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture19.pdf"> PDF</A><P>
+
+Lecture 20:  Modeling Integrity
+<A HREF="lecture20-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture20-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture20.pdf"> PDF</A><P>
+
+Lecture 21:  Modeling Integrity: Biba
+<A HREF="lecture21-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture21-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture21.pdf"> PDF</A><P>
+
+Lecture 22:  Biba's Other Models
+<A HREF="lecture22-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture22-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture22.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<h4>Week 5: Module 6:</h4>
+
+Lecture 23: Lipner's Model
+<A HREF="lecture23-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture23-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture23.pdf"> PDF</A><P>
+
+Lecture 24: The Clark-Wilson Model
+<A HREF="lecture24-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture24-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture24.pdf"> PDF</A><P>
+
+Lecture 25: The Chinese Wall Policy
+<A HREF="lecture25-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture25-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture25.pdf"> PDF</A><P>
+
+Lecture 26: Role-Based Access Control
+<A HREF="lecture26-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture26-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture26.pdf"> PDF</A><P>
+
+Lecture 27: Storing the ACM
+<A HREF="lecture27-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture27-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture27.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<h4>Week 6: Module 7:</h4>
+
+Lecture 28: Information Theory
+<A HREF="lecture28-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture28-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture28.pdf"> PDF</A><P>
+
+Lecture 29: Information Content
+<A HREF="lecture29-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture29-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture29.pdf"> PDF</A><P>
+
+Lecture 30: Exploring Encodings
+<A HREF="lecture30-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture30-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture30.pdf"> PDF</A><P>
+
+Lecture 31: Languages and Encodings
+<A HREF="lecture31-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture31-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture31.pdf"> PDF</A><P>
+
+Lecture 32: Entropy
+<A HREF="lecture32-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture32-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture32.pdf"> PDF</A><P>
+
+Lecture 33: Entropy II
+<A HREF="lecture33-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture33-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture33.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<!-- Due October 11: -->
+
+<h4>Week 7: Module 8:</h4>
+
+Lecture 34: Fundamental Theorems
+<A HREF="lecture34-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture34-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture34.pdf"> PDF</A><P>
+
+Lecture 35: Entropy of English
+<A HREF="lecture35-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture35-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture35.pdf"> PDF</A><P>
+
+Lecture 36: Entropy Odds and Ends
+<A HREF="lecture36-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture36-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture36.pdf"> PDF</A><P>
+
+<h4>Week 7: Module 9:</h4>
+
+Lecture 37: Cryptography
+<A HREF="lecture37-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture37-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture37.pdf"> PDF</A><P>
+
+Lecture 38: Cryptography II
+<A HREF="lecture38-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture38-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture38.pdf"> PDF</A><P>
+
+Lecture 39: Properties of Ciphers
+<A HREF="lecture39-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture39-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture39.pdf"> PDF</A><P>
+
+
+<BR><HR><BR>
+
+<b>The midterm covered material above this point.</b><P>
+
+<BR><HR><BR>
+
+<!-- Due October 18: -->
+
+
+<h4>Week 8: Module 10:</h4>
+
+Lecture 40: Substitution Ciphers
+<A HREF="lecture40-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture40-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture40.pdf"> PDF</A><P>
+
+Lecture 41: Using Information  
+<A HREF="lecture41-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture41-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture41.pdf"> PDF</A><P>
+
+Lecture 42: A Perfect Cipher
+<A HREF="lecture42-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture42-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture42.pdf"> PDF</A><P>
+
+Lecture 43: Transposition Ciphers
+<A HREF="lecture43-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture43-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture43.pdf"> PDF</A><P>
+
+Lecture 44: Symmetric vs. Asymmetric Encryption
+<A HREF="lecture44-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture44-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture44.pdf"> PDF</A><P>
+
+Lecture 45: Stream and Block Encryption
+<A HREF="lecture45-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture45-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture45.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<!-- Due October 25: -->
+
+<h4>Week 9: Module 11:</h4>
+
+Lecture 46: Advanced Encryption Standard
+<A HREF="lecture46-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture46-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture46.pdf"> PDF</A><P>
+
+Lecture 47: Modes of Usage
+<A HREF="lecture47-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture47-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture47.pdf"> PDF</A><P>
+
+Lecture 48: Public Key Encryption
+<A HREF="lecture48-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture48-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture48.pdf"> PDF</A><P>
+
+Lecture 49: Public Key Encryption II 
+<A HREF="lecture49-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture49-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture49.pdf"> PDF</A><P>
+
+Lecture 50: Cryptographic Hash Functions
+<A HREF="lecture50-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture50-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture50.pdf"> PDF</A><P>
+
+Lecture 51: Key Exchange
+<A HREF="lecture51-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture51-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture51.pdf"> PDF</A><P>
+
+Lecture 52: Diffie-Hellman Key Exchange
+<A HREF="lecture52-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture52-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture52.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<!-- Due November 1: -->
+
+<h4>Week 10: Module 12:</h4>
+
+Lecture 53: Digital Signatures
+<A HREF="lecture53-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture53-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture53.pdf"> PDF</A><P>
+
+Lecture 54: Certificates
+<A HREF="lecture54-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture54-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture54.pdf"> PDF</A><P>
+
+Lecture 55: Certificates II
+<A HREF="lecture55-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture55-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture55.pdf"> PDF</A><P>
+
+<h4>Week 10: Module 13:</h4>
+
+Lecture 56: Cryptographic Protocols
+<A HREF="lecture56-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture56-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture56.pdf"> PDF</A><P>
+
+Lecture 57: Cryptographic Protocols II
+<A HREF="lecture57-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture57-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture57.pdf"> PDF</A><P>
+
+Lecture 58: Cryptographic Protocols Abstractly
+<A HREF="lecture58-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture58-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture58.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<h4>Week 11: Module 14:</h4>
+
+Lecture 59: Attacks on Cryptographic Protocols
+<A HREF="lecture59-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture59-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture59.pdf"> PDF</A><P>
+
+Lecture 60: The Needham-Schroeder Protocol
+<A HREF="lecture60-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture60-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture60.pdf"> PDF</A><P>
+
+Lecture 61: Attacks on Needham-Schroeder
+<A HREF="lecture61-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture61-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture61.pdf"> PDF</A><P>
+
+Lecture 62: The Otway-Rees Protocol
+<A HREF="lecture62-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture62-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture62.pdf"> PDF</A><P>
+
+Lecture 63: Protocol Verification
+<A HREF="lecture63-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture63-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture63.pdf"> PDF</A><P>
+
+Lecture 64: The BAN Logic
+<A HREF="lecture64-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture64-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture64.pdf"> PDF</A><P>
+
+Lecture 65: The BAN Logic: Needham-Schroeder
+<A HREF="lecture65-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture65-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture65.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<h4>Week 12: Module 15:</h4>
+
+Lecture 66: PGP
+<A HREF="lecture66-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture66-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture66.pdf"> PDF</A><P>
+
+Lecture 67: PGP Services
+<A HREF="lecture67-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture67-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture67.pdf"> PDF</A><P>
+
+Lecture 68: PGP Services II
+<A HREF="lecture68-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture68-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture68.pdf"> PDF</A><P>
+
+Lecture 69: PGP Key Management
+<A HREF="lecture69-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture69-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture69.pdf"> PDF</A><P>
+
+Lecture 70: PGP Key Management II
+<A HREF="lecture70-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture70-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture70.pdf"> PDF</A><P>
+
+<BR><HR><BR>
+
+<h4>Week 13: Module 16:</h4>
+
+Lecture 71: Availability
+<A HREF="lecture71-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture71-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture71.pdf"> PDF</A><P>
+
+Lecture 72: Availability II
+<A HREF="lecture72-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture72-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture72.pdf"> PDF</A><P>
+
+Lecture 73: Intrusion Detection
+<A HREF="lecture73-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture73-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture73.pdf"> PDF</A><P>
+
+Lecture 74: Anatomy of an Attack: CodeRed
+<A HREF="lecture74-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture74-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture74.pdf"> PDF</A><P>
+
+Lecture 75: CodeRedII
+<A HREF="lecture75-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture75-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture75.pdf"> PDF</A><P>
+
+<!-- 
+
+<BR><HR><BR>
+
+<h4>Week 14: Module 17:</h4>
+
+Lecture 76: Certification
+<A HREF="lecture76-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture76-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture76.pdf"> PDF</A><P>
+
+Lecture 77: The Common Criteria
+<A HREF="lecture77-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture77-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture77.pdf"> PDF</A><P>
+
+Lecture 78: Protection Profile Example
+<A HREF="lecture78-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture78-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture78.pdf"> PDF</A><P>
+
+Lecture 79: Security Target Example
+<A HREF="lecture79-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture79-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture79.pdf"> PDF</A><P>
+
+Lecture 80: CC Evaluations
+<A HREF="lecture80-4up.ps"> PS-4up</A>&nbsp;
+<A HREF="lecture80-4up.pdf">PDF-4up</A>&nbsp;<A HREF="lecture80.pdf">
+  PDF</A><P> 
+
+<i>That's all, folks!</i><P>
+
+-->
+
+<BR><HR><BR>
+
+<a name="assignments">
+
+<H3>Assignments:</H3> There will also be around 6 programming
+assigments over the course of the semester.  They should be done in
+the Java programming language.  If you don't know Java, discuss it
+with me and I may allow an alternative arrangement.  Each student may work on
+programming assignments in collaboration with one other student.  Make
+sure that all submissions clearly identify which students contributed
+to the project. <P>
+
+You have another standing assignment: For each video you view, there
+are several short essay questions to be answered.  Collectively, these
+questions are counted as equal to two programming assignments.  They
+are linked below.  The questions are typically due at 5pm on the
+Friday of the week they are assigned.  <i>You are strongly encouraged
+to attempt them before you come to class on Wednesday so you can ask any
+questions you may have, and be prepared for a possible quiz.</i><P>
+
+<!-- For information on how to submit your work please
+visit: <A HREF="http://www.cs.utexas.edu/~gaya3rl/Programming_Submission.html">Submission
+info</A>.<P> -->
+
+Programs will be graded on a 10 point scale, and will be accepted up
+to two days late with a deduction of one point per day late.  The
+number of days late is purely a function of the timestamp recorded
+when you submit the assignment.  The TAs may also allocate a number of
+"slip days" that you can use at your discretion over the course of the
+semester.  The TAs may turn off the turnin program after the due date,
+and accept late assignments by email.  Please coordinate with the TAs
+regarding late submissions, or if you desire to re-submit an
+assignment following the due date. <P> 
+
+<I>After an assignment has been graded, it is your responsibility to
+check Blackboard to see that your assignment grades have been posted
+correctly.  It's not OK to complain at the end of the semester that
+some grades weren't posted or were posted incorrectly.</I><P>
+
+<b>Instructions for turnin:</B> Programs and question assignments will
+be submitted via the turnin program.  For every assignment, please
+submit your homework using the turnin command on CS lab machines. You
+can read the instructions by typing "man turnin". For example, type
+"turnin --submit username_ta hw# &lt;file1&gt; &lt;file2&gt;" to
+submit file1,file2 to TA as homework. You can submit several files or
+a complete directory with one turnin command, but please do not
+compress them and only submit necessary files. You can use "turnin
+--verify username_ta hw#" to check your submission.<P>
+
+To turn in your weekly questions , please use the command:
+<pre>
+turnin --submit cz3286 CS361-hw# filename
+</pre>
+For example, in week 2 you might type:
+<pre>
+turnin --submit cz3286 CS361-hw2 CS361-hw2-jimmy-jones.txt
+</pre>
+Students should name the homework file as hw2-firstname-lastname.txt
+(other document forms are fine).  This is the pattern you'll follow
+all semester.  Let us know via email if you have problems with turnin.
+Please put "CS361-hw#-fullname" in the subject line, so we'll know
+what messages relate to homework assignments.<P>
+
+We'll also follow a similar turnin scheme for projects.  Please just
+replace hw# with pr#.<P>
+
+Links to all assignments will appear below.  Check this page often and
+be sure to check that any particular assignment or due date has not been
+changed.  Each week expect one set of
+questions on the lectures.  Programming assignments will come about
+every 2-3 weeks.<P>
+
+Questions Week 1: <A HREF="week1-questions.pdf">Week 1: Due Tuesday,
+      September 3 by 5pm.</A><P>
+
+Questions Week 2: <A HREF="week2-questions.pdf">Week 2: Due Friday,
+      September 6 by 5pm.</A><P>
+
+<A HREF="assignment1-nonthreaded.html">Assignment 1: Due Friday,
+  9/13/12 by midnight</A><P>
+
+Questions Week 3: <A HREF="week3-questions.pdf">Week 3: Due Friday,
+      September 13 by 5pm.</A><P>
+
+Questions Week 4: <A HREF="week4-questions.pdf">Week 4: Due Friday,
+      September 20 by 5pm.</A><P>
+
+<A HREF="assignment2.html">Assignment 2: Due Wednesday, 9/25/12</A><P>
+
+Questions Week 5: <A HREF="week5-questions.pdf">Week 5: Due Friday,
+      September 27 by 5pm.</A><P>
+
+Questions Week 6: <A HREF="week6-questions.pdf">Week 6: Due Friday,
+      October 4 by 5pm.</A><P>
+
+<A HREF="huffman-assignment.html">Assignment 3: Due Friday,
+  10/11/13</A><P> 
+
+Questions Week 7: <A HREF="week7-questions.pdf">Week 7: Due Friday,
+      October 11 by 5pm.</A><P>
+
+Questions Week 8: <A HREF="week8-questions.pdf">Week 8: Due Friday,
+      October 18 by 5pm.</A><P>
+
+Questions Week 9: <A HREF="week9-questions.pdf">Week 9: Due Friday,
+      October 25 by 5pm.</A><P>
+
+<A HREF="assignment-aes.html">Assignment 4: Due Friday, 11/1/12</A><P>
+
+Questions Week 10: <A HREF="week10-questions.pdf">Week 10: Due Friday,
+      November 1 by 5pm.</A><P>
+
+<A HREF="crack-assignment.html">Assignment 5: Due Friday,
+  11/15/13</A><P>
+
+Questions Week 11: <A HREF="week11-questions.pdf">Week 11: Due Friday,
+      November 8 by 5pm.</A><P>
+
+Questions Week 12: <A HREF="week12-questions.pdf">Week 12: Due Friday,
+      November 15 by 5pm.</A><P>
+
+Questions Week 13: <A HREF="week13-questions.pdf">Week 13: Due Friday,
+      November 22 by 5pm.</A><P>
+
+<!-- 
+
+<A HREF="assignment6.html">Assignment 6: Due Friday, 12/7/12</A><P>
+
+Questions Week 14: <A HREF="week14-questions.pdf">Week 14: Due Monday,
+      December 2 by 5pm.</A><P> 
+
+-->
+
+<!-- 
+
+<A HREF="markov-assignment.html">Assignment 4: Due Monday, 8/6/12</A><P>
+
+<A HREF="crack-assignment.html">Assignment 5: Due Wednesday, 11/16/11</A><P>
+
+<A HREF="survivability-assignment.html">Assignment 3: Due Wednesday, 10/6/10</A><P>
+
+<A HREF="windows-eal4-evaluation.pdf"> Reading assignment:</A>&nbsp;
+Read this very short paper "Understanding the Windows EAL4 Evaluation"
+by Jonathan S. Shapiro found
+here <A HREF="windows-eal4-evaluation.pdf"> Shapiro</A>&nbsp; or
+available at various places on-line.<P> 
+
+# Not used last time.
+
+<A HREF="assignment-aes.html">Assignment 4: Due Monday, 7/5/10</A><P>
+
+<A HREF="library-assignment.html"> Assignment 3: Due 10/5/09 (note
+change to Monday from Friday)</A><P>
+
+<B>Note that this assignment has been updated:</B><BR>
+<A HREF="lipner-assignment.html">Assignment 3: Due 2/27/09</A><P>
+
+<A HREF="assignment2b.html">Optional Assignment 2b: Due 9/29/09</A><P>
+
+<A HREF="assignment3-cw-in-blp.html">Assignment 3: Due 10/25/06</A><P>
+
+<A HREF="kerberos-assignment.html">Assignment 5: Due 4/27/06</A><P>
+
+ -->
+
+<H3>Quizzes:</H3> Short in-class quizzes may be given at any time.
+These will cover material previously covered or material in the
+mini-lectures you were expected to view.  <i>Material for a week 
+is fair game for a Wednesday quiz.</i>  The goal of quizzes is to test
+your understanding of the material and to give you an idea of the
+types of questions that will appear on tests. <I>There will be no
+makeups for quizzes you miss,</I> but any single quiz is only a small
+proportion of your final grade.<P>
+
+<H3>Tests:</H3> There will be two major tests during the semester: a
+midterm and final.  Tests are closed-book, closed-notes tests, except
+that you may bring a single handwritten 3 x 5 inch index card of notes
+(both sides).  Your best study strategy is to review the class notes
+and ensure that you understand thoroughly the topics we have covered.
+Sample tests and vocabulary lists will be posted. <P>
+
+The midterm will be held at the regular class time (9-10am) on Friday,
+October 18.  This probably will be the only time we meet on Friday all
+semester.  The midterm will cover material through week 7.  A sample
+midterm is here: <A HREF="sample-midterm.pdf">Sample Midterm</A>.  A
+vocabulary list is here: <A HREF="midterm-vocab.pdf">Vocabulary
+List</A>.
+<P>
+
+<!-- The midterm will be held in class on Friday, October 19.  It will
+cover the material from weeks 1-7.  The final exam will be held on
+Saturday, December 15 from 9am to noon in ETC 2.108 Don't make travel
+plans that conflict with that date.  A sample midterm and sample final
+will be posted.<P>
+
+  You will be handed a copy of the vocabulary list at test time.<P> -->
+
+The final will be on Monday, December 16, 9am to noon, in ART 1.102.
+Please don't make travel plans that conflict with the date. A sample
+final will be posted. <P>
+
+<i>If you do better on the final than you did on the midterm, I will
+drop your midterm grade and double your grade on the final.</i>  This
+is a great opportunity for some of you to recover from bad performance
+on the midterm; so don't blow it!<P>
+
+<!-- final is here: <A HREF="sample-final.pdf">Sample Final</A>. 
+The vocabulary list is here: <A HREF="final-vocab.pdf">Vocabulary
+List</A><P>  -->
+
+<H3>No laptops:</H3> Students should not have laptops or other
+electronic devices open during class discussions.  Copies of all slides
+are provided.  Please just listen, participate and absorb the
+material. <P>
+
+<H3>Grading policies:</H3> Class attendance is mandatory for our
+Wednesday meetings, and will be checked.  Excessive unexcused absences
+will result in a reduced grade.  <I>If you don't plan to come to class
+regularly, please don't register for this class.</I> Signing in for
+another student not present will be considered cheating by both
+students.<P>
+
+<!-- Next semester, lower the exams to 25% and raise the assignments to 40%  -->
+
+Grades are averaged using the weighting below:
+<BR><BR> 
+
+<table border=1 cellpadding=10 cellspacing=5>
+  <tr valight="top">
+    <td bgcolor="cornflowerblue"><I>Component</i></td>
+    <td bgcolor="cornflowerblue"><I>Percent</i></td>
+  </tr>
+  <TR> <TH ALIGN="Left">Attendance, Quizzes and Participation<TH>10%
+  <TR> <TH ALIGN="Left">Assignments <TH>40%
+  <TR> <TH ALIGN="Left">Midterm Exam  <TH>25%
+  <TR> <TH ALIGN="Left">Final Exam <TH>25%
+</TABLE><BR>
+
+<!-- <b>If you do better on the final (percentage-wise) than you did on the
+  midterm, I will drop the midterm grade and count the final
+  twice.</b>  If you did poorly on the midterm, use this as an
+  opportunity.  A lot is riding on that grade.<P> -->
+
+Course grades are assigned on the scale: A = 90-100; B = 80-90;
+etc. (I don't grade on the +/- grading system.)  However, I reserve
+the right to be more generous than these ranges indicate.  That is, I
+may enlarge any of these ranges; I will not shrink any range.<P>
+
+<!-- <i>As of this semester, instructors are required to grade on the new
+  +/- grading system.</i>  Course grades are assigned according to the
+  following scale:<P>
+<table border=1 cellpadding=10 cellspacing=5>
+<tr valight="top">
+  <td bgcolor="cornflowerblue"><I>Grade</i></td>
+  <td bgcolor="cornflowerblue"><I>Range</i></td>
+</tr>
+<tr><th ALIGN="Left">A<th>92-100 
+<tr><th ALIGN="Left">A-<th>90-91
+<tr><th ALIGN="Left">B+<th>88-89
+<tr><th ALIGN="Left">B<th>82-87
+<tr><th ALIGN="Left">B-<th>80-81
+<tr><th ALIGN="Left">C+<th>78-79
+<tr><th ALIGN="Left">C<th>72-77
+<tr><th ALIGN="Left">C-<th>70-71
+<tr><th ALIGN="Left">D+<th>68-69
+<tr><th ALIGN="Left">D<th>62-67
+<tr><th ALIGN="Left">D-<th>60-61
+<tr><th ALIGN="Left">F<th>0-59
+</table><br>  -->
+
+<H3>Scholastic Dishonesty:</H3> Academic dishonesty will not be
+tolerated.  See 
+<A HREF="http://www.cs.utexas.edu/academics/conduct">http://www.cs.utexas.edu/academics/conduct</A>
+for an excellent summary of expectations of a student in a CS
+class.<P>
+
+All work must be the student's own effort (with the exception of group
+effort on programs).  <I>Work by students in previous semesters is not
+your own effort.  Don't even think about turning in such work as your
+own, or even using it as a basis for your work.  We have very
+sophisticated tools to find such cheating and we use them
+routinely.</I> Several students didn't heed this warning in past
+semesters and paid a heavy price.  It's far better to get a 0 on an
+assignment than to cheat.<P>
+
+No deviation from the standards of scholastic honesty or professional
+integrity will be tolerated.  Scholastic dishonesty is a serious
+violation of UT policy; and will likely result in an automatic F in
+the course and may result in further penalties imposed by the
+department or by the university.  Don't do it.  If you are caught, you
+will regret it.  And if you're not caught, you're still a cheater.<P>
+
+<H3>Students with Disabilities:</H3> 
+
+Students with disabilities may request appropriate academic
+accommodations from the Division of Diversity and Community
+Engagement, Services for Students with Disabilities, 471-6259,
+http://www.utexas.edu/diversity/ddce/ssd. <P>
+
+</BLOCKQUOTE>
+</BODY>
+</HTML>
+
+
+
+<!-- 
+
+<A HREF="http://www.abc.net.au/news/stories/2009/01/07/2460906.htm">Cybergeddon article</A><P> 
+<A
+HREF="http://www.infoworld.com/article/09/02/04/05NF-tech-career-education_3.html">Tech Jobs</A><P>
+<A HREF="http://xkcd.com/538">XKCD</A><P>
+<A
+HREF="http://www.nytimes.com/2009/01/23/technology/internet/23worm.html?_r=1&hp">New
+Computer Worm</A><P>
+<A
+HREF="http://www.payscale.com/research/US/Job=Software_Engineer_%2f_Developer_%2f_Programmer/Salary/by_Years_Experience">CS
+Pay Scales</A><P> 
+
+-->

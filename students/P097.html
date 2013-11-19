@@ -1,0 +1,501 @@
+<base href="http://www.cs.utexas.edu/~dlessin/teaching/cs105_cpp/">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>CS 105 (C++)</title></head><body>
+<br>
+
+<hr style="width: 100%; height: 2px;"><br>
+
+CS 105: Computer Programming: C++<br>Fall 2013<br>
+
+<br>
+
+Monday/Wednesday 2:00 pm - 3:00 pm<br>
+
+<a href="http://www.utexas.edu/maps/main/buildings/gdc.html">GDC</a> 4.304<br>
+
+Unique Number: 53600<br>
+
+Instructor: <a href="http://www.cs.utexas.edu/%7Edlessin">Dan Lessin</a><br>
+
+<a href="mailto:dlessin@cs.utexas.edu">
+dlessin@cs.utexas.edu</a><br>
+
+<br>
+
+<hr style="width: 100%; height: 2px;"><br>
+
+This course is an introduction to programming in C++.<br>
+
+<br>
+
+Prerequisite:<br>
+
+<ul>
+
+  <li>A grade of at least C- in CS 307, CS 313E, CS 314, CS
+314H, EE 422C, or EE 322C.</li>
+</ul>
+
+<br>
+
+Required Textbooks:<br>
+
+<ul>
+
+  <li><cite>The C Programming Language (Second Edition)</cite>, Brian
+Kernighan and Dennis Ritchie.</li>
+  <li><cite>C++: The Core Language</cite>, Gregory Satir and Doug Brown.<br>
+(Unverified online version <a href="http://findit.lib.utexas.edu/utaustin?sid=III:innopac&amp;pid=id=156592116X">here</a>.)<br>
+  </li>
+</ul>
+
+<br>
+
+Recommended Textbook:<br style="font-style: italic;">
+
+<ul>
+
+  <li><cite>C++ Pocket Reference</cite>, Kyle Loudon.<br>
+  </li>
+</ul>
+
+<br>
+
+Grading:
+<ul>
+
+  <li>50%: in-class quizzes/attendance.</li>
+  <li>50%: programming assignments.</li>
+</ul>
+
+<br>
+
+Academic Honesty:<br>
+
+<ul>
+
+  <li><a href="http://www.cs.utexas.edu/undergraduate-program/code-conduct">UTCS
+code of conduct</a>.<br>
+  </li>
+</ul>
+
+<br>
+
+Office Hours:<br style="text-decoration: line-through;">
+
+<ul>
+
+  <li><span style="text-decoration: line-through;"></span> Friday 2:00 pm - 3:00 pm, <a href="http://www.cs.utexas.edu/facilities/public-labs">GDC 1.302 (Desk 4)</a>.<br>
+</li>
+</ul>
+
+<br>
+
+Online Discussion Forum:<br>
+
+<ul>
+
+  <li><a href="http://piazza.com/utexas/fall2013/cs105">Piazza</a>.<br>
+  </li>
+</ul>
+
+<br>
+
+Facilities:<br>
+
+<ul>
+
+  <li><a href="https://apps.cs.utexas.edu/udb/newaccount/">UTCS account
+creation</a>.<br>
+  </li>
+  <li><a href="http://www.cs.utexas.edu/facilities/public-labs">UTCS
+public computer labs</a>.<br>
+  </li>
+</ul>
+
+<br>
+
+<hr style="width: 100%; height: 2px;"><br>
+
+Schedule<br>
+
+<br>
+
+<table style="text-align: left; width: 900px; height: 764px;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="font-weight: bold; text-align: center;">Date<br>
+      </td>
+      <td style="text-align: center;"><span style="font-weight: bold;">Class #</span><br>
+      </td>
+      <td style="font-weight: bold; text-align: center;">Quiz
+Topics / Requirements<br>
+      </td>
+      <td style="font-weight: bold; text-align: center;">Reading
+Due<br>
+      </td>
+      <td style="font-weight: bold; text-align: center;">Assignment
+Due<br>
+(midnight)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 8/28<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">0<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">course introduction<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Sun 9/1<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">(no
+assignment)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Mon 9/2<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><span style="font-style: italic;">(no class)</span><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 9/4<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_01.html">C
+introduction</a><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">C: Ch. 1<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Sun 9/8<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="assignment_01.html">Assignment 1</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Mon 9/9<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">2<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_02.html">types,
+operators, expressions</a><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">C: Ch. 2<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 9/11<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">3<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_03.html">control
+flow</a> </td>
+      <td style="vertical-align: top; text-align: center;">C: Ch. 3 </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><span style="text-decoration: line-through;"></span>Sun 9/15<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="assignment_02.html">Assignment 2</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Mon 9/16<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">4<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_04.html">functions</a> </td>
+      <td style="vertical-align: top; text-align: center;">C: Ch. 4 </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 9/18<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">5<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_05.html">pointers,
+arrays</a> </td>
+      <td style="vertical-align: top; text-align: center;"> C: Ch. 5</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Sun 9/22<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="assignment_03.html">Assignment 3</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Mon 9/23<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">6<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_06.html">structures</a> </td>
+      <td style="vertical-align: top; text-align: center;"> C: Ch. 6</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 9/25<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">7<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_07.html">input,
+output</a> </td>
+      <td style="vertical-align: top; text-align: center;"> C: Ch. 7</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Sun 9/29<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="assignment_04.html">Assignment 4</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Mon 9/30<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">8<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_08.html">OOP, C++
+without classes</a> </td>
+      <td style="vertical-align: top; text-align: center;"> C++: Ch. 1,
+2</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 10/2<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">9<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_09.html">member
+functions, access specifiers</a> </td>
+      <td style="vertical-align: top; text-align: center;"> C++: Ch. 3,
+4</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Sun 10/6<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="assignment_05.html">Assignment 5</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Mon 10/7<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">10<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_10.html">composition/derivation,
+constructors/destructors</a> </td>
+      <td style="vertical-align: top; text-align: center;"> C++: Ch. 5,
+6</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 10/9<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">11<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_11.html"><code>new</code>
+and <code>delete</code>,
+references</a> </td>
+      <td style="vertical-align: top; text-align: center;"> C++: Ch. 7,
+8</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Sun 10/13<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="assignment_06.html">Assignment 6</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Mon 10/14<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">12<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_12.html">other
+special member functions, example class</a> </td>
+      <td style="vertical-align: top; text-align: center;"> C++: Ch. 9,
+10</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 10/16<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">13<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="requirements_13.html">templates,
+virtual functions/polymorphism</a> </td>
+      <td style="vertical-align: top; text-align: center;">C++: Ch. 11,
+12</td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    
+<tr>
+      <td style="vertical-align: top; text-align: center;">Sun 10/20<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="assignment_07.html">Assignment 7</a><br>
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Mon 10/21<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">14<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="discussion_14.html">other things you should know</a><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><span style="font-style: italic;">(no reading)</span><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Wed 10/23<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><span style="font-style: italic;">(no class)</span><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top; text-align: center;">Sun 10/27<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><a href="assignment_08.html">Assignment 8</a><br>
+      </td>
+    </tr><tr>
+      <td style="vertical-align: top; text-align: center;">Sun 11/3<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">last day to submit all work<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+<hr style="width: 100%; height: 2px;"><br>
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width: 0pt;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"></a><br>
+
+This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative
+Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+</body></html>

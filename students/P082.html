@@ -1,0 +1,310 @@
+<base href="http://www.cs.utexas.edu/~egdaniel/cs108/">
+<html>
+<head>
+  <title>CS108: UNIX</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="http://userweb.cs.utexas.edu/~edwardsj/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<h2>CS108: UNIX</h2>
+
+
+<!-- HEADER INFO -->
+<!-- div class="header-box" -->
+
+<table border="1" cellpadding="3">
+ <tr>
+  <td class="header-item">When:</td>
+  <td>MW 9-10am, August 28 - October 21, 2013</td>
+ </tr>
+ <tr>
+  <td class="header-item">Where:</td>
+  <td><a href="http://www.utexas.edu/maps/main/buildings/gdc.html">GDC 2.210</a> </td>
+ </tr>
+ <tr>
+  <td class="header-item">Instructor:</td>        
+  <td><a href="http://www.cs.utexas.edu/~egdaniel/">E. Greg Daniel</a></td>
+ </tr>
+ <tr>
+  <td class="header-item">Email:</td>
+  <td>egdaniel at cs.utexas.edu</td>
+ </tr>
+ <tr>
+  <td class="header-item">Office Hours:</td>      
+  <td>Tuesday 2-3pm in the GDC Basement Lab</td>
+ </tr>
+ <tr>
+  <td class="header-item">Office:</td>      
+  <td></td>
+ </tr>
+ <tr>
+  <td class="header-item">Prerequisite:</td> 
+  <td>CS 307, 313E, 314, 314H, or EE 422C (or 322C) with a grade of at least C-</td>
+ </tr>
+ <tr>
+  <td class="header-item">Book (required): <br /></td> 
+  <td> <a href="http://www.amazon.com/Practical-Guide-Commands-Editors-Programming/dp/0131367366/ref=sr_1_1?ie=UTF8&qid=1313678240&sr=8-1">
+    A Practical Guide to Linux</a> by Mark Sobell
+  </td>
+ </tr>
+ <tr>
+  <td class="header-item">UTCS Account:<br /></td> 
+  <td> <a href="https://apps.cs.utexas.edu/udb/newaccount/"/>UTCS account creation</a> (get one ASAP!)
+  </td>
+ </tr>
+ <tr>
+  <td class="header-item">Course website:<br /></td> 
+  <td> <a href="http://cs.utexas.edu/~egdaniel/cs108/index.html">
+    cs.utexas.edu/~egdaniel/cs108/</a>
+  </td>
+ </tr>
+ <!--tr>
+  <td class="header-item">Mailing List:</td>      
+  <td><a href="https://utlists.utexas.edu/sympa/info/cs108-spring10">
+   Class Mailing List</a></td>
+ </tr -->
+</table>
+
+<!-- /div -->
+
+
+<h3>Schedule</h3>
+
+<table id="schedule" border="1" cellpadding="3">
+ <tr>
+<!--  <th width="55">Date</th>
+  <th width="140">Reading</th>
+  <th>Topic</th>
+  <th width="40">Assignments</th> -->
+  <th>&nbsp;</th>
+  <th>Date</th>
+  <th>Reading</th>
+  <th>Topic</th>
+  <th>Assignments</th>
+ </tr>
+ <tr>
+  <td>1</td>
+  <td>Aug 28</td>
+  <td>&nbsp;</td>
+  <td>Introduction 
+  &lt<a href=lec1.pdf>lec1.pdf</a>&gt
+  </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>Sept 2</td>
+  <td>* LABOR DAY *</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <!-- <td><a href="assignment1.zip">assignment1</a> due 8:00am</td> -->
+ </tr>
+ <tr>
+  <td>2</td>
+  <td>Sept 4</td>
+  <td>29-31, 33-36, 45-56</td>
+  <td>Basic Navigation and Utilities 
+    &lt<a href=lec2>script</a>&gt
+    </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>3</td>
+  <td>Sept 9</td>
+  <td>123-134, 275-277</td>
+  <td>Input, Output, Pipes
+    &lt<a href=lec3>script</a>&gt
+    </td>
+  <td>hw1 due 9am</td>
+  </td>
+ </tr>
+ <tr>
+  <td>4</td>
+  <td>Sept 11</td>
+  <td>77-110</td>
+  <td>Utilities and Filesystem <!--&lt<a href=l5.script>script</a>&gt--!>
+     &lt<a href=lec4>script</a>&gt
+     </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>5</td>
+  <td>Sept 16</td>
+  <td>149-173</td>
+  <td>Vim I<!-- &lt<a href=l3.script>script</a>&gt--!></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>6</td>
+  <td>Sept 18</td>
+  <td>173-184</td>
+  <td>Vim II  
+  &lt<a href=lec6>text</a>&gt
+  </td>
+  <td>hw2 due 9am</td>
+ </tr>
+ <tr>
+  <td>7</td>
+  <td>Sept 23</td>
+  <td>&nbsp;</td>
+  <td>Random Utilities and Hodge-podge 
+  &lt<a href=lec7>script</a>&gt
+  </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>8</td>
+  <td>Sept 25</td>
+  <td>290-296, 306-314 </td>
+  <td>Bash 
+  &lt<a href=lec8>script</a>&gt
+  </td>
+  <td>hw3 due 9am</td>
+ </tr>
+ <tr>
+  <td>9</td>
+  <td>Sept 30</td>
+  <td>397-406,411-415, 427-429, 431-433</td>
+  <td>Scripting I 
+  &lt<a href=lec9_info>outline</a>&gt &lt<a href=lec9_exmpl>examples</a>&gt
+  </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>10</td>
+  <td>Oct 2</td>
+  <td>434-444, 447-450, 460-468</td>
+  <td>Scripting II 
+  &lt<a href=lec10_exmpl>script</a>&gt
+  </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>11</td>
+  <td>Oct 7</td>
+  <td>531-541</td>
+  <td>AWK 
+  &lt<a href=lec11>examples</a>&gt &lt<a href=gawk_exmp>script</a>&gt
+  </td>
+  <td>hw4 due 9am</td>
+ </tr>
+ <tr>
+  <td>12</td>
+  <td>Oct 10</td>
+  <td>565-570</td>
+  <td>sed 
+  &lt<a href=lec12>script</a>&gt
+  </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>14</td>
+  <td>Oct 14</td>
+  <td>&nbsp;</td>
+  <td>Compiling and makefiles 
+  &lt<a href=http://www.cs.utexas.edu/~egdaniel/cs108/make>Examples</a>&gt
+  </td>
+  <td>hw5 due 9am</td>
+ </tr>
+ <tr>
+  <td>13</td>
+  <td>Oct 16</td>
+  <td>271-274, 296-298, 324-329</td>
+  <td>Alias, Export, .bashrc  <!--&lt<a href=l12>script</a>&gt--!></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>15</td>
+  <td>Oct 21</td>
+  <td>&nbsp;</td>
+  <td>TBD <!--&lt<a href=l14.pl>script</a>&gt--!></td>
+  <td>hw6 due 9am</td>
+ </tr>
+</table>
+
+
+<h3>Course Overview</h3>
+
+<p>This course is designed to introduce the Unix environment and familiarize students
+with using Linux. The course is intended for those who have little to no experience
+in working with Linux. We will cover topics ranging from basic navigation, file
+manipulation, and input/output control. For specifics on topics please see the schedule
+posted below. By the end of the course, the goal is for students to feel comfortable
+working in the Linux enviornment, and knowledge on how to use and get information on
+new tools they have never used before.
+
+<p>Notice that this course is not meant to be an operating course nor will we be covering
+specifics about the Unix/Linux kernal.
+
+<h3>Grading</h3>
+
+This course is a Pass/Fail course and cannot be taken for a letter grade. For this
+course to receive a passing grade, a students final grade must be a 60.0% or higher
+(so yes this means you must be above 59.95, 59.9499999999 is failing). The final
+grade will be calculated using the following:
+
+<table id="grading" border="1" cellpadding="3">
+ <tr>
+  <th width="15%">Type</th>
+  <th width="15%">Number</th>
+  <th width="15%">Grade Percent</th>
+ </tr>
+ <tr>
+  <td>Quizzes</td>
+  <td>~8</td>
+  <td>20%</td>
+ </tr>
+ <tr>
+  <td>Assignments</td>
+  <td>6</td>
+  <td>80%</td>
+ </tr>
+</table>
+
+<p><b>Quizzes</b> - We will randomly have short, little quizes at the start of some class. These quizes will be on topics covered in the previous class or two. The quizes are not intended to be difficult nor require much studying before hand. By attending class, doing assignments, and some practice at home, you should not have any problem with these quizes.
+
+<p><b>Assignments</b> - Assignments will be due about once a week, and we will have a total of 6 thoughout the course. The assignments should be completed alone.
+
+<p>Assignments are graded using the CS UNIX machines.  I strongly advise that students do their assignments on CS UNIX machines.  <a href="https://apps.cs.utexas.edu/udb/newaccount/">Sign up</a> for a CS UNIX account if you don't have one already.  <b>Do this early</b> because it often takes a couple of days to process and you won't be able to turn in any assignments until this account is active.  Programming assignments will be turned in with the UNIX-based <!--<a href="turnin.html">-->turnin<!--</a>-->.  The web-based turnin will not work.
+<a href="http://www.cs.utexas.edu/facilities/public-labs">Public labs</a> are available.
+
+<p>Homework assignments will be available from a directory on my cs account. Thus you must use the Linux command line to retrieve them. The assignments will be located in ~egdaniel/teaching/cs108.  For example, homework #1 is at <tt>~egdaniel/teaching/cs108/hw1</tt>.  <a href="getting_started.html">Here</a> is help on getting started on the first assignment.
+
+<p><b>Blackboard</b> - Scores will be maintained on <a href="https://courses.utexas.edu/webapps/portal/frameset.jsp">Blackboard</a>.
+
+<h3>Late Work Policy</h3>
+
+Again, late assignments are not accepted.  Daily quizzes cannot be made up.
+
+
+<h3>Academic Honesty</h3>
+
+<p>Assignments must be done individually.  You may not work in pairs or groups.  You should also use either the vim or emacs editor to write up assignments.  This is unenforceable, so we'll rely on the honor system.  See also the department's <a href="http://www.cs.utexas.edu/users/ear/CodeOfConduct.html">code of conduct</a>.
+
+<p>While you cannot consult with other students on the assignments, you may (and are encouraged to) use the internet.
+
+<h3>Resources</h3>
+
+<li><a href="http://cm.bell-labs.com/cm/cs/who/dmr/hist.html">Overview of Unix System</a>
+<!--
+<ul>
+<li><a href="getting_started.html">Step-by-step instructions</a> for getting started on assignment 1
+<li><a href="coding_guidelines.html">coding guidelines</a>
+<li><a href="turnin.html">turnin</a>
+<li><a href="linux.html">Linux resources</a>
+<li><a href="windows.html">Windows resources</a>
+<li><a href="cpp.html">C++ resources</a>
+</ul>
+--!>
+
+<h3>Acknowledgements</h3>
+
+<p>
+Portions of this course were adapted from previous instances of CS 108 taught by John Edwards, Eric Rozner, Lilyana Mihalkova, Matt Alden, and Matt Taylor.
+
+</p>
+
+</body>
+</html>

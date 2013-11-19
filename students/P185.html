@@ -1,0 +1,91 @@
+<base href="http://www.cs.utexas.edu/~novak/gclwin.html">
+<HTML>
+<!--  gclwin.html          G. Novak           14 Feb 06    -->
+<HEAD>
+<TITLE>Gnu Common Lisp for Microsoft Windows</TITLE>
+</HEAD>
+
+<BODY>
+<H2>Gnu Common Lisp for Microsoft Windows</H2>
+<HR>
+(If what you want is an interface to X Windows for GCL, that is
+<a href="dwindow.html">here.</a>)
+<HR>
+
+For a complete installation of 
+<a href="http://www.gnu.org/software/gcl/gcl.html">Gnu Common Lisp</a>
+get <a href="ftp://ftp.cs.utexas.edu/pub/novak/gcl/gcl-2.6.1.exe">
+gcl-2.6.1.exe</a> (15 MB download, 60 MB to install).  Unfortunately,
+at present this version of GCL produces a ^M (Return) character at the
+end of each line when used within Emacs.
+<P>
+For convenience, a version of GCL
+for Windows, renamed <TT>gcl.exe</TT>, is available for download
+<a href="ftp://ftp.cs.utexas.edu/pub/novak/gcl/gcl.exe">here</a> (3.4 MB).
+To install this software, put <TT>gcl.exe</TT> directly into <TT>C:/</TT>.
+This is an older version, but is smaller and does not produce
+the ^M characters.
+<P>
+GCL can be executed directly by double-clicking on it, but it
+is better when run from within
+<a href="http://www.gnu.org/software/emacs/windows/ntemacs.html">Emacs.</a>
+
+<P>
+<H3>Connecting Emacs to GCL:</H3>
+
+The following steps will connect Emacs to GCL so that GCL can be run using
+the Emacs command <TT>M-x run-lisp</TT>.
+<OL>
+<LI> If you do the full installation, GCL will be installed in Program Files.
+     Otherwise, put <TT>gcl.exe</TT> directly into <TT>C:/</TT>.  
+<LI> Define the <TT>HOME</TT> environment variable: <BR>
+     Start -> Control Panel -> System -> Advanced -> Environment Variables <BR>
+     Then define a new System variable <TT>HOME</TT> as your "home"
+     directory, e.g.
+<PRE>
+C:/Documents and Settings/myname/My Documents/
+</PRE>
+where <TT>myname</TT> would be replaced by your user name.
+<LI> Put the following file into your <TT>HOME</TT> directory:
+     <a href="ftp://ftp.cs.utexas.edu/pub/novak/gcl/mingw/.emacs">
+     <TT>.emacs</TT></a> if using the full installation,
+     <a href="ftp://ftp.cs.utexas.edu/pub/novak/gcl/.emacs"><TT>.emacs</TT></a>
+     if using <TT>gcl.exe</TT>.
+     Note: when doing a <TT>Save As</TT>, be sure to save the file as
+     text (<TT>.txt</TT>).  The file must be named <TT>.emacs</TT>;
+     right-click on the link above, then use Save Target As and change
+     the name of the saved file to <TT>".emacs"</TT>, adding the quotation
+     marks so that Windows will accept the file name.
+     Alternatively, you can get the file by FTP.
+<LI> If using the full installation, put the file
+     <a href="ftp://ftp.cs.utexas.edu/pub/novak/gcl/mingw/gcl1.bat">gcl1.bat</a>
+     into the directory <BR>
+     <TT>C:\Program Files\GCL-2.6.1\bin</TT>
+
+<LI> For convenience, put the following file into <TT>C:/</TT>
+     <a href="ftp://ftp.cs.utexas.edu/pub/novak/gcl/loadf.lsp">
+        <TT>loadf.lsp</TT></a>
+     Edit the file path in <TT>loadf.lsp</TT> to be the base directory
+     you would like (such as your <TT>HOME</TT> directory).
+</OL>
+<P>
+To use Lisp from within Emacs:
+<OL>
+<LI> Start Emacs.  It is convenient to split Emacs into two sub-windows
+     using <TT>C-x 2</TT> or <TT>C-x 3</TT> ; then you can run Lisp in
+     one half-window while editing code in the other half-window.
+<LI> Start Lisp in one sub-window with <TT>M-x run-lisp</TT> &nbsp
+     (For <TT>M-x</TT>, hold down the <TT>Alt</TT> key while typing <TT>x</TT>.)
+<LI> Enter <TT>(load "C:/loadf.lsp")</TT>
+<LI> Now you can load files using <TT>(loadf "myfile.lsp")</TT>
+     or <TT>(loadf "mydir/myfile.lsp")</TT>
+     where the file path that is specified to <TT>loadf</TT> will
+     be the path from the base directory that was edited in <TT>loadf.lsp</TT>
+</OL>
+<P>
+Thanks to Jan Kok for suggestions for improving these instructions.
+<P>
+</BODY>
+<address><a href="http://www.cs.utexas.edu/users/novak/index.html">
+Gordon S. Novak Jr.</a></address>
+</HTML>

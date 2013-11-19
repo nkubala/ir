@@ -1,0 +1,155 @@
+<base href="http://www.cs.utexas.edu/~mooney/ir-course/proj1/">
+<html>
+<head>
+<title>CS 371R: Information Retrieval and Web Search: Project 1</title>
+</head>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" >
+<center>
+<h2>Project 1 <br>
+CS 371R: Information Retrieval and Web Search <br>
+Adding Common Phrases to Vector-Space Retrieval </h2> <br>
+Due: Sept. 26, 2013
+</center>
+<br>
+<h3> Existing System </h3> 
+
+As discussed in class, a basic system for vector-space retrieval (VSR) is
+available in <code> /u/mooney/ir-code/ir/vsr/</code>.  See the <a
+href="../doc/ir/vsr/package-summary.html">Javadoc </a> for this system.  Use
+the <a href="../doc/ir/vsr/InvertedIndex.html#main(java.lang.String[])"> main
+method </a> for <a href="../doc/ir/vsr/InvertedIndex.html"> InvertedIndex</a>
+to index a set of documents and then process queries.
+
+<p> You can use the web pages in <code>
+/u/mooney/ir-code/corpora/yahoo-science/</code> as a set of test documents.
+This corpus contains 900 pages, 300 random samples each from the Yahoo indices
+for <a href="http://dir.yahoo.com/Science/Biology/"> biology</a>, <a
+href="http://dir.yahoo.com/Science/Physics/"> physics</a>, and <a
+href="http://dir.yahoo.com/Science/Chemistry/"> chemistry</a>.
+
+See the <a href="sample-trace.txt">sample trace</a> of using the system.
+
+<h3>Problem</h3>
+
+One of the problems with VSR is that is does not handle multi-word phrases
+well.  With a bag-of-words model, only individual words matter, regardless of
+their position and context. Therefore, queries that use specific phrases whose
+individual words do not adequately capture the meaning of the overall phrase,
+are not handled well.
+
+<p>
+For example, in the <a href="sample-trace.txt">sample trace</a>, for the query
+"cold fusion", the first two results contain the phrase but results 3 thru 5
+do not, they do not even contain the word "cold". For the query "quantum
+mechanics", the 1st result contains the phrase but the 2nd result is about
+fluid mechanics and does not even contain the word "quantum," while the 3rd and
+4th results are about quantum computing and do not contain the word
+"mechanics". For the query "chemical physics" the 1st result is relevant but
+the 2nd result only has "physics", the 3rd just "chemical", the 4th thru 6th
+just "physics".  In some situations, cosine similarity can prefer documents
+that contain a high density of some of the query words at the expense of
+completely ignoring other query words.  In addition, cosine similarity never
+considers multi-word phrases or the proximity or ordering of words.
+
+<p>
+Appropriate retrieval for many such queries can be aided by noticing that
+certain phrases such as "cold fusion," "quantum mechanics," and "chemical
+physics" are important as multi-word phrases and are not well represented by a
+bag of words.
+
+<h3>You Fix It</h3>
+
+Your task is to change the existing VSR code to first find common two-word
+phrases that appear in a document corpus, recognize occurrences of these
+phrases in documents, index these documents using the entire phrase,
+and finally recognize these phrases in queries and use them in retrieval.
+Your approach should be general-purpose and should produce better 
+results for the examples in the <a href="sample-trace.txt">sample trace</a>.
+
+<p>
+A simple statistical approach to discovering useful phrases is to simply look
+for frequently occuring sequences of words.  In a first pass through the
+corpus, your system should find all two-word phrases in the corpus (so called
+"bigrams") and determine the frequency of each bigram across the entire corpus.
+Consider bigrams as two indexed tokens produced in sequence by the current
+Document token generator, therefore, they do not include stop words.  After
+finding all bigrams, your program should determine the set of most frequent
+bigrams and store them as known phrases.  Your system should have a parameter,
+called <code>maxPhrases</code>, that determines the maximum number of phrases
+to be remembered (which should default to a value of 1,000).  You may find the
+Java sorting methods <code>Arrays.sort</code> or <code>Collections.sort</code>
+useful.
+
+<p>
+Then, when producing the vector representations of documents and queries, it
+should notice instances of the known phrases (two tokens generated in order),
+and create a single token for the entire phrase but <strong>not</strong> tokens
+for the individual words.  For example, the query "cold fusion" should
+result in a vector containing a single phrasal token "cold fusion" that
+does <strong>not</strong> include the individual tokens "cold" and
+"fusion".
+
+<p>
+Here is a <a href="sample-soln-trace.txt">sample solution trace</a> produced by
+my solution to this problem.  After the first pass through the corpus, the
+system prints out the 1,000 most-common phrases with their frequency.  Notice
+that, although, HTMLFileDocument does its best to parse the HTML and remove
+formatting commands, a number of the most-common phrases are actually HTML
+commands that are still indexed.  You can verify that all of the retrieved
+documents now contain the complete two-word query phrases.  Replicating the
+minute details of this trace is not important, but the trace for your system
+should be similar and only retrieve documents that contain these complete
+common phrases.  Your solution should be a general purpose phrase-indexer and
+not just a hack that works with these specific queries.
+
+<p>
+Implement your new version as a specialized class of <code>InvertedIndex</code>
+called <code>InvertedPhraseIndex</code> that accepts the same command line
+options as <code>InvertedIndex</code>.  You may also need to add methods to other
+classes.  In particular, my solution added methods to at least
+<code>Document</code> and <code>HashMapVector</code>.
+
+<h3>Submission</h3>
+<p>
+In submitting your solution, follow the general course instructions on
+<a href="../proj-submit-info.html">submitting projects</a> on the course homepage.
+<p>
+Along with that, follow these specific instructions for Project 1:
+
+<ul>
+<li> For this project, submit a directory called "proj1", which should
+contain:
+
+<ol>
+<li> <i>REPORT.* file</i>:       writeup in text or html or ps or pdf
+<li> <i>soln-trace</i>:          trace file of program execution
+<li> <i>ir directory</i>:        should contain /vsr subfolder with all the classes
+that you have made changes to. Submit <b>both</b> the .java and the 
+				.class files.
+</ol>
+<li> <b> It is important to submit the correct directory structure!</b>.  Executing
+"turnin -list jiho cs371r-proj1" should produce output similar to the following (it is
+important that proj1 is the top-level directory, with other files contained in it as shown).
+<pre>
+enceladus.cs.utexas.edu$ turnin -list jiho cs371r-proj1
+4064224    4 drwx------   3 jiho grad         4096 Sep 17 21:43 .
+4064225    4 drwxr-xr-x   3 jiho grad         4096 Sep 17 21:43 ./proj1
+4064226    6 -rw-r--r--   1 jiho grad         5249 Sep 12 15:05 ./proj1/soln-trace
+4064227    6 -rw-r--r--   1 jiho grad         5249 Sep 12 15:05 ./proj1/REPORT.html
+4064228    4 drwxr-xr-x   3 jiho grad         4096 Sep 17 21:43 ./proj1/ir
+4064229    4 drwxr-xr-x   2 jiho grad         4096 Sep 17 21:43 ./proj1/ir/vsr
+4064230   22 -rw-r--r--   1 jiho grad        22478 Sep 12 15:06 ./proj1/ir/vsr/InvertedPhraseIndex.java
+4064231    1 -rw-r--r--   1 jiho grad          623 Aug 16 10:40 ./proj1/ir/vsr/HashMapVector$1.class
+4064232   10 -rw-r--r--   1 jiho grad         9823 Sep 12 15:06 ./proj1/ir/vsr/InvertedPhraseIndex.class
+4064233    4 -rw-r--r--   1 jiho grad         3922 Aug 16 10:40 ./proj1/ir/vsr/HashMapVector.class
+4064234    9 -rw-r--r--   1 jiho grad         8692 Aug 14 17:17 ./proj1/ir/vsr/HashMapVector.java
+4064235    4 -rw-r--r--   1 jiho grad         3151 Sep 17 01:18 ./proj1/ir/vsr/Document.class
+4064236    8 -rw-r--r--   1 jiho grad         7523 Sep 17 01:18 ./proj1/ir/vsr/Document.java
+enceladus.cs.utexas.edu$
+</pre>
+</ul>
+
+</body>
+</html>
+

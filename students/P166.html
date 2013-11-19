@@ -1,0 +1,584 @@
+<base href="http://www.cs.utexas.edu/~novak/cs314vocab.html">
+<HTML>
+<!--  cs314vocab.html          G. Novak           28 Aug 13    -->
+<HEAD>
+<TITLE>CS 314: Vocabulary</TITLE>
+</HEAD>
+
+<BODY>
+<H2>CS 314: Vocabulary</H2>
+
+<B>A*:</B> a heuristic search algorithm that attempts to find a
+desired goal using a heuristic function to estimate the distance
+from a given node to the goal.
+<P>
+<B>abstract data type:</B> a description of operations on a data type
+that could have multiple possible implementations.
+<P>
+<B>acyclic:</B> describes a graph with no cycles (circular paths).
+<P>
+<B>adjacency list:</B> a representation of a graph in which each node has
+a list of nodes that are adjacent to it, i.e. connected to it by an arc.
+<P>
+<B>adjacency matrix:</B> a representation of a graph in which a boolean
+matrix contains a 1 at position (i,j) iff there is an arc from node i to
+node j.
+<P>
+<B>ancestors:</B> in a tree, the union of a node's parent and the
+parent's ancestors.
+<P>
+<B>arc:</B> a link between two nodes in a graph.
+<P>
+<B>array:</B> A contiguous block of memory containing elements of the
+same type, accessed by numeric index.
+<P>
+<B>ASCII:</B> (pronounced "ask-key") an abbreviation of American Standard
+Code for Information Interchange, a character code that maps between
+8-bit binary integers and characters such as letters, numbers, and
+punctuation.  There are 256 possible ASCII codes, of which 95 are printable.
+<P>
+<B>association list:</B> a list of pairs, where each pair has a key
+and a value associated with the key.
+<P>
+<B>AVL tree:</B> a self-balancing sorted binary tree, in which the heights
+of subtrees differ by at most 1.
+<P>
+<B>B-tree:</B> a tree with a high branching factor, to minimize the
+number of disk accesses required to access a desired record.
+<P>
+<B>backtrack:</B> in a tree search, to move back from the node currently
+being examined to its parent.
+<P>
+<B>balanced tree:</B> a tree in which the heights of subtrees are
+approximately equal.
+<P>
+<B>bandwidth:</B> information transfer rate of a network connection,
+in bits/second.
+<P>
+<B>base case:</B> a simple case that can be solved easily, without
+recursion.
+<P>
+<B>Big O:</B> an abstracted function that describes the amount of
+computer time or memory space required by an algorithm, as a function
+of problem size.  For problems larger than a certain size, the actual
+time or space required will be less than the Big O multiplied by some
+constant.
+<P>
+<B>bijective:</B> describes a relation that is both injective and surjective
+(one-to-one and onto).
+<P>
+<B>binary heap:</B> a data structure that implements a complete binary tree
+within an array, such that every parent node has a value that is less
+than the value of either of its children.
+<P>
+<B>binary tree:</B> a tree in which each node has at most two children.
+<P>
+<B>binary search:</B> search of a binary tree or other structure,
+in which the size of the set to be searched is cut in half at each step.
+<P>
+<B>binding:</B> an association of a name with a value.
+<P>
+<B>binding list:</B> a list structure that represents a set of bindings.
+<P>
+<B>bit:</B> short for <I>binary digit</I>, the smallest unit of computer
+memory.  A bit can have the value 0 or 1.
+<P>
+<B>Boolean matrix:</B> a matrix whose elements are 0 or 1.
+<P>
+<B>boxed number:</B> a number that is defined as an object, so that it
+has a runtime type and methods that can be used, e.g. Integer in Java.
+<P>
+<B>branching factor:</B> in a search tree, the number of children of
+a given node. Often, the branching factors of individual nodes will
+vary, so an average value may be used.
+<P>
+<B>bucket:</B> a collection, such as a linked list, of values that hash
+to the same value.
+<P>
+<B>byte:</B> an 8-bit piece of data, which can represent a character
+in a code such as ASCII.
+<P>
+<B>bytecodes:</B> the term used for the language of compiled Java.
+A given machine may have an interpreter for bytecodes (the JVM),
+or it may translate the bytecodes to native machine code so that
+it runs faster.
+<P>
+<B>cache:</B> to save a value locally to save re-computing or transferring it
+in the future.
+<P>
+<B>Cartesian product:</B> a set of pairs (x, y) of elements from two sets
+X and Y.
+<P>
+<B>child:</B> in a tree, a node pointed to by a parent node.
+<P>
+<B>circularly linked list:</B> a linked list in which the last element
+points back to the first element.
+<P>
+<B>circular queue:</B> a queue implemented within an array, where the
+first element of the array logically follows the last element.
+<P>
+<B>class:</B> in object-oriented programming, a description of a set
+of similar objects.
+<P>
+<B>clustering:</B> a situation in which many elements hash to the same
+hash value.
+<P>
+<B>collision:</B> when two values to be stored in a hash table have the same
+hash value.
+<P>
+<B>comparison:</B> the act of comparing two values to determine which is
+greater according to some ordering.
+<P>
+<B>cons:</B> 1. in Lisp, the function that constructs a pair of pointers,
+or basic element of list structure.  2. a cons data structure.
+3. to make a cons data structure.
+<P>
+<B>constructive:</B> describes a function that makes a new data
+structure but does not modify its arguments.
+<P>
+<B>CPU:</B> Central Processing Unit, the "brain" of a computer, which
+performs operations on data.
+<P>
+<B>critical path:</B> in a PERT chart or scheduling graph, a path
+from the initial state to the goal such that any increase in time
+required along the critical path will increase the time to complete
+the whole project.
+<P>
+<B>cycle:</B> a circular path in a graph.
+<P>
+<B>DAG:</B> directed acyclic graph.
+<P>
+<B>dense graph:</B> a graph such that a large fraction of possible
+connections among nodes are present, i.e. the number of edges is of
+the order of the number of vertices squared.  cf. sparse graph.
+<P>
+<B>depth:</B> the number of links between the root of a tree and the
+leaves.
+<P>
+<B>depth-first search:</B> a search in which children of a node are
+considered (recursively) before siblings are considered.
+<P>
+<B>dereference:</B> to convert from a pointer (address) to the data
+that is pointed to.
+<P>
+<B>descendants:</B> all nodes below a given node in a tree.
+<P>
+<B>design pattern:</B> a pattern that describes a set of similar
+programs.
+<P>
+<B>destructive:</B> describes a function that modifies its arguments.
+<P>
+<B>DFS:</B> depth-first search.
+<P>
+<B>Dijkstra's algorithm:</B> an optimal greedy algorithm to find the minimum
+distance and shortest path to all nodes in a weighted graph from a given
+start node.
+<P>
+<B>directed:</B> describes an arc that can only be traversed in one direction,
+or a graph with such arcs.
+<P>
+<B>directed acyclic graph:</B> a directed graph with no cycles.  Every tree
+is a DAG, but a DAG may be more general.
+<P>
+<B>discrete event simulation:</B> a simulation in terms of events, in which
+the highest-priority (least time) event is removed from an event queue and
+executed, which may have the effect of scheduling future events.
+<P>
+<B>divide and conquer:</B> a problem-solving strategy in which a
+problem is broken down into sub-problems, until simple subproblems
+are reached.
+<P>
+<B>domain:</B> the set of values that are the source values of a mapping.
+<P>
+<B>doubly linked list:</B> a linked list in which each element has
+both forward and backward pointers.
+<P>
+<B>edge:</B> a link or arc between nodes in a graph.
+<P>
+<B>exclusive or:</B> a binary Boolean function whose output is 1 if its
+inputs are different.  Abbreviated XOR.
+<P>
+<B>external sort:</B> a sort using external storage such as disk
+in addition to main memory.
+<P>
+<B>fair:</B> describes a process in which every arriving customer will
+eventually be served.
+<P>
+<B>FIFO:</B> first-in, first-out: describes the ordering of a queue.
+A queue is fair.
+<P>
+<B>filter:</B> a process that removes unwanted elements from a
+collection.
+<P>
+<B>first-child/next-sibling:</B> a way of implementing trees that uses
+two pointers per node but can represent an arbitrary number of children
+of a node.
+<P>
+<B>fold:</B> to process a set of items using a specified function; another
+term for reduce.
+<P>
+<B>garbage:</B> <B>1.</B> data that is incorrect, meaningless, or random;
+<B>2.</B> storage that is no longer pointed to by any variable
+and therefore can no longer be accessed.
+<P>
+<B>garbage collection:</B> the process of collecting garbage for
+recycling.
+<P>
+<B>gedanken:</B> describes a <I>thought</I> experiment or view of
+an entity.
+<P>
+<B>geometric series:</B> a series in which each successive term is multiplied
+by a constant less than 1, e.g. 1 + 1/2 + 1/4 + 1/8 + ...
+<P>
+<B>goal:</B> an item (or description of items) being sought in a search.
+<P>
+<B>grammar:</B> a formal description of a language in terms of
+vocabulary and rules for writing phrases and sentences.
+<P>
+<B>gradient ascent:</B> a method of finding the value x where f(x) is
+maximum by taking steps proportional to the gradient or slope of the
+function.  Also called <I>steepest ascent</I>, or <I>gradient descent</I>
+or <I>steepest descent</I> if the minimum of the function is sought.
+<P>
+<B>graph:</B> a set of nodes and arcs connecting the nodes.
+<P>
+<B>greedy algorithm:</B> an algorithm that always tries the solution path that
+appears to be the best.  "Eat dessert first."
+<P>
+<B>hash function:</B> a function that is deterministic but randomizing,
+i.e. whose output is a relatively small integer that appears to be a
+random function of the key value.
+<P>
+<B>hashing with buckets:</B> a hash table in which an item's hash value
+gives the index of a pointer to a <I>bucket</I>, an auxiliary structure
+containing the items with the same hash value.  Using a linked list for
+a bucket is called <I>separate chaining</I>.
+<P>
+<B>heuristic:</B> a function that estimates the distance from a given
+node to the goal in A* search.  More generally, a method that generally
+gives good advice about which direction to go or how to approach a
+problem.
+<P>
+<B>heuristic search:</B> A* search.
+<P>
+<B>immutable:</B> describes a data structure that cannot be changed once
+it has been created, such as Integer or String in Java.
+<P>
+<B>in-place:</B> describes a sort that does not require any additional
+memory.
+<P>
+<B>injective:</B> describes a mapping in which each element of the domain maps
+to a single element of the range.  Also, one-to-one.
+<P>
+<B>inorder:</B> an order of processing a tree in which the parent node is
+processed in between its children.
+<P>
+<B>interior node:</B> a node of a tree that has children.
+<P>
+<B>internal sort:</B> a sort using only the main memory of the computer.
+<P>
+<B>interpreter:</B> a program that reads instructions, determines what
+they say, and executes them.  The CPU is an interpreter for machine language;
+the JVM is an interpreter for compiled Java bytecodes.
+<P>
+<B>intersection:</B> given two sets, the intersection is the set of
+elements that are members of both sets.
+<P>
+<B>intractable:</B> a problem that is so hard (typically exponential)
+that it cannot be solved unless the problem is small.
+<P>
+<B>iterator:</B> an object containing data and methods to iterate through
+a collection of data, allowing processing of one data item at a time.
+<P>
+<B>JVM:</B> Java Virtual Machine, an interpreter for compiled Java bytecodes.
+<P>
+<B>latency:</B> the delay between asking for data from an I/O device
+and the beginning of data transfer.
+<P>
+<B>leaf:</B> a tree node containing a contents value but with no
+children.
+<P>
+<B>LIFO:</B> last-in, first  out: describes the order of a stack.
+<P>
+<B>linear:</B> O(n), a problem whose solution requires a linear amount
+of time or space if the problem is of size n.
+<P>
+<B>link:</B> a pointer to the next element in a linked list.
+<P>
+<B>linked list:</B> a sequence of records, where each record contains
+a link to the next one.
+<P>
+<B>load factor:</B> in a hash table, the fraction of the table's capacity
+that is filled.
+<P>
+<B>map:</B> in MapReduce, a program that processes an element of the input
+and may emit one or more (key, value) pairs.  In Java, a <TT>Map</TT> is
+a data structure that implements a mapping, such as <TT>HashMap</TT>
+or <TT>TreeMap</TT>
+<P>
+<B>mapcan:</B> in Lisp, a program that applies a mapping function to each
+element of a list of inputs, producing a list that concatenates
+corresponding results.  The mapping function produces a list of results
+for each input, which allows it to produce multiple results or an
+empty result.
+<P>
+<B>mapcar:</B> in Lisp, a program that applies a mapping function to each
+element of a list of inputs, producing a list of corresponding results.
+<P>
+<B>mapping:</B> association of elements of a Range set with
+elements of a Domain set.  We write <I> M : R &rarr; D </I> , for example
+<I> PhoneDirectory : Name &rarr; Number</I> .
+<P>
+<B>master:</B> a program that controls a set of other programs or devices.
+<P>
+<B>max queue:</B> a priority queue in which the maximum element is removed
+first.
+<P>
+<B>memory hierarchy:</B> the use of several kinds of memory hardware
+in a computer system, where the fastest memory (e.g. cache) is smallest,
+slower memory (e.g. RAM) is larger, and the slowest memory (e.g. disk)
+is largest.
+<P>
+<B>memory locality:</B> the processing of data in such a way that data
+that are located near each other by memory address are accessed nearby
+in time.
+<P>
+<B>merge:</B> to combine two ordered linear structures into one.
+<P>
+<B>min queue:</B> a priority queue in which the minimum element is removed
+first.
+<P>
+<B>minimum spanning tree:</B> a tree formed from the nodes of a graph
+and a subset of its edges, such that all nodes are connected and the
+total cost of the edges is minimal.
+<P>
+<B>node:</B> an element of a linked list, tree, or graph, often
+represented by a data structure.
+<P>
+<B>null dereference:</B> a runtime error that occurs when an operation
+such as a method call is attempted on a null pointer.
+<P>
+<B>object:</B> a data structure that can be identified at runtime as
+being a member of a class.
+<P>
+<B>on-line:</B> describes a sorting algorithm that can process items
+one at a time.
+<P>
+<B>one-to-one:</B> describes a mapping in which each element of the domain maps
+to a single element of the range.  Also, injective.
+<P>
+<B>onto:</B> describes a mapping in which each element of the range is the
+target of some element of the domain.  Also, surjective.
+<P>
+<B>ontology:</B> a description of the kinds of objects that exist in
+a computer program, e.g. a Java class hierarchy.
+<P>
+<B>operator:</B> in a search tree, a program that changes a state into
+a child state, e.g. a move in a game.
+<P>
+<B>parent:</B> in a tree, a node that points to a given node.
+<P>
+<B>parsing:</B> analysis of a sentence of a language to determine the elements
+of the sentence and their relationship and meaning.
+<P>
+<B>path:</B> a sequence of steps along arcs in a graph.
+<P>
+<B>pattern:</B> a representation of a class of objects, containing some constant
+elements in relation to variable elements.
+<P>
+<B>pattern variable:</B> a part of a pattern that can match variable parts of
+an input.
+<P>
+<B>pivot:</B> in Quicksort, a "center" value used in partitioning the set
+to be sorted.
+<P>
+<B>pointer:</B> a variable containing the address of other data.
+<P>
+<B>postorder:</B> an order of processing a tree in which the parent node
+is processed after its children.
+<P>
+<B>predicate:</B> a function that returns True or False.  In Lisp,
+{\tt nil} represents False, and anything else represents True.
+<P>
+<B>preorder:</B> an order of processing a tree in which the parent node
+is processed before its children.
+<P>
+<B>priority queue:</B> a queue in which the highest-priority elements are
+removed first; within a priority value, the earliest arrival is removed first.
+<P>
+<B>quadratic:</B> O(n<SUP>2</SUP>), a problem whose solution requires
+a quadratic amount of time or space if the problem is of size n.
+<P>
+<B>queue:</B> a data structure representing a sequence of items,
+which are removed in the same order as they were inserted.
+<P>
+<B>random access:</B> describes a data structure or device in which
+all accesses have the same cost, O(1).
+<P>
+<B>randomized algorithm:</B> an algorithm in which the data to be processed
+or the deice to process it is randomly selected.
+<P>
+<B>range:</B> a set of values that are the targets of a mapping.
+<P>
+<B>recursion:</B> a case where a program calls itself.
+<P>
+<B>recursive case:</B> a condition of the input data where the data
+will be handled by call(s) to the same program.
+<P>
+<B>Red-Black tree:</B> a self-balancing binary tree in which nodes are
+"colored" red or black.  The longest path from the root to a leaf is
+no more than twice the length of the shortest path.
+<P>
+<B>reduce:</B> to apply a given function to the elements of a given list.
+Also, fold.
+<P>
+<B>reference:</B> a pointer to data.
+<P>
+<B>reference type:</B> a type in which variables of that type are
+pointers to objects.  In the code <TT>Integer i = 3</TT>, the variable
+<TT>i</TT> holds a pointer to the <TT>Integer</TT> object that contains
+the value.  In <TT>int j = 3</TT>, the variable <TT>j</TT> contains
+the value.  In Java, only reference types have methods.
+<P>
+<B>rehash:</B> to apply a different hashing function to a key when a
+collision occurs.
+<P>
+<B>root:</B> the top node of a tree, from which all other nodes can
+be reached.
+<P>
+<B>row-major order:</B> a way of storing a multiply-dimensioned array
+in memory, such that elements of a row are in adjacent memory addresses.
+<P>
+<B>runtime stack:</B> a stack containing a stack frame of variable values
+for each active invocation of a procedure.
+<P>
+<B>scalability:</B> the ability of an algorithm or hardware system to
+grow to handle a larger number of inputs.
+<P>
+<B>scope:</B> the area of program text over which a variable can
+be referenced.
+<P>
+<B>search:</B> to look through a data structure until a goal object
+is found.
+<P>
+<B>sentinel:</B> an extra record at the start or end of a data structure
+such as a linked list, to simplify the processing.
+<P>
+<B>separate chaining:</B> hashing with buckets, using a linked list to
+store the contents of a bucket.
+<P>
+<B>set difference:</B> given two sets, the set difference is the set of
+elements of the first set that are not members of the second set.
+<P>
+<B>shadow:</B> to hide similar items with the same name.
+<P>
+<B>shortest path:</B> the shortest path between a start node and a goal
+node in a weighted graph.
+<P>
+<B>side-effect:</B> any effect of a procedure other than returning a
+value, e.g. printing or modifying a data structure.
+<P>
+<B>simple path:</B> a path between two nodes in a graph that does not revisit
+any intermediate node.
+<P>
+<B>slack:</B> in a PERT chart or scheduling graph, the amount of time
+by which the time of an activity could be increased without affecting
+the overall completion time.
+<P>
+<B>slave:</B> a program or device that operates under control of a master.
+<P>
+<B>sort:</B> to modify the order of a set of elements so that a
+desired ordering holds between them, e.g. alphabetic order.
+<P>
+<B>sparse array:</B> an array in which most of the elements are zero or
+missing.
+<P>
+<B>sparse graph:</B> a graph in which any node is connected to relatively few
+other nodes.  cf. dense graph.
+<P>
+<B>spatial locality:</B> being close together in space, i.e. memory
+address.
+<P>
+<B>Splay tree:</B> a self-balancing binary tree that places recently
+accessed elements near the top of the tree for fast access.
+<P>
+<B>stable:</B> describes a sort algorithm in which the relative position of
+elements with equal keys is unchanged after sorting.
+<P>
+<B>stack frame:</B> a section of the runtime stack holding the values
+of all variables for one invocation of a procedure.
+<P>
+<B>stack space:</B> the amount of space on the runtime stack required
+for execution of a program.
+<P>
+<B>state:</B> a description of the state of a process, such as a
+board game.
+<P>
+<B>structure sharing:</B> a case where two data structures share some
+elements.
+<P>
+<B>successor:</B> the next element in a linked list.
+<P>
+<B>surjective:</B> describes a mapping in which each element of the range is the
+target of some element of the domain.  Also, onto.
+<P>
+<B>symbol table:</B> a data structure that links names to information about
+the objects denoted by the names.
+<P>
+<B>tail recursive:</B> a function whose value either does not involve
+a recursive call, or is exactly the value of a recursive call.
+<P>
+<B>taxonomy:</B> a classification of objects into a tree structure
+that groups related objects.
+<P>
+<B>temporal locality:</B> being close together in time, i.e. memory
+accesses that occur within a short time of each other.
+<P>
+<B>topological sort:</B> a linear ordering of nodes of an acyclic graph,
+such that a node follows all of its graph predecessors in the ordering.
+<P>
+<B>tree rotation:</B> changing the links in a binary tree to change the relative
+heights of the child subtrees, while leaving the sort order of the tree
+unchanged.
+<P>
+<B>undirected:</B> describes a graph in which the arcs may be followed in
+either direction.
+<P>
+<B>Unicode:</B> a character code that maps between binary numbers and
+the characters used in most modern languages, more than 110,000 characters.
+The lowest values of the UTF-8 encoding of Unicode are the same as ASCII,
+allowing characters to be 8 bits when staying within the ASCII character set.
+For other languages, more bits are used.  Java uses Unicode.
+<P>
+<B>union:</B> given two sets, the union is the set of
+elements that are members of either set.
+<P>
+<B>unparsing:</B> converting an abstract syntax tree into a sentence in
+a language, such as a programming language.
+<P>
+<B>vertex:</B> a node in a graph.
+<P>
+<B>virtual machine:</B> an abstract computer that is simulated by
+an interpreter program running on an actual computer.
+<P>
+<B>weight:</B> a number that denotes the cost of following an arc in a graph.
+<P>
+<B>well-founded ordering:</B> an ordering that can be guaranteed to
+terminate, e.g. starting at a positive integer and counting down to 0.
+<P>
+<B>word:</B> a group of bits that are treated as a unit and processed
+in parallel by a computer CPU.  Common word sizes are 32 bits and 64 bits.
+<P>
+<B>XML:</B> eXtensible Markup Language, a way of writing data in a
+tree-structured form by enclosing items in pairs of opening and closing tags,
+e.g. <tt>&lt;zipcode&gt; 78712 &lt;/zipcode&gt;</tt>
+<P>
+<B>XOR:</B> exclusive or.
+<P>
+
+<HR>
+
+<a href="cs314.html">CS 314</a><P>
+</BODY>
+</HTML>
+

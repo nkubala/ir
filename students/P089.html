@@ -1,0 +1,475 @@
+<base href="http://www.cs.utexas.edu/~lin/cs314h/">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+<title>
+CS314H: Algorithms and Data Structures
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="Description" content="Your description here...">
+<meta name="Keywords" content="Calvin Lin, University, Texas">
+
+<link rel="stylesheet" href="../styles/main.css" type="text/css"> 
+
+<link rel="shortcut icon" href="/sites/all/themes/utcs/images/favicon.png" type="image/x-icon" />
+
+
+<!-- <link rel="shortcut icon"
+      href="http://example.com/myicon.ico" />
+      LINC
+ -->
+
+<script language="JavaScript">
+
+
+<!--  begin nav scripts -->
+
+function Toggle(item) {
+   obj=document.getElementById(item);
+   visible=(obj.style.display!="none")
+    key=document.getElementById( item + "Arrow" );
+   if (visible) {
+     obj.style.display="none";
+     key.src="../images/navArrowSide.gif";
+   } else {
+      obj.style.display="block";
+      key.src="../images/navArrowDown.gif";
+   }
+}
+
+<!-- begin swap horizontal images -->
+
+function get_random(lowNum, hiNum)
+{   
+  num = lowNum + (hiNum-lowNum)*Math.random();
+  num = Math.round(num);
+ //alert(num);
+  return num;
+  }
+
+
+function swapPageImage1(lowNum, hiNum, dir) {
+
+	document.images.image1.style.filter="blendTrans(duration=1)";
+	document.images.image1.filters.blendTrans(duration=1).Apply();
+	document.images.image1.filters.blendTrans.Play();
+	newNum=get_random(lowNum, hiNum);
+	
+	document.images.image1.src= dir + "../images/315/image"+ newNum +".jpg"
+
+//alert(num);
+}
+  
+function swapPageImage2(lowNum, hiNum, dir) {
+
+	document.images.image2.style.filter="blendTrans(duration=1)";
+	document.images.image2.filters.blendTrans(duration=1).Apply();
+	document.images.image2.filters.blendTrans.Play();
+	newNum=get_random(lowNum, hiNum);
+	
+	document.images.image2.src= dir + "../images/315/image"+ newNum +".jpg"
+
+//alert(num);
+}
+
+function swapPageImage3(lowNum, hiNum, dir) {
+
+   document.images.image3.style.filter="blendTrans(duration=1)";
+	document.images.image3.filters.blendTrans(duration=1).Apply();
+	document.images.image3.filters.blendTrans.Play();
+	newNum=get_random(lowNum, hiNum);
+	
+	document.images.image3.src= dir + "../images/315/image"+ newNum +".jpg"
+
+//alert(num);
+}
+
+<!-- end swap horizontal images -->
+
+
+<!--  end nav scripts -->
+
+</script>
+
+</head>
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" background="../images/bluebackground.gif">
+
+<table border="0" cellpadding="0" cellspacing="0" align="left class="body" background="../images/bluebackground.gif">
+<tr>
+<td><img src="../images/trans.gif" width="100" height="1" border="0" alt=""></td>
+<td><img src="../images/trans.gif" width="50" height="1" border="0" alt=""></td>
+<td><img src="../images/trans.gif" height="1" border="0" alt=""></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td valign=top colspan=2>
+<table border="0" cellpadding="0" cellspacing="0" width="850" align="center" class="body" bgcolor="#999999">
+
+	<tr height="1">
+		<td width="220"><img src="../images/trans.gif" width="10" height="1" border="0" alt=""></td>
+	</tr> 
+	<tr height="1">
+		<td><p>&nbsp;</p>&nbsp;&nbsp;&nbsp;<b class="heading1">CS314H: Algorithms and Data Structures (53810 and 53810)</b><br>
+		<b class="titleheading2">&nbsp;&nbsp;&nbsp;&nbsp;Fall 2013</b><br></td>
+	</tr> 
+	
+	<tr><td>&nbsp;</td></tr>
+
+	</table>
+</td> 
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td bgcolor=#999999>&nbsp;</td>
+<td>	
+
+<!-- This is the main table for the page. It includes all section and page specific items. -->
+<table border="0" cellpadding="0" cellspacing="0" width="800" align="center" class="body">
+	<!-- definition row -->
+	<tr height="1">
+		<!-- sidebar - left-->
+		<td width="10" bgcolor="#777777"><img src="../images/trans.gif" width="10" height="1" border="0" alt=""></td>
+		
+		<!-- nav bar-->
+		<td width="210" bgcolor="#777777"><img src="../images/trans.gif" width="210" height="1" border="0" alt=""></td>
+			
+		<!-- body content  -->
+		<td bgcolor="#777777"><img src="../images/trans.gif" height="1" border="0" alt=""></td>
+	
+	 <!-- right column content  -->
+		<td width="200" bgcolor="#777777><img src="../images/trans.gif" width="200" height="1" border="0" alt=""></td>
+	
+		<!-- sidebar - right -->
+		<td width="10" bgcolor="#777777"><img src="../images/trans.gif" width="10" height="1" border="0" alt=""></td>
+	</tr> 
+	<!-- close definition row -->			
+
+	<tr height="1">
+		<!-- sidebar - left-->
+		<td bgcolor="#777777"><img src="../images/trans.gif" height="1" border="0" alt=""></td>
+		
+		<!-- nav bar-->
+		<td bgcolor="#FFFFFF" valign="top">
+		
+<table cellspacing="5" cellpadding="0" border="0" class="contextNav">
+<tr><td>
+
+<table cellspacing="5" cellpadding="0" border="0" class="contextNav">
+				<tr>
+				<td>&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td class="contextNav">
+					Handouts<br>
+   							<div ID="nest1" style="display:block;">
+<!--
+<a href="prog8.pdf" class="contextSubNav">Programming Assignment 8</a><br>
+<a href="handout36.pdf" class="contextSubNav">Graphs</a><br>
+
+<a href="class-photo.jpg" class="contextSubNav">Class Photo</a><br>
+<a href="handout40.pdf" class="contextSubNav">Tarjan's Algorithm</a><br>
+<a href="Web_Crawling_Ethics_preprint.doc" class="contextSubNav">Web Crawling
+Ethics</a><br>
+<a href="handout37.pdf" class="contextSubNav">Analysis of Splay Trees</a><br>
+  -->
+<a href="prog7.pdf" class="contextSubNav">Programming Assignment 7</a><br>
+<a href="handout31.pdf" class="contextSubNav">Red-Black Tree Deletion</a><br>
+<a href="prog6.pdf" class="contextSubNav">Programming Assignment 6</a><br>
+<a href="prog5.pdf" class="contextSubNav">Programming Assignment 5</a><br>
+<a href="prog4.pdf" class="contextSubNav">Programming Assignment 4</a><br>
+<a href="prog3.pdf" class="contextSubNav">Programming Assignment 3</a><br>
+<a href="pairs.txt" class="contextSubNav">Pair Programming Teams</a><br>
+<a href="prog2.pdf" class="contextSubNav">Programming Assignment 2</a><br>
+<a href="Kindergarten.pdf" class="contextSubNav">Pair Programming Paper</a><br>
+<a href="prog1.pdf" class="contextSubNav">Programming Assignment 1</a><br>
+<a href="survey1.pdf" class="contextSubNav">Survey</a><br>
+<a href="syllabus.pdf" class="contextSubNav">Syllabus</a><br>
+					</div>
+				</td>
+				</tr>
+				<tr>
+					<td><hr class="navLine" align="left"></td>
+				</tr>
+				
+				<tr>
+					<td class="contextNav">
+					Model Reports<br>
+   							<div ID="nest1" style="display:block;">
+<!--
+<a href="prog2-haley.pdf" class="contextSubNav">Patrick Haley: Assign 2</a><br>
+<a href="prog2-twickham.pdf" class="contextSubNav">Tony Wickham: Assign 2</a><br>
+  -->
+<a href="prog3-hardesty.pdf" class="contextSubNav">Tad Hardesty: Assign 3</a><br>
+<a href="prog3-lankenau.pdf" class="contextSubNav">Yager and Lankenau: Assign 3</a><br>
+<a href="prog2-hardesty.pdf" class="contextSubNav">Tad Hardesty: Assign 2</a><br>
+<a href="prog2-perce.pdf" class="contextSubNav">Robert Perce: Assign 2</a><br>
+<a href="prog1-hua.pdf" class="contextSubNav">Wil Hua: Assign 1</a><br>
+<a href="prog1-waller.pdf" class="contextSubNav">Will Waller: Assign 1</a><br>
+					</div>
+				</td>
+				</tr>
+				<tr>
+					<td><hr class="navLine" align="left"></td>
+				</tr>
+
+				<tr>
+					<td class="contextNav">
+					References<br>
+   							<div ID="nest2" style="display:block;">
+<!--
+<a href="http://www.cs.utexas.edu/users/sharadb/cs314h/"
+   class="contextSubNav">Sharad's class page</a><br>
+  -->
+<a href="http://java.sun.com/javaee/5/docs/api/" class="contextSubNav">Java
+   API</a><br>
+<a href="http://java.sun.com/docs/books/tutorial/" class="contextSubNav">Java
+   Tutorial</a><br>
+<a href="http://www.junit.org/index.htm" class="contextSubNav">JUnit
+   Testing Resources</a><br>
+<a href="http://www.cs.utexas.edu/users/lin/critterfest.html"
+   class=contextSubNav>CritterFest Hall of Fame</a><br>
+					
+  							</div>
+				</td>
+				</tr>
+				
+				</table></td>
+				
+				<td width="2" bgcolor="#CCCCCC"><img src="../images/trans.gif" width="2" height="1" border="0" alt=""></td>
+				
+				</tr>
+				</table>
+			
+</td>
+		
+		<!-- body content  -->
+		<td valign="top" bgcolor="#FFFFFF">
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" class="body">
+		<tr>
+		  <td width="350"><img src="../images/trans.gif" width="350" height="15" border="0" alt=""></td>
+			<td width="10"><img src="../images/trans.gif" width="10" height="1" border="0" alt=""></td>
+		</tr>
+		
+		<tr>
+          <td valign="top" align="left">
+        
+<P class="heading2">Announcements</p>
+<!-- ====================================================================== -->
+<!-- Put any announcements here. --> 
+<ul> 
+<li> The final exam will take place in PHR 2.108 from 2:00-5:00pm on 
+December 14th.
+<li> The <a href="midterm.txt">midterm distribution</a>
+</li>
+</ul>
+
+<!-- ====================================================================== -->
+        
+<P class="heading2">Reading Schedule</p>
+<table class="body" border=1 cellpadding=2 cellspacing=2>
+<!--
+<tr>
+ <td>Dec 3</td>
+ <td colspan = 2>Chapter 24</td>
+</tr>
+<tr>
+ <td>Nov 28</td>
+ <td colspan = 2>Chapter 14-14.3, 14.5</td>
+</tr>
+<tr>
+ <td>Nov 28</td>
+ <td colspan = 2>Chapter 20</td>
+</tr>
+  -->
+<tr>
+ <td>Nov 13</td>
+ <td colspan = 2>Chapter 22.1-22.5</td>
+</tr>
+<tr>
+ <td>Nov 11</td>
+ <td colspan = 2>Chapter 19.8</td>
+</tr>
+<tr>
+ <td>Nov 8</td>
+ <td colspan = 2>Chapter 21</td>
+</tr>
+<tr>
+ <td>Nov 4</td>
+ <td colspan = 2>Chapter 19.5</td>
+</tr>
+<tr>
+ <td>Oct 28</td>
+ <td colspan = 2>Chapter 19.1-19.4</td>
+</tr>
+<tr>
+ <td>Oct 25 </td>
+ <td colspan = 2>Chapter 6-6.8, 16, 17</td>
+</tr>
+<tr>
+ <td>Oct 23</td>
+ <td colspan = 2>Chapter 18 </td>
+</tr>
+<tr>
+ <td>Oct 14</td>
+ <td colspan = 2>Chapter 7 (except 7.4 and 7.6)</td>
+</tr>
+<tr>
+ <td>October 11</td>
+ <td colspan = 2>Chapter 8-8.6 </td>
+</tr>
+<tr>
+ <td>Oct 9</td>
+ <td colspan = 2>Chapter 5</td>
+</tr>
+<tr>
+ <td>Sep 6</td>
+ <td colspan = 2>Pair Programming paper</td>
+</tr>
+<tr>
+ <td>Sep  4</td>
+ <td colspan = 2>Chapters 3 and 4</td>
+</tr>
+<tr>
+ <td>Aug 30</td>
+ <td colspan = 2>Syllabus, Chapters 1 and 2</td>
+</tr>
+
+
+</table>
+  
+		  </td>
+			<td><img src="../images/trans.gif" width="10" height="1" border="0" alt=""></td>
+      </table>  
+			</td> 
+			
+			<!-- end body cell -->
+			
+			<!-- begin right column -->
+          <td bgcolor="#999999" valign="top">
+          
+        <img src="../images/315/image22.jpg" border="0" alt="" name="image1">
+        
+        <hr>
+ <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" class="body">
+<tr>
+<td>&nbsp;</td>
+<td>         
+    
+    <b>Instructor:</b><br>
+    <a href="http://www.cs.utexas.edu/users/lin/">Calvin Lin</a><br>
+   lin(at)cs.utexas.edu<br><br>
+<b>Office:</b><br>
+   GDC 5.512<br><br>
+   <b>Office hours: </b><br>
+   
+   Mondays 3:30-4:30pm<br> 
+   Wednesdays 3:30-4:30pm<br> 
+   <br>
+<hr>
+
+ <b>Teaching Assistant:</b><br>
+    <strong>Arthur Peters</strong><br>
+   amp(at)cs.utexas.edu<br><br>
+<b>Office:</b><br>
+   GDC First Floor Lab<br><br>
+
+   <b>Office hours: </b>
+   <br> Tuesdays &nbsp; &nbsp; 11:00-noon
+   <br> Thursdays &nbsp; &nbsp; 11:00-noon
+   <br> <br>
+
+<hr>
+ <b>Proctor:</b>
+   <br>
+<br> <b>Elynn Lee</b> <br><br>
+<b>Office:</b>
+     <br> GDC 3.312
+     <br> <br>
+     <b>Office hours: </b>
+     <br> Wednesdays 1:00-2:00pm
+     <br> Fridays &nbsp; &nbsp; &nbsp; &nbsp; 2:00-3:00pm
+   <!--
+   <img src="tsay.jpg" border="0" alt="" width=120> 
+   -->
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+		  <hr>
+         <img src="../images/315/image30.jpg" border="0" alt="" name="image2">
+        <hr>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" class="body">
+<tr>
+<td>&nbsp;</td>
+<td>
+
+ <b>Administrative Assistant</b><br>
+    Phyllis Bellon<br>
+<b>Office:</b><br>
+   GDC 5.420<br>
+   
+   <!--
+   <b>Lectures</b><br> Monday, Wednesday, Friday <br>2:00 - 3:00<br>PAI 3.14
+   <br><br>
+<b>Discussion Sections</b><br>
+   Tuesday<br>3:00 - 4:00<br>WAG 2.14<br><br>
+     
+   <b>Text</b>
+   <br>Weiss, "Data Structures & Problem Solving Using Java, 3rd Edition" 
+ <br><br>
+   -->
+   
+    
+   
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+<hr>
+        <img src="../images/315/image20.jpg" border="0" alt="" name="image3"> 		
+		
+		</td>
+		<!-- end right column -->
+		
+		<!-- sidebar - right -->
+		<td bgcolor="#777777"><img src="../images/trans.gif" width="10" height="1" border="0" alt=""></td>
+	</tr> 
+	
+	
+	<tr><td valign=top class="bodySml" bgcolor="#777777" colspan="7">&nbsp;  
+	Last updated: November 18, 2013<img src="../images/trans.gif" height="20" border="0" alt=""></td></tr>
+
+	</table>
+
+	
+	</td></tr>
+	</table>
+	
+	<!--  #include virtual="/includes/footer.htm"  -->
+	
+	
+<!-- swap image -->
+<script language="JavaScript">
+<!--
+
+<!-- the number that goes in here is the range of photos.  -->
+<!-- If they are named image[10-15], the numbers are 10 and 15, if -->
+<!-- the numbers are 10-25, the number as 10 and 25  -->
+
+swapPageImage1(10, 14, ""); 
+swapPageImage2(20, 23, ""); 
+swapPageImage3(30, 33, ""); 
+
+//-->
+</script>
+
+	
+</body>
+</HTML>

@@ -1,0 +1,406 @@
+<base href="http://www.cs.utexas.edu/~ckm/teaching/cs354_f11/">
+<html>
+
+<head>
+  <title>CS 354</title>
+</head>
+<body>
+<center>
+<h3 style="letter-spacing: 1px;"><b><font color="#0000ff"><font size="+1">CS354<br>
+</font></font></b></h3>
+</center>
+
+<center>
+<h3 style="letter-spacing: 1px;"><font color="#0000ff"><font size="+2">
+Computer Graphics</font></font></h3>
+<b style="color: rgb(0, 0, 255);">Lecture:</b><span
+ style="color: rgb(0, 0, 255);"> TR 9:30AM - 11:00AM
+<b>(BUR 220)</b>
+<br><span style="font-weight: bold;">Course unique #</span>:
+52467<br>
+<br>
+</span></center>
+
+
+<center><font color="#0000ff"><font size="+1"><a
+ href="http://www.cs.utexas.edu/">Computer
+Science Department</a></font></font>
+<p><font color="#0000ff"><font size="+1"><a href="http://www.utexas.edu">University
+of Texas at Austin</a></font></font>
+</p>
+<p><font size="+1" color="#804040">Fall 2011</font></p>
+</center>
+<br>
+&nbsp;
+<table border="1" width="100%">
+  <tbody>
+    <tr>
+      <td width="13%">&nbsp;</td>
+      <td width="33%">
+      <center><b><font size="+1">Instructor</font></b></center>
+      </td>
+      <td width="33%">
+      <center><b><font size="+1">Teaching Assistant</font></b></center>
+      </td>
+    </tr>
+    <tr>
+      <td width="13%">
+      <center><b><font size="+1">Name</font></b></center>
+      </td>
+      <td width="33%"><font size="+1"><a href="http://www.cs.utexas.edu/~ckm">Christian Miller</a></font></td>
+      <td width="33%"><font size="+1">Randall Smith</font></td>
+    </tr>
+    <tr>
+      <td width="13%">
+      <center><b><font size="+1">Office</font></b></center>
+      </td>
+      <td width="33%"><font size="+1">Painter 5.33</font></td>
+      <td width="33%"><font size="+1">Painter 5.33</font></td>
+    </tr>
+    <tr>
+      <td width="13%">
+      <center><b><font size="+1">E-mail</font></b></center>
+      </td>
+      <td width="33%"><font size="+1">ckm _at_ cs.utexas.edu</font></td>
+      <td width="33%"><font size="+1">agrippa _at_ cs.utexas.edu</font></td>
+    </tr>
+    <tr>
+      <td width="13%">
+      <center><b><font size="+1">Office Hours</font></b></center>
+      </td>
+      <td width="33%"><font size="+1">Wed 3:00pm - 5:00pm<br></font></td>
+      <td width="33%"><font size="+1">Tues / Thurs 11:00am - 12:00pm<br></font></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+&nbsp;
+&nbsp;<br>
+<b><font size="+1">Course Outline</font></b>
+<p><font size="+1">
+  This course will gives a broad overview of the field of computer graphics, covering the fundamental
+  concepts and mathematics as well as a selection of more advanced topics.  Students will learn about 
+  rasterization and ray tracing, homogeneous and perspective transforms, object representations, illumination models,
+  basic GPU architecture, and so forth.
+</font>
+&nbsp;<br>
+&nbsp;<br>
+</p>
+<p><b><font size="+1">Textbook</font></b>
+</p>
+<p><font size="+1">"Interactive Computer Graphics: A Top-Down Approach With Shader-Based OpenGL" 
+by Edward Angel and Dave Shreiner;
+Addison-Wesley, 6th edition.
+<a href="http://www.amazon.com/Interactive-Computer-Graphics-Top-Down-Shader-Based/dp/0132545233/">Link</a>
+</font>
+&nbsp;<br>
+&nbsp;<br>
+</p>
+<p><b><font size="+1">Recommended Reading</font></b>
+</p>
+<p><font size="+1">"Mathematics for 3D Game Programming and Computer Graphics" by Eric Lengyel;
+Course Technology PTR,
+3rd edition.
+<a href="http://www.amazon.com/Mathematics-Programming-Computer-Graphics-Third/dp/1435458869/">Link</a>
+</font>
+</p>
+<p><font size="+1">"Real-Time Rendering" 
+by Tomas Akenine-M&ouml;ller, Eric Haines, and Naty Hoffman;
+AK Peters,
+3rd edition.
+<a href="http://www.amazon.com/Real-Time-Rendering-Third-Tomas-Akenine-Moller/dp/1568814240/">Link</a>
+</font>
+&nbsp;<br>
+&nbsp;<br>
+</p>
+<p><b><font size="+1">Grading</font></b>
+</p>
+<ol>
+  <li> <font size="+1">
+  The final grade will be compiled from two midterms (2 x 10%), 
+  a final exam (20%), and 4 programming assignments (4 x 15%).
+</font></li>
+&nbsp;<br>
+  <li> <font size="+1">
+  Each programming assignment will be graded on correctness (60%), efficiency (20%), 
+  programming style (10%), and user interface (5%).  The remaining 5% is earned by 
+  submitting an image of your program's output, which will be put up in a gallery.  
+  Exceptional cleverness, artistic merit, and/or rendering techniques can earn bonus points.
+  (This is graphics, afterall!)
+  </font></li>
+&nbsp;<br>
+  <li> <font size="+1">
+  It is recommended that you work in pairs for each project, but it is not a requirement.  Grades in 
+  a pair will not necessarily be equal; each student's relative contribution will be taken into account.
+  </font></li>
+&nbsp;<br>
+  <li> <font size="+1">
+  Projects should be completed on time!  To allow for unexpected complications, each student has a total 
+  of 4 slip days (24-hour grace periods) that can be allocated however he/she chooses between the projects.
+  If an assignment is turned in late and a student has run out of slip days, it is worth <b>no points</b>.
+  <br>
+    </font></li>
+&nbsp;<br>
+  <li> <font size="+1">
+  UT's rules of academic integrity apply, and violations will be dealt with harshly.  
+  A full description of the policy can be found <a href=http://deanofstudents.utexas.edu/sjs/acint_student.php> here</a>.
+  </font></li>
+</ol>
+&nbsp;<br>
+<p><font size="+1"><b>Course Calendar</b> (subject to change)</font>
+<br>
+&nbsp;
+<table border="1" width="100%" height="884">
+  <tbody>
+    <tr>
+      <td width="17%" height="22">
+      <center><b><font size="+1">Date</font></b></center>
+      </td>
+      <td width="60%" height="22">
+      <center><b><font size="+1">Lectures</font></b></center>
+      </td>
+      <td width="23%" height="22">
+      <center><b><font size="+1">Assignments</font></b></center>
+      </td>
+    </tr>
+
+    <tr>
+      <td>August 25<br></td>
+      <td>
+      <a href="lectures/Lecture1.pdf">Syllabus, grading, graphics history</a>
+      </td> 
+    </tr>
+
+    <tr>
+      <td>August 30<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture2.pdf">Image formation and the graphics pipeline</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>September 1<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture3.pdf">Programming in OpenGL and GLUT</a>
+      </td>
+      <td>
+      Project 1: <a href="projects/assn1.pdf">Assignment</a>, <a href="projects/cs354_proj1.zip">Code</a>
+      </td>
+    </tr>
+    <tr>
+      <td>September 6 <br>
+      </td>
+      <td>
+      <a href="lectures/Lecture4.pdf">Vectors and matrices, coordinate systems, and geometry</a>
+      </td>
+    </tr>
+    <tr>
+      <td>September 8<br>
+      </td>
+      <td> 
+      <a href="lectures/Lecture5.pdf">Transformations 1: Affine transforms and homogeneous coordinates</a>
+      </td>
+    </tr>
+    <tr>
+      <td>September 13<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture6.pdf">Transformations 2: Rotations</a>
+      </td>
+    </tr>
+    <tr>
+      <td>September 15<br></td>
+      <td>
+      <a href="lectures/Lecture7.pdf">Transformations 3: Projections and perspective</a>
+      </td>
+      <td>
+      Project 1 due
+      </td>
+    </tr>
+    <tr>
+      <td>September 20<br></td>
+      <td>
+      <a href="lectures/Lecture8.pdf">Clipping, rasterization, visibility determination, blending</a>
+      </td>
+    </tr>
+    <tr>
+      <td>September 22
+       <br>
+      </td>
+      <td>
+      <a href="lectures/Lecture9.pdf">Objects 1: Meshes and procedural modeling</a>
+      </td>
+      <td>
+      Project 2: <a href="projects/assn2.pdf">Assignment</a>, <a href="projects/cs354_proj2.zip">Code</a>
+      </td>
+    </tr>
+    <tr>
+      <td>September 27<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture10.pdf">Objects 2: Parameterized curves and splines</a>
+      </td>
+    </tr>
+    <tr>
+      <td>September 29<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture11.pdf">Objects 3: Surfaces (parameterized, subdivision, and implicit)</a>
+      </td>
+    </tr>
+    <tr>
+      <td>October 4<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture12.pdf">Color and perception</a>
+      </td>
+    </tr>
+    <tr>
+      <td>October 6<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture13.pdf">Shading 1: Basic lighting</a>
+      </td>
+      <td>
+      Project 2 due
+      </td>
+    </tr>
+    <tr>
+      <td>October 11<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture14.pdf">Shading 2: Texturing</a>
+      </td>
+      <td>
+      <a href=http://www.cs.utexas.edu/~bajaj/graphics10/cs354/exams/practice_mt1_F10.pdf>Practice Midterm I</a>
+      <a href=http://www.cs.utexas.edu/~bajaj/graphics10/cs354/exams/practice_mt1_F10_solutions.pdf>(Solutions)</a>
+      </td>
+    </tr>
+    <tr>
+      <td>October 13<br>
+      </td>
+      <td>
+      <b><font color="green">MIDTERM I -- IN CLASS</font></b> <a href="exam/exam1_soln.pdf">(Solutions)</a>
+      </td>
+    </tr>
+    <tr>
+      <td> October 18<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture15.pdf">Shading 3: Ray tracing</a>
+      </td>
+    </tr>
+    <tr>
+      <td>October 20<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture16.pdf">Shading 4: Texturing tricks</a>
+      </td>
+      <td>
+      Project 3: <a href="projects/assn3.pdf">Assignment</a>, <a href="projects/cs354_proj3.zip">Code</a>, <a href="projects/cs354_proj3_scenes.zip">Scenes</a>
+      </td>
+    </tr>
+    <tr>
+      <td>October 25<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture17.pdf">Shading 5: Shadows</a>
+      </td>
+    </tr>
+    <tr>
+      <td>October 27<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture18.pdf">Shading 6: Global illumination</a>
+      </td>
+    </tr>
+    <tr>
+      <td>November 1</td>
+      <td>
+      <a href="lectures/Lecture19.pdf">Shaders and programmable graphics hardware</a>
+      </td>
+    </tr>
+    <tr>
+      <td>November 3<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture20.pdf">GPU architecture</a>
+      </td>
+    </tr>
+    <tr>
+      <td>November 8<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture21.pdf">Acceleration 1: BSP trees, KD-trees, and Bounding Volume Hierarchies</a>
+      </td>
+      <td>
+      <a href=http://www.cs.utexas.edu/~bajaj/graphics10/cs354/exams/practice_mt2_F10.pdf>Practice Midterm II</a>
+      <a href=http://www.cs.utexas.edu/~bajaj/graphics10/cs354/exams/practice_mt2_F10_solutions.pdf>(Solutions)</a>
+      </td>
+    </tr>
+    <tr>
+      <td>November 10<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture22.pdf">Acceleration 2: Level of detail, occlusion culling</a>
+      </td>
+      <td>
+      Project 3 due
+      </td>
+    </tr>
+    <tr>
+      <td>November 15<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture23.pdf">Special topics: physics and graphics</a>
+      </td>
+    </tr>
+    <tr>
+      <td>November 17<br></td>
+      <td>
+      <b><font color="green">MIDTERM II -- IN CLASS</b></font> <a href="exam/exam2_soln.pdf">(Solutions)</a>
+      </td>
+      <td>
+      Project 4: <a href="projects/assn4.pdf">Assignment</a>, <a href="projects/cs354_proj4.zip">Code</a>, <a href="projects/p4_examples">Examples</a>
+      </td>
+    </tr>
+    <tr>
+      <td>November 22<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture24.pdf">Special topics: character animation</a>
+      </td>
+    </tr>
+    <tr>
+    <td>November 24<br>
+      <td><b>Thanksgiving holiday</b></td>
+    </tr>
+    <tr>
+      <td>November 29<br>
+      </td>
+      <td>
+      <a href="lectures/Lecture25.pdf">Special topics: Non-photorealistic rendering</a>
+      </td>
+    </tr>
+    <tr>
+      <td>December 1<br>
+      </td>
+      <td>
+      <b><font color="green">FINAL EXAM -- IN CLASS</b>
+      </td>
+      <td>
+      Project 4 due
+      </td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<p>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;<br>
+</p>
+</body>
+</html>

@@ -1,0 +1,945 @@
+<base href="http://www.cs.utexas.edu/~moore/classes/cs313k/">
+<HTML>
+<HEAD>
+<TITLE>CS 313K</TITLE>
+</HEAD>
+<BODY TEXT="#000000" 
+      BGCOLOR="#FFFFFF"
+      LINK="#FF0000"
+      ALINK="#00FF00" 
+      VLINK="#0000FF"
+      "fixed">
+<H1>CS313K Logic, Sets, and Functions<BR>
+Spring, 2010
+</H1>
+
+
+<H2>Basics</H2>
+
+<UL>
+
+<LI>Catalog Description: Propositional and predicate logic; proof techniques,
+including induction, sets, relations, and functions.
+<P>
+<LI>Unique Id:  54095 &ndash; 54120
+</P>
+<P>
+<LI>Lecture Meets: TT 3:30 &ndash; 5:00, WEL 2.246
+</P>
+<P>
+<LI>Section Meetings:
+<TABLE CELLSPACING="20">
+<TR><TD><I>unique id</I></TD><TD><I>time</I></TD><TD><I>room</I></TD><TD><I>instructor</I></TD></TR>
+<TR><TD>54095</TD><TD>Friday  9:00 &ndash; 10:00a</TD><TD>WRW 113</TD><TD>Vinod Venkataraman</TD></TR>
+<TR><TD>54100</TD><TD>Friday 10:00 &ndash; 11:00a</TD><TD>JES A218A</TD><TD>Vinod Venkataraman</TD></TR>
+<TR><TD>54105</TD><TD>Friday 10:00 &ndash; 11:00a</TD><TD>SZB 416</TD><TD>Xu Wang</TD></TR>
+<TR><TD>54110</TD><TD>Friday 12:00 &ndash;  1:00p</TD><TD>RLM  5.122</TD><TD>Behnam Robatmili</TD></TR>
+<TR><TD>54115</TD><TD>Friday  1:00 &ndash;  2:00p</TD><TD>CBA  4.344</TD><TD>Behnam Robatmili</TD></TR>
+<TR><TD>54120</TD><TD>Friday  1:00 &ndash;  2:00p</TD><TD>JES  A209A</TD><TD>Xu Wang</TD></TR>
+</TABLE>
+</P>
+<P>
+<LI>Supplemental Material Used in Lectures:  Most of these ``lectures''
+just contain the day's announcements.  I do not post the Quiz Questions.
+<UL>
+<LI><A HREF="lecture-01.pdf">Lecture 1</A>
+<LI><A HREF="lecture-02.pdf">Lecture 2 (minus Quiz questions)</A>
+<LI><A HREF="lecture-03.pdf">Lecture 3 (minus Quiz questions)</A>
+<LI><A HREF="lecture-04.pdf">Lecture 4 (minus Quiz questions)</A>
+<LI>Lecture 5 (there were no slides other than the Quiz)
+<LI><A HREF="lecture-06.pdf">Lecture 6 (minus Quiz questions)</A>  This lecture contains
+important material about Midterm 1 next week.
+<LI><A HREF="lecture-07.pdf">Lecture 7 (minus Quiz questions)</A>  This lecture contains important material about Midterm 1 on Thursday.
+<LI><A HREF="proof-example-08.lisp">Lecture 8: Proof typed out in class</A>
+<LI><A HREF="boyer-moore-fast-string-searching.pdf">Marktoberdorf Lecture on Boyer-Moore fast string searching algorithm</A>
+<LI><A HREF="lecture-09.pdf">Lecture 9 (minus Quiz questions)</A>
+<LI>Lecture 10 was drill and practice on ``factoring,'' ``conjuncts list,'' etc.
+<LI><A HREF="lecture-11.pdf">Lecture 11 (minus Quiz questions)</A> and a
+quick and elementary illustration of how logic is used in the
+hardware industry to verify a <A HREF="adder.lisp">ripple-carry adder</A>.
+<LI><A HREF="lecture-12.pdf">Lecture 12</A>.
+<LI><A HREF="lecture-13.pdf">Lecture 13</A> and I typed a proof of
+<CODE><A HREF="proof-example-13.lisp">(true-listp (rev x))</A></CODE>.
+<LI><A HREF="lecture-14.pdf">Lecture 14</A>.
+<LI><A HREF="lecture-15.pdf">Lecture 15</A>.
+<LI><A HREF="lecture-16.pdf">Lecture 16</A>.  If you want to see the simple model of
+the Java Virtual Machine I demonstrated at the end of class, see the paper
+<I><A HREF="http://userweb.cs.utexas.edu/users/moore/publications/talks/marktoberdorf-08/papers/main.pdf">Mechanized Operational Semantics:  The M1 Story</I></A>
+<LI><A HREF="lecture-17.pdf">Lecture 17</A>.
+<LI><A HREF="midterm2-spring-09.pdf">Midterm 2 (Spring, 2009)</A>
+<LI><A HREF="midterm2-key.pdf">Midterm 2 (Spring, 2009) Answers</A>
+<LI><A HREF="lecture-18.pdf">Lecture 18</A>.
+<LI><A HREF="lecture-19.pdf">Lecture 19 -- Generalized Induction</A>.
+<LI><A HREF="lecture-20.pdf">Lecture 20</A>.
+<LI><A HREF="lecture-21.pdf">Lecture 21</A>.
+<LI><A HREF="lecture-22.pdf">Lecture 22</A>.
+<LI><A HREF="lecture-23.pdf">Lecture 23</A>.
+<LI><A HREF="lecture-24.pdf">Lecture 24</A>.
+<LI><A HREF="lecture-25.pdf">Lecture 25</A>.
+<LI>No online notes for lecture-26.
+<LI><A HREF="lecture-27.pdf">Lecture 27</A>.
+<LI><A HREF="lecture-28.pdf">Lecture 28</A>.
+<LI><A HREF="final-spring-2009.pdf">Final Exam, Spring 2009</A>.
+</UL> 
+
+<P>
+<LI>Instructor: J Strother Moore
+</P>
+<P>
+<LI>Office: TAY 4.140A
+</P>
+<P>
+<LI>Email: &lt; moore at cs dot utexas dot edu &gt;
+</P>
+<P>
+<LI>Office Hours:  Wednesday 2 pm &ndash; 3 pm, Thursday 2 pm &ndash; 3 pm, or by appointment
+</P>
+<P>
+<LI>TAs and Their Office Hours:  <I>To Be Determined</I> 
+<UL>
+<P>
+<LI>Behnam Robatmili &lt; beroy at cs dot utexas dot edu &gt;<BR>
+<I>Office Hours</I>
+<UL>
+<LI>Mon 1:30 &ndash; 3:30 pm, ENS 31NQ Desk 1
+<LI>Thu 9:00 &ndash; 10:00 am, ENS 31NQ Desk 1
+</UL>
+</P>
+
+<P>
+<LI>Vinod Venkataraman &lt; vinodv at cs dot utexas dot edu &gt;<BR>
+<I>Office Hours</I>
+<UL>
+<LI>Mon 12:00 &ndash; 1:00 pm, ENS 31NQ Desk 6
+<LI>Wed 4:30 &ndash; 6:30 pm, ENS 31NQ Desk 6
+</UL>
+</P>
+
+<P>
+<LI>Xu Wang &lt; wangxu at cs dot utexas dot edu &gt;<BR>
+<I>Office Hours</I>
+<UL>
+<LI>Mon 10:00 &ndash; 12:00 noon, ENS 31NQ Desk 3
+<LI>Thu 10:00 &ndash; 11:00 am, ENS 31NQ Desk 3
+</UL>
+</P>
+</UL>
+</P>
+<P>
+<LI>Tutors:  For best results, contact tutors in advance to insure that they will
+be available.  <I>To Be Determined</I> 
+<UL>
+<P>
+<LI>Young-suk Lee &lt; youngsuklee at mail dot utexas dot edu &gt;<BR>
+Office: CS Micro Lab in ENS
+<UL>
+<LI>Wed 3:00 &ndash; 5:00 pm
+<LI>Thu 1:30 &ndash; 3:30 pm
+</UL>
+</P>
+</UL>
+
+</P>
+<P>
+<LI>Google Group Discussion Forum:  There is an optional
+<A HREF="http://groups.google.com/group/utexas-cs313k-spring2010">Discussion Forum</A> you can join to
+discuss the course with TAs and other students.  Here is an
+<A HREF="google-groups.html">Introduction to Google Discussion Groups</A>.
+</P>
+
+<P>
+<LI>Important Class Dates:
+<UL>
+<LI>Midterm 1:  Thursday, Feb 11, 3:30 &ndash; 5:00 pm, Room: <FONT COLOR="Red">WEL 1.308 (not our usual room!)</FONT>
+<LI>Midterm 2:  Thursday, Apr 1, 3:30 &ndash; 5:00 pm, Room:  <FONT COLOR="Red">WEL 2.224 (not our usual room!)</FONT>
+<LI>Final Exam:  Tuesday, May 18, 9:00 &ndash; 12:00 noon, Room: WEL 2.224
+</UL>
+
+</P>
+</UL>
+</P>
+
+<H2>Objectives</H2>
+
+This course is designed to teach you to use the predominant mathematical
+notations and systems in computer science, how to formalize ideas
+mathematically, and how to prove that those formal concepts have certain
+properties.  This is a required course for CS majors.  To find out why,
+click <A HREF="#Why">here</A>.  For some advice on how to succeed in this
+course, click <A HREF="#HowToSucceed">here</A>.
+
+<H2>Textbook</H2>
+
+<P>
+<FONT COLOR="Red">The second lecture will start with a quiz, so you must
+accomplish all three of the following tasks <I>before</I> class on Thursday, Jan 21!
+Do not procrastinate.</FONT>
+</P>
+<UL>
+<LI>Purchase <I><A HREF="http://www.cs.utexas.edu/users/moore/classes/cs313k/cs313k-notes-spring-10.pdf">CS313K
+Notes &mdash; Spring, 2010</A></I>, by J
+Strother Moore, $12.94 at the UT Copy Center (see below).  I strongly recommend you
+buy a hardcopy to bring to class and mark-up, even though the link above will
+give you a searchable pdf copy for free.
+<P>
+UT Copy Center<BR>
+Welch Hall, WEL 2.228 (across the hall from the lecture room)<BR>
+Hours:  7:30 am &ndash; 4:30 pm
+</P>
+<P>
+<B>Note:</B> Mistakes in the notes will be corrected in class.  You will be expected to be
+there to hear the corrections and mark your books accordingly.
+
+<LI>Purchase an <B>iClicker</B> (a remote control device) from the Co-op bookstore, about $36
+<P>
+Beware:  There may be several incompatible brands of
+remote control devices on sale.  Be sure you get the &ldquo;iClicker&rdquo; brand.
+To find out more about iClickers, see the company's
+<A HREF="http://www.iclicker.com/dnn/Abouticlicker/WhatisaClicker/tabid/143/Default.aspx">web site</A>. 
+The Co-op will buy back the iClicker for about half the current price.  I recommend that you
+put a piece of transparent tape across the serial number on the back of your iClicker to prevent it
+from being rubbed off with use.  That serial number is important when you register the
+iClicker (see the next step) and you want it intact when/if you re-sell the iClicker.
+</P>
+
+<LI> Register your iClicker (even if you think you already have!)
+at <CODE><A HREF="http://www.iclicker.com/registration/">http://www.iclicker.com/registration/</A></CODE>
+by providing:
+<UL>
+<LI>your first name
+<LI>your last name
+<LI>your UT EID (which they call your &ldquo;student ID&rdquo;)
+<LI>your clicker's ID (the serial number under the bar code on the back of the device)
+</UL>
+If you already have a iClicker and registered it to your EID in the past, you should be aware that
+iClicker registrations do expire (each July, I believe).  It doesn't hurt to re-register each term.
+If you cannot read the serial number on your iClicker, see me.
+</UL>
+</P>
+
+<P>
+Bring your notes, iClicker, some scratch paper, and a pen or pencil to every lecture.
+</P>
+
+<H2>Errata for the Notes</H2>
+<P>
+On page 5, the claim that <CODE>(f (g x y))</CODE> is ill-formed because it
+contains an ``ill-formed interior term'' is wrong!  It's not ill-formed at all.
+<CODE>(f (g x))</CODE> would be an example of the kind of ill-formed term
+meant.
+</P>
+<P>
+On page 22, Question 34 should ask ``what is the value of <CODE>(fn-q34 x)</CODE>
+when <CODE>x</CODE> is a natural number?''  As phrased, the question is ill-formed
+because <CODE>fn-q34</CODE> has arity 1 but the question talks about 
+<CODE>(fn-q34 x y)</CODE>.
+</P>
+<P>
+The notes list a number of homework problems due on Mar 16.  That's during
+Spring Break.  Those homework problems are due Mar 23 instead.
+See the (corrected) due dates in the Homework section below.
+</P>
+<H2>Reading Assignments</H2>
+
+<P>
+This is college.  You must read ahead to know what is going on in the
+lectures.  The reading schedule is implicit in the notes.  Each section is
+marked with the date of the lecture at which that section will be discussed.
+</P>
+<P>
+Every lecture &mdash; including the second &mdash; will start with an
+iClicker quiz over the assigned reading and <I>you will be graded on the
+quizzes</I>.  I cannot stress enough the importance of your taking
+responsibility for the reading.
+</P>
+<P>
+We're going to cover roughly 240 pages of the notes.  The course marches on
+<I>relentlessly</I>, every lecture covering new material.  Keep up!
+</P>
+<P>
+I will not remind you of the reading from week to week.  That is your responsibility!  It will
+sometimes take a day or two or read the material, so I recommend that after every class you
+look ahead to see what the next reading assignment is and plan your time accordingly before
+the next class.  Do not wait until an hour before class!  That won't be enough time.
+</P>
+<P>
+I may have to change pace of the reading assignments.  Changes will be announced in
+class.  Pay attention.
+</P>
+<P>
+When you read the material, work some of the problems.  Program up small
+examples to test your understanding.  Do not study passively!  Just reading
+&mdash; without thinking through the consequences of what you're reading
+&mdash; is usually a waste of time.
+</P>
+
+<P>
+The quizzes will often refer to the notes and I'll expect you to answer my
+questions with your clickers.  <I>You will be graded on the answers.</I> So
+be sure you
+<UL>
+<LI> read the assigned material before class,
+<LI> bring your notes, 
+<LI> bring your clickers, and
+<LI> bring paper and something to write with so you can work out
+your answers!
+</UL>
+</P>
+
+<P>
+Last year (Spring, 2009) I had a rule that if more than half the students answered a quiz
+question incorrectly, I did not count the question.  I've decided that is a bad rule that
+punishes the best students.  This year (Spring, 2010), every question I ask will count.
+
+<H2>Attendance</H2>
+
+Attendance is taken in every lecture via the iClicker quiz.  It will be
+necessary to attend class and take the quizzes to make a good grade.
+<P>
+Show up!  And bring your clicker!
+
+Please sit in the front.
+</P>
+
+
+<H2>Homework</H2>
+
+<P>
+There will be weekly homeworks.  
+</P>
+<P>
+Homework is always due on the Tuesday before class.  All homework solutions
+must be typed in plain ASCII and submitted via
+the <A HREF="https://turnin.microlab.cs.utexas.edu/turnin/webturnin.dll/login">turnin</A>
+facility.  (Be sure to turn your homework into your CS313K folder and not some
+other class!  No credit will be given for homework turned in to another class!) 
+</P>
+<P>
+Your solution to the first homework should be
+named <CODE>hw1.txt</CODE>, the second <CODE>hw2.txt</CODE>, etc.  The text
+file should start with your name, EID, and a title (e.g. &ldquo;CS313K Spring 10
+Homework <I>i</I>&rdquo;).
+</P>
+<P>
+The official list of homework problems and due dates is given below.  Remember:  well formatted plain ASCII, via 
+<A HREF="https://turnin.microlab.cs.utexas.edu/turnin/webturnin.dll/login">turnin</A>, before 3:30 pm,
+on the Tuesdays listed below.
+</P>
+
+<TABLE CELLSPACING="20">
+<TR><TD><I>hwi</I></TD><TD><I>due date</I></TD><TD><I>Problems</I></TD></TR>
+<TR><TD>1</TD><TD>Jan 26</TD><TD>14, 23, 24, 25, 29, 33</TD></TR>
+
+<TR><TD>2</TD><TD>Feb 2</TD><TD>49, 50, 55, 57, 60, 65</TD></TR>
+
+<TR><TD>3</TD><TD>Feb 9</TD><TD>89, 92, 93, 109, 112, 114, 115</TD></TR>
+
+<TR><TD>4</TD><TD>Feb 23</TD><TD>125, 130, 131, 132, 133</TD></TR>
+
+<TR><TD>5</TD><TD>Mar 2</TD><TD>135, 137, 146, 148, 151, 160, 164</TD></TR>
+
+<TR><TD>6</TD><TD>Mar 9</TD><TD>167, 168, 169, 170, 174, 181</TD></TR>
+
+<TR><TD>7</TD><TD><FONT COLOR="Red">Mar 23</FONT></TD><TD>194, 199, 215, 216, 219</TD></TR>
+
+<TR><TD>8</TD><TD>Mar 30</TD><TD>225, 226, 230, 235, 237</TD></TR>
+
+<TR><TD>9</TD><TD>Apr 13</TD><TD>266, 268, 269, 270, 274, 281, 282, 283</TD></TR>
+
+<TR><TD>10</TD><TD>Apr 20</TD><TD>289, 292, 293, 296, 314, 316</TD></TR>
+
+<TR><TD>11</TD><TD>Apr 27</TD><TD>318, 320, 321, 322, 323, 324, 331, 337, 338, 355, 366, 372</TD></TR>
+
+<TR><TD>12</TD><TD>May 4</TD><TD>379, 388, 393, 395, 403</TD></TR>
+</TABLE>
+
+<P>
+I reserve the right to change the homework assignments in response to the pace of the
+lectures.  Changes will be announced in class and the list above will be modified.
+Check this list weekly if you want to be sure you're doing the right problems!
+</P>
+<P>
+For your convenience, the printed copy of the textbook has the assigned homework problems
+marked with stars
+(&#9733&#9733&#9733) along with the due date.  Of course, if I change the assignments, the
+starred problems in the book will no longer be current.  I recommend that you mark your books
+when I make announcements in class -- and check the list above weekly.
+</P>
+
+<P>
+Some symbols we use in class and in the notes are not ASCII, e.g., 
+&and;, &or;, &not;, &rarr;, &harr;, &forall;, &exist;, &isin;, &sube;, &cap;, &cup;.
+There is a table of ASCII substitutes in Appendix D of the notes.  For example, you're
+told there to type &ldquo;<CODE>p --> q</CODE>&rdquo; for &ldquo;<I>p</I>&rarr;<I>q</I>&rdquo;, and
+&ldquo;<CODE>(all v p)</CODE>&rdquo; for &ldquo;<I>(&forall; v : p)</I>&rdquo;.
+</P>
+<P>
+<B>Warning</B>:  You will get a 0 for any answer that violates the following rules.
+Every &ldquo;formula&rdquo; must be syntactically well-formed.  Nothing should extend beyond the
+80th column -- lines should not be truncated or wrap around when viewed in a window 80 characters
+wide.  Finally, if the grader feels that insufficient effort has been made to display a formula
+sensibly, he or she is free to assign a 0 for that answer even if it is correct!  The book
+discusses this at length in &ldquo;Syntax&rdquo; section of Chapter 4.
+</P>
+
+<P>
+You may work on your homework in groups, but each person must prepare and
+turn in his or her own write-up.  Working in groups is an excellent way to
+learn new material, but writing it down yourself is an great way to make sure
+you understand it.  Don't think that <I>you</I> understand because someone in
+your group understands!  And remember, you will work alone during the exams
+and the only way to do well in the class is to master the material.
+</P>
+<P>
+It is considered cheating to turn in somebody else's homework as your own.  In
+the CS department, cheating and facilitating cheating by others results in a
+<I>course grade</I> of <B>F</B>.
+</P>
+
+<P>
+Just to be clear:
+<UL>
+<LI>You can work together in groups or teams on homework.
+<LI>One person might take the lead and write out a proof, debugged by all the participants.
+<LI>You might take notes on how the team solved each problem.
+<LI> <I>But then</I> sit down by yourself and type your own homework solutions.
+<LI> If you realize you don't
+understand a step in your notes, feel free to ask somebody.
+<LI><FONT COLOR="Red">But what you must not do is copy somebody else's homework file or turn in somebody
+else's work as your own.</FONT>
+</UL>
+</P>
+
+<H2>Tools</H2>
+
+You will be expected to define and run programs in the ACL2 programming language.  ACL2 is probably
+unfamiliar to you, but it is simple to learn.
+<P>
+
+The first homework assignment contains
+<A HREF="how-to-use-acl2s.html">explicit instructions</A> to get you
+started with the ACL2 system.  It introduces an Eclipse interface to ACL2,
+called <I>ACL2s</I>, written and maintained
+by <A HREF="http://www.peterd.org/">Peter Dillinger</A>,
+<A HREF="http://www.ccs.neu.edu/home/pete/">Pete Manolios</A> and Harsh
+Chamarthi, of Northeastern University, Boston.  ACL2s is available on all the
+CS department's public machines.  You may wish
+to <A HREF="http://acl2s.peterd.org/acl2s/doc/">install</A> it on your own
+laptop but that is not necessary.
+</P>
+<P>
+If you do install ACL2s on your laptop, you might want to look at this
+<A HREF="http://acl2s.ccs.neu.edu/acl2s/doc/#faq_installation_problems">Installation FAQ</A>.
+</P>
+
+<P>
+Do not be nervous about learning a new programming language.  In your careers
+as CS students and then as computer scientists you will learn new languages
+regularly!  <I>Get used to it!</I>
+</P>
+<P>
+<B>Note</B>: ACL2 can be run under Emacs and directly from Windows or Unix.
+You may see me using it that way in class from time to time.  But the
+preferred interface for novices is ACL2s, <A
+HREF="http://acl2s.peterd.org/acl2s/doc/">The ACL2 Sedan for Eclipse</A>.
+It's called the &ldquo;sedan&rdquo; for good reason.  Driving full ACL2 is like driving
+a race car: one mistake and you're in the ditch.
+</P>
+
+<H2>Exams and Scheduled Quizzes</H2>
+
+There will be two midterms and a final.  See above for the dates.
+<P>
+There will be a scheduled quiz in every lecture except the first one and the two lecture periods devoted to
+the midterms.
+</P>
+
+<H2>Email and Discussion Forum</H2>
+
+<P>
+All students should become familiar with the University's official <A
+HREF="http://www.utexas.edu/its/policies/emailnotify.php"> e-mail student
+notification policy</A>.  I may occasionally use email to communicate with
+the students in the class and it is your responsibility to keep your <A
+HREF="https://utdirect.utexas.edu/utdirect/bio/address_change.WBX">UT Direct
+email address</A> current and to check it frequently and regularly.
+</P>
+<P>
+<I>Discussion Forum To Be Determined</I> (In Spring, 2009, online discussion
+forums were organized.  If that happens this time, I'll announce it here and
+in class.)
+</P>
+<!--
+<P>
+To sign up for the discussion forum, visit ???
+<A HREF="http://groups.google.com/group/utexas-cs313k-spring2009/">http://groups.google.com/group/utexas-cs313k-spring2009/</A>.
+</P>
+<P>
+If you do not have a Google account, send an email to your TA, and
+he (??? or she) can send an email to you that will invite your UTCS account to
+join. You do not need to join to read the discussion forum, just to
+post to it. That being said, we hope most of you will post at some
+point, so it is probably in your interest to sign up now, rather than
+later.
+</P>
+-->
+
+<H2>Grading</H2>
+
+Grades are determined by the total number of points earned in each of several
+activities: attendance at TA sessions, scheduled quizzes, homeworks, the two
+midterm exams, and the final exam.  The total available points is 1240, distributed
+as follows:
+
+<table cellspacing="10">
+<tr>
+<td>activity</td><td>opportunities</td><td>points/opportunity</td><td>total</td>
+</tr>
+<tr>
+<td>TA sessions</td><td>15</td><td>10</td><td>150</td>
+</tr>
+<tr>
+<td>Quizzes</td><td>27</td><td>10</td><td>270</td>
+</tr>
+<tr>
+<td>Homeworks</td><td>12</td><td>10</td><td>120</td>
+</tr>
+<tr>
+<td>MidTerm 1</td><td>1</td><td>200</td><td>200</td>
+</tr>
+<tr>
+<td>MidTerm 2</td><td>1</td><td>200</td><td>200</td>
+</tr>
+<tr>
+<td>Final Exam</td><td>1</td><td>300</td><td>300</td>
+</tr>
+<tr>
+<td>total for course</td><td></td><td></td><td>1240</td>
+</tr>
+</table>
+<P>
+
+Your final score will be the total number of points earned divided by 12.40 and
+rounded up to an integer.  This gives an integer between 0 and 100.
+</P>
+
+<P>
+Letter grades will be assigned in the conventional way:
+</P>
+
+<table cellspacing="20">
+<tr>
+<td>93 &le; <I>score</I> &le; 100</td><td><B>A</B></td>
+</tr>
+<tr>
+<td>90 &le; <I>score</I> &lt; 93</td><td><B>A-</B></td>
+</tr>
+<tr>
+<td>87 &le; <I>score</I> &lt; &nbsp; 90</td><td><B>B+</B></td>
+</tr>
+<tr>
+<td>83 &le; <I>score</I> &lt; &nbsp; 87</td><td><B>B</B></td>
+</tr>
+<tr>
+<td>80 &le; <I>score</I> &lt; &nbsp; 83</td><td><B>B-</B></td>
+</tr>
+<tr>
+<td>77 &le; <I>score</I> &lt; &nbsp; 80</td><td><B>C+</B></td>
+</tr>
+<tr>
+<td>73 &le; <I>score</I> &lt; &nbsp; 77</td><td><B>C</B></td>
+</tr>
+<tr>
+<td>70 &le; <I>score</I> &lt; &nbsp; 73</td><td><B>C-</B></td>
+</tr>
+<tr>
+<td>67 &le; <I>score</I> &lt; &nbsp; 70</td><td><B>D+</B></td>
+</tr>
+<tr>
+<td>63 &le; <I>score</I> &lt; &nbsp; 67</td><td><B>D</B></td>
+</tr>
+<tr>
+<td>60 &le; <I>score</I> &lt; &nbsp; 63</td><td><B>D-</B></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;0 &le; <I>score</I> &lt; &nbsp; 60</td><td><B>F</B></td>
+</tr>
+<table>
+
+<H3>Important Notes</H3>
+
+Each quiz is worth 10 points.  But some quizzes may have as few as 2 questions
+and others as many as 15 or so.  The average number of questions per quiz will
+be about 6.
+<P>
+Quiz, homework, and test scores are kept as integers between 0 and 10.  When computed from fractions, they are rounded up.
+For example if you answer 5 questions correctly on a quiz with 6 questions, you
+will receive <I>ceiling</I>(10 &times; 5/6) = 9 points, not 8.3 points.  Midterm and final exam scores are kept as
+integers in the range 0 to 100.
+</P>
+
+<P>
+Partial credit is not given on quiz answers.
+</P>
+
+<P>
+Quiz scores are not curved.
+</P>
+
+<P>
+If any student in a lecture is discovered with more than one clicker, the
+clickers will be confiscated until the situation is sorted out by the
+instructor.  If it is determined that one student was taking quizzes for
+another it will be considered cheating.  The CS department penalty for
+cheating is a <I>course grade</I> of <B>F</B> and referral to the Dean of
+Students.
+</P>
+
+<P>
+While discussion of the homework problems among students is encouraged, each
+student must prepare his or her own homework submissions.  Turning in
+somebody else's work as your own is an example of cheating.  The CS
+department penalty for cheating is a <I>course grade</I> of <B>F</B> and
+referral to the Dean of Students.
+</P>
+
+<P>
+If you ever wonder whether some behavior you're contemplating would be considered cheating, <I>don't do it</I>!
+If it's in this course, ask me.  If it's in another course, ask the professor in charge.
+</P>
+
+<P>
+Partial credit is not given on homework.
+</P>
+
+<P>
+Failure to be in your TA session when attendance is taken, for any reason
+other than an <A HREF="#ExcusedAbsence">excused absence</A>, results in a 0
+that day.  No partial credit is given for late arrivals.
+</P>
+
+<P>
+Failure to turn in a homework on time, for any reason other than an <A
+HREF="#ExcusedAbsence">excused absence</A>, results in a 0 on that homework.
+No partial credit is given for late homeworks.
+</P>
+
+<P>
+Failure to take a midterm or the final exam will result in a score of 0.
+Except for <A HREF="#ExcusedAbsence">excused absences</A>, make up exams
+will not be scheduled.
+</P>
+
+<P>
+No &ldquo;slip points&rdquo; are provided.  However, it is possible to make an <B>A</B>
+without perfect performance.  See <A HREF="#Strategies">Effects of Various Coping Strategies</A>.
+</P>
+<P>
+If you are dissatisfied with a grade you receive on an assignment or test,
+you must submit your complaint via email, along with supporting evidence or
+arguments, to your TA within one week of the date the teaching staff first
+attempted to return the assignment or test to you.
+</P>
+
+<P>
+Questions about your homework grades are to be sent to your TA.
+</P>
+
+<P>
+There are no opportunities for extra credit in this course.
+</P>
+
+<P>
+Course grades may be adjusted with pluses and minuses at the instructor's
+discretion.
+</P>
+
+
+
+<A NAME="Strategies">
+<H3>Effects of Various Coping Strategies</H3>
+
+In this section I illustrate the implications of this grading scheme by
+describing several hypothetical performance records and giving the resulting
+score.
+
+<P>
+First, note how expensive cheating is.  A single quiz or homework assignment
+is worth just 10 points out of 1240, less than 1% of your grade.  But giving
+your clicker to somebody to operate on your behalf, turning in somebody
+else's work, or facilitating such behavior by another student results in a
+<I>course grade</I> of <B>F</B>.  That is, you're risking failing the entire
+course to make less than 1% of the total available points.
+</P>
+
+<P><!-- (score 1 1 80/100 1 80/100 80/100 80/100 80/100) = 81 -->
+If you miss one TA session and one Quiz (lecture) and fail to turn in one
+homework, but you score 80% on the remaining quizzes, homeworks, midterms,
+and the final exam, you'll make a <B>B-</B>.
+</P>
+
+<P><!-- (score 2 2 80/100 1 80/100 80/100 80/100 80/100) = 79 -->
+But if you miss two TA sessions and two Quizes and otherwise perform as
+above, you'll make a <B>C+</B>.
+</P>
+
+<P><!-- (score 1 1 90/100 1 90/100 91/100 90/100 90/100) = 90 -->
+If you miss one TA session and one Quiz (lecture) and fail to turn in one
+homework, but you score at least 90% on the remaining quizzes and homeworks and
+you score 90 on two of the exams and 91 on the other, you'll make an <B>A-</B>.
+</P>
+
+<P>
+Thus, it is possible to make an <B>A-</B> without perfect attendance or perfect
+homework performance.  Because of this, there are no &ldquo;slip points.&rdquo;
+</P>
+
+<P>
+It is less risky to attend all the TA sessions and lectures.
+</P>
+
+<P><!-- (score 0 0 90/100 3 90/100 90/100 90/100 90/100) = 90
+        but
+        (score 0 0 90/100 4 90/100 90/100 90/100 90/100) = 89 -->
+If you have perfect attendance at the TA sessions and lectures and score 90
+on every quiz, exam, and homework you turn in, you can afford to miss no more than 3
+homeworks and still make an <B>A-</B>.
+
+<P><!-- (score 0 0 85/100 0 90/100 88/100 92/100 90/100) = 91 -->  
+You could also make an <B>A-</B> by attending all the TA sessions and lectures,
+make a 85% on the quizzes, average 95% on the homeworks and turn in all of them,
+and make an 88 and 92 on the midterms and then a 90 on the final.
+</P>
+
+<P><!-- (score 15 27 80/100 0 100/100 100/100 100/100 100/100) = 67 -->
+Finally, if you ace the exams, with three perfect 100s, and get perfect scores
+on all the homeworks, but don't come to lectures or the TA sessions, you'll
+make a <B>D+</B>!  So you can't do well in this class without attending the
+lectures and your TA sessions.
+</P>
+
+<P>
+You can experiment with your own strategies using the following ACL2 function.
+If you can't figure out how to use it after a couple of weeks, you won't pass.
+To have ACL2 check that you're calling it with the right type of arguments,
+do <CODE>:set-guard-checking t</CODE> before you evaluate sample scenarios. 
+</P>
+
+<PRE>
+(defun score (tax qzx qzv hwx hwv mt1 mt2 fin)
+
+ (declare 
+   (xargs
+    :guard (and (and (natp tax) (<= tax 15))
+                (and (natp qzx) (<= qzx 27))
+                (and (rationalp qzv) (<= 0 qzv) (<= qzv 1))
+                (and (natp hwx) (<= hwx 12))
+                (and (rationalp hwv) (<= 0 hwv) (<= hwv 1))
+                (and (rationalp mt1) (<= 0 mt1) (<= mt1 1))
+                (and (rationalp mt2) (<= 0 mt2) (<= mt2 1))
+                (and (rationalp fin) (<= 0 fin) (<= fin 1)))))
+
+; Returns the final score, between 0 and 100, of a student with
+; the indicated performance, where the types of the arguments
+; are as given above.  Their meanings are:
+
+; tax = number of TA sessions missed
+; qzx = number of Quizzes missed
+; qzv = average grade on quizzes taken
+; hwx = number of Homeworks missed
+; hwv = average grade on homeworks turned in
+; mt1 = grade on midterm 1
+; mt2 = grade on midterm 2
+; fin = grade on final exam
+
+; Note that the function requires fractional inputs between 0 and 1
+; to represent the average scores on the quizzes, homeworks, and
+; tests. I multiply those by the total number of points available 
+; for each category.  In actual grading, we will just sum the number
+; of points earned on the quizzes, the homeworks, and the tests.
+
+  (let ((TA 10)
+        (QZ 10)
+        (HW 10)
+        (M1 200)
+        (M2 200)
+        (FN 300))
+  (ceiling
+   (* 100
+      (/ (+ (* (- 15 tax) TA)
+            (* (- 27 qzx) (* qzv QZ))
+            (* (- 12 hwx) (* hwv HW))
+            (ceiling (* mt1 M1) 1)
+            (ceiling (* mt2 M2) 1)
+            (ceiling (* fin FN) 1))
+         (+ (* 15 TA) (* 27 QZ) (* 12 HW) M1 M2 FN)))
+   1)))
+</PRE>
+
+<P>
+
+For example, the outcome of the scenario
+
+<BLOCKQUOTE>
+Suppose I miss 2 TA sessions and 1 lecture.  I think I can score an
+average of 73% on all the other quizzes.  I haven't missed turning in any homework yet.  I
+can keep that up &mdash; it's easy since all the homeworks are marked in the book   So my
+missed homeworks will be 0.
+I'm sure I can maintain an average
+of 95% on the homeworks &mdash; I have a couple of
+friends in the course who explain things to me.  I got a 78% on the first
+midterm.  I think I can get an 85% on the next one and I'll assume I get just 80% on the
+final exam.  What will my final grade be?
+</BLOCKQUOTE>
+
+is determined by
+<PRE>
+(score 2 1 73/100 0 95/100 78/100 85/100 80/100)
+</PRE>
+which computes to 81.  The student will make a <B>B-</B>.
+</P>
+
+<A NAME="ExcusedAbsence">
+<H3>Excused Absence</H3>
+
+<P>
+<I>Religious Holy Days</I>: A student who is absent from an examination or
+cannot meet an assignment deadline due to the observance of a religious holy
+day may take the examination on an alternate day, submit the assignment up to
+24 hours late without penalty, or be excused from the examination or
+assignment, if proper notice of the planned absence has been given. Notice
+must be given at least fourteen days prior to the classes scheduled on dates
+the student will be absent. For religious holy days that fall within the
+first two weeks of the semester, notice should be given on the first day of
+the semester. It must be personally delivered to the instructor and signed
+and dated by the instructor, or sent via certified mail, return receipt
+requested. Email notification will be accepted if received, but a student
+submitting such notification must receive email confirmation from the
+instructor. A student who fails to complete missed work within the time
+allowed will be subject to the normal academic penalties.
+</P>
+
+<P>
+<I>Disability Related Needs</I>: Please notify me of any
+modification/adaptation you may require to accommodate a disability-related
+need. You will be requested to provide documentation to the Office of the
+Dean of Students in order that the most appropriate accommodations can be
+determined. Specialized services are available on campus through Services for
+Students with Disabilities, SSB 4th floor, A5800, 471-6259, TTY 471-4641
+</P>
+
+<P>
+<I>Emergencies and Illness</I>: Documented emergencies and illnesses will be
+dealt with by the instructor.  For best results, communicate with me
+<I>before</I> you miss a midterm or the final and be prepared to supply
+written, verifiable evidence of the condition.
+</P>
+
+<I>Code of Conduct</I>:  For important other advice about expectations and
+conduct, see <A HREF="http://www.cs.utexas.edu/academics/conduct/">The Computer Sciences Department Rules to Live By</A>.
+
+<P>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<H2>Acknowledgements</H2>
+
+I thank the following people for their help in preparing for this course: Bob
+Boyer, Matt Kaufmann, Warren Hunt, Peter Dillinger, Pete Manolios, Harsh
+Chamarthi, Sandip Ray, Morrie Schluman, Mike Scott, Bruce Porter, David
+Rager, Behnam Robatmili, Ian Wehrman, Nathan Wetzler, Mark Reitblatt, and all
+the TAs, tutors, departmental academic staff, and the ACL2 research
+community.
+
+
+<A NAME="Why">
+
+<H2>Why We Make CS Majors Take This Course</H2>
+
+In science, mathematics is used to describe the world and to analyze the
+behavior and interactions of objects in the world.  Mathematics is necessary
+because the objects we describe  and analyze  &mdash; planets, reactions, supernovas, molecular docking,
+microprocessors, algorithms, networks &mdash; are so complicated that we cannot
+keep all the interactions in mind at once.  We need the precision and power
+of mathematics to help us keep things straight in our heads.
+
+<P>
+
+In physics, for example, the dominant mathematical systems are calculus and
+differential equations.  But in computer science, the dominant mathematical
+systems are mathematical logic, set theory, and the theory of functions and
+relations.  The difference is that physics deals mainly with continuous,
+smoothly varying systems, while computer science deals with discrete, digital
+systems.  Continuous mathematics, like the Real Analysis and Calculus, is of
+little use in analyzing a system that goes from one state to another without
+any intermediate state.
+
+<P>
+Thus, the mathematical language of CS is often very different from that of physics.
+In physics, your professors will use &part; x/&part; y, &int;, and lots of
+algebraic notation.  In CS, your professors will use symbols you've never seen
+before: &and;, &or;, &not;, &rarr;, &harr;, &forall;, &exist;, &isin;, &sube;, &cap;, &cup;,
+etc.  To understand your future CS courses and to speak clearly and precisely
+to your computing colleagues, you need to learn the rudiments of these
+mathematical systems.  That's what this course is about.
+
+<P>
+
+Mathematical logic, set theory, and function theory are deep intellectual
+subjects.  Some of the greatest minds in computing &mdash; Godel, Turing, von
+Neumann, Minsky, McCarthy, Dijkstra, Knuth, Newell, Rabin, Hoare, Cook, Karp,
+Emerson, etc., &mdash; have made fundamental contributions that can only be
+expressed in these terms.  Some of the deepest insights mankind has had about
+the nature of truth and the power of computation stem from these subjects.
+Many of the basic ideas of programming languages and of system design &mdash; variables, objects,
+methods, macros, modularity, recursion, types, interpreters, representation, abstraction &mdash;
+were first explored in the context of mathematical logic.
+
+
+<A NAME="HowToSucceed">
+
+<H2>How to Succeed in CS313K</H2>
+
+You've probably never come across any form of mathematics quite like what you'll see here.
+So it is going to seem really strange and hard to grasp. 
+
+<P>
+
+But what are the skills you have as computer scientists?  You can
+<UL>
+<LI> spot patterns
+<LI> understand the power of repetition
+<LI> solve puzzles
+<LI> decompose a problem into simpler steps
+<LI> describe precisely the decomposition and the assembly of their results, and
+<LI> use formal symbolic language for writing down such descriptions.
+</UL>
+These are the same skills it takes to master logic, sets, and functions.
+<P>
+The secret to success is practice, practice, practice.  You were not born
+with the ability to ride a bike, hit a ball, dance, or play a musical
+instrument.  You picked up these and almost all your other skills by hard
+work and practice.  So too with proving theorems and reading set notation!
+
+<P>
+Nobody is born with an innate comprehension of mathematical logic, set theory, or
+the theory of functions!
+<I>Everyone</I> who knows how to do this stuff
+<I>learned</I> it!  We learned it by hard work and practice.  You can too!
+But you have to stay with it.
+<P>
+Here are the ten most important things to do to succeed in CS313K:
+<OL>
+<LI> never fall behind
+<LI> schedule time to do your reading in advance of <I>every</I> class
+<LI> think about the questions in the text
+<LI> spend <I>way more time</I> on this course than I do &mdash; I already know this stuff
+<LI> don't memorize; understand the new language you're learning
+<LI> come to <I>every</I> lecture and TA section
+<LI> answer <I>every</I> clicker question and compare your answers to the right ones
+<LI> ask questions when you don't understand  
+<LI> visit me or the TAs or the tutors whenever you feel confused
+<LI> never fall behind
+</OL>
+
+</BODY>
+</HTML>

@@ -1,0 +1,161 @@
+<base href="http://www.cs.utexas.edu/~mooney/ir-course/proj2/">
+<html>
+
+<head>
+<title>CS 371R Information Retrieval and Web Search: Project 2</title>
+</head>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" >
+<center>
+<h2>Project 2 for CS 371R:  Information Retrieval and Web Search <br>
+Evaluating the Performance of Pseudo Relevance Feedback </h2>
+<h3>Due: Oct. 10, 2013</h3>
+</center>
+<br>
+<h3> Evaluating Retrieval </h3>
+
+As discussed in class, a basic system for evaluating vector-space retrieval
+(VSR) is available in <code> /u/mooney/ir-code/ir/eval/</code>.  See the <a
+href="../doc/ir/eval/package-summary.html">Javadoc </a> for this system.  Use
+the <a href="../doc/ir/eval/Experiment.html#main(java.lang.String[])"> main
+method </a> for <a href="../doc/ir/eval/Experiment.html"> Experiment</a> to
+index a set of documents, then process queries, evaluate the results compared
+to known relevant documents, and finally generate a recall-precision curve
+using the interpolation method discussed in the text.
+
+<p> You can use the documents in the Cystic-Fibrosis (CF) corpus
+(<code>/u/mooney/ir-code/corpora/cf/</code>) as a set of test documents.  This
+corpus contains 1,239 "documents" (actually just medical article title and
+abstracts).  A set of 100 queries with the correct documents determined to be
+relevant to these queries is in <code>
+/u/mooney/ir-code/queries/cf/queries</code>.
+
+<p> As discussed in class, Experiment can be used to produce
+recall-precision curves for this document/query corpus. Here is
+a <a href="exp-trace.txt"> trace </a> of running such an experiment.
+The program also generates as output a ".gplot" file
+that <a href="http://www.gnuplot.info/documentation.html">gnuplot</a>
+can use to generate a recall-precision graph (plot) in postscript,
+such as <a href="cf-rp.gplot.pdf">this graph</a> (just execute
+"gnuplot filename.gplot > filename.ps").  You can view the ".ps" file
+with "gv filename.ps" (Ghostview) or generate a PDF version using "ps2pdf
+  filename.ps" and view it with "acroread filename.pdf".
+<p>
+A set of sample results files that I generated for the CF data are in <code>
+/u/mooney/ir-code/results/cf/</code>
+<p>
+You can also edit the ".gplot" files yourself to create graphs combining the
+results of multiple runs of Experiment (such as with this <a
+href="cf-rp-all.gplot"> ".gplot" file</a> and resulting <a
+href="cf-rp-all.gplot.pdf">graph</a>) in order to compare different
+methods.
+
+<h3> Relevance Feedback and Pseudo Relevance Feedback </h3>
+<p>
+Code for performing relevance feedback is included in the VSR system.  See
+ir.vsr.Feedback class and the <a href="../doc/ir/vsr/Feedback.html">Javadoc
+documentation</a> for it.  It is invoked by using the "-feedback" flag when
+ir.vsr.InvertedIndex is run. After viewing a retrieved document, the user is asked to
+rate it as either relevant or irrelevant to the query.  Then, by using the "r" (redo)
+command, this feedback will be used to revise the query vector (using the Ide_Regular
+method), which is then used to produce a new set of retrievals. You can see a <a
+href="feedback-trace.txt">trace</a> of using relevance feedback in VSR.
+
+<p>
+One problem with relevance feedback is that it comes at an expense to the user, who
+must spend her time on rating the initial retrieval results. A possible solution to
+this problem is using <i>pseudo</i> relevance feedback: just <b>assuming</b> that the
+top <i>m</i> retrieved documents are relevant, and using them to reformulate the
+query.
+
+<p>
+An important question that can be addressed experimentally is: what is the effect of pseudo relevance
+feedback on retrieval results? 
+
+<h3>Your Task</h3>
+<p>
+Your assignment is to modify ir.vsr.Feedback class to allow pseudo relevance
+feedback.  Current interactive feedback capabilities should be preserved; the pseudo
+capability can be achieved by adding the new capability to ir.vsr.Feedback along with
+a way to distinguish between the interactive and pseudo feedback modes. 
+
+<p>
+A new flag "-pseudofeedback" should be implemented in ir.vsr.InvertedIndex and
+ir.eval.Experiment classes, which would be followed by the integer value of <i>m</i>,
+e.g.<br> "java ir.vsr.InvertedIndex -html -pseudofeedback 8
+/u/mooney/ir-code/corpora/yahoo-science/". <br> You will also need to add necessary
+parameters and make corresponding changes in the constructors and the code that
+handles feedback in these classes.
+
+<p>
+A flag "-feedbackparams" should also be implemented in these classes, which
+would be followed by three floating-point values for ALPHA, BETA and GAMMA
+feedback parameters, e.g. <br> <code> java ir.eval.Experiment -pseudofeedback 5
+-feedbackparams 1.0 0.5 1.0 /u/mooney/ir-code/corpora/cf/
+/u/mooney/ir-code/queries/cf/queries /u/mooney/ir-results/5beta05</code> <br>
+You will need to change the classes ir.vsr.Feedback, ir.vsr.InvertedIndex and
+ir.eval.Experiment.
+
+<p>
+You will then use this code to produce recall-precision curves that evaluate the
+effect of different amounts of pseudo relevance feedback on retrieval performance on
+the CF corpus. 
+
+<p> Try the following amounts of pseudo relevance feedback (values of <i>m</i>): {0,
+1, 5, 10, 15, 30, 50} (using the default values of feedback parameters).  This should generate 7
+different recall-precision plots.  You should manually combine these into one gnuplot
+file and final performance graph that compares recall-precision performance for all
+these different amounts of feedback in one graph. Put this graph in a file called
+"amount-results.ps".
+
+<p> Using 5 top retrieved documents for relevance feedback (<i>m=5</i>), try the
+following values for BETA: {0.1, 0.5, 1.0}.  ALPHA and GAMMA should remain 1.0
+(explain why varying these parameters is of no interest to us).  This should
+generate 3 different recall-precision plots.  You should manually combine these plots
+into one gnuplot file, along with recall-precision curve for performance of the
+original system without pseudo relevance feedback (<i>m</i>=0). Put this graph in a
+file called "beta-results.ps".
+
+<h3>Discussion</h3> Insightful discussion of your algorithm and results is very
+important for this assignment.  Following are some of the issues that should be
+addressed in your writeup:
+<ul>
+<li>How does pseudo relevance feedback affect performance?  How is this impact
+manifested on the precision-recall curves that you generated?
+<li>What is the optimum amount of pseudo relevance feedback for this corpus?  Explain. 
+<li>What is the effect of varying BETA on precision and recall?
+<li>What improvements or alternative implementations of pseudo relevance feedback can
+you suggest?
+</ul>
+
+
+<h3>Submission</h3>
+<p>
+In submitting your solution, follow the general course instructions on
+<a href="../proj-submit-info.html">submitting projects</a> on the course homepage.
+<p>
+Along with that, follow these specific instructions for Project 2:
+
+<ul>
+
+<li> For this project, submit a directory which should contain:
+
+<ol>
+<li> <i>REPORT.* file</i>:       writeup in text or html or ps or pdf
+<li> <i>soln-trace</i>:          trace file of program execution (running an
+  Experiment with pseudofeedback with <i>m</i>=ALPHA=BETA=GAMMA=1)
+<li> <i>amount-results.ps</i>:    final ps gnuplot output (7 precision-recall curves)
+<li> <i>beta-results.ps</i>:    final ps gnuplot output (4 precision-recall curves)
+<li> <i>ir directory</i>:        should contain sub-directories (e.g., eval, 
+vsr) containing only the .java files you have modified for <i>this</i> project.
+  Make sure that you can copy these files directly into a <i>fresh</i> copy of 
+the <b>ir</b> project, compile it, and see your changes take effect on a CS 
+Linux box.  If it won't compile or your changes don't show up, you probably 
+need to include something else.  It might seem like a hassle to create so many 
+directories, but it makes things much easier on the grader.
+</ol>
+</ul>
+
+</body>
+</html>
+

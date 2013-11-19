@@ -1,0 +1,38 @@
+<base href="http://www.cs.utexas.edu/~mooney/ir-course/search.html">
+<html>
+
+<head>
+<title>Simple Search Engine</title>
+</head>
+
+<body bgcolor="#ffffff" text="#000000">
+
+<h1><font color="#00CC00" face="Bradley Hand ITC"><b>Simple Search
+Engine</b></font></h1>
+
+<form action="http://triton.cs.utexas.edu:8082/servlet/irs.Search" method="POST">
+<p>
+<b> Enter your query: </b> <input type="text" name="query" size=40>
+<p>
+<b>Search Database: </b>
+<select name="directory">
+   <option selected value="/u/mooney/ir-code/corpora/cs-faculty/">
+       UT CS Faculty
+   <option value="/u/mooney/ir-code/corpora/yahoo-science/"> 
+       Yahoo Science 
+</select>
+<p>
+<b>Use Relevance Feedback: </b>
+<input type="checkbox" name="feedback" value="1">
+
+<br>
+<br>
+<input type="submit" value="Submit Query">
+<input type="reset" value="Reset Form">
+</form>
+
+<hr>
+</body>
+
+
+</html>

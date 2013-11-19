@@ -1,0 +1,208 @@
+<base href="http://www.cs.utexas.edu/~mwalfish/classes/s11-cs372h/">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>CS 372H, Spring 2011: Introduction to Operating Systems:
+Honors</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<script type="text/javascript" src="/util.js">
+</script>
+</head>
+<body>
+<h1>CS 372H, Spring 2011: Introduction to Operating Systems:
+Honors</h1>
+<div id="topnavbar">
+<ul class="topnavlist">
+<li><a href="index.html">Home</a></li>
+<li><a href="syllabus.html">Schedule</a></li>
+<li><a href="policies.html">Policies and grading</a></li>
+<li><a href="labs.html">Labs</a></li>
+<li><a href="exams.html">Exams</a></li>
+<li><a href="tools.html">Tools</a></li>
+<li><a href="reference.html">Reference materials</a></li>
+<li><a href="announcements.html">Announcements</a></li>
+</ul>
+</div>
+
+
+
+<div id="overview">
+<div id="news">
+<h3>Latest Announcements</h3>
+
+
+<dl class="newslist">
+
+  <dt>5/20:  Final grades submitted to registrar.</dt>
+    <dd>Have a nice summer!</dd>
+  <dt>5/20:  Final project scores posted to egradebook</dt>
+    <dd>We assigned these scores out of 10. A 10/10 was a truly impressive or surprising project. A project that met its deliverables with a few flaws was a 9/10. A project that had some issues, like not running in many cases or being buggy in important cases, was an 8/10. We also gave half-points. Etc. We found most of the projects inspiring, even the ones that lost points; there was just a lot of coolness in this year's projects.</dd>
+  <dt>5/18:  Final exam scores posed and final exam statistics</dt>
+    <dd>The statistics for the final exam are: mean 67.3, median 74, high score 90, std. dev 15.4.</dd>
+  <dt>5/12:  Final exam and solutions posted on <a href="exams.html">exams page</a></dt>
+    <dd><a href=exams/final-soln-2011.pdf>Here</a> is a link to the solutions.</dd>
+  <dt>5/10:  Mike's last-minute office hours will be 4:00--5:30 PM Thursday evening, May 12</dt>
+    <dd></dd>
+  <dt>5/8:  Exam details</dt>
+    <dd>Most of the details are in the notes from the review/study session. The emphasis will be on the second half of the semester, but the first half will be covered.</dd>
+  <dt>5/8:  <a href=lectures/r02.txt>Notes from review/study session</a> posted here and on schedule page</dt>
+    <dd></dd>
+  <dt>5/4:  The story of Mel</dt>
+    <dd>You may enjoy <a href="http://www.cs.utah.edu/~elb/folklore/mel.html">the story of Mel</a>, a classic folk tale. Recently, people (re)learned that <a href="http://wps.com/J/LGP-21/mel-the-programmer.html">Mel is real</a>.</dd>
+  <dt>5/4:  Final will be closed book, but you can bring TWO two-sided sheets of notes</dt>
+    <dd>As with the midterm, you may bring sheets of notes. Note that whereas for the midterm you had ONE two-sided sheet, for the final, you may bring TWO two-sided sheets, for a total of four sides of printing. As with the midterm, we have formatting requirements for each sheet. Here they are: Times New Roman font, minimum 10 point font, minimum 1 inch margins on all sides, maximum 55 lines per side (which is a busy single-spaced sheet). <i>Please do not exceed 1 inch margins, even if it means that you cannot fit 55 lines per side.</i> If you use handwriting, same deal: your handwriting should be no smaller than 10pt, your margins should be at least 1 inch, etc., etc.</dd>
+  <dt>5/4:  Reminder about final review session this Saturday</dt>
+    <dd>Review session for the final is this Saturday, May 7, 6:00--8:00 PM in BUR 220</dd>
+
+</dl>
+
+<p><a href="announcements.html">See all announcements</a>
+<a href="rss2.xml"><!--<img src="xml.gif" border="0">-->RSS 2.0 feed</a>
+</p>
+</div>
+
+<br></br>
+<br></br>
+
+<h2>Course information</h2>
+<ul>
+<li>Time and place: TueTh 5:00-6:30 PM, CBA 4.328</li>
+<li>Instructor: <a href="http://www.cs.utexas.edu/~mwalfish">Michael
+Walfish</a>.
+    <ul><li>Office hours: Fridays, 3:00-4:00 PM, or by
+    appointment. Office: ACES 6.252.</li></ul>
+  </li>
+<li>Lab assistant: Victor Vu
+    <ul>
+    <li>Office hours: Tuesdays, 3:00-4:00 PM. Location: seating area
+    outside ACES 6.252.</li>
+    <li>Email address: username is diragjie. domain is cs.</li></ul>
+</li>
+<li>Staff mailing list:
+    <tt>cs372h-s11-staff@cs</tt> 
+<li> Course mailing list (students and staff):
+    <tt>cs372h-s11-all@utlists.utexas.edu</tt></li>
+<li><i>If you have
+questions about the labs, please email the staff mailing list, not
+either of the staff members individually.</i></li>
+</ul>
+
+<div id="overview_main">
+<h2>Description and goals</h2>
+<p>
+
+<p>This course is an introduction to operating systems. 
+
+<p>The goals are for you to learn three sets of interrelated things. The
+first thing is how operating systems and, more generally, computers
+work. Students graduating with CS degrees should believe "there is no
+magic": they should be able to describe the chain of events that occurs
+when they hit a key and cause a letter to appear on the screen from the
+register level (or logical gate level or transistor level) to the system
+architecture level to the operating system level to the application
+level. This is philosophically important, but it is also of practical
+interest to developers who need to figure out how to make a system do
+what they want it to do.
+
+<p>The second goal is for you to learn the core ideas in operating
+systems: virtual addressing, memory protection, concurrent programming,
+file systems, scheduling, transactions, etc. Often, but not always, such
+ideas are best explained as <i>abstractions</i> that some software layer
+(usually
+the operating system) provides above imperfect hardware to make that
+hardware
+usable by programmers and users. The intent is for you to understand
+such abstractions well enough to be able to synthesize new abstractions
+when faced with new problems.</p>
+
+<p>Many of the ideas and abstractions that we will cover are relevant
+not only to OS kernels but also to many large-scale systems. Thus, a
+third goal of this course (which is more like a beneficial side effect)
+is to enhance your ability to understand, design, and implement such
+systems.</p>
+
+<h2>The work</h2>
+
+<p>Besides twice-weekly lectures, the class will consist of 
+assigned readings, labs, homeworks, and exams:</p>
+
+<ul>
+<li> The <b>readings</b> are summarized below. The assigned readings
+should be completed before class.</li>
+
+<li> The <b>labs</b> are a crucial component of this course and
+are described in more detail <a href="labs.html">here</a>. You will
+implement (the interesting pieces of) a real operating system that will
+boot on a PC. 
+
+<li> The <b>homeworks</b> will not count for your grade but rather will
+be exercises that are just that: exercises. (These homeworks shouldn't
+be confused with the labs, and their included exercises, which do count for
+your grade.) The intent is for you to use
+them as self-exams to assess your understanding of the material, and
+evaluate your performance, all without affecting your grade. Of course,
+the lack of an actual grade or a deadline for completing these problem
+sets may be an invitation for procrastination or even ignoring this
+process altogether. But we trust that you will find this a useful aspect
+of the class and we strongly urge you to take advantage of it. To make
+effective use of this feature, complete the homeworks by the specified
+deadline. Delaying the homeworks with the intent of accumulating them
+and solving them at once before the exams is not likely to be an
+effective strategy.</li>
+
+<li> The <b>exams</b> are described <a href="policies.html">here</a>.
+
+</ul>
+
+<p>Finally, you are responsible for checking the announcements (either on the site
+or by RSS) every 24 hours.</p>
+
+<h2>A note about the labs</h2>
+
+We recommend that you start the labs long before they are due. The
+standard advice is "Start the labs early", but that is not quite right.
+The best advice that we know of is "Start the labs on time, but on time
+is probably much earlier than you think".
+
+<h2>Readings</h2>
+
+<ul>
+<li>Required: <i>Modern Operating Systems (third edition)</i>, Andrew S. Tanenbaum.
+(Prentice Hall, Inc., 2008. ISBN: 0-13-600663-9.) There will be assigned
+readings from this book. If you don't want to buy this edition, note
+that it is on reserve at PCL. Also, the second edition of the book
+will probably be fine, but we cannot guarantee that.</li>
+<li>Required: Assigned handouts</li>
+<li>Optional: <i>Operating System Concepts (eighth edition)</i>, Abraham
+Silberschatz, Peter Baer Galvin, and Greg Gagne. (John Wiley &amp; Sons,
+2008. ISBN: 0-47-012872-0.) This book may be a useful reference. It too
+is on reserve at PCL.</li>
+<li>Optional: <i>The C programming language (second edition)</i>, Brian W.
+Kernighan and Dennis M. Ritchie. (Prentice Hall, Inc., 1988. ISBN:
+0-13-110362-8.) This book is a classic reference to C.</li>
+</ul>
+
+<!-- ugly: needed to prevent the announcements from bleeding over -->
+<hr style="clear: both; visibility: hidden;" />
+</div>
+</div>
+
+<h4>Acknowledgements</h4>
+
+We are indebted to the present and past staffs of related courses
+elsewhere: 
+<a
+href="http://www.cs.utexas.edu/~dahlin/Classes/UGOS/Spring08/index.html">UT</a>, <a
+href="http://pdos.csail.mit.edu/6.828/2008">MIT</a>, <a
+href="http://www.cs.ucla.edu/~kohler/class/08w-aos/">UCLA</a>, and <a
+href="http://www.scs.stanford.edu/05au-cs240c/">Stanford</a>.
+
+<hr />
+<p class="lastupdated">Last updated: Fri May 20 04:51:07 -0500 2011
+ [<a href="http://validator.w3.org/check?uri=referer">validate xhtml</a>]</p>
+</body>
+</html>

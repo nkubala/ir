@@ -1,0 +1,265 @@
+<base href="http://www.cs.utexas.edu/~eberlein/cs341/cs341.html">
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="GENERATOR"
+ content="Mozilla/4.79 [en] (X11; U; Linux 2.4.18 i686) [Netscape]">
+  <title>Automata Theory</title>
+</head>
+<body link="#0000ef" text="#000000" vlink="#51188e" alink="#ff0000"
+ background="cotnppr.gif" bgcolor="#ccffff">
+<h2> </h2>
+<center>
+<table nosave="" height="100" width="100%" border="1" cellpadding="10"
+ cols="1">
+  <tbody>
+    <tr nosave="" bgcolor="#66ffff">
+      <td nosave="" height="10%">
+      <center><font size="+4">CS 341 - Automata Theory</font> <br>
+Computer Sciences Dept * The University of Texas at Austin * Fall 2011<br>
+      </center>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+<ul>
+  <li> <a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/cs341_syll.html">Course
+Syllabus</a></li>
+  <li> <a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/cs341topics.html">Topic
+Schedule<br>
+    </a></li>
+  <li><a href="homeworkGuidelines.html">Homework guidelines</a><br>
+  </li>
+  <li><a href="https://courses.utexas.edu/webapps/portal/frameset.jsp">Class
+discussion
+group</a></li>
+&nbsp;
+  <p><big><big style="font-weight: bold;">Announcements:</big> <br>
+  </big></p>
+  <ul>
+    <li>Dec 6: Homework 9 solutions are outside my office.</li>
+    <li>Dec 6: Our final exam review will be today, 2-3:30, in PAI 3.14.<br>
+    </li>
+    <li>Sept 21: Exam 1 will be Monday, Oct 3, 7-8:30, in PAI 2.48.</li>
+    <li>Sept 21: Exam 2 will be Monday, Nov 7, 7-8:30, in PAI 2.48.<br>
+    </li>
+    <li>Sep 6: From now on, we will use <a
+ href="http://piazza.com/class#fall2011/cs341">piazza</a> instead of
+blackboard for the class discussion board. You are expected to read
+messages and announcements regularly.</li>
+    <li>Sep 6: Note that Fred's office hours have changed. <br>
+    </li>
+    <li>Aug 24: This website is a work in progress - the course
+policies will not be finalized until the first day of class.<br>
+    </li>
+  </ul>
+  <p> <b><font size="+2">Handouts</font></b> </p>
+  <ul>
+    <li> <a href="mathPrelims.pdf">Math Preliminaries</a></li>
+    <li><a href="proofTechniques.pdf">Review of proof techniques</a></li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/mid1pracfall2011.pdf">Midterm
+review
+sheet</a></li>
+    <li><a href="midSum2007.pdf">Midterm</a> - Summer 2007</li>
+    <li><a href="mid2007sol.pdf">Midterm 2007 solutions</a></li>
+    <li><a href="midsol-sum2007.pdf">review solutions</a></li>
+    <li><a href="review2-sum2007.pdf">CFL review sheet</a></li>
+    <li><a href="CFLReviewSols-sum2007.pdf">CFL review solutions</a></li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/midterm2-fall01.pdf">Sample
+Midterm
+2</a> <br>
+    </li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/review2fall2011.pdf">Midterm
+2
+Review</a></li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/Exam2Solutions.pdf">Exam
+2
+Solutions</a><br>
+    </li>
+  </ul>
+  <b><font size="+1"><font size="+2"><br>
+Homework Assignments<br>
+  </font></font></b>
+  <ul>
+    <li><a href="hw1.pdf">homework 1</a> - due Friday, Sept 9,
+at the beginning of class</li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/hw2fall2011.pdf">homework
+2</a> - due Wednesday, Sept 14, at the beginning of class</li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/hw3fall2011.pdf">homework
+3</a> - due Friday, Sept 23, at the beginning of class</li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/hw4fall2011.pdf">homework
+4</a> - due Friday, Sept 30, at the beginning of class</li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/hw5fall2011.pdf">homework
+5</a> - due Monday, Oct 17, at the beginning of class</li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/hw6fall2011.pdf">homework
+6</a> - due Wednesday, Oct 26, at the beginning of class</li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/hw7fall2011.pdf">homework
+7</a> - due Friday, Nov 4, at the beginning of class</li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/hw8fall2011.pdf">homework
+8</a> - due Friday, November 18, at the beginning of class</li>
+    <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/hw9fall2011.pdf">homework
+9</a> - due Friday, Dec 2, at the beginning of class<br>
+    </li>
+  </ul>
+</ul>
+<font style="font-weight: bold;" size="+2"><br>
+</font>
+<ul>
+  <p>The old assignments and exams below are provided as practice
+problems. Additional solutions will not be posted but can be discussed
+during office hours and review sessions.&nbsp;</p>
+  <p> <br>
+  <b> <font size="+2">Homework Assignments from Spring 2003</font></b>
+  </p>
+</ul>
+<ul>
+  <li> <a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/hw1-spr2003.ps">Homework
+1</a> - due Jan 28 <a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/HW1solS03.pdf"></a><br>
+  </li>
+  <li><a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/hw2-spring2003.ps">Homework
+2</a> - due Feb 11&nbsp;</li>
+  <li><a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/hw3-spr03.ps">Homework
+3</a> - due Feb
+25 <a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/hw3-spr03-corrections.txt"></a><br>
+  </li>
+  <li><a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/hw4-spr03.ps">Homework
+4</a> - due March 25 <a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/HW4solS03.pdf"></a><br>
+  </li>
+  <li><a href="http://www.cs.utexas.edu/users/eberlein/cs341/hw4a.ps">Homework
+4</a>,
+part 2 - due March 27 <br>
+  </li>
+  <li><a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/hw5-spr03.ps">Homework
+5</a> - due April 10 <a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/HW5solS03.pdf"></a><br>
+  </li>
+  <li><a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/hw6-sp03.ps">Homework
+6</a> - due April 22 <a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/HW6solS03.pdf"></a><br>
+  </li>
+  <li><a
+ href="http://www.cs.utexas.edu/users/eberlein/cs341/hw7-spr03.ps">Homework
+7</a> - due May 1 &nbsp;</li>
+</ul>
+<ul>
+  <p><b><font size="+2"></font></b></p>
+  <p><b><font size="+2">Old Homework Assignments from Spring 2002</font></b>
+  </p>
+  <ul>
+    <li> <a href="hw1spr02.ps">Homework 1</a> -- due Jan 24</li>
+    <li> <a href="hw2.ps">Homework 2 </a>-- due Feb 14</li>
+    <li> <a href="hw3spr02.ps">Homework 3</a> -- due Feb
+27</li>
+    <li> <a href="hw4spr02.ps">Homework 4 </a>-- due Apr
+2</li>
+    <li> <a href="hw5spr02.ps">Homework 5 </a>-- due May
+2</li>
+  </ul>
+  <p><br>
+  <b><font size="+2">Old Exams</font></b> </p>
+  <ul>
+    <li> <a href="midterm1-fall01.ps">Midterm 1</a>, Fall
+2001 and <a href="midterm1_sol.ps">solutions</a></li>
+    <li> <a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/midterm2-fall01.pdf">Midterm
+2,
+Fall
+2001
+
+
+
+      <br>
+      </a></li>
+    <li>Midterm 2 <a href="mid2sol-fall2001.pdf">solutions</a><br>
+    </li>
+    <li> <a href="final_fall01.ps">Final Exam, Fall 2001</a></li>
+    <li> <a href="f2001sol.html">Solutions to Fall 2001 final</a></li>
+  </ul>
+</ul>
+<br>
+<b><font size="+2">Old Handouts</font></b><br>
+<ul>
+  <li>Luay's <a href="1st_midterm_review_fa03.pdf">Review
+Sheet</a> for Midterm 1</li>
+  <li>Luay's <a href="final_review_sp03.pdf">review
+sheet</a> for the
+final exam</li>
+  <li><a
+ href="http://www.cs.utexas.edu/%7Eeberlein/cs341/finalReviewFall2011.pdf">Final
+exam
+review sheet</a><br>
+  </li>
+  <li><a href="finalReviewSols.pdf">Solutions</a> for final exam review
+sheet</li>
+  <li><a href="final_review_sp03_sol.pdf">Luay's solutions</a> - final
+exam review</li>
+</ul>
+<br>
+<b><font size="+1">&nbsp; </font></b><br>
+<br>
+<b><font size="+1">Some Useful Links:<br>
+</font></b><br>
+<ul>
+  <li><a href="http://www.utexas.edu/student/utlc/">The University of
+Texas Learning Center</a> - tutoring and academic counseling</li>
+  <li><a href="http://www.utacm.org/">UT's ACM chapter</a> -
+tutoring</li>
+  <li><a href="http://www.ics.uci.edu/%7Eeppstein/161/960222.html">Finite
+automata
+and
+string
+matching</a> - a description of one application of
+finite automata.</li>
+  <li><a href="http://www.4guysfromrolla.com/webtech/120400-1.shtml">Common
+Applications
+of
+Regular
+Expressions</a></li>
+  <li><a
+ href="http://www.melonfire.com/community/columns/trog/article.php?id=2">So
+What's
+a
+$#!%%
+Regular
+Expression,
+Any
+way?!</a> - using regular
+expressions for search and replace operations<br>
+  </li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

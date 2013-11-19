@@ -1,0 +1,221 @@
+<base href="http://www.cs.utexas.edu/~mooney/ir-course/proj3/">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>CS 371R Information Retrieval and Web Search: Project 3</title>
+  <style>
+    div.important {
+      width: 60em;
+      border: 1px dashed red;
+      background-color: #eee;
+      margin: auto;
+      padding: .5em;
+    }
+    pre.codesample {
+      width: 60em;
+      background-color: #eee;
+      border: 1px dashed blue;
+      margin-left: 3em;
+      padding: .5em;
+    }
+  </style>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<center>
+<h2>Project 3 for CS 371R: Information Retrieval and Web Search <br>
+Web Spidering and PageRanking<br>
+</h2>
+Due: Tuesday Nov. 19, 2013<br>
+(Making web page: Part 1 due: Nov. 10;&nbsp; Part 2 due: Nov. 12)<br>
+</center>
+<br>
+<h3>Existing Spiders </h3>
+<p> As discussed in class, a basic system for
+spidering the web is available in <code>/u/mooney/ir-code/ir/webutils/</code>
+See the <a href="../doc/ir/webutils/package-summary.html">Javadoc </a>
+for this
+code. Use the <a
+ href="../doc/ir/webutils/Spider.html#main%28java.lang.String%5B%5D%29">
+<code>main</code> method </a> for the <a
+ href="../doc/ir/webutils/Spider.html">
+<code>Spider</code></a> class to start from a particular URL and spider
+the web
+breadth-first and save the documents in a specified directory for
+subsequent
+indexing and searching with VSR. Also see the specializations <a
+ href="../doc/ir/webutils/SiteSpider.html"> <code>SiteSpider</code></a>
+and <a href="../doc/ir/webutils/DirectorySpider.html">
+<code>DirectorySpider</code></a>, which restrict their crawling to a
+particular
+site (host) or directory, respectively.
+</p>
+<p>See a <a href="../spider-trace.txt">sample trace</a> of running
+<code>SiteSpider</code> on the UT CS department faculty page to collect
+75 pages related to CS faculty.
+</p>
+<p>This assignment will not require using the "<code>-safe</code>"
+spidering flag
+that invokes restrictions according to the
+<a href="http://www.robotstxt.org/wc/exclusion.html">Robot Exclusion
+Policy</a> since we will be sticking to spidering within the
+department. Therefore
+the <code>Safe</code>* and <code>Robot</code>* classes can be ignored
+for now. However, if you spider outside the department, be sure to use
+"<code>-safe</code>". 
+</p>
+<p>A collection of 800 department pages <code>SiteSpider</code>ed from <a
+href="http://www.cs.utexas.edu/faculty">
+<code>http://www.cs.utexas.edu/faculty</code></a> are cached in
+<code>/u/mooney/ir-code/corpora/cs-faculty/</code>. Like
+<code>yahoo-science</code>, this directory can be indexed and searched using
+VSR, as in <a href="../proj1/">Project 1</a>. This database can also be
+searched using the <a href="../search.html">Simple Search Engine</a> servlet
+demo. The code for this servlet is available at
+<code>/u/mooney/ir-code/irs/</code> ("irs" is for "information retrieval
+servlets").
+</p>
+<h3>Your Task</h3>
+<p>
+Your assignment is to make a specialization of the <code>Spider</code>
+class called <code>PageRankSpider</code> that computes the PageRanks
+of the spidered pages based on their link structure, and make a
+specialization of the <code>InvertedIndex </code>class
+called <span style="font-family:
+monospace;">PageRankInvertedIndex</span> that utilizes the PageRanks
+to compute the relevance of documents. Make sure to override only the
+methods you change. You should also create further a
+specialization <code>PageRankSiteSpider</code> that restricts its
+spidering accordingly.&nbsp;
+</p>
+<p>While crawling, <code>PageRankSpider</code> should form a graph
+based on the incoming and outgoing links. When computing PageRank, only those pages which are actually
+indexed (saved to disk) should be included in the graph as nodes. You may find <code>ir.webutils.Graph</code>
+and <code>ir.webutils.Node</code> data structures helpful for building and manipulating the graph. Then it should run the PageRank algorithm on the graph and store all the PageRanks in a text file named <code>pageRanks</code> in the same directory as the crawled pages.  The format of <code>pageRanks</code> should be similar to this example:
+
+<pre class='codesample'>
+P001.html 0.006494458532952974
+P002.html 0.009569125239295519
+P003.html 0.006569776377162855
+</pre>
+
+Each line contains a file name, some amount of whitespace, and the computed PageRank for that document.<br><br>
+
+With respect to the PageRank algorithm's parameters, use 0.15 for <em>alpha</em> and 50 for the number of <em>iterations</em>. <br>
+</p>
+<p>
+ You can crawl the following URL to help you verify that your PageRank algorithm works:
+ <pre class="codesample"> <a href="a.html">http://www.cs.utexas.edu/~mooney/ir-course/proj3/a.html</a> </pre>
+</p>
+<p><code></code>In addition to indexing the documents, <code>PageRankInvertedIndex</code> should read the
+ PageRanks of the documents. When computing the relevance of the document for a
+ query it should add its PageRank scaled by a <em>weight</em> parameter to the score.  The <em>weight</em> parameter should be a command
+ line argument for <code>PageRankInvertedIndex</code> specified with "<code>-weight value"</code> </p>
+
+
+<p><strong>Making Web Pages</strong><br>
+</p>
+<p>As discussed in class, in order to create test data for this
+assignment, everyone
+should create a special personal page for this class at
+<code>http://www.cs.utexas.edu/users/<i>login</i>/ir-course.html</code>
+by adding an
+"<code>ir-course.html</code>" file to the <code>/u/<i>login</i>/public_html/</code>
+web
+directory for your <code><i>login</i></code>.  You might need to set the Linux permissions to make the file readable with the command <code>chmod a+r ir-course.html</code>.  Make sure that when you click on <a
+ href="http://www.cs.utexas.edu/users/mooney/ir-course/students.html">
+your link</a> it pulls up your new web page.<br>
+</p>
+<strong>Important: Parts 1 and 2 of this assignment cannot be turned in late!</strong>  Note: please do not submit your ir-course.html pages through turnin.  Simply post them to the web as described above. 
+<p><span style="font-weight: bold;">Part 1 (2.5 points): due Nov. 10</span><br>
+You should include links to at least 5 webpages
+of the courses that you have enjoyed from the list of CS courses
+located at <a href="course-list.html">http://www.cs.utexas.edu/users/moooney/ir-course/proj3/course-list.html</a>.
+Please include the links <b>exactly</b> as they are given in this
+list, and don't
+worry if your favorite class is not included - we are just creating a
+toy link
+structure. For example, your "<code>ir-course.html</code>" may look
+like <a href="favorite.txt">this</a>.<br>
+This simple part counts for 2.5% of
+the project grade. They all will be linked from <a
+ href="http://www.cs.utexas.edu/users/mooney/ir-course/students.html">
+http://www.cs.utexas.edu/users/mooney/ir-course/students.html</a> .<br>
+</p>
+<span style="font-weight: bold;">Part 2 (2.5 points): due Nov. 12</span><br>
+Once all ir-course.html pages are in place by Nov. 10, select at least
+3 <code>ir-course.html</code> pages of other students and link them
+from your page. You may use
+some criteria like how much you agree with their favorite courses.
+Again, the bottom-line is to make an interesting toy link structure.
+This part counts  2.5% of the project grade. Do
+not change your page after Nov 12.<br>
+
+<p>Use your <code>PageRankSiteSpider</code> to crawl from&nbsp; <a
+ href="http://www.cs.utexas.edu/users/mooney/ir-course/students.html">http://www.cs.utexas.edu/users/mooney/ir-course/students.html</a>
+and index all
+student course pages. A limit of 200 pages should
+suffice. Index and search the resulting directory of pages using <code>PageRankInvertedIndex</code>
+and compare the search results to those obtained
+with the original <code>InvertedIndex</code> for several different
+values of <span style="font-style: italic;">weight</span>. Try the
+following queries:
+</p>
+<ul>
+  <li>Raymond machine learning</li>
+  <li>cryptography</li>
+  <li>vision visualization graphics</li>
+</ul>
+<h3>Report and Trace</h3>
+<p>
+In your report, describe the PageRank algorithm as you have implemented it, and describe how you changed the retrieval process to incorporate it.  Additionally, try several queries to get a feel for the effects of PageRank and then answer at least these two questions: 
+  <ol>
+    <li>Does PageRank seem to have an effect on the quality of your results, as compared to the original retrieval code?  Why or why not?</li>  
+    <li>How does varying <em>weight</em> change your results?</li>
+  </ol>
+  
+You are asked to submit two separate traces for this assignment: a trace of the spidering operation and a trace of the retrieval operation. 
+<p>This is a sample <a href="page-ranks.txt">page rank output file</a>&nbsp; in which <code>PageRankSiteSpider</code> has been
+crawled on the <a href="http://www.cs.utexas.edu/users/mooney/ir-course/students.html">students'
+pages</a>. </p>
+<p>This is a sample <a href="retrieve-trace.txt">retrieval trace</a> from running the <code>PageRankInvertedIndex</code> with a couple different weights on the queries above (see also the <a href="pageurls.txt">filename to URL mapping</a> for this trace). 
+</p>
+
+<h3>Submission</h3>
+<p>
+In submitting your solution, follow the general course instructions on
+<a href="../proj-submit-info.html">submitting projects</a> on the
+course homepage.  Note that this assignment requires <strong>two</strong> traces, as described below:
+</p>
+<p>Along with that, follow these specific instructions for Project 3:
+</p>
+<ul>
+  <li> Create new classes by extending existing classes - call them <code>PageRankSpider</code>, <code>PageRankSiteSpider</code>, and <code>PageRankInvertedIndex</code>.  You may also wish to create a standalone  <code>PageRank</code> class to compute PageRank.</li>
+  <li> For this project, submit a directory, which
+should contain:
+    <ol>
+      <li> <i>REPORT.* file</i>: writeup in text or html or ps or pdf </li>
+      <li> <i>spider-trace.txt</i>: trace file of running the spider on the sample corpus
+</li>
+      <li> <i>page-ranks.txt</i>: page rank output file when
+crawled on <a
+ href="http://www.cs.utexas.edu/users/mooney/ir-course/students.html">students'
+pages</a></li>
+      <li> <i>retrieve-trace.txt</i>: trace file of program execution when
+querying with page rank on at least the queries mentioned above.</li>
+
+      <li> <i>ir directory</i>: should contain /webutils , and /vsr
+with all (and <i>only</i>) the files that you have created or modified.</li>
+      <li>If you make any changes to the existing code (should be
+minimal) then also turn in the modified files.<br>
+      </li>
+    </ol>
+  </li>
+  <li> <b> It is important to submit the correct directory structure!</b>
+Executing
+"turnin -list jiho cs371r-proj3" after the submission should produce
+output similar to the following:
+    <pre>pandora.cs.utexas.edu$ turnin -list jiho cs371r-proj3<br>12027712    4 drwx------   3 jiho grad         4096 Nov  6 03:38 ./<br>12027712    4 drwxr-xr--   3 jiho grad         4096 Nov  6 03:38 ./proj3<br>12027723    4 drwxr-xr-x   4 jiho grad         4096 Nov  6 03:37 ./proj3/ir<br>12027724    4 drwxr-xr-x   2 jiho grad         4096 Nov  6 03:37 ./proj3/ir/webutils<br>12027725    2 -rw-r--r--   1 jiho grad         1471 Oct 23 23:36 ./proj3/ir/webutils/PageRankSiteSpider.java<br>12027726    6 -rw-r--r--   1 jiho grad         6076 Nov  6 03:22 ./proj3/ir/webutils/PageRankSpider.java<br>12027727    3 -rw-r--r--   1 jiho grad         2219 Nov  6 03:35 ./proj3/ir/webutils/PageRank.java<br>12027728    4 drwxr-xr-x   2 jiho grad         4096 Nov  6 03:37 ./proj3/ir/vsr<br>12027729    9 -rw-r--r--   1 jiho grad         8347 Nov  6 02:45 ./proj3/ir/vsr/PageRankInvertedIndex.java<br>12027730    6 -rw-r--r--   1 jiho grad         5199 Oct 10 10:05 ./proj3/REPORT.pdf<br>12027731   18 -rw-r--r--   1 jiho grad        18368 Nov  6 03:27 ./proj3/spider-trace<br>12027731   18 -rw-r--r--   1 jiho grad        15323 Nov  6 03:29 ./proj3/retrieve-trace<br></pre>
+  </li>
+</ul>
+</body>
+</html>

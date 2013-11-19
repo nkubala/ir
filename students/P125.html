@@ -1,0 +1,136 @@
+<base href="http://www.cs.utexas.edu/~novak/cs375.html">
+<HTML>
+<!--  cs375.html          G. Novak           30 Jul 13    -->
+<HEAD>
+<TITLE>CS 375: Compilers</TITLE>
+</HEAD>
+
+<BODY>
+<H1>CS 375: Compilers</H1>
+<HR>
+
+CS 375 covers the design and construction of compilers for programming
+languages.  Each student writes a compiler for most of Pascal; code
+is generated for a real processor and is run on hardware.
+<p>
+<B>This course has a heavy programming workload, especially in the summer.</B>
+Students planning to take the course in summer should expect to dedicate
+their lives to this course for five weeks; <B>do not</B> try to work while
+taking CS 375 in summer.
+<P>
+
+<B>Instructor:</B>
+ <a href="http://www.cs.utexas.edu/users/novak/index.html">
+Gordon S. Novak Jr.</a>, GDC 3.824; Office Hours: 4:00 - 5:00.
+<p>
+<B>TA:</B> <a href="http://www.cs.utexas.edu/users/yunsik">
+Yun-Sik Choi </a>,
+Office Hours: M T Th 10:30 - 11:30 in the GDC basement TA station,
+ and by appointment.
+
+&nbsp &nbsp &nbsp &nbsp &nbsp
+<A href=mailto:yunsik@cs.utexas.edu><TT>yunsik@cs.utexas.edu</TT></A>
+
+<p>
+<a href="cs375syllabus.html"><b>Syllabus</b></a><p>
+<B>Text:</B>
+<a href="http://dragonbook.stanford.edu/">
+Aho, Lam, Sethi, & Ullman, <I> Compilers: Principles, Techniques, and Tools</I></a>, Optional.
+<p>
+<B>iClicker:</B>
+An iClicker, version 1 or 2, is required.  If you already have an
+iClicker, it should work.  <BR>
+<B>Register</B> your iClicker on
+<a href="https://courses.utexas.edu/"> Blackboard</a>: select the CS 375
+class, select Blackboard Tools on the menu at left, scroll down to the
+iClicker tool.
+<P>
+<a href="cs375clcontents.html"><B>Clicker Questions</B>
+<P>
+<A href="https://utexas.instructure.com"><B>Grades on Canvas</B></A>
+<p>
+<B>Lecture Notes:</B> Available in printed form in WEL 2.228. <BR>
+Online by <a href="cs375contents.html"><b>Contents</b></a> or
+<a href="cs375index.html"><b>Index</b></a> or
+<a href="cs375.pdf"><b>PDF</b></a>. &nbsp; &nbsp;
+<a href="langtableb.pdf"><b>Table of Chomsky Language Hierarchy</b></a>
+<p>
+<a href="http://nb.mit.edu/f/4866"><B>Lecture Notes Annotated on NB</B></a>
+<p>
+<a href="cs375vocab.html"><B>Vocabulary</B></a>
+<p>
+<a href="http://piazza.com/">
+<B>Follow CS 375 Discussions on Piazza</B></a>
+<p>
+<B>Programming assignments</B> may be written in C / lex / yacc
+or Lisp (if you are good at Lisp).
+All programming assignments must be your own individual work.
+Program files are provided, in the directory <tt>/projects/cs375/</tt> or
+in the <a href="ftp://ftp.cs.utexas.edu/pub/novak/cs375/">
+FTP directory for Program Files,</a>
+<tt>ftp://ftp.cs.utexas.edu/pub/novak/cs375/</tt>
+for use with the assignments.  The files are described by
+<a href="cs375files.html">Program File Descriptions</a>.
+It is legal to use any of these files as part of your programs.
+
+<p>
+<a href="http://www.cs.utexas.edu/users/novak/cs375turnin.html">
+How to Turn in the Programming Assignments</a><p>
+<p>
+<a href="debugging.html"><B>Testing and Debugging</B></a>
+<p>
+<B>Assignments:</B>
+<p>
+<UL>
+<LI><a href="asg-lexan.html">Lexical Analyzer</a>
+<LI><a href="asg-lex.html">Lexical Analyzer using <tt>lex</tt></a>
+    &nbsp &nbsp    See <a href="lexpaper.htm">Paper on <tt>lex</tt></a>,
+<a href="http://en.wikipedia.org/wiki/Flex_lexical_analyser">
+Wikipedia page on Flex</a>, and
+<a href="http://flex.sourceforge.net/"> Flex</a>.
+<LI><a href="asg-parse.html">Parser using <tt>yacc</tt> or C or Lisp</a>
+    &nbsp &nbsp    See <a href="yaccpaper.htm">Paper on <tt>yacc</tt></a>,
+<a href="http://en.wikipedia.org/wiki/Yacc">Wikipedia page on Yacc</a>,
+<a href="http://en.wikipedia.org/wiki/GNU_bison">Wikipedia page on Bison</a>,
+<a href="http://www.gnu.org/software/bison/manual/">
+Gnu Bison Manual</a>,
+         <a href="make-intro.pdf">Introduction to Makefiles</a>,  and
+<a href="grammar.html">Pascal Grammar Flowcharts</a>.
+<LI><a href="asg-codegen.html">Code Generator</a>
+</UL>
+
+<H4>X86 References:</H4>
+<UL>
+<LI> <a href="http://en.wikibooks.org/wiki/X86_Assembly">
+Wikibooks: X86 Assembly</a>
+<LI> <a href="http://www.cs.cmu.edu/~fp/courses/15213-s07/misc/asm64-handout.pdf">
+x86-64 Machine-Level Programming, CMU</a>
+<LI> <a href="http://www.cs.virginia.edu/~evans/cs216/guides/x86.html">
+x86 Assembly Guide, University of Virginia</a>
+
+</UL>
+
+<H4> <a href="iso7185.pdf">ISO 7185 Pascal Standard (pdf)</a> </H4>
+
+
+<H4>Song: <a href="http://www.prometheus-music.com/audio/eternalflame.mp3">
+"God Wrote in Lisp"</a>,
+<a href="http://www.songworm.com/lyrics/songworm-parody/EternalFlame.html">
+Lyrics</a> by 
+<a href="http://www.songworm.com/songworm.html">Bob Kanefsky</a>,
+sung by <a href="http://www.songworm.com/db/person/JuliaEcklar.html">
+Julia Ecklar</a>.
+</H4>
+
+<a href="cs375grading.html">Program Grading</a><p>
+
+<a href="cs375midterm.html">Midterm Study Guide</a>
+and <a href="cs375midquest.html">Example Midterm Questions</a>
+<p>
+<a href="cs375final.html">Final Exam Study Guide</a>
+and <a href="cs375finquest.html">Example Final Exam Questions</a>
+
+</BODY>
+<address><a href="http://www.cs.utexas.edu/users/novak/index.html">
+Gordon S. Novak Jr.</a></address>
+</HTML>

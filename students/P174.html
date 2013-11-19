@@ -1,0 +1,195 @@
+<base href="http://www.cs.utexas.edu/~novak/cs314recurbn.html">
+<HTML>
+<!--  cs314recurbn.html          G. Novak           04 Oct 12    -->
+<!--    -->
+<HEAD>
+  <TITLE>Notes on CS 314 Assignment 3: More Recursion and Lists</TITLE>
+</HEAD>
+<BODY>
+
+<H2>Notes on CS 314 Assignment 3: More Recursion and Lists</H2>
+
+<P>
+
+<OL>
+
+<LI> Write functions that find the <TT>sum</TT>, <TT>mean</TT> or average
+(mean = (sum x<SUB>i</SUB>) / n),
+<TT>meansq</TT> (mean square = (sum x<SUB>i</SUB><SUP>2</SUP>) / n),
+<TT>variance</TT>, and
+<TT>stddev</TT> (standard deviation) of a list of <TT>Integer</TT>.
+<P>
+If the assignment does not specify it, you can use either iteration,
+recursion, or tail recursion (your choice).  You can always use
+any of your functions from previous assignments, or functions from
+the class notes.
+<P>
+A formula for variance is shown below.  Using the functions for mean
+and mean square as subroutines makes this one easy.
+<P>
+<IMG SRC="variance.png">
+<P>
+The standard deviation is the square root of the variance.
+You can use <TT>Math.sqrt()</TT> .
+
+<LI>  The sine function can be computed from its Taylor 
+series expansion:
+<PRE>
+          1    3    5    7    9
+         x    x    x    x    x
+sin(x) = -- - -- + -- - -- + -- - ...
+         1!   3!   5!   7!   9!
+</PRE>
+Write a function <TT>double sine(double x)</TT> to compute sine
+using this series.  You may not use the functions <TT>Math.pow</TT>
+or <TT>factorial</TT>;
+instead, write a tail-recursive auxiliary function to compute each 
+term of the series from the previous term and add it to the 
+sum.  Stop after the 21st power of x.
+<P>
+Hint: write down how each term of the series differs from the previous term.
+<P>
+Your result should be very close to <TT>Math.sin()</TT> for small values
+of x (say, x less than 0.6), i.e. the same for 14 digits or so.
+
+<P>
+<LI> <TT>nthcdr(int n, Cons lst)</TT> just applies 
+<TT>rest</TT> to <TT>lst</TT> <TT>n</TT> times (<TT>cdr</TT>,
+pronounced "could-er", was the original name given to <TT>rest</TT>).
+<P>
+<PRE>
+>(nthcdr 3 '(a b c d e))
+
+(D E)
+</PRE>
+<P>
+<TT>nthcdr</TT> is a standard function in Lisp, as are most of the
+rest of the functions in this assignment.  If you are using Lisp, you will
+need to rename this function to avoid conflict.  You can check whether
+a function name is already used with <TT>fboundp</TT>:
+<TT>(fboundp 'mapcar)</TT>
+
+<P>
+<LI> Write a function <TT>elt(Cons lst, int n)</TT> that retrieves
+the <TT>n</TT><SUP>th</SUP> item.  This is a one-liner if you use
+<TT>nthcdr</TT> as a subroutine.
+<P>
+The method <TT>List.get(n)</TT> in Java is similar.
+<P>
+<PRE>
+>(elt '(a b c d e) 3)
+
+D
+</PRE>
+
+<P>
+<LI> Write a function <TT>double interpolate(Cons lst, double x)</TT>
+that will make <TT>lst</TT>, a list of <TT>Integer</TT>, appear to be a
+continuous function by linearly interpolating for values of <TT>x</TT>.
+<P>
+<TT>interpolate</TT> just returns a number (it does not do any graphics).
+<P>
+We have values for some variable that are taken at discrete time points.
+For example, the newspaper publishes the temperature at each hour
+for the previous day.  We want to know the temperature at 8:37 when what
+we have is temperatures at 8:00, 9:00, etc.  So what we can do is to
+interpolate between the 8:00 and 9:00 temperatures to estimate the
+temperature at 8:37.
+<P>
+So, what we are doing is to take a set of discrete point measurements
+and make it look like a continuous function by connecting the dots
+with straight lines.
+<P>
+Linear interpolation is the simplest kind. There are more complex kinds
+of interpolation that do a better job with curvy lines.
+<P><a href="http://en.wikipedia.org/wiki/Interpolation">
+http://en.wikipedia.org/wiki/Interpolation</a>
+<P>
+<LI> Write a recursive function <TT>sumtr(Cons lst)</TT>
+that adds all the numbers in <TT>lst</TT>.
+The list <TT>lst</TT> may contain not only <TT>Integer</TT>, but
+also sublists, recursively.
+<P>
+The "tr" in the name is for "tree"; this function actually is operating
+on a tree with numbers at the leaves.
+<P>
+Actually, this function is easy.  Start with the <TT>sum</TT> function
+that you wrote above.  The only difference from the <TT>sum</TT> function
+is that some of the things in the list are not <TT>Integer</TT> (you can
+use <TT>consp</TT> to test if you found a <TT>Cons</TT>).  If it is a
+<TT>Cons</TT>, all you need is a function to add up its contents ...
+don't you have such a function already?
+
+<P>
+<LI> Write a function <TT>subseq(Cons lst, int start, int end)</TT>
+that returns a new list that is a sub-sequence of <TT>lst</TT>
+beginning with the item numbered <TT>start</TT> and including
+items through <TT>end - 1</TT>.
+<P>
+<TT>subseq</TT> needs to be <TT>cons</TT>tructive, i.e. you need to use
+<TT>cons</TT> to build the output, so that you don't mess up the input.
+Be sure to think about using an earlier function as a subroutine.
+<P>
+If your technique makes the output list backwards (e.g. using tail recursion)
+and you want to use <TT>nreverse</TT> to get it into the right order
+before returning it, that is okay; this is a standard idiom, and the
+only exception to our rule of "no destructive functions" in assignments.
+
+<P>
+<LI> A <I>filter</I> is a function that allows desired elements
+to pass through, while removing undesired elements.
+Write a recursive function <TT>posfilter(Cons lst)</TT> that
+returns a new list containing only the non-negative values in
+<TT>lst</TT>, a list of <TT>Integer</TT>, in the same order as in
+the original list.
+<P>
+<TT>posfilter</TT> should be <TT>cons</TT>tructive.
+<P>
+<LI> A <I>predicate</I> is a <TT>boolean</TT> function, which
+tests its argument and returns <TT>true</TT> or <TT>false</TT>.
+Write a recursive function <TT>subset(Predicate p, Cons lst)</TT>
+that returns a new list containing only the values in
+<TT>lst</TT> that satisfy the predicate <TT>p</TT>.  In mathematical
+notation, this would be written { x &isin; lst | p(x) }, pronounced
+<I>the set of x in lst such that p(x)</I>.
+We will
+assume that <TT>p.pred(item)</TT> can be used to test an item.
+<P>
+Java does not allow a function to be passed as an argument to
+another function.  However, it is possible to do this by making
+the function a method of a class and passing an element of that
+class as an argument.
+<P>
+
+
+<LI> A <I>mapping</I> relates an element of a set, called its
+<I>domain</I>, to an element of another set, called its <I>range</I>;
+we write <I>M: D &rarr; R</I>.
+Write a recursive function <TT>mapcar(Functor f, Cons lst)</TT>
+that returns a new list containing the results of applying
+<TT>f.fn(item)</TT> to each item in the list <TT>lst</TT>.
+
+<P>
+<TT>mapcar</TT> is important to us because it is the first half
+of MapReduce, a powerful system for using large numbers of computers
+in parallel to process large data.
+<P>
+
+<LI> Write a recursive function
+<TT>Object some(Predicate p, Cons lst)</TT>
+that returns the first item in <TT>lst</TT> that satisfies the
+predicate <TT>p</TT>.  In mathematical notation, this would be
+written &exist; x &nbsp; p(x), and pronounced <I>there exists an x
+such that p(x)</I> or <I>for some x, p(x)</I>.
+
+<P>
+<LI> Write a recursive function
+<TT>boolean every(Predicate p, Cons lst)</TT>
+that tests whether every item in <TT>lst</TT> satisfies the
+predicate <TT>p</TT>.  In mathematical notation, this would be
+written &forall; x &nbsp; p(x), and pronounced <I>for all x, p(x)</I>.
+
+</OL>
+</BODY>
+
+</HTML>

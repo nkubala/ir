@@ -1,0 +1,515 @@
+<base href="http://www.cs.utexas.edu/~byoung/cs429/syllabus429.html">
+<HTML>
+<HEAD>
+<TITLE>CS 429, Fall 2013: Syllabus</TITLE>
+</HEAD>
+
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B"
+alink="#FF0000">
+<BLOCKQUOTE>
+
+<STYLE TYPE="text/css">
+<!--
+H2
+   {
+   color:blue;
+   font-size:25pt;
+   }
+H3
+   {
+   color:cornflowerblue;
+   font-size:18pt;
+   }
+-->
+</STYLE>
+
+<FONT FACE="Arial, Helvetica, Geneva" SIZE="+1">
+
+<DIV ALIGN="center">
+<H2>CS 429: Fall, 2013 <BR>Computer Organization and Architecture </H2>
+<H3><B>Instructor:</B> Dr. Bill Young</H3>
+
+<B>Unique numbers:</B> 53820, 53825, 53830, 53835, 53840<BR>
+<B> Class time:</B> TT 8:30-10:30am; <B>Location:</B> GDC 2.216 <BR>
+<B>Office:</B> GDC 7.810; <B>Office Hours:</B>  MW 10-11am, TT
+10:30-11:30am, and by appointment<BR> 
+<B>Office Phone:</B> 471-9782;  <B>Email:</B>
+byoung@cs.utexas.edu<BR><BR>
+
+<B>TA:</B> Ji Hong; <B>Email:</B> jhong@cs.utexas.edu <BR> 
+<B>TA Office Hours:</B> Fridays 8-9am<BR>
+<B>TA:</B> Hang Yu; <B>Email:</B> yuhang@cs.utexas.edu<BR> 
+<B>TA Office Hours:</B> Mondays 8-9am, GDC 1.302, desk 1<BR>
+<B>TA:</B> Akbar Mehdi; <B>Email:</B> samehdi@cs.utexas.edu <BR> 
+<B>TA Office Hours:</B> Fridays 4-5pm, GDC 1.302 Desk 5.<BR> 
+<B>Proctor:</B> Bulat Bazarbayev; <B>Email:</B> bazarbayev.bulat@utexas.edu<BR> 
+<B>Proctor Office Hours:</B> Wed. noon-1pm; Fri. 11am-noon, GDC lab
+3rd floor<BR>
+<B>This website:</B>
+www.cs.utexas.edu/users/byoung/cs429/syllabus429.html<BR>
+</DIV><BR><BR>
+
+<!-- TAs:
+
+GDC lab 3rd floor:
+
+W: 12-1pm
+F: 11am-12n
+
+Monday 
+8:00am - 9:00am
+GDC 1.302: desk1
+
+bazarbayev.bulat@utexas.edu
+bb26332
+
+Hang Yu (hy3425)
+
+Ji Hong (jh53645)
+Akbar Mehdi (sam3292)
+-->
+
+<HR><BR>
+
+<H3>Important Class Announcements:</H3>  
+
+<b> Breaking news important to the class will be posted here.  Consult
+this spot often.</b><P>
+
+Here is the description of your final
+lab: <A HREF="bomblab_instruction.pdf">Lab7: Binary Bomb</A>.  By popular
+demand, it's the famous (or infamous) "Binary Bomb" lab, rather than
+Prof. Peterson's Lab7.  It is due Dec. 1.<P>
+
+Here's homework 10: <A HREF="hw10.pdf">Homework 10</A>.<P>
+
+Here's homework 11: <A HREF="hw11.pdf">Homework 11</A>.<P>
+
+Here's lab6: <A HREF="peterson-lab6.html">Lab 6</A>. The turnin
+command is: 
+<pre>
+turnin --submit yuhang program6 Makefile *.h *.c
+</pre>
+Some background info that may be useful for lab6 is here: <A HREF="hints-for-lab6">hints</A><BR>
+<P>
+
+One of Prof. Peterson's TAs posted a Makefile mini-tutorial that some
+of you may find helpful: <A HREF="makefile-minitutorial">Makefile Hints</A>.<P>
+
+<!-- Lab5 is now posted: <A HREF="peterson-lab5.html">Lab 5</A>.  The
+turnin command for lab5 will be: 
+<pre>
+   turnin --submit jhong program5 *.h *.c [Mm]akefile
+</pre><P>
+
+Prof. Peterson posted another test file and corresponding verbose
+output file for lab4.  Here are the
+files: <A HREF="pc.obj">pc.obj</A>, <A HREF="pc.out">pc.out</A>.
+These test some PC corner cases.<P> -->
+
+The individual labs and homeworks have been graded by: 
+<ol>
+<li> Homeworks: Bulat Bazarbayev;
+<li> Lab1: Ji Hong;
+<li> Lab2: Hang Yu;
+<li> Lab3: Akbar Mehdi;
+<li> Lab4: Bulat Bazarbayev;
+<li> Lab5: Ji Hong;
+</ol>
+Their email addresses are posted at the top of this page.  If you have
+questions about your grade, I suggest contacting the TA who graded the
+lab.<P>
+
+If you send me an email re. the class, please put "CS429" somewhere in
+the subject line, so I'll know to which class it refers.<P>
+
+<!-- ################################################################################ --> 
+
+<BR><BR><HR><BR>
+
+<H3>Some Interesting Links:</H3> 
+
+<A HREF="http://spectrum.ieee.org/computing/software/enders-game-is-already-a-reality-for-the-us-military/?utm_source=techalert&utm_medium=email&utm_campaign=110713">Ender's
+  Game a Reality</A><BR>
+
+<A HREF="http://spectrum.ieee.org/semiconductors/devices/the-status-of-moores-law-its-complicated/?utm_source=techalert&utm_medium=email&utm_campaign=103113">Status
+  of Moore's Law</A><BR>
+
+<A HREF="http://www4.wittenberg.edu/academics/mathcomp/shelburne/Comp255/notes/PDP8APDX.pdf">Good PDP-8 referencd</A><BR>
+
+<A HREF="http://beej.us/guide/bggdb/">Nice intro to GDB</A><BR>
+
+<A HREF="http://www.noveltheory.com/techpapers/endian.asp">Thoughts on
+  Endianess</A><BR>
+
+<A HREF="http://www.stanford.edu/class/cs107/other/IA32_Cheat_Sheet.pdf">x86
+  cheat sheet</A><BR>
+
+<A HREF="y86primer.pdf">Primer on Y86</A><BR>
+
+<A HREF="http://sandbox.mc.edu/~bennet/cs110/flt/dtof.html">Decimal
+  to FP guide</A><BR>
+
+<A HREF="http://www.cs.virginia.edu/~evans/cs216/guides/x86.html">x86
+  Assembly Guide</A><BR>
+
+<A HREF="http://www.eetimes.com/document.asp?doc_id=1319330">Moore's
+  Law Dead?</A><BR>
+
+<A HREF="http://www.gnu.org/fun/jokes/unix-hoax.html">Unix, C Hoaxes?</A><BR>
+
+<A HREF="http://news.dice.com/2012/04/02/five-realities-to-consider-for-a-computer-science-degree/">5
+  Things to Know</A><BR>
+
+<A HREF="http://cs.iupui.edu/undergraduate/career/overview">Indiana
+  U. Career Overview</A><BR>
+
+<A HREF="http://www.uncg.edu/cmp/career/jobprospects.html">Jobs Prospects</A><BR>
+
+<A HREF="http://jobsearch.about.com/b/2013/06/18/top-10-jobs-for-computer-science-majors.htm">Top
+  10 Jobs for CS Majors</A><BR>
+
+<A HREF="http://www.staff.com/blog/it-jobs-with-the-highest-pay-and-fastest-growth-infographic/">Jobs
+  with High Pay</A><BR>
+
+<A HREF="http://www.forbes.com/sites/susanadams/2012/09/20/the-cities-with-the-most-computer-science-jobs/">Cities
+  with Most CS Jobs</A><BR>
+
+<BR><BR><HR><BR>
+
+<H3>Course Description:</H3> CS429 is the first course in the systems
+core sequence required of all UT CS majors.  It describes how
+computers operate at a fairly low level of abstraction.  
+For example, we'll consider:
+<UL>
+<li> What are the components of a computer and how do they fit together?
+<LI> How do computers do arithmetic?
+<li> How does the code you write actually execute?
+<li> How does a program in a high level language like C get translated
+  into a form the machine can execute?
+<li> How can you write code likely to execute efficiently?
+<li> How is information stored and accessed?
+<li> How does your program access existing "libraries"?
+</UL>
+<i>Understanding these fundamentals thoroughly is absolutely essential
+to your future success in computer science.</i>  The material of this
+course is quite detailed and requires careful and diligent study. If
+you are not willing to put in the time and effort required to master
+this material, you probably should reconsider your decision to major
+in Computer Science.<P>
+
+The students that do well in this class are survivors. This class is a
+lot of work, and it is important to keep current. The material in this
+class is cumulative; it can be quite difficult to catch up if one
+falls behind. It is important to keep turning in homework and come to
+class.<P>
+
+We will be discussion several different programming languages in this
+course: C, x86 assembly language, and Y86 assembly language.  You will
+be writing programs in at least C and Y86. <P>
+
+Students are required to attend their assigned lab weekly. <BR><BR>
+
+<table border=1 cellpadding=10 cellspacing=5>
+  <tr valight="top">
+    <td bgcolor="cornflowerblue"><I>Unique #</i></td>
+    <td bgcolor="cornflowerblue"><I>Time</i></td>
+    <td bgcolor="cornflowerblue"><I>Location</i></td>
+    <td bgcolor="cornflowerblue"><I>TA</i></td>
+  </tr>
+  <TR> <TH ALIGN="Left">53820<TH>M 9-11am<th>GDC 4.302<th>Hang Yu
+  <TR> <TH ALIGN="Left">53825<TH>F 9-11am<th>GDC 4.302<th>Ji Hong
+  <TR> <TH ALIGN="Left">53830<TH>M 11am-1pm<th>GDC 2.210<th>Hang Yu
+  <TR> <TH ALIGN="Left">53835<TH>F 11am-1pm<th>GDC 1.406<th>Ji Hong
+  <TR> <TH ALIGN="Left">53840<TH>F 2-4pm<th>GDC 1.406<th>Akbar Mehdi
+</TABLE><BR> 
+
+<!--  Restricted to computer science majors. An introduction to low-level
+ computer design ranging from the basics of digital design to the
+ hardware/software interface for application programs. Includes basic
+ systems principles of pipelining and caching, and requires writing
+ and understanding programs at multiple levels. Only one of the
+ following may be counted: Computer Science 310, 310H, 429, 429H. -->
+
+<b>Using Piazza:</b> We will be using Piazza for class
+communication. The Piazza system is highly catered to getting you help
+fast and efficiently from classmates, the TAs, and myself. Rather than
+emailing questions to the teaching staff, I encourage you to post your
+questions on Piazza. If you have any problems or feedback for the
+developers, email team@piazza.com.  The Piazza class page will be
+posted shortly.<P>
+
+<!-- 
+Find our class page at:
+http://www.piazza.com/utexas/summer2012/cs361.
+<P>
+ -->
+
+<H3>Prerequisites:</H3> You are expected to have taken and passed the
+following courses (or equivalent) with a grade of at least C-:
+Computer Science 311, 311H, 313H, or 313K; Computer Science 314, 314H,
+315, or 315H.  If you don't have the prerequisites, be sure to clear
+it with the CS department or risk being dropped from the class.<P>
+
+<H3>Text:</H3> The required text book for this class is <i>Computer
+Systems, A Programmer's Perspective</i> by Randal E. Bryant and David
+O'Hallaron, Prentice Hall, 2010.  You must have this book.  Note that
+this book is also used in CS439, so <i>don't sell it back at the end
+of the semester</i> if you plan on continuing in CS.<P>
+
+Since we will be programming some in C, I recommend that you have
+access to <i>The C Programming Language</i>, second edition, by Brian
+Kernighan and Dennis Ritchie, Prentice Hall Software Series.  This is
+available on-line.  There are also many Web pages devoted to
+C-language programming.  A nice tutorial intro to C is here: 
+<A HREF="C_tutorial.pdf">C Tutorial</A>.  Java programmers should have
+no problem with the subset of C that we will use.<P>
+
+<H3>Class Schedule and Slides:</H3>
+The class schedule is here: <A HREF="429schedule.pdf">schedule</A>.
+<i>This schedule is approximate; some dates may change slightly.</i><P>
+
+All of the class slides will be made available via links below as we
+cover new material.  You are welcome to print them out or view them
+on-line.  Slides are in PDF form.  They are derived from slides
+developed for the course by Bryant and O'Hallaron and modified by me
+and other professors. They are used with permission.<P>
+
+<A HREF="slides-c.pdf">Introduction to C</A><br><br>
+
+The following is a tutorial on C generated by a UT grad student:
+<A HREF="C_tutorial.pdf">C Tutorial</A><BR><br>
+
+<A HREF="slides1-intro.pdf">Slideset 1: Introduction to Computer Systems</A><BR><BR>
+
+<A HREF="slides2-bits-bytes.pdf">Slideset 2: Bits and Bytes</A><BR><BR>
+
+<A HREF="slides3-integers.pdf">Slideset 3: Integers</A><BR><BR>
+
+<A HREF="slides4-fp.pdf">Slideset 4: Floating Point</A><BR><BR>
+
+<A HREF="slides5-logic.pdf">Slideset 5: Digital Logic</A><BR><BR>
+
+<A HREF="slides6-isa1.pdf">Slideset 6: ISA I</A><BR><BR>
+
+<A HREF="slides7-isa2.pdf">Slideset 7: ISA II</A><BR><BR>
+
+<A HREF="slides8-isa3.pdf">Slideset 8: ISA III</A><BR><BR>
+
+<A HREF="slides9-isa4.pdf">Slideset 9: ISA IV</A><BR><BR>
+
+<A HREF="slides10-isa5.pdf">Slideset 10: ISA V</A><BR><BR>
+
+<A HREF="slides11-isa6.pdf">Slideset 11: ISA VI</A><BR><BR>
+
+<A HREF="slides12-datapath1.pdf">Slideset 12: Datapath I</A><BR><BR>
+
+<A HREF="slides13-datapath2.pdf">Slideset 13: Datapath II</A><BR><BR>
+
+<A HREF="lecture14-pipeline1.pptx">Slideset 14: Pipelining I</A><BR><BR>
+
+<A HREF="lecture15-pipeline2.pptx">Slideset 15: Pipelining II</A><BR><BR>
+
+<A HREF="lecture16-pipeline3.pptx">Slideset 16: Pipelining III</A><BR><BR>
+
+<A HREF="lecture17-pipeline4.pptx">Slideset 17: Pipelining IV</A><BR><BR>
+
+<A HREF="lecture18-storage-technology.pptx">Slideset 18: Storage Technology</A><BR><BR>
+
+<A HREF="lecture19-cache1.pptx">Slideset 19: Cache I</A><BR><BR>
+
+<A HREF="lecture20-cache2.pptx">Slideset 20: Cache II</A><BR><BR>
+
+<A HREF="lecture23-optimization1.pptx">Slideset 21: Optimization I</A><BR><BR>
+
+<A HREF="lecture24-optimization2.pptx">Slideset 22: Optimization II</A><BR><BR>
+
+<!-- 
+
+<A HREF="lecture21-linking1.pptx">Slideset 23: Linking I</A><BR><BR>
+
+<A HREF="lecture22-linking2.pptx">Slideset 24: Linking II</A><BR><BR>
+
+ -->
+
+
+
+<P>
+
+<H3>Tests:</H3> There will be three in-class exams of approximately
+one hour each. See the schedule for dates.  I will drop the lowest of
+these three in-class exams.  There will also be a three-hour final
+exam on Wednesday, December 11, from 7-10pm, in ART 1.102. That's the
+day and time determined by the registrar for a class in our time slot.
+Please don't make travel plans that will conflict with the final exam.
+<P>
+
+<H3>Assignments:</H3> Written homework will be assigned each week.  It
+must be submitted to your TA by the end of your discussion section, and
+will not be accepted late.  You may work together on written
+assignments.  This is an easy 15% of your grade so make the most of
+it.<P>
+
+You will have 7 labs over the course of the semester.  <i>You must
+work alone on all labs.</i>  The due dates will be clearly marked.
+For labs, you will have 3 total grace days available which you can use
+over the course of the semester.  You'd be advised to save them as
+long as possible to deal with illnesses and personal emergencies. <P>
+
+<A HREF="hw1.pdf">Homework 1</A><BR><br>
+
+<A HREF="datalab.pdf">Lab 1 README</A>
+and <A HREF="datalab-handout.tar"> Lab 1 tarball</A><BR><br>
+
+<A HREF="hw2.pdf">Homework 2</A><BR><br>
+
+<A HREF="hw3.pdf">Homework 3</A><BR><br>
+
+<A HREF="peterson-lab2.html">Lab 2</A>.  
+There are some C files that
+may be helpful at the bottom or Prof. Peterson's webpage:
+<A HREF="http://www.cs.utexas.edu/users/peterson/cs429.html">Peterson's
+webpage</A><BR><br>
+
+<A HREF="hw4.pdf">Homework 4</A><BR><br>
+
+<A HREF="hw5.pdf">Homework 5</A><BR><br>
+
+<A HREF="peterson-lab3.html">Lab 3</A><br><BR>
+
+<A HREF="hw6.pdf">Homework 6</A><BR><br>
+
+<A HREF="peterson-lab4.html">Lab 4</A><br><BR>
+
+<A HREF="peterson-lab5.html">Lab 5</A><br><BR>
+
+<A HREF="hw7.pdf">Homework 7</A><BR><br>
+
+<A HREF="hw8.txt">Homework 8</A><BR><br>
+
+<A HREF="hw9.pdf">Homework 9</A><BR><br>
+
+<A HREF="peterson-lab6.html">Lab 6</A><br><BR>
+
+<A HREF="hw10.pdf">Homework 10</A><BR><br>
+
+<A HREF="hw11.pdf">Homework 11</A>.<br><br>
+
+<A HREF="bomblab_instruction.pdf">lab7: Binary Bomb</A>.<br><br>
+
+<H3>Attendance:</H3> You are encouraged to come to class, but
+attendance will not be checked.<P>
+
+<H3>Computation of Your Grade:</H3>
+The weighting of the grades for the various aspects of the course are
+as follows: 
+<BR><BR> 
+
+<table border=1 cellpadding=10 cellspacing=5>
+  <tr valight="top">
+    <td bgcolor="cornflowerblue"><I>Component</i></td>
+    <td bgcolor="cornflowerblue"><I>Percent</i></td>
+  </tr>
+  <TR> <TH ALIGN="Left">In class exams (one dropped) <TH>30%
+  <TR> <TH align="left" ALIGN="Left">Final Exam <TH>20%
+  <TR> <TH ALIGN="Left">Homework <TH>15%
+  <TR> <TH ALIGN="Left">Labs  <TH>35%
+</TABLE><BR> 
+
+
+<!-- The weighting for the laboratory assignments will be as follows:
+<table border=1 cellpadding=10 cellspacing=5>
+  <tr valight="top">
+    <td bgcolor="cornflowerblue"><I>Component</i></td>
+    <td bgcolor="cornflowerblue"><I>Percent</i></td>
+  </tr>
+  <TR> <TH ALIGN="Left">Lab 0:<TH>3%
+  <TR> <TH ALIGN="Left">Lab 1:<TH>7%
+  <TR> <TH ALIGN="Left">Lab 2a:<TH>6%
+  <TR> <TH ALIGN="Left">Lab 2b:<TH>5%
+  <TR> <TH ALIGN="Left">Lab 3:<TH>4%
+</TABLE><BR> -->
+
+It is very important that you do the laboratory assignments. Once a
+laboratory has been turned in, material concerning a laboratory may
+appear on an exam.<P>
+
+Grades for the entire course are averaged using the weighting below:
+<BR><BR> 
+
+<table border=1 cellpadding=10 cellspacing=5>
+  <tr valight="top">
+    <td bgcolor="cornflowerblue"><I>Course score</i></td>
+    <td bgcolor="cornflowerblue"><I>Grade</i></td>
+  </tr>
+  <TR> <TH ALIGN="Left">[90...100]<th>A
+  <TR> <TH ALIGN="Left">[87... 90)<th>A-
+  <TR> <TH ALIGN="Left">[85... 87)<th>B+
+  <TR> <TH ALIGN="Left">[80... 85)<th>B
+  <TR> <TH ALIGN="Left">[77... 80)<th>B-
+  <TR> <TH ALIGN="Left">[75... 77)<th>C+
+  <TR> <TH ALIGN="Left">[70... 75)<th>C
+  <TR> <TH ALIGN="Left">[67... 70)<th>C-
+  <TR> <TH ALIGN="Left">[65... 67)<th>D+
+  <TR> <TH ALIGN="Left">[60... 65)<th>D
+  <TR> <TH ALIGN="Left">[ 0... 60)<th>F
+</table>
+<P>
+This is tentative.  The grades likely will be curved and may be a bit
+more generous than this.  They will certainly not be less
+generous. <P>
+
+<!-- Note the interval marks around the course score column. For example, a
+course grade of B will be assigned if your semester grade is greater
+than or equal to 80 and less than 85. This also means that a course
+grade of at least 67 needs to be achieved for this course to count
+toward a UTCS degree. <P> -->
+
+<H3>Scholastic Dishonesty:</H3> Academic dishonesty will not be
+tolerated.  See 
+<A HREF="http://www.cs.utexas.edu/academics/conduct">http://www.cs.utexas.edu/academics/conduct</A>
+for an excellent summary of expectations of a student in a CS
+class.<P>
+
+All work must be the student's own effort.  <I>Work by students in
+previous semesters is not your own effort.  Don't even think about
+turning in such work as your own, or even using it as a basis for your
+work.  We have very sophisticated tools to find such cheating and we
+use them routinely.</I> It's far better to get a 0 on an assignment
+than to cheat.<P>
+
+No deviation from the standards of scholastic honesty or professional
+integrity will be tolerated.  Scholastic dishonesty is a serious
+violation of UT policy; and will likely result in an automatic F in
+the course and may result in further penalties imposed by the
+department or by the university.  Don't do it.  If you are caught, you
+will regret it.  And even if you're not caught, you're still a
+cheater.<P>
+
+<H3>Students with Disabilities:</H3> 
+
+Students with disabilities may request appropriate academic
+accommodations from the Division of Diversity and Community
+Engagement, Services for Students with Disabilities, 471-6259,
+http://www.utexas.edu/diversity/ddce/ssd. <P>
+
+</BLOCKQUOTE>
+</BODY>
+</HTML>
+
+
+
+<!-- 
+
+<A HREF="http://www.abc.net.au/news/stories/2009/01/07/2460906.htm">Cybergeddon article</A><P> 
+<A
+HREF="http://www.infoworld.com/article/09/02/04/05NF-tech-career-education_3.html">Tech Jobs</A><P>
+<A HREF="http://xkcd.com/538">XKCD</A><P>
+<A
+HREF="http://www.nytimes.com/2009/01/23/technology/internet/23worm.html?_r=1&hp">New
+Computer Worm</A><P>
+<A
+HREF="http://www.payscale.com/research/US/Job=Software_Engineer_%2f_Developer_%2f_Programmer/Salary/by_Years_Experience">CS
+Pay Scales</A><P> 
+
+-->

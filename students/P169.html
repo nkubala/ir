@@ -1,0 +1,208 @@
+<base href="http://www.cs.utexas.edu/~novak/debugging.html">
+<HTML>
+<!--  debugging.html          G. Novak         31 Oct 13        -->
+<HEAD>
+<TITLE>Testing and Debugging</TITLE>
+</HEAD>
+
+<BODY>
+<H2>Testing and Debugging</H2>
+<HR>
+
+Testing and debugging are important skills that can simplify your life
+as a computer scientist if you do them well.  Learning these skills is
+one of the goals of the class.
+
+<P>
+<H4>Backup:</H4>
+<B>Is the dog going to eat your program?  Yes!</B>
+Dogs are descended from wolves, which are predators.  Predators eat things;
+that is their job.
+<P>
+You cannot prevent the dog from eating your program.  But you can keep a
+backup.  A computer scientist <I>always</I> keeps a backup.
+<P>
+Copy your files to a flash memory key, and to your CS Linux account.
+CS backs up your Linux files every 4 hours, under <TT>.snapshot/</TT>
+<P>
+<H4>Testing:</H4>
+<UL><B>Start with simple test cases first</B>, then increase the complexity:
+<UL>
+<LI> <TT>(= x y)</TT>, solve for <TT>x</TT>.
+<LI> <TT>(= x y)</TT>, solve for <TT>y</TT>.
+<LI> <TT>(= x 3)</TT>, solve for <TT>z</TT>.
+<LI> <TT>(= a (+ b c))</TT>, solve for <TT>b</TT>
+<LI> <TT>(= a (+ b c))</TT>, solve for <TT>c</TT>
+<LI> <TT>(= a (+ b (+ c d)))</TT>, solve for <TT>c</TT>
+<LI> <TT>(= a (+ (+ b c) d))</TT>, solve for <TT>c</TT>
+<LI> <TT>(= x (- y))</TT>, solve for <TT>y</TT>
+<LI> <TT>(= x (exp y))</TT>, solve for <TT>y</TT>
+</UL>
+<P>
+<LI> <B>Your testing should cover:</B>
+<UL>
+<P><LI> <B>All base cases.</B>  Do these first.
+<P><LI> <B>The null case.</B> There are lots of <TT>null</TT> values in the
+     world.  Make sure your program can handle them, even if you do not
+     really expect <TT>null</TT> as an input.
+<P><LI> <B>Simple recursive cases.</B>
+<P><quotation>
+  If you get the base cases right, <BR>
+  and get the recursive case(s) right,  <BR>
+  your function is right.
+</quotation></P>
+</UL>
+<P>
+<LI> <B>Always read your output critically</B> (even after you think your
+     program is working).
+<P>
+<LI> <B>If you see anything wrong or funny, track it down and fix it
+     immediately. <BR>
+     Never let a bug get away.</B>
+<P>
+<quotation>
+   The most exciting phrase to hear in science, <BR>
+   the one that heralds new discoveries, <BR>
+   is not "Eureka" but "That's funny ... " <BR>
+   -- Isaac Asimov (1920 - 1992)
+</quotation>
+</P>
+<P>
+<LI> <B>Test components individually.</B>  If you have a well-defined
+component, call it with test data and print out the results to make
+sure it works.  Test the engine before trying to fly.
+</UL>
+
+<P>
+<H4>Debugging:</H4>
+<UL>
+<LI> <B>Don't get stuck on logical analysis.</B> <BR>
+     Of course it is okay
+     to look at your code and see if you can spot what is wrong with it. <BR>
+     But, if you don't find it within 5 minutes, stop and put in printouts.
+<P>
+<LI> <B>If your code cannot possibly be doing what it is doing,  <BR>
+     the bug is something you are not looking at.</B> <BR>
+     You will never find it by logical analysis (since you are not looking
+     at it), <BR>
+     but you will find it by putting in printouts and looking
+     for something that is funny.
+<P>
+<LI> <B>Put in printouts.</B> <BR>
+<UL>
+<P>
+<LI> <B>Make them informative.</B>  Don't just print "hello"; that doesn't
+     tell you much.  Print out the exact location and variable values.
+<P>
+<LI> <B>Build printouts in</B> as a debugging aid.
+<PRE>
+public static boolean debugflag = true;
+
+Cons solve(Cons e, String v) {
+    if (debugflag)
+       System.out.println("entering solve" + " e = " + e + " v = " + v);
+    ...
+    if (debugflag)
+       System.out.println("leaving solve" + " val = " + val);
+    return val; }
+</PRE>
+<P>
+<LI> <B>Leave printouts in permanently</B> as a "black box" in case of a crash.
+Once you think your  program is debugged, you can simply set:
+<PRE>
+public static boolean debugflag = false;
+</PRE>
+but if you later encounter a bug, you can easily turn the printouts back on.
+
+<P> <LI> <B>Put in multiple debug flags</B> to allow you to watch different
+aspects of your program.
+</UL>
+
+<P> <LI> <B>Divide and Conquer the Bugs.</B>
+If the arguments of some call to <TT>solve</TT> are okay, but the value
+on exit is not, focus on just that problem (a smaller test case) and fix it.
+<P>
+Don't focus on "How can I get the right answer to the hard test case?",
+but on "How can I find a small test case that demonstrates a small problem
+that I can fix?".
+</UL>
+
+
+<P>
+<H4>Common Problems:</H4>
+<UL>
+<LI> <B>Stack Overflow:</B> A Stack Overflow could be caused by using a
+good program on data that is larger than your language's stack.
+Usually, though, it means you have an infinite loop.  Typical causes:
+<UL>
+<LI> forgetting to test for <TT>null</TT>
+<LI> forgetting to do <TT>rest()</TT>
+</UL>
+<P>
+Printouts will make an infinite loop very obvious.
+<P>
+<LI> <B>Segfault:</B> A Segfault (segmentation fault) is signaled by the
+     CPU when the program attempts to access memory that does not exist.
+     A common cause of segfaults is trying to dereference a <TT>null</TT>
+     pointer, i.e. <TT>ptr.field</TT> or <TT>ptr.method()</TT> when
+     <TT>ptr</TT> is <TT>null</TT>.
+<P>
+<LI> <B>INF:</B> INF (infinity) as a floating-point value is commonly
+     caused by dividing by 0.
+<P>
+<LI> <B>NaN:</B> NaN (Not a Number) is a value of a numeric variable that
+     is not a valid numeric value.  Some compilers initialize floating-point
+     variables to NaN, so a NaN value often indicates failure to initialize
+     a variable.  If you just say:
+<PRE>
+   double sum;
+</PRE>
+     then you may get a NaN.  NaN is contagious:
+<PRE>
+   trash = sum + 1.0;
+</PRE>
+     will be a NaN if <TT>sum</TT> is a NaN.
+<P>
+<LI> <B>Extra Parens or Wrong Parens:</B>
+Parens are just a printed reflection of the underlying structure.
+If the parens are wrong, it is because the structure is wrong.
+Don't try to "get rid of parens" (they do not actually exist),
+but fix the structure instead.
+Incorrect structure is probably caused by using the wrong access
+function (<TT>rest()</TT> instead of <TT>first(rest())</TT> ) or
+the wrong constructor function (<TT>cons</TT>, <TT>list</TT>, <TT>append</TT>).
+<PRE>
+   ((the sum of) a and b)
+</PRE>
+is the result of:
+<PRE>
+   (cons '(the sum of) '(a and b))
+</PRE>
+when what you probably wanted was:
+<PRE>
+   (append '(the sum of) '(a and b))
+</PRE>
+which produces:
+<PRE>
+   (the sum of a and b)
+</PRE>
+<TT>cons</TT>, <TT>list</TT>, and <TT>append</TT> all have their uses;
+learn when to use each.
+<P>
+<LI> <B>Lost Data:</B> You say:
+<PRE>
+   llmergesort(lst);
+</PRE>
+and some of your data is gone.  Did the dog eat your data?
+No; since llmergesort is destructive, you must re-assign the value:
+<PRE>
+   lst = llmergesort(lst);
+</PRE>
+See the slide entitled
+<A href="http://www.cs.utexas.edu/users/novak/cs31474.html">
+<B>On Not Dropping the Ball</B>.</A>
+</UL>
+
+</BODY>
+
+</HTML>

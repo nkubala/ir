@@ -1,0 +1,398 @@
+<base href="http://www.cs.utexas.edu/~edwardsj/teaching/2012fall/cs354/">
+<html><head>
+  <title>CS 354: COMPUTER GRAPHICS</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link href="http://userweb.cs.utexas.edu/~edwardsj/style.css" rel="stylesheet" type="text/css">
+
+  <style type="text/css">
+    z {color:gray;font-style:italic}
+  </style>
+
+</head>
+
+<body>
+
+<h2>CS 354 (BME 345): COMPUTER GRAPHICS</h2>
+
+
+<!-- HEADER INFO -->
+<!-- div class="header-box" -->
+
+<p>
+<b>Lecture:</b> T/Th 9:30-11am, <a href="http://www.utexas.edu/maps/main/buildings/bur.html">BUR 220</a><br/>
+<b>Prerequisite:</b> CS 310, 310H, 429, or 429H; 336 or 336H; Math 408D, 408M, or 427L; and 340L or 341<br/>
+<b>Required text:</b> Interactive Computer Graphics, 6th edition, by Edward Angel<br/>
+<!-- <b>Required:</b> <a href="http://www.amazon.com/i-clicker-Classroom-Response-System/dp/0716779390/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1281371438&amp;sr=8-1">
+    i&gt;clicker</a> available at the CO-OP and online (NOT i&gt;clicker version 2)<br/> -->
+<b>Course website:</b> <a href="http://cs.utexas.edu/%7Eedwardsj/teaching/2012fall/cs354/index.html">
+    cs.utexas.edu/~edwardsj/teaching/2012fall/cs354/</a><br/>
+<b>UTCS Account:</b> <a href="https://udb.cs.utexas.edu/amut/acut/">UTCS account creation</a>
+</p>
+
+<p>
+<b>Instructor:</b> John Edwards<br/>
+<b>Email:</b> john.edwards@utexas.edu<br/>
+<b>Office Hours:</b> M 10-11am, ACES 2.100 (north end); WF 12-1pm, ENS 31NR<br/>
+</p>
+
+<p>
+<b>TA:</b> Randall Smith<br/>
+<b>Email:</b> agrippa@cs.utexas.edu<br/>
+<b>Office Hours:</b> TTh 11-12 (for now), ENS 31NR<br/>
+</p>
+
+<p>
+<b>Proctor:</b> Alex Pharo<br/>
+<b>Email:</b> apharo@texhorseman.com<br/>
+<b>Office Hours:</b> F 3-5, ENS 31NR<br/>
+</p>
+
+
+<h3>Schedule</h3>
+
+<table id="schedule" border="1" cellpadding="3">
+ <tbody><tr>
+<!--  <th width="55">Date</th>
+  <th width="140">Reading</th>
+  <th>Topic</th>
+  <th width="40">Assignments</th> -->
+  <th>&nbsp;</th>
+  <th>Date</th>
+  <th>Reading</th>
+  <th>Topic</th>
+  <th>Assignments</th>
+ </tr>
+ <tr>
+  <td>1</td>
+  <td>Aug 30</td>
+  <td>&nbsp;</td>
+  <td><a href="./l1.pdf">Overview</a></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>2</td>
+  <td>Sept 4</td>
+  <td>2.1, 2.4 - 2.4.2, 2.4.7</td>
+  <td><a href="./l2.tar.gz">Graphics programming I</a></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>3</td>
+  <td>Sept 6</td>
+  <td>2.5 - 2.7</td>
+  <td><a href="./l3.tar.gz">Graphics programming II</a></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>4</td>
+  <td>Sept 11</td>
+  <td>3.1 - 3.2</td>
+  <td>Geometry & transformations I</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>5</td>
+  <td>Sept 13</td>
+  <td>3.3 - 3.4, 3.7</td>
+  <td>Geometry & transformations II</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>6</td>
+  <td>Sept 18</td>
+  <td>3.8 - 3.10</td>
+  <td>Geometry & transformations III</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>7</td>
+  <td>Sept 20</td>
+  <td>3.11, 3.13 - 3.14</td>
+  <td><a href="./l7.tar.gz">Geometry & transformations IV</a></td>
+  <td><a href="./project1.tar.gz">Project 1</a> (due Sept 21, 11:59pm)</td>
+ </tr>
+ <tr>
+  <td>8</td>
+  <td>Sept 25</td>
+  <td>4.3 - 4.4</td>
+  <td><a href="./l8.pdf">Viewing I</a></td>
+  <td><a href="hw1.pdf">hw1</a> (due in class)</td>
+ </tr>
+ <tr>
+  <td>9</td>
+  <td>Sept 27</td>
+  <td>4.5 - 4.8</td>
+  <td><a href="./l9.tar.gz">Viewing II</a></td>
+  <td><a href="./project2.tar.gz">Project 2</a> (due Sept 28, 11:59pm)</td>
+ </tr>
+ <tr>
+  <td>10</td>
+  <td>Oct 2</td>
+  <td>8.1 - 8.5</td>
+  <td><a href="./l10.pdf">Hierarchical models</a></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>11</td>
+  <td>Oct 4</td>
+  <td>5.1 - 5.3</td>
+  <td><a href="./l11.tar.gz">Lighting and shading I</a></td>
+  <td><a href="hw2.pdf">hw2</a> (due in class)</td>
+ </tr>
+ <tr>
+  <td>12</td>
+  <td>Oct 9</td>
+  <td>MIDTERM</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>13</td>
+  <td>Oct 11</td>
+  <td>5.4 - 5.7</td>
+  <td>Lighting and shading II <a href="./Angel6E21.ppt">1</a> <a href="./Angel6E22.ppt">2</a></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>14</td>
+  <td>Oct 16</td>
+  <td><z>No quiz</z></td>
+  <td>Lighting and shading III</td>
+  <td><a href="./project3.tar.gz">Project 3</a> (due Oct 17, 11:59pm)</td>
+ </tr>
+ <tr>
+  <td>15</td>
+  <td>Oct 18</td>
+  <td>7.1 - 7.5</td>
+  <td>Mapping I</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>16</td>
+  <td>Oct 23</td>
+  <td>7.6</td>
+  <td><a href="./l16.zip">Mapping II</a></td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>17</td>
+  <td>Oct 25</td>
+  <td>7.7 - 7.10</td>
+  <td>Mapping III</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>18</td>
+  <td>Oct 30</td>
+  <td>7.11 - 7.12</td>
+  <td>Mapping IV</td>
+  <td><a href="hw3.pdf">hw3</a> (due in class)</td>
+ </tr>
+ <tr>
+  <td>19</td>
+  <td>Nov 1</td>
+  <td>6.1 - 6.6</td>
+  <td>Vertices and fragments I</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>20</td>
+  <td>Nov 6</td>
+  <td>6.8 - 6.11</td>
+  <td>Vertices and fragments II</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>21</td>
+  <td>Nov 8</td>
+  <td><z>No quiz</z></td>
+  <td><a href="./glsl.zip">Shaders</a></td>
+  <td><a href="./project4.tar.gz">Project 4</a> (due Nov 9, 11:59pm) <a href="./obj-data.tar.gz">data</a> <a href="./example-viewer.zip">viewer</a></td>
+ </tr>
+ <tr>
+  <td>22</td>
+  <td>Nov 13</td>
+  <td>11.1 - 11.4</td>
+  <td>Advanced rendering I</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>23</td>
+  <td>Nov 15</td>
+  <td>11.5 - 11.7</td>
+  <td>Advanced rendering II</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>24</td>
+  <td>Nov 20</td>
+  <td>10.1 - 10.3</td>
+  <td>Curve representation I</td>
+  <td><a href="./project5.tar.gz">Project 5</a> (due Nov 21, 11:59pm)</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>Nov 22</td>
+  <td>THANKSGIVING HOLIDAY</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>25</td>
+  <td>Nov 27</td>
+  <td>10.4 - 10.7</td>
+  <td>Curve representation II</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>26</td>
+  <td>Nov 29</td>
+  <td>10.8 - 10.9, 10.11 - 10.12</td>
+  <td>Curve representation III</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>27</td>
+  <td>Dec 4</td>
+  <td>&nbsp;</td>
+  <td>Review</td>
+  <td><a href="hw4.pdf">hw4</a> (due in class)</td>
+ </tr>
+ <tr>
+  <td>28</td>
+  <td>Dec 6</td>
+  <td>&nbsp;</td>
+  <td>FINAL</td>
+  <td><a href="./project6.tar.gz">Project 6</a> (due Dec 9, 11:59pm) <a href="./raytrace.html">extras</a></td>
+ </tr>
+
+</tbody></table>
+
+
+<h3>Course Overview</h3>
+
+The purpose of this course is to introduce the student to computer graphics.
+Topics we will cover are listed in the schedule.
+We will cover mathematical foundations and algorithms relating to graphics 
+modeling, rendering and interaction.  We will implement most of the ideas
+using the OpenGL API.  While we will not go into OpenGL in depth, we will learn enough
+of it to put the graphics concepts to use.
+<p>
+The student is expected to have programming experience in a C-based language
+(e.g. C, C++, Java, C#) including a solid understanding of data structures.  
+All programming projects will be done in C++.  The student
+is also expected to have a basic understanding of trigonometry
+and linear algebra.
+
+<h3>Grading</h3>
+
+Final grade percentage will be computed as follows:
+<p>
+
+<table id="grading" border="1" cellpadding="3">
+ <tbody><tr>
+  <th width="15%">Type</th>
+  <th width="15%">Number</th>
+  <th width="15%">Percentage</th>
+ </tr>
+ <tr>
+  <td>Quizzes</td>
+  <td>Best 22</td>
+  <td>10%</td>
+ </tr>
+ <tr>
+  <td>Projects</td>
+  <td>7</td>
+  <td>40%</td>
+ </tr>
+ <tr>
+  <td>Homework</td>
+  <td>4-7</td>
+  <td>15%</td>
+ </tr>
+ <tr>
+  <td>Midterm</td>
+  <td>1</td>
+  <td>15%</td>
+ </tr>
+ <tr>
+  <td>Final</td>
+  <td>1</td>
+  <td>20%</td>
+ </tr>
+</tbody></table>
+
+</p><p><b>Quizzes</b> - We will have daily quizzes at the <i>beginning</i>
+ of class (really).  No quiz will be given the first day of 
+class, making a total of 26 quizzes.  The bottom 4 quiz scores will be 
+dropped.  The quizzes will be on the daily reading assignment.  This 
+doesn't mean that you must have a perfect understanding of everything 
+you read.  It just means that you need to have a grasp of what is being 
+talked about, why it is important, etc.  Quizzes cannot be made up.
+
+<!--</p><p>Quizzes are given using the i&gt;clicker, which allows you to 
+electronically respond to the quiz questions. The clickers will also be 
+used for in-class participation. You will need to get an i&gt;clicker 
+from the CO-OP or elsewhere by the second class day. You're welcome to 
+buy a used i&gt;clicker or even borrow one from a friend.  You will 
+register your clicker remote in class on the second class day.  You are 
+responsible for bringing your clicker remote to class every day. -->
+
+</p><p><b>Projects</b> - There will be seven programming projects spaced, usually
+spaced 2 weeks apart.  We will have covered enough material to get started
+two weeks prior to the due date.  All necessary material will have been covered
+one week prior to the due date.  These projects make up the majority of the grade.  
+All assignments are due on Fridays at 11:59 pm.  
+<i>No late assignments will be accepted.</i>  This means that if you turn an assignment
+in at 12:01 Saturday morning it will receive a zero.
+
+</p><p>Projects are graded using the CS UNIX machines.  I strongly advise that students 
+do their projects on CS UNIX machines.  If you choose to develop on another computer
+you should test your final program on a CS UNIX machine before submitting.
+Programming projects will be turned in with the UNIX-based 
+<!--<a href="turnin.html">-->turnin<!--</a>-->.  The web-based turnin will not work.
+<a href="https://udb.cs.utexas.edu/amut/acut/">Sign up</a> for a CS UNIX account if 
+you don't have one already.  <b>Do this early</b>
+because it often takes a couple of days to process and you won't be 
+able to turn in any assignments until this account is active.  
+<a href="http://www.cs.utexas.edu/facilities/public-labs">Public labs</a> are available.
+
+</p><p>Projects will be posted at least two weeks before they are due.
+
+</p><p>Projects will be graded as follows
+<ul>
+  <li>80% for fulfilling the requirements in the problem statement.
+  <li>10% for coding style.  Your code should adhere to the <a href="http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml">Google C++ Style Guide</a>.  Points will be taken off if it doesn't.  We will be using <a href="http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py">cpplint.py</a> to enforce this and judge points.  A copy of cpplint.py will be included with each project distribution so you can check your code for style errors.  We strongly recommend that you check it frequently as you code since fixing everything at the end is burdensome.
+  <li>10% for creativity.  Many graphics applications require a high degree of creativity.  This is your opportunity to use your programming prowess to create great art.  These points are competitive -- you will be judged against your peers.  We will showcase the best projects in class.
+</ul>
+
+After downloading the project, extract it with "tar -zxf project1.tar.gz".  Then consult README.pdf for further instructions.
+
+</p><p><b>Homework</b> - Between 4 and 7 written homework assignments will be given throughout the semester.  They can be typed or written by hand and will be turned in in class.  No late homework will be accepted.
+
+</p><p><b>Midterm/Final</b> - A midterm and final will be given.  <i>No exam study guide will be given.</i>  The exams will cover material in the reading assignments, lecture, projects and written homework.  The exams are closed book, but you are allowed one 8 1/2 x 11 sheet of notes.
+
+<!-- </p><p>Assignments are available on John's UTCS account.  For example, assignment #1 is at <tt>~edwardsj/cs108/hw1</tt>.  <a href="http://www.cs.utexas.edu/%7Eedwardsj/teaching/2011fall/cs108/getting_started.html">Here</a> is help on getting started on the first assignment. -->
+
+</p><p><b>Blackboard</b> - Scores will be maintained on <a href="https://courses.utexas.edu/webapps/portal/frameset.jsp">Blackboard</a>.
+
+</p><h3>Late Work Policy</h3>
+
+Again, late projects or homeworks are not accepted.  Daily quizzes and exams cannot be made up.  Exceptions are on a case-by-case basis and are only granted for religious holy days (must have prior approval), documented illness or emergencies.  
+
+
+<h3>Academic Honesty</h3>
+
+<p>Projects and homework must be done individually.  You may not work in pairs or 
+groups.  Helping other students through discussion is permitted, but if you are looking at another student's source code or written assignment, then you are cheating.  You may consult the Internet, but you may not copy code from the Internet or any other source except for the course textbook.
+ See the department's <a href="http://www.cs.utexas.edu/users/ear/CodeOfConduct.html">code of conduct</a>.
+
+</p><h3>Laptops</h3>
+
+No open laptops in class.
+
+</p>
+
+
+
+</body></html>

@@ -1,0 +1,103 @@
+<base href="http://www.cs.utexas.edu/~novak/emacs.html">
+<HTML>
+<!--  emacs.html          G. Novak           17 Aug 07    -->
+<HEAD>
+<TITLE>Basic Emacs</TITLE>
+</HEAD>
+
+<BODY>
+<H2>Basic Emacs</H2>
+<HR>
+
+<P>
+Although <TT> emacs</TT> has sophisticated features, the basics are
+easy to learn.  Ordinary characters that are typed are put directly
+into the text.  Commands to <TT>emacs</TT> are given by control
+characters (denoted <TT>C-</TT>) and Meta characters
+(denoted <TT>M-</TT>). For example, <TT>C-f</TT> would be entered by
+holding down the <TT>Ctrl</TT> key while typing <TT>f</TT>.  On many
+workstations, Meta is <TT>Alt</TT> .
+Cursor positioning can be done with arrow keys or the left mouse
+button.  Documentation and options can be found in menus at top of screen.
+<P>
+<TABLE>
+<TR><TD>
+</TD></TR>
+<TR><TD>
+<TT> C-f</TT> </TD><TD> Move the cursor Forward one character.</TD></TR>
+<TR><TD>
+<TT> C-b</TT> </TD><TD> Move the cursor Backward one character.</TD></TR>
+<TR><TD>
+<TT> C-p</TT> </TD><TD> Move up to the Previous line.</TD></TR>
+<TR><TD>
+<TT> C-n</TT> </TD><TD> Move down to the Next line.</TD></TR>
+<TR><TD>
+<TT> C-a</TT> </TD><TD> Move cursor to beginning of line.</TD></TR>
+<TR><TD>
+<TT> C-e</TT> </TD><TD> Move cursor to End of line.</TD></TR>
+<TR><TD>
+<TT> M-f</TT> </TD><TD> Move the cursor Forward one word.</TD></TR>
+<TR><TD>
+<TT> M-b</TT> </TD><TD> Move the cursor Backward one word.</TD></TR>
+<TR><TD>
+<TT> C-v</TT> </TD><TD> Move forward down the text by a screenful.</TD></TR>
+<TR><TD>
+<TT> M-v</TT> </TD><TD> Move backwards up the text by a screenful.</TD></TR>
+<TR><TD>
+<TT> C-l</TT> </TD><TD> Center the display around the cursor position.</TD></TR>
+<TR><TD>
+<TT> M-&lt </TT> </TD><TD> Go to the beginning of the file.</TD></TR>
+<TR><TD>
+<TT> M-&gt </TT> </TD><TD> Go to the end of the file.</TD></TR>
+<TR><TD>
+<TT> C-d</TT> </TD><TD> Delete a character.</TD></TR>
+<TR><TD>
+<TT> M-d</TT> </TD><TD> Delete a word (saved: see <TT> C-y</TT>).</TD></TR>
+<TR><TD>
+<TT> C-k</TT> </TD><TD> Kill to end of line.  Two individual <TT> C-k</TT>'s delete a line </TD></TR>
+<TR><TD>
+       </TD><TD> and its carriage return.  (saved: see <TT> C-y</TT>.) </TD></TR>
+<TR><TD>
+<TT> C-y</TT> </TD><TD> Yank back what was killed earlier.  Material can be duplicated </TD></TR>
+<TR><TD>
+       </TD><TD> by yanking it back multiple times.  A single line can be yanked </TD></TR>
+<TR><TD>
+       </TD><TD> at the Lisp interpreter prompt and executed by a carriage return. </TD></TR>
+<TR><TD>
+<TT> C-u n</TT> </TD><TD> Repeat the next command <TT> n</TT> times.  For example, <TT> C-u 6 C-k C-y C-y</TT> </TD></TR>
+<TR><TD>
+       </TD><TD> will kill six lines (including the carriage returns) and make two copies.</TD></TR>
+<TR><TD>
+<TT> C-s str</TT> </TD><TD> Search for the string <TT> str</TT>.  When found, enter <TT> ESC</TT>ape to get</TD></TR>
+<TR><TD>
+       </TD><TD> out of search mode.  If you want the next or previous </TD></TR>
+<TR><TD>
+       </TD><TD> occurrence of <TT> str</TT>, just enter <TT> C-s</TT> or <TT> C-r</TT> again.</TD></TR>
+<TR><TD>
+<TT> C-r str</TT> </TD><TD> Reverse search for <TT> str</TT> .</TD></TR>
+<TR><TD>
+<TT> C-x C-v</TT> </TD><TD> Visit a new file; EMACS will prompt for the file name.</TD></TR>
+<TR><TD>
+<TT> C-x C-w</TT> </TD><TD> Write out the text buffer to a file.</TD></TR>
+<TR><TD>
+<TT> C-x C-s</TT> </TD><TD> Save the text buffer in the file it came from.</TD></TR>
+<TR><TD>
+<TT> C-g</TT> </TD><TD> Abort the current command.</TD></TR>
+<TR><TD>
+<TT> M-x run lisp</TT> </TD><TD> Run Austin Kyoto Common Lisp with X underneath Emacs. </TD></TR>
+<TR><TD>
+<TT> M-x fi:common-lisp</TT> </TD><TD> Run Allegro Common Lisp underneath Emacs. </TD></TR>
+<TR><TD>
+<TT> C-x 5</TT> </TD><TD> Split the screen in half vertically to make two windows.</TD></TR>
+<TR><TD>
+<TT> C-x 2</TT> </TD><TD> Split the screen in half horizontally to make two windows.</TD></TR>
+<TR><TD>
+<TT> C-M-z</TT> </TD><TD> Evaluate the form under the cursor from Lisp.</TD></TR>
+<TR><TD>
+<TT> C-x C-c</TT> </TD><TD> Stop Emacs.</TD></TR>
+<TR><TD>
+</TABLE>
+
+
+</BODY>
+</HTML>

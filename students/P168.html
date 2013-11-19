@@ -1,0 +1,268 @@
+<base href="http://www.cs.utexas.edu/~novak/howtoturnin.html">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title> CS 314 - Turnin Instructions </title>
+
+		</head><body><div class="content">
+		<div class="block">
+		<div class="header">
+<h2>How to Turn in the Programming Assignments</h2>
+		</div>
+		<div class="body">
+<p>Assignments
+are due 11:59 PM CDT on the date listed (except for project 1).
+To submit your assignments, follow this guide.</p>
+<p>The basic order of things is:</p>
+<ol>
+<li> Transfer the files from your machine over to the Linux machines
+</li>
+<li> Test your code on the Linux machine
+</li>
+<li> Use turnin to submit your files </li>
+<li> Verify that your files were correctly submitted
+</li>
+			</ol>
+<p>It is a good idea to make a directory/folder for cs314 and a subdirectory
+for each assignment.  There will be many files named <TT>Cons.java</TT>,
+and having separate directories will keep the files from older assignments
+from being overwritten and lost.
+<PRE>
+mkdir cs314                 make a directory called cs314
+cd cs314                    connect (move into) that directory
+mkdir asg2                  make a directory called asg2
+cd asg2                     connect (move into) that directory
+...                         now work on assignment 2
+<PRE>
+</p>
+		</div>
+		</div>
+		
+		<div class="block">
+		<div class="header">
+<h2>Transferring Files</h2>
+		</div>
+		<div class="body">
+<p>If
+you do the assignments on the CS Linux computers, you may skip this
+step; however, if you do the assignments at home, you will need to
+transfer your files over to one of the Linux machines.</p>
+		
+<p>In order to connect to a CS linux machine, you first need the machine name.  You may find a list of machine names at <a href="http://apps.cs.utexas.edu/unixlabstatus/"><TT>http://apps.cs.utexas.edu/unixlabstatus/</TT></a>.
+Find a machine that is up and, preferably, has a low number of users.
+Once you select a machine, you must concatenate ".cs.utexas.edu" onto
+the end of the listed machine name. For instance, if your are trying to
+connect to the machine called <tt>moro</tt>, you would use <tt>moro.cs.utexas.edu</tt> as the host name.</p>
+		
+<p>There are many programs, which you may use to connect to the CS machines using SSH; a brief list is available at <a href="http://www.cs.utexas.edu/facilities/faq/"><tt>http://www.cs.utexas.edu/facilities/faq/</tt></a> under <B>Unix</B>,
+click on the first question, "What happened to FTP access?".
+You can also use the
+<tt>scp</tt> command on OS X / Linux / Cygwin.</p>
+		
+<p>To
+connect, you will need both the host name and your user name. As
+previously mentioned, the hostname will be
+&lt;computer_name&gt;.cs.utexas.edu; your user name is your <em>CS account username</em>;
+it is not your UT EID. If you were connecting to the Linux machines
+using the Mac OSX terminal, it would look something like this:</p>
+
+<p><tt>ssh &lt;cs_username&gt;@&lt;computer_name&gt;.cs.utexas.edu</tt></p>
+		
+<p> Alternatively, you can use the <tt>-l</tt> (that is a lowercase L) flag to provide your user name.  As a result, the following command is equivalent to the one above:</p>
+		
+<p><tt>ssh &lt;computer_name&gt;.cs.utexas.edu -l &lt;cs_username&gt;</tt></p>
+		
+<p>On some SSH applications you will be asked for a port number. Port 22 is the standard port, so use this value.</p>
+
+<p>After
+you successfully connect to the linux machine, it will say something
+about saving a public key to the database. You want to do this so it
+doesn't have to keep re-authenticating your key every time you try to
+log in.</p>
+		
+<p>Now that you are logged in, if you
+have a GUI you can transfer files over that way. By default, the
+default folder that you transfer the files into will be the folder that
+you start in when you log in at the command line interface. If you do
+not want to use a GUI, come to office hours and I will show you how to
+use <tt>scp</tt>.</p>
+		
+<p>Please note that when you
+SSH into a machine, you are remotely using that machine; you will not
+have access to your locally stored files. If you want, you can avoid
+transferring files between your machine and the CS Linux machines
+simply by working on them remotely using SSH.</p>
+		</div>
+		</div>
+		
+		<div class="block">
+		<div class="header">
+<h2>Compiling Java on the Command Line</h2>
+		</div>
+		<div class="body">
+<p>If
+you are using Java, your program must be able to be compiled and run
+from the command line. While you are free to develop using any IDE you
+like, such as Eclipse, realize that for testing purposes, no particular
+IDE configuration will be used or even available. Before submitting
+your files, be sure that they can be compiled using <tt>javac &lt;your_files&gt;</tt> and run using <tt>java &lt;your_program&gt;</tt>.  If you are using Eclipse, generally this means that you will need to remove the package statement from your Java files.</p>
+<p>For example, in project 2, your files should be compiled using the following command:</p>
+<p><tt>javac Cons.java</tt></p>
+<p>Your program must execute the sample main() using the following command:</p>
+<p><tt>java Cons</tt></p>
+		</div>
+		</div>
+		
+		<div class="block">
+		<div class="header">
+<h2>Turning In Your Files</h2>
+		</div>
+		<div class="body">
+<p>Now
+that you have successfully transferred your files and (presumably)
+tested them to make sure that (1) they work as expected on Linux and
+(2) they are the correct version, you are ready to turn them in. Make
+sure the working directory is where your source files are and type
+the appropriate command, depending on your class section and the first
+letter of your last name:</p>
+<P>
+<B>TTh 12:30 - 2:00:</B>
+
+<UL>
+<LI> <B>A-K</B> <tt>turnin --submit rezwana CS314-hw2 &lt;filenames&gt; </tt> 
+
+<LI> <B>L-Z</B> <tt>turnin --submit muqeet CS314-hw2 &lt;filenames&gt; </tt> 
+</UL>
+<P>
+<B>TTh 2:00 - 3:30:</B>
+
+<UL>
+<LI> <B>A-I</B> <tt>turnin --submit yunsik CS314-hw2 &lt;filenames&gt; </tt> 
+
+<LI> <B>J-N</B> <tt>turnin --submit sccheng CS314-hw2 &lt;filenames&gt; </tt> 
+
+<LI> <B>O-Z</B> <tt>turnin --submit maxxb CS314-hw2 &lt;filenames&gt; </tt> 
+</UL>
+
+<p>Note that the assignment names should be CS314-hw2, CS314-hw3, etc.
+</p>
+			
+<p>As an example, the following could be used to turn in Cons.java and
+the README (containing answers to questions asked in the assignment)
+for assignment 2, Recursion and Lists:</p>
+			
+<p> <tt>turnin --submit myta CS314-hw2 Cons.java README </tt> </p>
+
+The easy way to do it is to keep all the files for a given assignment
+in a single directory; then you can simply use the <TT>*</TT> notation
+to include all files (substitute the correct name of your TA):
+
+<PRE>
+cd cs314/asg2/
+turnin --submit myta CS314-hw2 *
+</PRE>
+		</div>
+		</div>
+
+		<div class="block">
+		<div class="header">
+<h2>Verifying Your Submission</h2>
+		</div>
+		<div class="body">
+<p>It is important to check to make sure that your files were correctly
+submitted. Turnin makes it very easy for you to check, so there are no
+excuses for not performing this step. </p>
+			
+<p>To get a copy of the directory and all of the files you submitted, use the <tt>--verify</tt> option.  You use it like this (substitute the correct
+name of your TA):</p>
+			
+<p><tt>turnin --verify myta &lt;assignment_name&gt;</tt></p>
+			
+<p>For example, using assignment 2, you would type:</p>
+			
+<p><tt>turnin --verify myta CS314-hw2</tt></p>
+			
+<p>Once
+you have the folder containing a copy of your submitted files, double
+check that they are the right versions and still compile / execute. In
+previous classes, many students have mistakenly not submitted a file or
+submitted an outdated version; don't let that happen to you.</p>
+			
+<p>Turnin
+also provides you with a listing of the files submitted. It is not
+quite as good as retesting the files, but it can be used to check that
+all of the files you thought you submitted actually were. To get a list
+of submitted files, use the <tt>--list</tt> option.  The syntax is just like <tt>--verify</tt>.</p>
+			
+<p>If you want more information on the turnin program itself, from within the Linux shell type:</p>
+
+<p><tt>man turnin</tt></p>
+
+<p>This will bring up the manual for the turnin command. To exit the manual, press the "q" button.</p>
+		</div>
+		</div>
+
+		
+		<div class="block">
+		<div class="header">
+<h2>Additional Requirements</h2>
+		</div>
+		<div class="body">
+<p>You
+are expected to include some additional information for every
+assignment: your name (important for a class of this size, so don't
+omit it), any parts of the assignment you were unable to complete, and
+anything else you would like to say about your work. Put this
+information in a separate README file, which should be just a plain
+text file (no Word files, etc.). To facilitate grading, please do not
+change the names of the files or signatures of the functions given to
+you. Normally, you should not have to modify anything existing; your
+job is to add new stuff. The one exception is with the *.asgx.java
+files. For example, you need to change Cons.asg2.java to Cons.java in
+order to compile. In these cases, submit the files under the new names.
+</p>
+<p>Please make sure you turn in all files necessary to
+run your program as an independent unit. This means that you should
+even include files you have not modified from the class directory in
+your submission. If you choose to program in Lisp, you should also
+duplicate the test code section, which is provided to you in Java, and
+include it as part of your code submission.</p>
+		</div>
+		</div>
+		
+		<div class="block">
+		<div class="header">
+			<h2>Advice</h2>
+		</div>
+		<div class="body">
+<p>Bad
+things can and do happen to source code; this is just an unfortunate
+fact of life in CS. We do not expect you to use a source code
+management scheme, but you should be aware that things could happen if
+you are coding on your laptop, etc. In order to prevent these
+unfortunate circumstances from impacting you too much, consider using
+turnin to keep a current copy of your work. Turnin will overwrite the
+files every time you submit them, so this is one way to always keep a
+version available for grading.</p>
+		</div>
+		</div>
+		</div> <!-- end of content -->
+		 <!-- end of col1 -->
+	 <!-- end of col1wrap -->
+	<div class="col2">
+	</div> <!-- end of col2 -->
+	<div class="col3">
+	</div> <!-- end of col3 -->
+	 <!-- end of colleft -->
+	 <!-- end of colmid -->
+	 <!-- end of colmask -->
+	
+	<div id="footer">
+
+<p>Derived from a previous semester guide
+written by Phillip Verheyden and adapted by Yulin Li, Andrew Dreher, Wei Dong,
+and Gordon Novak.
+</p>
+	</div> <!-- end of footer -->
+</body></html>

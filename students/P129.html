@@ -1,0 +1,1429 @@
+<base href="http://www.cs.utexas.edu/~grauman/courses/fall2009/main.htm">
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="main_files/filelist.xml">
+<link rel=Edit-Time-Data href="main_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Fall 2009: CS 378 Computer Vision</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="City"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Kristen Grauman</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Kristen Grauman</o:LastAuthor>
+  <o:Revision>83</o:Revision>
+  <o:TotalTime>3345</o:TotalTime>
+  <o:Created>2009-05-17T23:12:00Z</o:Created>
+  <o:LastSaved>2009-12-13T15:23:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>1601</o:Words>
+  <o:Characters>9127</o:Characters>
+  <o:Company>UTCS</o:Company>
+  <o:Lines>76</o:Lines>
+  <o:Paragraphs>21</o:Paragraphs>
+  <o:CharactersWithSpaces>10707</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="main_files/themedata.thmx">
+<link rel=colorSchemeMapping href="main_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>90</w:Zoom>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" LatentStyleCount="267">
+  <w:LsdException Locked="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="99" Name="No List"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true"
+   Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="99" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Batang;
+	panose-1:2 3 6 0 0 1 1 1 1 1;
+	mso-font-alt:\BC14\D0D5;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627400839 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:"\@Batang";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:129;
+	mso-generic-font-family:auto;
+	mso-font-format:other;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 151388160 16 0 524288 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	font-style:italic;}
+a:link, span.MsoHyperlink
+	{mso-style-unhide:no;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-unhide:no;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-unhide:no;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria","serif";
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.mediumtext
+	{mso-style-name:medium_text;
+	mso-style-unhide:no;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:646251432;
+	mso-list-type:hybrid;
+	mso-list-template-ids:151421072 -284266888 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-family:Symbol;
+	color:windowtext;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:659818279;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-217798338 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="109570"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:16.0pt;font-family:"Arial","sans-serif"'>Computer Vision<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt;font-family:"Arial","sans-serif"'>Fall
+2009<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+Batang'>Tues/Thurs 11:00 am � 12:15 pm<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang;mso-ansi-language:FR'><a
+href="http://www.utexas.edu/maps/main/buildings/cpe.html">CPE</a> 2.206</span><span
+lang=FR style='font-family:"Arial","sans-serif";mso-ansi-language:FR'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:"Arial","sans-serif";
+mso-ansi-language:FR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:"Arial","sans-serif";
+mso-ansi-language:FR'>CS 378, Unique # 54875<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=FR style='font-family:"Arial","sans-serif";
+mso-ansi-language:FR'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1032" style='position:absolute;z-index:4' from=".4pt,2.35pt" to="659.75pt,2.35pt"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:absolute;z-index:4;margin-left:0px;
+margin-top:2px;width:881px;height:2px'><img width=881 height=2
+src="main_files/image002.gif" v:shapes="_x0000_s1032"></span><![endif]><!--[if mso & !supportInlineShapes & supportFields]><span
+lang=FR style='font-family:"Arial","sans-serif";mso-ansi-language:FR'><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'>�</span>SHAPE <span
+style='mso-spacerun:yes'>�</span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span
+lang=FR style='font-family:"Arial","sans-serif";mso-ansi-language:FR'><!--[if gte vml 1]><v:group
+ id="_x0000_s1030" editas="canvas" style='width:6in;height:14.4pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="1808,5764" coordsize="8640,288">
+ <v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75"
+  o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+  <v:stroke joinstyle="miter"/>
+  <v:formulas>
+   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+   <v:f eqn="sum @0 1 0"/>
+   <v:f eqn="sum 0 0 @1"/>
+   <v:f eqn="prod @2 1 2"/>
+   <v:f eqn="prod @3 21600 pixelWidth"/>
+   <v:f eqn="prod @3 21600 pixelHeight"/>
+   <v:f eqn="sum @0 0 1"/>
+   <v:f eqn="prod @6 1 2"/>
+   <v:f eqn="prod @7 21600 pixelWidth"/>
+   <v:f eqn="sum @8 21600 0"/>
+   <v:f eqn="prod @7 21600 pixelHeight"/>
+   <v:f eqn="sum @10 21600 0"/>
+  </v:formulas>
+  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+  <o:lock v:ext="edit" aspectratio="t"/>
+ </v:shapetype><v:shape id="_x0000_s1031" type="#_x0000_t75" style='position:absolute;
+  left:1808;top:5764;width:8640;height:288' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" aspectratio="f"/>
+ </v:shape><w:wrap type="none"/>
+ <w:anchorlock/>
+</v:group><![endif]--><![if !vml]><img width=576 height=19
+src="main_files/image001.gif" v:shapes="_x0000_s1030 _x0000_s1031"><![endif]></span><!--[if mso & !supportInlineShapes & supportFields]><span
+lang=FR style='font-family:"Arial","sans-serif";mso-ansi-language:FR'><v:shape
+ id="_x0000_i1025" type="#_x0000_t75" style='width:6in;height:14.4pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span></span><![endif]--><span
+style='mso-fareast-font-family:Batang'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+Batang'>Instructor</span></b><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>: <a href="http://www.cs.utexas.edu/~grauman/">Kristen
+Grauman</a><span style='mso-spacerun:yes'>� </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Email: grauman @ cs<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Office location: <a
+href="http://www.utexas.edu/maps/main/buildings/csa.html">CSA 114</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Office hours: Wednesdays 5-6 pm, and by
+appointment.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+Batang'>TA</span></b><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+Batang'>: Jaechul Kim<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Email: jaechul @ cs<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Office hours: Mondays 3-4 pm, and Wednesdays
+3-4 pm, in TAY basement computer lab.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+Batang'>TA:</span></b><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+Batang'> Yong Jae Lee (for office hours only)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Office hours: Tuesdays 4-5 pm, and Thursdays
+4-5 pm, in TAY basement computer lab.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><!--[if gte vml 1]><v:line
+ id="_x0000_s1036" style='position:absolute;z-index:6' from=".4pt,7.35pt" to="670.65pt,7.35pt"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=0 height=9></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=895 height=2 src="main_files/image006.gif" v:shapes="_x0000_s1036"></td>
+ </tr>
+</table>
+
+</span><![endif]><span style='font-family:"Arial","sans-serif";mso-fareast-font-family:
+Batang'><o:p>&nbsp;</o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Please come to any of our office hours for
+questions about assignments or lectures.<span style='mso-spacerun:yes'>�
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Questions via email about assignments should be
+sent to: <span style='color:red'>cv-fall2009 @ cs</span> , with �378� in the
+beginning of the subject line.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:137.25pt'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>This will help ensure a timely response from
+the instructor or TAs.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1028" style='position:absolute;
+ z-index:3' from=".4pt,4.05pt" to="670.7pt,4.25pt"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:absolute;z-index:3;margin-left:0px;
+margin-top:4px;width:895px;height:3px'><img width=895 height=3
+src="main_files/image009.gif" v:shapes="_x0000_s1028"></span><![endif]><!--[if mso & !supportInlineShapes & supportFields]><span
+lang=FR style='font-family:"Arial","sans-serif";mso-ansi-language:FR'><span
+style='mso-element:field-begin;mso-field-lock:yes'></span><span
+style='mso-spacerun:yes'>�</span>SHAPE <span
+style='mso-spacerun:yes'>�</span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span
+lang=FR style='font-family:"Arial","sans-serif";mso-ansi-language:FR'><!--[if gte vml 1]><v:group
+ id="_x0000_s1027" editas="canvas" style='width:6in;height:14.4pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="1808,5764" coordsize="8640,288">
+ <v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;left:1808;
+  top:5764;width:8640;height:288' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" aspectratio="f"/>
+ </v:shape><w:wrap type="none"/>
+ <w:anchorlock/>
+</v:group><![endif]--><![if !vml]><img width=576 height=19
+src="main_files/image001.gif" v:shapes="_x0000_s1027 _x0000_s1026"><![endif]></span><!--[if mso & !supportInlineShapes & supportFields]><span
+lang=FR style='font-family:"Arial","sans-serif";mso-ansi-language:FR'><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" style='width:6in;height:14.4pt'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span></span><![endif]--><span
+lang=FR style='font-family:"Arial","sans-serif";mso-ansi-language:FR'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><a
+href="http://www.cs.utexas.edu/~grauman/courses/fall2009/schedule.htm">Schedule</a><span
+style='mso-tab-count:1'>������� </span><a
+href="https://utdirect.utexas.edu/diia/egb/index.WBX">eGradebook</a><span
+style='mso-spacerun:yes'>����� </span><a
+href="https://courses.utexas.edu/webapps/login/?new_loc=%2Fwebapps%2Fportal%2Fframeset.jsp">Blackboard</a><o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1035" style='position:absolute;
+ z-index:5' from=".4pt,9.75pt" to="670.7pt,9.95pt"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=0 height=12></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=895 height=2 src="main_files/image010.gif" v:shapes="_x0000_s1035"></td>
+ </tr>
+</table>
+
+</span><![endif]><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<h1><a name="_Announcements"></a><span style='mso-fareast-font-family:"Times New Roman"'>Announcements<span
+style='mso-spacerun:yes'>� </span><o:p></o:p></span></h1>
+
+<p class=MsoNormal style='tab-stops:22.5pt .5in'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_1" o:spid="_x0000_s1058" type="#_x0000_t75" alt="victor_vu.jpg"
+ style='position:absolute;margin-left:37.5pt;margin-top:13.4pt;width:298.3pt;
+ height:3in;z-index:7;visibility:visible;mso-wrap-style:square;
+ mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;
+ mso-wrap-distance-bottom:0;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:text;mso-position-vertical:absolute;
+ mso-position-vertical-relative:text'>
+ <v:imagedata src="main_files/image007.jpg" o:title="victor_vu"/>
+ <w:wrap type="square"/>
+</v:shape><![endif]--><![if !vml]><img width=398 height=288
+src="main_files/image004.jpg" align=left hspace=12 alt="victor_vu.jpg" v:shapes="Picture_x0020_1"><![endif]><span
+style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'>Answers for Section 1 of Pset 5 are available
+<a
+href="http://www.cs.utexas.edu/~grauman/courses/fall2009/psets/pset5/pset5section1.pdf">here</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'>Final exam is Monday 12/14, 2-5 pm in
+JGB 2.218.<span style='mso-spacerun:yes'>� </span>Example exams handed out in
+class on 12/1.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'>Check out class mosaic results <a
+href="http://vision.cs.utexas.edu/cv-fall2009/mosaics/">here</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'>Check out class seam carving results <a
+href="http://vision.cs.utexas.edu/cv-fall2009/seams/">here</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'>Use the course <a
+href="http://www.cs.utexas.edu/~grauman/courses/fall2009/schedule.htm">schedule</a>
+for all reading assignments, deadlines, lecture notes, etc.<span
+style='mso-spacerun:yes'>� </span><a
+href="http://www.cs.utexas.edu/~grauman/courses/fall2009/schedule.htm">Lecture
+slides are linked from the 2<sup>nd</sup> to last column</a>.<span
+style='color:#365F91;mso-themecolor:accent1;mso-themeshade:191'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:22.5pt .5in'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='tab-stops:22.5pt .5in'><span style='font-family:"Arial","sans-serif"'>Grades
+and late-days posted on <a href="https://utdirect.utexas.edu/diia/egb/index.WBX">eGradebook</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:9.0pt'><!--[if gte vml 1]><v:shape id="Picture_x0020_2"
+ o:spid="_x0000_s1057" type="#_x0000_t75" alt="suyog_jain.jpg" style='position:absolute;
+ left:0;text-align:left;margin-left:37.5pt;margin-top:13.4pt;width:528.95pt;
+ height:3in;z-index:8;visibility:visible;mso-wrap-style:square;
+ mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;
+ mso-wrap-distance-bottom:0;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:text;mso-position-vertical:absolute;
+ mso-position-vertical-relative:text'>
+ <v:imagedata src="main_files/image005.jpg" o:title="suyog_jain"/>
+ <w:wrap type="square"/>
+</v:shape><![endif]--><![if !vml]><img width=705 height=288
+src="main_files/image011.jpg" align=left hspace=12 alt="suyog_jain.jpg" v:shapes="Picture_x0020_2"><![endif]><span
+style='font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;page-break-after:avoid;mso-outline-level:1'><b><span
+style='font-size:16.0pt;font-family:"Arial","sans-serif";mso-font-kerning:16.0pt'>Overview<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Billions
+of images are hosted publicly on the web---how can you find one that �looks
+like� some image you are interested in?<span style='mso-spacerun:yes'>�
+</span>Could we interact with a computer in richer ways than a keyboard and
+mouse, perhaps with natural gestures or simply facial expressions?<span
+style='mso-spacerun:yes'>� </span>How can a robot identify objects in complex
+environments, or navigate uncharted territory?<span style='mso-spacerun:yes'>�
+</span>How can a video camera in the operating room help a surgeon plan a
+procedure more safely, or assist a radiologist in more efficiently detecting a
+tumor?<span style='mso-spacerun:yes'>� </span>Given some video sequence of a
+scene, can we synthesize new virtual views from arbitrary viewpoints that make
+a viewer feel as if they are in the movie?<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Computer
+vision is at the heart of many such questions: the goal is to develop methods
+that enable a machine to �understand� or analyze images and videos.<span
+style='mso-spacerun:yes'>�� </span>In this introductory computer vision course,
+we will explore various fundamental topics in the area, including image
+formation, feature detection, segmentation, multiple view geometry, recognition
+and learning, and motion and tracking.<span style='mso-spacerun:yes'>�
+</span>An outline of the syllabus is <a
+href="http://www.cs.utexas.edu/~grauman/courses/fall2009/syllabus_topics.htm">here</a>.<span
+style='mso-spacerun:yes'>� </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>This
+course is intended for upper-level undergraduate students.<span
+style='mso-spacerun:yes'>� </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;page-break-after:avoid;mso-outline-level:1'><b><span
+style='font-size:16.0pt;font-family:"Arial","sans-serif";mso-font-kerning:16.0pt'>Prerequisites<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Basic
+knowledge of probability and linear algebra; data structures, algorithms;
+programming experience.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Previous
+experience with image processing or machine learning will be useful but is not
+required.<span style='mso-spacerun:yes'>� </span>Problem sets will include
+Matlab programming problems.<span style='mso-spacerun:yes'>� </span>There will
+be a Matlab tutorial in class on Thursday, September 3, and a warm-up
+assignment to get familiar with basic Matlab commands.<span
+style='mso-spacerun:yes'>� </span>We will recommend useful functions to check
+out per assignment.<span style='mso-spacerun:yes'>� </span>Students are
+expected to practice and pick up Matlab on their own in order to complete the
+assignments.<span style='mso-spacerun:yes'>� </span>The instructor and TAs are
+happy to help with Matlab issues during office hours.<span
+style='mso-spacerun:yes'>� </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:87.9pt'><span
+style='font-family:"Arial","sans-serif"'><span style='mso-tab-count:1'>���������������� </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>If
+you are unsure if your background is a good match for this course, please come
+talk to me.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;page-break-after:avoid;mso-outline-level:1'><a
+name="_Course_requirements"></a><b><span style='font-size:16.0pt;font-family:
+"Arial","sans-serif";mso-font-kerning:16.0pt'>Course requirements<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'>Problem sets:<span
+style='mso-spacerun:yes'>� </span></span></b><span style='font-family:"Arial","sans-serif"'>Problem
+sets will be given approximately every two weeks, and will involve a
+combination of concept questions and programming problems.<span
+style='mso-spacerun:yes'>� </span>The programming problems will provide
+hands-on experience working with techniques covered in or related to the
+lectures.<span style='mso-spacerun:yes'>� </span>All code and written responses
+must be completed individually.<span style='mso-spacerun:yes'>� </span>These
+problem sets will take time to complete; please start early!<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'>Small assignments</span></b><span
+style='font-family:"Arial","sans-serif"'>: In addition to the problem sets
+above, we may have a few very short assignments due within 3-7 days of their assignment.<span
+style='mso-spacerun:yes'>� </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'>Due dates:<span
+style='mso-spacerun:yes'>� </span></span></b><span style='font-family:"Arial","sans-serif"'>All
+problem sets are to be submitted by 11:59 PM on the day they are due unless
+otherwise noted on the assignment itself.<span style='mso-spacerun:yes'>�
+</span>Deadlines are firm, and we will not make exceptions.<span
+style='mso-spacerun:yes'>�� </span>We will use the �turnin� program timestamp
+to determine time of submission.<span style='mso-spacerun:yes'>�
+</span>Anything from 1 minute to 24 hours is one day late (i.e., a timestamp of
+12:00 AM or later is one day late).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>The
+instructions in each problem set will designate which parts to submit
+electronically and which if any to submit via hardcopy.<span
+style='mso-spacerun:yes'>� </span>Any hardcopy portions should be submitted in
+class or left in Jaechul�s office, CSA 1.134.<span style='mso-spacerun:yes'>�
+</span>Create a pdf file for the report portion of the assignments.<span
+style='mso-spacerun:yes'>� </span>(The CS machines have openoffice which can be
+used to convert doc files to pdf if you work in Word and don�t have a Adobe PDF
+printer.) <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'>Free late days (�slip
+days�):</span></b><span style='font-family:"Arial","sans-serif"'> Over the
+course of the term you have an allowance of four free late days for problem set
+turn-ins, meaning you can accrue up to four days in late assignments with no
+penalty.<span style='mso-spacerun:yes'>� </span>Late problem sets beyond this
+allowance lose 50% of the total possible credit per day late.<span
+style='mso-spacerun:yes'>� </span>Please plan ahead so you can spend your late
+days wisely.<span style='mso-spacerun:yes'>� </span>No late problem sets will
+be accepted after solutions are discussed in class or posted online.<span
+style='mso-spacerun:yes'>� </span>Late days are timed as the assignments; we�ll
+count a full additional day as having passed for submissions 1 minute to 24
+hours late.<span style='mso-spacerun:yes'>� </span>If you use any late days on
+an assignment, clearly include the number of days used at the top of your
+write-up.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:.5in 45.0pt'><b
+style='mso-bidi-font-weight:normal'><span style='font-family:"Arial","sans-serif"'>Exams:</span></b><span
+style='font-family:"Arial","sans-serif"'><span style='mso-spacerun:yes'>�
+</span>There is an in-class midterm and a comprehensive final exam.<span
+style='mso-spacerun:yes'>� </span>For each exam students may use a single sheet
+(8.5 x 11�) of notes.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:.5in'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'>Participation/attendance:
+</span></b><span style='font-family:"Arial","sans-serif"'>Regular attendance
+and participation in class is expected.<span style='mso-spacerun:yes'>�
+</span>If for whatever reason you are absent, it is your responsibility to find
+out what you missed that day.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'>Reading: </span></b><span
+style='font-family:"Arial","sans-serif"'>The reading assignments listed on the
+schedule should be read before the associated class lecture.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;tab-stops:.5in'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b style='mso-bidi-font-weight:
+normal'><span style='font-family:"Arial","sans-serif"'>Grading policy</span></b><span
+style='font-family:"Arial","sans-serif"'>:<span style='mso-spacerun:yes'>�
+</span>Grades will be determined roughly as follows.<span
+style='mso-spacerun:yes'>� </span>You can check your current grades online at
+eGradebook.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:137.25pt;margin-bottom:
+0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:45.8pt list 1.0in left 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt 11.0in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Problem sets (55%)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:137.25pt;margin-bottom:
+0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:45.8pt list 1.0in left 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt 11.0in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Midterm exam (15%)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:137.25pt;margin-bottom:
+0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:45.8pt list 1.0in left 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt 11.0in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Final exam (20%)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:137.25pt;margin-bottom:
+0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:45.8pt list 1.0in left 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt 11.0in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif"'>Class
+participation, including attendance (10%)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Please read the <a
+href="http://www.cs.utexas.edu/~ear/CodeOfConduct.html">UTCS code of conduct</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'>Please frequently check this page for course
+announcements, and use the schedule page for reading assignments, problem set
+downloads, deadlines, etc.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;page-break-after:avoid;mso-outline-level:1'><a
+name="_Important_dates"></a><b><span style='font-size:16.0pt;font-family:"Arial","sans-serif";
+mso-font-kerning:16.0pt'>Important dates<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Midterm
+exam: Tuesday Oct 13 (in class) <i style='mso-bidi-font-style:normal'>tentative</i><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Last
+class meeting: Thursday Dec 3<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Final
+exam: Monday Dec 14, 2:00-5:00 PM in JGB 2.218<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;page-break-after:avoid;mso-outline-level:1'><b><span
+style='font-size:16.0pt;font-family:"Arial","sans-serif";mso-font-kerning:16.0pt'>Books<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>The
+recommended textbook is Computer Vision: A Modern Approach, by Forsyth and <st1:place
+w:st="on"><st1:City w:st="on">Ponce</st1:City></st1:place>.<span
+style='mso-spacerun:yes'>� </span>You may also find the following books
+useful.<span style='mso-spacerun:yes'>� </span>Copies of all of them are on
+reserve for members of our class to use at the <a
+href="http://lib.utexas.edu/about/librarymap/pcl.html">PCL</a> library.<span
+style='mso-spacerun:yes'>� </span>Also check out excerpts posted on Blackboard.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><a
+href="http://www.cs.berkeley.edu/~daf/book.html">Computer vision : a modern
+approach, David A. Forsyth and Jean Ponce</a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Computer
+vision, Linda G. Shapiro and George C. Stockman.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Introductory
+techniques for 3-D computer vision, Emanuele Trucco and Alessandro Verri.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><a
+href="http://homepages.inf.ed.ac.uk/rbf/BOOKS/BANDB/bandb.htm">Computer vision,
+Dana H. Ballard and Christopher M. Brown.<span style='mso-spacerun:yes'>�
+</span>(available online)</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'>Multiple
+view geometry in computer vision, Richard Hartley and Andrew Zisserman.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><a
+href="http://rii.ricoh.com/~stork/DHS.html">Pattern classification, Richard O.
+Duda, Peter E. Hart, and David G. Stork.</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><a
+href="http://www.cs.cmu.edu/~tom/mlbook.html">Machine learning, Tom M.
+Mitchell.</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><a
+href="http://research.microsoft.com/~szeliski/Book/">Computer Vision:
+Algorithms and Applications, book draft by Richard Szeliski</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:0in;page-break-after:avoid;mso-outline-level:1'><a
+name="_Links"></a><b><span style='font-size:16.0pt;font-family:"Arial","sans-serif";
+mso-font-kerning:16.0pt'>Links<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://www.cs.utexas.edu/~grauman/courses/fall2009/matlab.htm">Accessing
+Matlab at UT</a><o:p></o:p></span></p>
+
+<p class=MsoListParagraph style='margin-left:.75in;mso-add-space:auto;
+text-indent:-.25in;mso-list:l0 level1 lfo4;tab-stops:22.5pt .5in list .75in'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif"'>A
+script <a
+href="https://courses.utexas.edu/webapps/login/?new_loc=%2Fwebapps%2Fportal%2Fframeset.jsp">tattle-matlab.sh</a>
+is posted on Blackboard-&gt;Course documents.<span style='mso-spacerun:yes'>�
+</span>You can use it to alert you when Matlab licenses are available, in case
+there�s another overload in the future.<span style='mso-spacerun:yes'>�
+</span>See the script for usage instructions.<span style='mso-spacerun:yes'>�
+</span>(Thanks to Jason Pepas for providing this.)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://www.cs.utexas.edu/facilities/computing/">UTCS Computing /
+Facilities web page</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://homepages.inf.ed.ac.uk/rbf/CVonline/">CV Online</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://www.intel.com/technology/computing/opencv/">OpenCV</a> (open
+source computer vision library)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span lang=SV style='font-family:
+Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:
+SV'><span style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a href="http://www.cs.waikato.ac.nz/ml/weka/"><span
+lang=SV style='mso-ansi-language:SV'>Weka</span></a></span><span lang=SV
+style='font-family:"Arial","sans-serif";mso-fareast-font-family:Batang;
+mso-ansi-language:SV'> (Java data mining software)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span lang=SV style='font-family:
+Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:
+SV'><span style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=SV style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang;mso-ansi-language:SV'><a
+href="http://www.cs.utexas.edu/~grauman/courses/spring2008/datasets.htm">Compiled
+list of image datasets</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://www.cs.ubc.ca/~murphyk/Vision/objectRecognitionDatabases.html">Object
+recognition databases</a> (list compiled by Kevin Murphy)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://www.cs.cmu.edu/~efros/courses/LBMV07/databases.htm">Various useful
+databases and image sources</a> (list compiled by Alyosha Efros)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a href="http://www.ncrg.aston.ac.uk/netlab/">Netlab</a>
+(matlab toolbox for data analysis techniques, written by Ian Nabney and
+Christopher Bishop) <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a href="http://www.robots.ox.ac.uk:5000/~vgg/">Oxford
+Visual Geometry Group</a> (contains links to data sets and feature extraction
+software)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://iris.usc.edu/Information/Iris-Conferences.html">Computer vision
+conferences</a> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://iris.usc.edu/Vision-Notes/bibliography/contents.html">Annotated
+computer vision bibliography</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a href="http://www.face-rec.org/">Face
+recognition homepage</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://www.cs.cmu.edu/~cil/v-groups.html">Computer vision research groups</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif";
+mso-fareast-font-family:Batang'><a
+href="http://www.aaai.org/AITopics/html/vision.html">Vision related links on
+AAAI.org page</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;mso-list:l0 level1 lfo4;
+tab-stops:list .75in'><![if !supportLists]><span style='font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+style='mso-list:Ignore'>�<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-family:"Arial","sans-serif"'><a
+href="http://www.cs.utexas.edu/~grauman/courses/378/handouts/mathprimer.pdf">Linear
+algebra review / primer by Martial Hebert</a><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><a name="_Overview"></a><a name="_Papers"></a><span
+style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
