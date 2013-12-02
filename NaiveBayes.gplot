@@ -1,0 +1,9 @@
+set xlabel "Size of training set"
+set ylabel "Accuracy"
+
+set terminal postscript color
+set size 0.75,0.75
+
+set data style linespoints
+
+plot 'NaiveBayes.data' title "NaiveBayes"
