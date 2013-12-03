@@ -136,9 +136,11 @@ public class Rocchio extends Classifier {
           idfMap.put(token, 1.0);
       }
 
+      //extract corresponding prototype vector from array
       cat_id = e.getCategory();
       p = prototype_array[cat_id];
 
+      //add example to prototype scaled by max token weight
       scale = e.getHashMapVector().maxWeight();
       p.addScaled(e.getHashMapVector(), 1.0/scale);
 
@@ -161,40 +163,21 @@ public class Rocchio extends Classifier {
       }
     }
 
-
     //iterate through idfMap, converting containing document counts to idfs
     for (Map.Entry<String, Double> entry : idfMap.entrySet())
     {
       idfMap.put(entry.getKey(), Math.log10((double)trainExamples.size() / entry.getValue()));
     }
 
-    // //print idfMap to make sure all entries added correctly
-    // for (Map.Entry<String, Double> entry : idfMap.entrySet())
-    // {
-    //   System.out.println(entry.getKey() + ": " + entry.getValue());
-    // }
-
-
-
-
     //now all prototypes are constructed, iterate through each, scaling each entry by idf
-    //for (HashMapVector pr : prototypes)
     for (HashMapVector pr : prototype_array)
     {
       for (Map.Entry<String, Weight> entry : pr.entrySet())
       {
-        //System.out.println(entry.getKey() + ": " + entry.getValue().getValue());
         weight = entry.getValue().getValue();
-        //if (weight != 0 && Double.isNaN(weight))
-        if (weight != 0) //token value isn't 0
-        {
-          token = entry.getKey();
-          idf = idfMap.get(token);
-          //System.out.println("weight of " + token + " is " + weight);
-          Weight w = new Weight();
-          w.setValue(weight * idf);
-          pr.hashMap.put(token, w);
-        }
+        token = entry.getKey();
+        idf = idfMap.get(token);
+        pr.hashMap.get(token).setValue(weight * idf);
       }
     }
   }
@@ -208,17 +191,7 @@ public class Rocchio extends Classifier {
     int predictedClass = -1;
     HashMapVector p, copy;
 
-    // //for printing idfMap
-    // int print = 0;
-    // for (Map.Entry<String, Weight> entry : d.entrySet())
-    // {
-    //   if (print > 50)
-    //     break;
-    //   //System.out.println("test count " + test_count);
-    //   System.out.println("Example " + entry.getKey() + ": " + entry.getValue().getValue());
-    // }
-
-    //MAKE DEEP COPY OF EXAMPLE, LEST YOU GET FUCKED!!!!!!
+    //make deep copy of example vector for computation
     copy = d.copy();
 
     //scale example hashMapVector by idf weightings of all terms
@@ -227,36 +200,30 @@ public class Rocchio extends Classifier {
       if (entry.getValue().getValue() != 0)  //token is not 0
       {
         token = entry.getKey();
-        //System.out.println("token is " + token);
         weight = entry.getValue().getValue(); //double value of weight
-        //idf = idfMap.get(token);
-        if (idfMap.get(token) == null)
+
+        if (idfMap.get(token) != null)
         {
-          //System.out.println("value of " + token + " is null");
-          idf = 0;
+          idf = idfMap.get(token);
+          w = weight * idf;
+          copy.hashMap.get(token).setValue(w);
         }
         else
         {
-          idf = idfMap.get(token);
-          //System.out.println("token " + token + " has idf " + idf);
-        }
-
-        if (idf != 0)
-        {
+          idf = 0;
           w = weight * idf;
-          //copy.hashMap.put(token, w); //update value in e's HMV
           copy.hashMap.get(token).setValue(w);
         }
       }
     }
 
-
-
-
+    //compare example to all prototypes using cosine similarity
+    //select closest one and test if categories are equal
     for (int i=0; i<prototype_array.length; i++)
     {
       p = prototype_array[i];
       sim = copy.cosineTo(p);
+
       if (sim > maxCosSim)
       {
         maxCosSim = sim;
@@ -267,12 +234,11 @@ public class Rocchio extends Classifier {
     return (predictedClass == testExample.getCategory());
   }
 
-
+  //method to initialize prototype vectors (called in constructor)
   public void initializePrototypes()
   {
     for (int i=0; i<numCategories; i++)
       prototypes.add(new HashMapVector());
     prototype_array = prototypes.toArray(new HashMapVector[prototypes.size()]);
   }
-
 }
