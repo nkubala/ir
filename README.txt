@@ -12,3 +12,5 @@ for more information and introductory documentation (especially see the Project
 assignment descriptions).
 
 Copyleft: Raymond J. Mooney, 2001
+
+yall r fuken trolls
